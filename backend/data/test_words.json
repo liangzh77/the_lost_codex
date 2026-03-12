@@ -1,0 +1,27 @@
+{
+  "word_banks": [
+    {"name": "小学单词", "display_order": 1},
+    {"name": "初一新增", "display_order": 2}
+  ],
+  "words": {
+    "小学单词": [
+      {"english": "apple", "chinese": "苹果", "phonetic": "/ˈæp.əl/", "chinese_explanation": "一种常见水果", "english_explanation": "a round fruit with red or green skin", "example_sentence": "I eat an apple every day."},
+      {"english": "book", "chinese": "书", "phonetic": "/bʊk/", "chinese_explanation": "用来阅读的印刷品", "english_explanation": "a set of printed pages bound together", "example_sentence": "She is reading a book."},
+      {"english": "cat", "chinese": "猫", "phonetic": "/kæt/", "chinese_explanation": "一种常见宠物", "english_explanation": "a small domesticated animal", "example_sentence": "The cat is sleeping on the sofa."},
+      {"english": "dog", "chinese": "狗", "phonetic": "/dɒɡ/", "chinese_explanation": "人类最忠实的朋友", "english_explanation": "a domesticated animal kept as a pet", "example_sentence": "The dog is playing in the park."},
+      {"english": "egg", "chinese": "鸡蛋", "phonetic": "/eɡ/", "chinese_explanation": "鸡下的蛋", "english_explanation": "an oval object laid by a bird", "example_sentence": "I had an egg for breakfast."},
+      {"english": "fish", "chinese": "鱼", "phonetic": "/fɪʃ/", "chinese_explanation": "生活在水中的动物", "english_explanation": "an animal that lives in water", "example_sentence": "There are many fish in the river."},
+      {"english": "green", "chinese": "绿色的", "phonetic": "/ɡriːn/", "chinese_explanation": "草和树叶的颜色", "english_explanation": "the color of grass and leaves", "example_sentence": "The grass is green."},
+      {"english": "happy", "chinese": "快乐的", "phonetic": "/ˈhæp.i/", "chinese_explanation": "感到高兴", "english_explanation": "feeling pleasure and enjoyment", "example_sentence": "She looks very happy today."},
+      {"english": "ice", "chinese": "冰", "phonetic": "/aɪs/", "chinese_explanation": "水冻结后的固体", "english_explanation": "frozen water", "example_sentence": "The lake is covered with ice."},
+      {"english": "jump", "chinese": "跳", "phonetic": "/dʒʌmp/", "chinese_explanation": "双脚离地向上运动", "english_explanation": "to push yourself off the ground", "example_sentence": "The children like to jump rope."}
+    ],
+    "初一新增": [
+      {"english": "achieve", "chinese": "实现", "phonetic": "/əˈtʃiːv/", "chinese_explanation": "成功达到目标", "english_explanation": "to succeed in doing something", "example_sentence": "She achieved her goal."},
+      {"english": "balance", "chinese": "平衡", "phonetic": "/ˈbæl.əns/", "chinese_explanation": "保持稳定的状态", "english_explanation": "a state of being equal or steady", "example_sentence": "Try to keep your balance."},
+      {"english": "courage", "chinese": "勇气", "phonetic": "/ˈkɜːr.ɪdʒ/", "chinese_explanation": "面对困难时的勇敢", "english_explanation": "the ability to face danger or difficulty", "example_sentence": "It takes courage to speak up."},
+      {"english": "develop", "chinese": "发展", "phonetic": "/dɪˈvel.əp/", "chinese_explanation": "逐渐成长或进步", "english_explanation": "to grow or change over time", "example_sentence": "The city is developing quickly."},
+      {"english": "environment", "chinese": "环境", "phonetic": "/ɪnˈvaɪ.rən.mənt/", "chinese_explanation": "周围的自然条件", "english_explanation": "the natural world around us", "example_sentence": "We should protect the environment."}
+    ]
+  }
+}
