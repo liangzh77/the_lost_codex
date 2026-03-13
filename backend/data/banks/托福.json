@@ -1,0 +1,246 @@
+{
+  "name": "托福",
+  "display_order": 10,
+  "words": [
+    {
+      "english": "aberration",
+      "chinese": "偏差",
+      "phonetic": "/ˌæb.əˈreɪ.ʃən/",
+      "chinese_explanation": "异常现象",
+      "english_explanation": "a departure from normal",
+      "example_sentence": "A statistical aberration."
+    },
+    {
+      "english": "bolster",
+      "chinese": "支持",
+      "phonetic": "/ˈboʊl.stər/",
+      "chinese_explanation": "加强",
+      "english_explanation": "to support or strengthen",
+      "example_sentence": "Bolster the economy."
+    },
+    {
+      "english": "coalesce",
+      "chinese": "合并",
+      "phonetic": "/ˌkoʊ.əˈles/",
+      "chinese_explanation": "融合在一起",
+      "english_explanation": "to come together",
+      "example_sentence": "Ideas coalesced into a plan."
+    },
+    {
+      "english": "debilitate",
+      "chinese": "使衰弱",
+      "phonetic": "/dɪˈbɪl.ɪ.teɪt/",
+      "chinese_explanation": "削弱体力",
+      "english_explanation": "to make weak",
+      "example_sentence": "The illness debilitated him."
+    },
+    {
+      "english": "elucidate",
+      "chinese": "阐明",
+      "phonetic": "/ɪˈluː.sɪ.deɪt/",
+      "chinese_explanation": "解释清楚",
+      "english_explanation": "to make clear",
+      "example_sentence": "Elucidate the theory."
+    },
+    {
+      "english": "frivolous",
+      "chinese": "轻浮的",
+      "phonetic": "/ˈfrɪv.əl.əs/",
+      "chinese_explanation": "不严肃的",
+      "english_explanation": "not serious",
+      "example_sentence": "A frivolous remark."
+    },
+    {
+      "english": "gregarious",
+      "chinese": "群居的",
+      "phonetic": "/ɡrɪˈɡer.i.əs/",
+      "chinese_explanation": "爱交际的",
+      "english_explanation": "fond of company",
+      "example_sentence": "Humans are gregarious."
+    },
+    {
+      "english": "homogeneous",
+      "chinese": "同质的",
+      "phonetic": "/ˌhoʊ.məˈdʒiː.ni.əs/",
+      "chinese_explanation": "成分相同的",
+      "english_explanation": "of the same kind",
+      "example_sentence": "A homogeneous mixture."
+    },
+    {
+      "english": "innate",
+      "chinese": "天生的",
+      "phonetic": "/ɪˈneɪt/",
+      "chinese_explanation": "与生俱来的",
+      "english_explanation": "inborn",
+      "example_sentence": "An innate talent."
+    },
+    {
+      "english": "juxtaposition",
+      "chinese": "并列",
+      "phonetic": "/ˌdʒʌk.stə.pəˈzɪʃ.ən/",
+      "chinese_explanation": "并排对比",
+      "english_explanation": "placing side by side",
+      "example_sentence": "An interesting juxtaposition."
+    },
+    {
+      "english": "kinship",
+      "chinese": "亲属关系",
+      "phonetic": "/ˈkɪn.ʃɪp/",
+      "chinese_explanation": "血缘关系",
+      "english_explanation": "family relationship",
+      "example_sentence": "A sense of kinship."
+    },
+    {
+      "english": "lucrative",
+      "chinese": "有利可图的",
+      "phonetic": "/ˈluː.krə.tɪv/",
+      "chinese_explanation": "赚钱的",
+      "english_explanation": "producing profit",
+      "example_sentence": "A lucrative business."
+    },
+    {
+      "english": "mitigate",
+      "chinese": "缓和",
+      "phonetic": "/ˈmɪt.ɪ.ɡeɪt/",
+      "chinese_explanation": "减轻影响",
+      "english_explanation": "to make less severe",
+      "example_sentence": "Mitigate the damage."
+    },
+    {
+      "english": "nuance",
+      "chinese": "细微差别",
+      "phonetic": "/ˈnjuː.ɑːns/",
+      "chinese_explanation": "微妙之处",
+      "english_explanation": "a subtle difference",
+      "example_sentence": "Understand the nuances."
+    },
+    {
+      "english": "opaque",
+      "chinese": "不透明的",
+      "phonetic": "/oʊˈpeɪk/",
+      "chinese_explanation": "看不透的",
+      "english_explanation": "not transparent",
+      "example_sentence": "An opaque glass."
+    },
+    {
+      "english": "proliferate",
+      "chinese": "激增",
+      "phonetic": "/prəˈlɪf.ər.eɪt/",
+      "chinese_explanation": "迅速增加",
+      "english_explanation": "to increase rapidly",
+      "example_sentence": "Rumors proliferated."
+    },
+    {
+      "english": "quandary",
+      "chinese": "困惑",
+      "phonetic": "/ˈkwɒn.dər.i/",
+      "chinese_explanation": "进退两难",
+      "english_explanation": "a state of uncertainty",
+      "example_sentence": "In a quandary about what to do."
+    },
+    {
+      "english": "rudimentary",
+      "chinese": "基础的",
+      "phonetic": "/ˌruː.dɪˈmen.tər.i/",
+      "chinese_explanation": "初步的",
+      "english_explanation": "basic and simple",
+      "example_sentence": "Rudimentary knowledge."
+    },
+    {
+      "english": "sporadic",
+      "chinese": "零星的",
+      "phonetic": "/spəˈræd.ɪk/",
+      "chinese_explanation": "偶尔发生的",
+      "english_explanation": "occurring irregularly",
+      "example_sentence": "Sporadic rainfall."
+    },
+    {
+      "english": "transient",
+      "chinese": "短暂的",
+      "phonetic": "/ˈtræn.zi.ənt/",
+      "chinese_explanation": "临时的",
+      "english_explanation": "lasting only briefly",
+      "example_sentence": "A transient feeling."
+    },
+    {
+      "english": "usurp",
+      "chinese": "篡夺",
+      "phonetic": "/juːˈzɜːrp/",
+      "chinese_explanation": "非法夺取",
+      "english_explanation": "to seize power illegally",
+      "example_sentence": "Usurp the throne."
+    },
+    {
+      "english": "venerate",
+      "chinese": "尊敬",
+      "phonetic": "/ˈven.ər.eɪt/",
+      "chinese_explanation": "崇敬",
+      "english_explanation": "to regard with respect",
+      "example_sentence": "Venerate the elders."
+    },
+    {
+      "english": "wane",
+      "chinese": "衰退",
+      "phonetic": "/weɪn/",
+      "chinese_explanation": "逐渐减弱",
+      "english_explanation": "to decrease gradually",
+      "example_sentence": "Interest began to wane."
+    },
+    {
+      "english": "anomaly",
+      "chinese": "异常",
+      "phonetic": "/əˈnɒm.ə.li/",
+      "chinese_explanation": "不正常的事",
+      "english_explanation": "something unusual",
+      "example_sentence": "A genetic anomaly."
+    },
+    {
+      "english": "benign",
+      "chinese": "良性的",
+      "phonetic": "/bɪˈnaɪn/",
+      "chinese_explanation": "无害的",
+      "english_explanation": "not harmful",
+      "example_sentence": "A benign tumor."
+    },
+    {
+      "english": "cursory",
+      "chinese": "粗略的",
+      "phonetic": "/ˈkɜːr.sər.i/",
+      "chinese_explanation": "匆忙的",
+      "english_explanation": "hasty and superficial",
+      "example_sentence": "A cursory glance."
+    },
+    {
+      "english": "disseminate",
+      "chinese": "传播",
+      "phonetic": "/dɪˈsem.ɪ.neɪt/",
+      "chinese_explanation": "散布信息",
+      "english_explanation": "to spread widely",
+      "example_sentence": "Disseminate information."
+    },
+    {
+      "english": "enigma",
+      "chinese": "谜",
+      "phonetic": "/ɪˈnɪɡ.mə/",
+      "chinese_explanation": "难以理解的事",
+      "english_explanation": "a mystery",
+      "example_sentence": "She remains an enigma."
+    },
+    {
+      "english": "futile",
+      "chinese": "徒劳的",
+      "phonetic": "/ˈfjuː.taɪl/",
+      "chinese_explanation": "无用的",
+      "english_explanation": "pointless",
+      "example_sentence": "A futile attempt."
+    },
+    {
+      "english": "harbinger",
+      "chinese": "先兆",
+      "phonetic": "/ˈhɑːr.bɪn.dʒər/",
+      "chinese_explanation": "预兆",
+      "english_explanation": "a sign of what is coming",
+      "example_sentence": "A harbinger of spring."
+    }
+  ]
+}

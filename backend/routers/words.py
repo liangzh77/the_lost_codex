@@ -1,9 +1,10 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from database import get_db
 from models import WordBank, Word, UserWordProgress
 from auth import get_current_user, User
+from services.ai_complete import complete_word_info
 
 router = APIRouter(prefix="/api/words", tags=["words"])
 
@@ -48,8 +49,16 @@ def list_words_in_bank(bank_id: int, db: Session = Depends(get_db)):
 def get_word(word_id: int, db: Session = Depends(get_db)):
     word = db.query(Word).filter(Word.id == word_id).first()
     if not word:
-        from fastapi import HTTPException
         raise HTTPException(status_code=404, detail="单词不存在")
+    # 自动补全缺失的详细信息
+    if not word.chinese:
+        info = complete_word_info(word.english)
+        word.chinese = info.get("chinese", "")
+        word.phonetic = info.get("phonetic", "")
+        word.chinese_explanation = info.get("chinese_explanation", "")
+        word.english_explanation = info.get("english_explanation", "")
+        word.example_sentence = info.get("example_sentence", "")
+        db.commit()
     return {
         "id": word.id,
         "english": word.english,

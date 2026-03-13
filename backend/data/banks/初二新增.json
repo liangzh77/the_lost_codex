@@ -1,0 +1,246 @@
+{
+  "name": "初二新增",
+  "display_order": 3,
+  "words": [
+    {
+      "english": "adventure",
+      "chinese": "冒险",
+      "phonetic": "/ədˈven.tʃər/",
+      "chinese_explanation": "刺激的经历",
+      "english_explanation": "an exciting experience",
+      "example_sentence": "Life is an adventure."
+    },
+    {
+      "english": "brilliant",
+      "chinese": "杰出的",
+      "phonetic": "/ˈbrɪl.jənt/",
+      "chinese_explanation": "非常聪明的",
+      "english_explanation": "very clever or bright",
+      "example_sentence": "She is a brilliant student."
+    },
+    {
+      "english": "communicate",
+      "chinese": "交流",
+      "phonetic": "/kəˈmjuː.nɪ.keɪt/",
+      "chinese_explanation": "传递信息",
+      "english_explanation": "to share information",
+      "example_sentence": "We communicate by email."
+    },
+    {
+      "english": "disappear",
+      "chinese": "消失",
+      "phonetic": "/ˌdɪs.əˈpɪr/",
+      "chinese_explanation": "不见了",
+      "english_explanation": "to stop being visible",
+      "example_sentence": "The sun disappeared behind clouds."
+    },
+    {
+      "english": "enormous",
+      "chinese": "巨大的",
+      "phonetic": "/ɪˈnɔːr.məs/",
+      "chinese_explanation": "非常大的",
+      "english_explanation": "extremely large",
+      "example_sentence": "An enormous whale swam by."
+    },
+    {
+      "english": "furniture",
+      "chinese": "家具",
+      "phonetic": "/ˈfɜːr.nɪ.tʃər/",
+      "chinese_explanation": "房间里的物品",
+      "english_explanation": "objects in a room like chairs",
+      "example_sentence": "We bought new furniture."
+    },
+    {
+      "english": "government",
+      "chinese": "政府",
+      "phonetic": "/ˈɡʌv.ərn.mənt/",
+      "chinese_explanation": "管理国家的机构",
+      "english_explanation": "the group that rules a country",
+      "example_sentence": "The government made a new law."
+    },
+    {
+      "english": "hesitate",
+      "chinese": "犹豫",
+      "phonetic": "/ˈhez.ɪ.teɪt/",
+      "chinese_explanation": "拿不定主意",
+      "english_explanation": "to pause before doing",
+      "example_sentence": "Don't hesitate to ask."
+    },
+    {
+      "english": "independent",
+      "chinese": "独立的",
+      "phonetic": "/ˌɪn.dɪˈpen.dənt/",
+      "chinese_explanation": "不依赖他人的",
+      "english_explanation": "not relying on others",
+      "example_sentence": "She is very independent."
+    },
+    {
+      "english": "journalist",
+      "chinese": "记者",
+      "phonetic": "/ˈdʒɜːr.nə.lɪst/",
+      "chinese_explanation": "写新闻的人",
+      "english_explanation": "a person who writes news",
+      "example_sentence": "The journalist wrote an article."
+    },
+    {
+      "english": "kindergarten",
+      "chinese": "幼儿园",
+      "phonetic": "/ˈkɪn.dər.ɡɑːr.tən/",
+      "chinese_explanation": "幼儿学校",
+      "english_explanation": "a school for young children",
+      "example_sentence": "My sister goes to kindergarten."
+    },
+    {
+      "english": "luggage",
+      "chinese": "行李",
+      "phonetic": "/ˈlʌɡ.ɪdʒ/",
+      "chinese_explanation": "旅行携带的包",
+      "english_explanation": "bags for traveling",
+      "example_sentence": "Don't forget your luggage."
+    },
+    {
+      "english": "mystery",
+      "chinese": "谜",
+      "phonetic": "/ˈmɪs.tər.i/",
+      "chinese_explanation": "无法解释的事",
+      "english_explanation": "something hard to explain",
+      "example_sentence": "It remains a mystery."
+    },
+    {
+      "english": "necessary",
+      "chinese": "必要的",
+      "phonetic": "/ˈnes.ə.ser.i/",
+      "chinese_explanation": "不可缺少的",
+      "english_explanation": "needed or required",
+      "example_sentence": "Sleep is necessary for health."
+    },
+    {
+      "english": "opportunity",
+      "chinese": "机会",
+      "phonetic": "/ˌɒp.ərˈtjuː.nɪ.ti/",
+      "chinese_explanation": "有利的时机",
+      "english_explanation": "a good chance",
+      "example_sentence": "This is a great opportunity."
+    },
+    {
+      "english": "pollution",
+      "chinese": "污染",
+      "phonetic": "/pəˈluː.ʃən/",
+      "chinese_explanation": "环境被破坏",
+      "english_explanation": "damage to the environment",
+      "example_sentence": "Air pollution is serious."
+    },
+    {
+      "english": "recognize",
+      "chinese": "认出",
+      "phonetic": "/ˈrek.əɡ.naɪz/",
+      "chinese_explanation": "辨认出来",
+      "english_explanation": "to identify someone",
+      "example_sentence": "I recognized her voice."
+    },
+    {
+      "english": "schedule",
+      "chinese": "日程",
+      "phonetic": "/ˈsked.juːl/",
+      "chinese_explanation": "时间安排",
+      "english_explanation": "a plan of activities",
+      "example_sentence": "Check your schedule."
+    },
+    {
+      "english": "tradition",
+      "chinese": "传统",
+      "phonetic": "/trəˈdɪʃ.ən/",
+      "chinese_explanation": "代代相传的习俗",
+      "english_explanation": "a custom passed down",
+      "example_sentence": "It is a family tradition."
+    },
+    {
+      "english": "valuable",
+      "chinese": "有价值的",
+      "phonetic": "/ˈvæl.juː.ə.bəl/",
+      "chinese_explanation": "很值钱的",
+      "english_explanation": "worth a lot",
+      "example_sentence": "This is a valuable painting."
+    },
+    {
+      "english": "whisper",
+      "chinese": "低语",
+      "phonetic": "/ˈwɪs.pər/",
+      "chinese_explanation": "小声说话",
+      "english_explanation": "to speak very softly",
+      "example_sentence": "She whispered a secret."
+    },
+    {
+      "english": "anxiety",
+      "chinese": "焦虑",
+      "phonetic": "/æŋˈzaɪ.ə.ti/",
+      "chinese_explanation": "担心不安",
+      "english_explanation": "a feeling of worry",
+      "example_sentence": "He felt anxiety before the exam."
+    },
+    {
+      "english": "boundary",
+      "chinese": "边界",
+      "phonetic": "/ˈbaʊn.dər.i/",
+      "chinese_explanation": "分界线",
+      "english_explanation": "a line that divides areas",
+      "example_sentence": "The river is the boundary."
+    },
+    {
+      "english": "concentrate",
+      "chinese": "集中",
+      "phonetic": "/ˈkɒn.sən.treɪt/",
+      "chinese_explanation": "专注于",
+      "english_explanation": "to focus attention",
+      "example_sentence": "Concentrate on your work."
+    },
+    {
+      "english": "distinguish",
+      "chinese": "区分",
+      "phonetic": "/dɪˈstɪŋ.ɡwɪʃ/",
+      "chinese_explanation": "分辨不同",
+      "english_explanation": "to tell the difference",
+      "example_sentence": "Distinguish right from wrong."
+    },
+    {
+      "english": "enthusiasm",
+      "chinese": "热情",
+      "phonetic": "/ɪnˈθjuː.zi.æz.əm/",
+      "chinese_explanation": "强烈的兴趣",
+      "english_explanation": "strong excitement",
+      "example_sentence": "She showed great enthusiasm."
+    },
+    {
+      "english": "frequently",
+      "chinese": "频繁地",
+      "phonetic": "/ˈfriː.kwənt.li/",
+      "chinese_explanation": "经常地",
+      "english_explanation": "happening often",
+      "example_sentence": "He frequently visits the gym."
+    },
+    {
+      "english": "guarantee",
+      "chinese": "保证",
+      "phonetic": "/ˌɡær.ənˈtiː/",
+      "chinese_explanation": "确保做到",
+      "english_explanation": "to promise something",
+      "example_sentence": "I guarantee it will work."
+    },
+    {
+      "english": "harvest",
+      "chinese": "收获",
+      "phonetic": "/ˈhɑːr.vɪst/",
+      "chinese_explanation": "收割庄稼",
+      "english_explanation": "to gather crops",
+      "example_sentence": "Farmers harvest rice in autumn."
+    },
+    {
+      "english": "influence",
+      "chinese": "影响",
+      "phonetic": "/ˈɪn.flu.əns/",
+      "chinese_explanation": "对他人的作用",
+      "english_explanation": "the power to affect others",
+      "example_sentence": "Parents influence children."
+    }
+  ]
+}

@@ -1,0 +1,246 @@
+{
+  "name": "初一新增",
+  "display_order": 2,
+  "words": [
+    {
+      "english": "achieve",
+      "chinese": "实现",
+      "phonetic": "/əˈtʃiːv/",
+      "chinese_explanation": "成功达到目标",
+      "english_explanation": "to succeed in doing something",
+      "example_sentence": "She achieved her goal."
+    },
+    {
+      "english": "balance",
+      "chinese": "平衡",
+      "phonetic": "/ˈbæl.əns/",
+      "chinese_explanation": "保持稳定",
+      "english_explanation": "a state of being steady",
+      "example_sentence": "Try to keep your balance."
+    },
+    {
+      "english": "courage",
+      "chinese": "勇气",
+      "phonetic": "/ˈkɜːr.ɪdʒ/",
+      "chinese_explanation": "面对困难的勇敢",
+      "english_explanation": "ability to face danger",
+      "example_sentence": "It takes courage to speak up."
+    },
+    {
+      "english": "develop",
+      "chinese": "发展",
+      "phonetic": "/dɪˈvel.əp/",
+      "chinese_explanation": "逐渐成长",
+      "english_explanation": "to grow over time",
+      "example_sentence": "The city is developing quickly."
+    },
+    {
+      "english": "environment",
+      "chinese": "环境",
+      "phonetic": "/ɪnˈvaɪ.rən.mənt/",
+      "chinese_explanation": "周围的条件",
+      "english_explanation": "the natural world around us",
+      "example_sentence": "Protect the environment."
+    },
+    {
+      "english": "foreign",
+      "chinese": "外国的",
+      "phonetic": "/ˈfɒr.ən/",
+      "chinese_explanation": "来自其他国家",
+      "english_explanation": "from another country",
+      "example_sentence": "He speaks a foreign language."
+    },
+    {
+      "english": "grammar",
+      "chinese": "语法",
+      "phonetic": "/ˈɡræm.ər/",
+      "chinese_explanation": "语言的规则",
+      "english_explanation": "the rules of a language",
+      "example_sentence": "English grammar can be tricky."
+    },
+    {
+      "english": "honest",
+      "chinese": "诚实的",
+      "phonetic": "/ˈɒn.ɪst/",
+      "chinese_explanation": "不说谎的",
+      "english_explanation": "telling the truth",
+      "example_sentence": "He is an honest person."
+    },
+    {
+      "english": "imagine",
+      "chinese": "想象",
+      "phonetic": "/ɪˈmædʒ.ɪn/",
+      "chinese_explanation": "在脑海中构想",
+      "english_explanation": "to form a picture in mind",
+      "example_sentence": "Imagine you are on a beach."
+    },
+    {
+      "english": "journey",
+      "chinese": "旅程",
+      "phonetic": "/ˈdʒɜːr.ni/",
+      "chinese_explanation": "从一地到另一地",
+      "english_explanation": "a trip from one place to another",
+      "example_sentence": "The journey took three hours."
+    },
+    {
+      "english": "knowledge",
+      "chinese": "知识",
+      "phonetic": "/ˈnɒl.ɪdʒ/",
+      "chinese_explanation": "学习获得的信息",
+      "english_explanation": "information gained by learning",
+      "example_sentence": "Knowledge is power."
+    },
+    {
+      "english": "library",
+      "chinese": "图书馆",
+      "phonetic": "/ˈlaɪ.brer.i/",
+      "chinese_explanation": "借阅书籍的地方",
+      "english_explanation": "a place to borrow books",
+      "example_sentence": "I study in the library."
+    },
+    {
+      "english": "medicine",
+      "chinese": "药",
+      "phonetic": "/ˈmed.ɪ.sɪn/",
+      "chinese_explanation": "治疗疾病的物质",
+      "english_explanation": "substance to treat illness",
+      "example_sentence": "Take medicine after meals."
+    },
+    {
+      "english": "natural",
+      "chinese": "自然的",
+      "phonetic": "/ˈnætʃ.ər.əl/",
+      "chinese_explanation": "非人造的",
+      "english_explanation": "existing in nature",
+      "example_sentence": "This is a natural park."
+    },
+    {
+      "english": "opinion",
+      "chinese": "观点",
+      "phonetic": "/əˈpɪn.jən/",
+      "chinese_explanation": "个人的看法",
+      "english_explanation": "a personal view",
+      "example_sentence": "What is your opinion?"
+    },
+    {
+      "english": "patient",
+      "chinese": "耐心的",
+      "phonetic": "/ˈpeɪ.ʃənt/",
+      "chinese_explanation": "能够等待的",
+      "english_explanation": "able to wait calmly",
+      "example_sentence": "Please be patient."
+    },
+    {
+      "english": "respect",
+      "chinese": "尊重",
+      "phonetic": "/rɪˈspekt/",
+      "chinese_explanation": "对他人的敬意",
+      "english_explanation": "to admire someone",
+      "example_sentence": "Respect our teachers."
+    },
+    {
+      "english": "similar",
+      "chinese": "相似的",
+      "phonetic": "/ˈsɪm.ɪ.lər/",
+      "chinese_explanation": "看起来差不多",
+      "english_explanation": "looking almost the same",
+      "example_sentence": "These pictures are similar."
+    },
+    {
+      "english": "temperature",
+      "chinese": "温度",
+      "phonetic": "/ˈtem.prə.tʃər/",
+      "chinese_explanation": "冷热的程度",
+      "english_explanation": "how hot or cold it is",
+      "example_sentence": "The temperature is 30 degrees."
+    },
+    {
+      "english": "uniform",
+      "chinese": "校服",
+      "phonetic": "/ˈjuː.nɪ.fɔːrm/",
+      "chinese_explanation": "统一的服装",
+      "english_explanation": "matching clothes for a group",
+      "example_sentence": "Students wear uniforms."
+    },
+    {
+      "english": "vacation",
+      "chinese": "假期",
+      "phonetic": "/veɪˈkeɪ.ʃən/",
+      "chinese_explanation": "休息的时间",
+      "english_explanation": "a period of rest",
+      "example_sentence": "We went to the beach on vacation."
+    },
+    {
+      "english": "weather",
+      "chinese": "天气",
+      "phonetic": "/ˈweð.ər/",
+      "chinese_explanation": "大气的状况",
+      "english_explanation": "condition of the atmosphere",
+      "example_sentence": "The weather is nice today."
+    },
+    {
+      "english": "excellent",
+      "chinese": "优秀的",
+      "phonetic": "/ˈek.sə.lənt/",
+      "chinese_explanation": "非常好的",
+      "english_explanation": "extremely good",
+      "example_sentence": "She did an excellent job."
+    },
+    {
+      "english": "accept",
+      "chinese": "接受",
+      "phonetic": "/əkˈsept/",
+      "chinese_explanation": "同意收下",
+      "english_explanation": "to agree to take",
+      "example_sentence": "I accept your invitation."
+    },
+    {
+      "english": "believe",
+      "chinese": "相信",
+      "phonetic": "/bɪˈliːv/",
+      "chinese_explanation": "认为是真的",
+      "english_explanation": "to think something is true",
+      "example_sentence": "I believe you can do it."
+    },
+    {
+      "english": "compare",
+      "chinese": "比较",
+      "phonetic": "/kəmˈper/",
+      "chinese_explanation": "找出异同",
+      "english_explanation": "to examine differences",
+      "example_sentence": "Compare these two answers."
+    },
+    {
+      "english": "describe",
+      "chinese": "描述",
+      "phonetic": "/dɪˈskraɪb/",
+      "chinese_explanation": "用语言说明",
+      "english_explanation": "to say what something is like",
+      "example_sentence": "Describe your best friend."
+    },
+    {
+      "english": "experience",
+      "chinese": "经历",
+      "phonetic": "/ɪkˈspɪr.i.əns/",
+      "chinese_explanation": "亲身经历的事",
+      "english_explanation": "something that happens to you",
+      "example_sentence": "It was a great experience."
+    },
+    {
+      "english": "favorite",
+      "chinese": "最喜欢的",
+      "phonetic": "/ˈfeɪ.vər.ɪt/",
+      "chinese_explanation": "最喜爱的",
+      "english_explanation": "liked the most",
+      "example_sentence": "What is your favorite color?"
+    },
+    {
+      "english": "generous",
+      "chinese": "慷慨的",
+      "phonetic": "/ˈdʒen.ər.əs/",
+      "chinese_explanation": "乐于给予的",
+      "english_explanation": "willing to give",
+      "example_sentence": "She is very generous."
+    }
+  ]
+}

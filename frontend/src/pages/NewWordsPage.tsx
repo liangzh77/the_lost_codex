@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getWordBanks, startNewWords, startNewSingleWord, checkWords } from '../api';
+import { getWordBanks, pickNewWords, completeBatch, completeWord, startNewWords, startNewSingleWord, checkWords } from '../api';
 import NavBar from '../components/NavBar';
 import Button from '../components/Button';
 import Card from '../components/Card';
+import LoadingProgress from '../components/LoadingProgress';
 
 interface Bank {
   id: number;
@@ -25,23 +26,59 @@ export default function NewWordsPage() {
     getWordBanks().then((res) => setBanks(res.data));
   }, []);
 
+  const loadWordsWithProgress = async (
+    wordItems: { id: number; english: string; needs_complete?: boolean }[]
+  ) => {
+    const needComplete = wordItems.filter((w) => w.needs_complete);
+    const alreadyDone = wordItems.filter((w) => !w.needs_complete);
+
+    const results: any[] = [];
+
+    // 已有详��信息的批量获取
+    if (alreadyDone.length > 0) {
+      const res = await completeBatch(alreadyDone.map((w) => w.id));
+      results.push(...res.data);
+    }
+
+    // 需要补全的按 10 个一组并发调用，显示进度
+    if (needComplete.length > 0) {
+      const batchSize = 10;
+      const totalBatches = Math.ceil(needComplete.length / batchSize);
+      let completed = 0;
+      setProgress({ current: 0, total: needComplete.length, word: '' });
+
+      for (let i = 0; i < totalBatches; i++) {
+        const batch = needComplete.slice(i * batchSize, (i + 1) * batchSize);
+        const batchWords = batch.map((w) => w.english).join(', ');
+        setProgress({ current: completed, total: needComplete.length, word: batchWords });
+        try {
+          const res = await completeBatch(batch.map((w) => w.id));
+          results.push(...res.data);
+        } catch {}
+        completed += batch.length;
+        setProgress({ current: completed, total: needComplete.length, word: '' });
+      }
+    }
+
+    return results;
+  };
+
   const handleStart = async () => {
     setLoading(true);
     try {
       if (customMode) {
         const wordList = customInput.split(/[,，\s\n]+/).filter(Boolean);
         if (wordList.length === 0) return;
-        // 先检查哪些是新词
         const checkRes = await checkWords(wordList);
         const existingWords: string[] = checkRes.data.existing;
         const newWords: string[] = checkRes.data.new;
         const allWords: any[] = [];
-        // 已有的词批量获取
+
         if (existingWords.length > 0) {
           const res = await startNewWords(undefined, existingWords);
           allWords.push(...res.data);
         }
-        // 新词逐个加载，显示进度
+
         if (newWords.length > 0) {
           setProgress({ current: 0, total: newWords.length, word: '' });
           for (let i = 0; i < newWords.length; i++) {
@@ -52,6 +89,7 @@ export default function NewWordsPage() {
             } catch {}
           }
         }
+
         if (allWords.length === 0) {
           alert('没有找到新单词');
           return;
@@ -59,12 +97,19 @@ export default function NewWordsPage() {
         navigate('/learn/session', { state: { words: allWords, isFirst: true } });
       } else {
         if (!selectedBank) return;
-        const res = await startNewWords(selectedBank);
-        if (res.data.length === 0) {
+        // 先抽取，再逐个补全
+        const pickRes = await pickNewWords(selectedBank);
+        const picked = pickRes.data;
+        if (picked.length === 0) {
           alert('没有找到新单词');
           return;
         }
-        navigate('/learn/session', { state: { words: res.data, isFirst: true } });
+        const allWords = await loadWordsWithProgress(picked);
+        if (allWords.length === 0) {
+          alert('加载失败');
+          return;
+        }
+        navigate('/learn/session', { state: { words: allWords, isFirst: true } });
       }
     } catch (err: any) {
       const msg = err?.response?.data?.detail || '请求失败';
@@ -133,18 +178,11 @@ export default function NewWordsPage() {
           onClick={handleStart}
           disabled={loading || (!customMode && !selectedBank) || (customMode && !customInput.trim())}
         >
-          {loading && progress.total > 0
-            ? `加载中 ${progress.current}/${progress.total}：${progress.word}`
-            : loading ? '加载中...' : '开始学习'}
+          {loading && progress.total === 0 ? '加载中...' : loading ? '' : '开始学习'}
         </Button>
 
         {loading && progress.total > 0 && (
-          <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-            <div
-              className="h-full bg-blue-500 rounded-full transition-all duration-300"
-              style={{ width: `${Math.round((progress.current / progress.total) * 100)}%` }}
-            />
-          </div>
+          <LoadingProgress current={progress.current} total={progress.total} word={progress.word} />
         )}
       </div>
     </div>

@@ -1,0 +1,246 @@
+{
+  "name": "四级新增",
+  "display_order": 8,
+  "words": [
+    {
+      "english": "accommodate",
+      "chinese": "容纳",
+      "phonetic": "/əˈkɒm.ə.deɪt/",
+      "chinese_explanation": "提供住处",
+      "english_explanation": "to provide space for",
+      "example_sentence": "The hotel accommodates 200 guests."
+    },
+    {
+      "english": "bureaucratic",
+      "chinese": "官僚的",
+      "phonetic": "/ˌbjʊr.əˈkræt.ɪk/",
+      "chinese_explanation": "行政繁琐的",
+      "english_explanation": "involving complex procedures",
+      "example_sentence": "Bureaucratic red tape."
+    },
+    {
+      "english": "comprehensive",
+      "chinese": "全面的",
+      "phonetic": "/ˌkɒm.prɪˈhen.sɪv/",
+      "chinese_explanation": "包罗万象的",
+      "english_explanation": "covering everything",
+      "example_sentence": "A comprehensive review."
+    },
+    {
+      "english": "deterioration",
+      "chinese": "恶化",
+      "phonetic": "/dɪˌtɪr.i.əˈreɪ.ʃən/",
+      "chinese_explanation": "变坏的过程",
+      "english_explanation": "the process of getting worse",
+      "example_sentence": "Environmental deterioration."
+    },
+    {
+      "english": "entrepreneur",
+      "chinese": "企业家",
+      "phonetic": "/ˌɒn.trə.prəˈnɜːr/",
+      "chinese_explanation": "创业者",
+      "english_explanation": "a person who starts a business",
+      "example_sentence": "A successful entrepreneur."
+    },
+    {
+      "english": "fluctuation",
+      "chinese": "波动",
+      "phonetic": "/ˌflʌk.tʃuˈeɪ.ʃən/",
+      "chinese_explanation": "起伏变化",
+      "english_explanation": "irregular changes",
+      "example_sentence": "Price fluctuations are normal."
+    },
+    {
+      "english": "gregarious",
+      "chinese": "爱社交的",
+      "phonetic": "/ɡrɪˈɡer.i.əs/",
+      "chinese_explanation": "喜欢群居的",
+      "english_explanation": "enjoying company of others",
+      "example_sentence": "She is very gregarious."
+    },
+    {
+      "english": "hazardous",
+      "chinese": "危险的",
+      "phonetic": "/ˈhæz.ər.dəs/",
+      "chinese_explanation": "有害的",
+      "english_explanation": "risky and dangerous",
+      "example_sentence": "Hazardous waste disposal."
+    },
+    {
+      "english": "incentive",
+      "chinese": "激励",
+      "phonetic": "/ɪnˈsen.tɪv/",
+      "chinese_explanation": "鼓励措施",
+      "english_explanation": "something that motivates",
+      "example_sentence": "Financial incentives for workers."
+    },
+    {
+      "english": "juxtapose",
+      "chinese": "并列",
+      "phonetic": "/ˌdʒʌk.stəˈpoʊz/",
+      "chinese_explanation": "并排比较",
+      "english_explanation": "to place side by side",
+      "example_sentence": "Juxtapose the two images."
+    },
+    {
+      "english": "kinetic",
+      "chinese": "动力的",
+      "phonetic": "/kɪˈnet.ɪk/",
+      "chinese_explanation": "运动的",
+      "english_explanation": "relating to motion",
+      "example_sentence": "Kinetic energy."
+    },
+    {
+      "english": "leverage",
+      "chinese": "杠杆作用",
+      "phonetic": "/ˈlev.ər.ɪdʒ/",
+      "chinese_explanation": "利用优势",
+      "english_explanation": "to use to maximum advantage",
+      "example_sentence": "Leverage your skills."
+    },
+    {
+      "english": "meticulous",
+      "chinese": "一丝不苟的",
+      "phonetic": "/məˈtɪk.jə.ləs/",
+      "chinese_explanation": "非常仔细的",
+      "english_explanation": "very careful and precise",
+      "example_sentence": "Meticulous attention to detail."
+    },
+    {
+      "english": "nostalgia",
+      "chinese": "怀旧",
+      "phonetic": "/nɒˈstæl.dʒə/",
+      "chinese_explanation": "对过去的思念",
+      "english_explanation": "longing for the past",
+      "example_sentence": "A feeling of nostalgia."
+    },
+    {
+      "english": "obsolete",
+      "chinese": "过时的",
+      "phonetic": "/ˈɒb.sə.liːt/",
+      "chinese_explanation": "不再使用的",
+      "english_explanation": "no longer in use",
+      "example_sentence": "The technology is obsolete."
+    },
+    {
+      "english": "paradox",
+      "chinese": "悖论",
+      "phonetic": "/ˈpær.ə.dɒks/",
+      "chinese_explanation": "自相矛盾",
+      "english_explanation": "a contradictory statement",
+      "example_sentence": "A logical paradox."
+    },
+    {
+      "english": "quota",
+      "chinese": "定额",
+      "phonetic": "/ˈkwoʊ.tə/",
+      "chinese_explanation": "分配的份额",
+      "english_explanation": "an assigned amount",
+      "example_sentence": "Import quotas were set."
+    },
+    {
+      "english": "rationale",
+      "chinese": "理由",
+      "phonetic": "/ˌræʃ.əˈnæl/",
+      "chinese_explanation": "基本原因",
+      "english_explanation": "the reasons behind something",
+      "example_sentence": "Explain the rationale."
+    },
+    {
+      "english": "scrutiny",
+      "chinese": "审查",
+      "phonetic": "/ˈskruː.tɪ.ni/",
+      "chinese_explanation": "仔细检查",
+      "english_explanation": "careful examination",
+      "example_sentence": "Under public scrutiny."
+    },
+    {
+      "english": "tangible",
+      "chinese": "有形的",
+      "phonetic": "/ˈtæn.dʒɪ.bəl/",
+      "chinese_explanation": "可触摸的",
+      "english_explanation": "able to be touched",
+      "example_sentence": "Tangible results."
+    },
+    {
+      "english": "ubiquitous",
+      "chinese": "无处不在的",
+      "phonetic": "/juːˈbɪk.wɪ.təs/",
+      "chinese_explanation": "到处都有的",
+      "english_explanation": "found everywhere",
+      "example_sentence": "Smartphones are ubiquitous."
+    },
+    {
+      "english": "viable",
+      "chinese": "可行的",
+      "phonetic": "/ˈvaɪ.ə.bəl/",
+      "chinese_explanation": "能成功的",
+      "english_explanation": "capable of working",
+      "example_sentence": "A viable solution."
+    },
+    {
+      "english": "watershed",
+      "chinese": "分水岭",
+      "phonetic": "/ˈwɔː.tər.ʃed/",
+      "chinese_explanation": "转折点",
+      "english_explanation": "a turning point",
+      "example_sentence": "A watershed moment."
+    },
+    {
+      "english": "adjacent",
+      "chinese": "邻近的",
+      "phonetic": "/əˈdʒeɪ.sənt/",
+      "chinese_explanation": "紧挨着的",
+      "english_explanation": "next to",
+      "example_sentence": "The adjacent building."
+    },
+    {
+      "english": "benevolent",
+      "chinese": "仁慈的",
+      "phonetic": "/bəˈnev.ə.lənt/",
+      "chinese_explanation": "善良的",
+      "english_explanation": "kind and generous",
+      "example_sentence": "A benevolent leader."
+    },
+    {
+      "english": "cognitive",
+      "chinese": "认知的",
+      "phonetic": "/ˈkɒɡ.nɪ.tɪv/",
+      "chinese_explanation": "与思维有关的",
+      "english_explanation": "relating to thinking",
+      "example_sentence": "Cognitive development."
+    },
+    {
+      "english": "demographic",
+      "chinese": "人口统计的",
+      "phonetic": "/ˌdem.əˈɡræf.ɪk/",
+      "chinese_explanation": "人口特征的",
+      "english_explanation": "relating to population",
+      "example_sentence": "Demographic changes."
+    },
+    {
+      "english": "eloquent",
+      "chinese": "雄辩的",
+      "phonetic": "/ˈel.ə.kwənt/",
+      "chinese_explanation": "口才好的",
+      "english_explanation": "fluent and persuasive",
+      "example_sentence": "An eloquent speech."
+    },
+    {
+      "english": "frugal",
+      "chinese": "节俭的",
+      "phonetic": "/ˈfruː.ɡəl/",
+      "chinese_explanation": "不浪费的",
+      "english_explanation": "spending little money",
+      "example_sentence": "A frugal lifestyle."
+    },
+    {
+      "english": "holistic",
+      "chinese": "整体的",
+      "phonetic": "/hoʊˈlɪs.tɪk/",
+      "chinese_explanation": "全面考虑的",
+      "english_explanation": "considering the whole",
+      "example_sentence": "A holistic approach."
+    }
+  ]
+}

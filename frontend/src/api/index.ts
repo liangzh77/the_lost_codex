@@ -15,6 +15,15 @@ export const getWord = (wordId: number) => api.get(`/words/${wordId}`);
 export const startNewWords = (wordBankId?: number, customWords?: string[]) =>
   api.post('/learning/new', { word_bank_id: wordBankId, custom_words: customWords });
 
+export const pickNewWords = (wordBankId: number) =>
+  api.post('/learning/new-pick', { word_bank_id: wordBankId });
+
+export const completeWord = (wordId: number) =>
+  api.post(`/learning/complete/${wordId}`);
+
+export const completeBatch = (wordIds: number[]) =>
+  api.post('/learning/complete-batch', { word_ids: wordIds });
+
 export const startNewSingleWord = (word: string) =>
   api.post('/learning/new', { custom_words: [word] });
 

@@ -1,0 +1,246 @@
+{
+  "name": "小学单词",
+  "display_order": 1,
+  "words": [
+    {
+      "english": "apple",
+      "chinese": "苹果",
+      "phonetic": "/ˈæp.əl/",
+      "chinese_explanation": "一种常见水果",
+      "english_explanation": "a round fruit",
+      "example_sentence": "I eat an apple every day."
+    },
+    {
+      "english": "book",
+      "chinese": "书",
+      "phonetic": "/bʊk/",
+      "chinese_explanation": "用来阅读的印刷品",
+      "english_explanation": "printed pages bound together",
+      "example_sentence": "She is reading a book."
+    },
+    {
+      "english": "cat",
+      "chinese": "猫",
+      "phonetic": "/kæt/",
+      "chinese_explanation": "一种常见宠物",
+      "english_explanation": "a small domesticated animal",
+      "example_sentence": "The cat is sleeping."
+    },
+    {
+      "english": "dog",
+      "chinese": "狗",
+      "phonetic": "/dɒɡ/",
+      "chinese_explanation": "人类的朋友",
+      "english_explanation": "a domesticated pet animal",
+      "example_sentence": "The dog is playing."
+    },
+    {
+      "english": "egg",
+      "chinese": "鸡蛋",
+      "phonetic": "/eɡ/",
+      "chinese_explanation": "鸡下的蛋",
+      "english_explanation": "an oval object laid by a bird",
+      "example_sentence": "I had an egg for breakfast."
+    },
+    {
+      "english": "fish",
+      "chinese": "鱼",
+      "phonetic": "/fɪʃ/",
+      "chinese_explanation": "水中的动物",
+      "english_explanation": "an animal that lives in water",
+      "example_sentence": "There are many fish in the river."
+    },
+    {
+      "english": "green",
+      "chinese": "绿色的",
+      "phonetic": "/ɡriːn/",
+      "chinese_explanation": "草的颜色",
+      "english_explanation": "the color of grass",
+      "example_sentence": "The grass is green."
+    },
+    {
+      "english": "happy",
+      "chinese": "快乐的",
+      "phonetic": "/ˈhæp.i/",
+      "chinese_explanation": "感到高兴",
+      "english_explanation": "feeling pleasure",
+      "example_sentence": "She looks very happy today."
+    },
+    {
+      "english": "ice",
+      "chinese": "冰",
+      "phonetic": "/aɪs/",
+      "chinese_explanation": "冻结的水",
+      "english_explanation": "frozen water",
+      "example_sentence": "The lake is covered with ice."
+    },
+    {
+      "english": "jump",
+      "chinese": "跳",
+      "phonetic": "/dʒʌmp/",
+      "chinese_explanation": "离地向上",
+      "english_explanation": "to push off the ground",
+      "example_sentence": "Children like to jump rope."
+    },
+    {
+      "english": "milk",
+      "chinese": "牛奶",
+      "phonetic": "/mɪlk/",
+      "chinese_explanation": "白色饮品",
+      "english_explanation": "a white liquid from cows",
+      "example_sentence": "I drink milk every morning."
+    },
+    {
+      "english": "nose",
+      "chinese": "鼻子",
+      "phonetic": "/noʊz/",
+      "chinese_explanation": "呼吸器官",
+      "english_explanation": "part of face for breathing",
+      "example_sentence": "He has a big nose."
+    },
+    {
+      "english": "orange",
+      "chinese": "橙子",
+      "phonetic": "/ˈɒr.ɪndʒ/",
+      "chinese_explanation": "柑橘类水果",
+      "english_explanation": "a round citrus fruit",
+      "example_sentence": "She peeled an orange."
+    },
+    {
+      "english": "pen",
+      "chinese": "钢笔",
+      "phonetic": "/pen/",
+      "chinese_explanation": "写字工具",
+      "english_explanation": "a tool for writing",
+      "example_sentence": "Give me a pen please."
+    },
+    {
+      "english": "rain",
+      "chinese": "雨",
+      "phonetic": "/reɪn/",
+      "chinese_explanation": "天上落下的水",
+      "english_explanation": "water from clouds",
+      "example_sentence": "It is going to rain."
+    },
+    {
+      "english": "sun",
+      "chinese": "太阳",
+      "phonetic": "/sʌn/",
+      "chinese_explanation": "发光的恒星",
+      "english_explanation": "the star giving light",
+      "example_sentence": "The sun rises in the east."
+    },
+    {
+      "english": "tree",
+      "chinese": "树",
+      "phonetic": "/triː/",
+      "chinese_explanation": "有树干的植物",
+      "english_explanation": "a tall plant with trunk",
+      "example_sentence": "A big tree in the garden."
+    },
+    {
+      "english": "water",
+      "chinese": "水",
+      "phonetic": "/ˈwɔː.tər/",
+      "chinese_explanation": "无色液体",
+      "english_explanation": "a clear liquid",
+      "example_sentence": "Give me some water."
+    },
+    {
+      "english": "bird",
+      "chinese": "鸟",
+      "phonetic": "/bɜːrd/",
+      "chinese_explanation": "会飞的动物",
+      "english_explanation": "an animal with wings",
+      "example_sentence": "A bird is singing."
+    },
+    {
+      "english": "cake",
+      "chinese": "蛋糕",
+      "phonetic": "/keɪk/",
+      "chinese_explanation": "甜的食物",
+      "english_explanation": "a sweet baked food",
+      "example_sentence": "Mom made a birthday cake."
+    },
+    {
+      "english": "door",
+      "chinese": "门",
+      "phonetic": "/dɔːr/",
+      "chinese_explanation": "房间入口",
+      "english_explanation": "entrance to a room",
+      "example_sentence": "Please close the door."
+    },
+    {
+      "english": "flower",
+      "chinese": "花",
+      "phonetic": "/ˈflaʊ.ər/",
+      "chinese_explanation": "植物美丽的部分",
+      "english_explanation": "colorful part of a plant",
+      "example_sentence": "The flower smells nice."
+    },
+    {
+      "english": "hand",
+      "chinese": "手",
+      "phonetic": "/hænd/",
+      "chinese_explanation": "抓东西的部分",
+      "english_explanation": "body part at end of arm",
+      "example_sentence": "Raise your hand please."
+    },
+    {
+      "english": "lion",
+      "chinese": "狮子",
+      "phonetic": "/ˈlaɪ.ən/",
+      "chinese_explanation": "大型猫科动物",
+      "english_explanation": "a large wild cat",
+      "example_sentence": "The lion is strong."
+    },
+    {
+      "english": "moon",
+      "chinese": "月亮",
+      "phonetic": "/muːn/",
+      "chinese_explanation": "夜晚的天体",
+      "english_explanation": "object shining at night",
+      "example_sentence": "The moon is bright tonight."
+    },
+    {
+      "english": "red",
+      "chinese": "红色的",
+      "phonetic": "/red/",
+      "chinese_explanation": "血液的颜色",
+      "english_explanation": "the color of blood",
+      "example_sentence": "She has a red dress."
+    },
+    {
+      "english": "star",
+      "chinese": "星星",
+      "phonetic": "/stɑːr/",
+      "chinese_explanation": "夜空中的天体",
+      "english_explanation": "bright point in the sky",
+      "example_sentence": "I see many stars tonight."
+    },
+    {
+      "english": "table",
+      "chinese": "桌子",
+      "phonetic": "/ˈteɪ.bəl/",
+      "chinese_explanation": "放东西的家具",
+      "english_explanation": "furniture with a flat top",
+      "example_sentence": "Put the book on the table."
+    },
+    {
+      "english": "window",
+      "chinese": "窗户",
+      "phonetic": "/ˈwɪn.doʊ/",
+      "chinese_explanation": "墙上的开口",
+      "english_explanation": "opening in a wall",
+      "example_sentence": "Open the window please."
+    },
+    {
+      "english": "blue",
+      "chinese": "蓝色的",
+      "phonetic": "/bluː/",
+      "chinese_explanation": "天空的颜色",
+      "english_explanation": "the color of the sky",
+      "example_sentence": "The sky is blue today."
+    }
+  ]
+}

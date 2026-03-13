@@ -1,0 +1,246 @@
+{
+  "name": "初三新增",
+  "display_order": 4,
+  "words": [
+    {
+      "english": "abandon",
+      "chinese": "放弃",
+      "phonetic": "/əˈbæn.dən/",
+      "chinese_explanation": "不再坚持",
+      "english_explanation": "to give up completely",
+      "example_sentence": "Never abandon your dreams."
+    },
+    {
+      "english": "beneficial",
+      "chinese": "有益的",
+      "phonetic": "/ˌben.ɪˈfɪʃ.əl/",
+      "chinese_explanation": "有好处的",
+      "english_explanation": "having a good effect",
+      "example_sentence": "Exercise is beneficial to health."
+    },
+    {
+      "english": "circumstance",
+      "chinese": "情况",
+      "phonetic": "/ˈsɜːr.kəm.stæns/",
+      "chinese_explanation": "周围的条件",
+      "english_explanation": "a condition or situation",
+      "example_sentence": "Under no circumstance give up."
+    },
+    {
+      "english": "demonstrate",
+      "chinese": "展示",
+      "phonetic": "/ˈdem.ən.streɪt/",
+      "chinese_explanation": "演示说明",
+      "english_explanation": "to show clearly",
+      "example_sentence": "He demonstrated the experiment."
+    },
+    {
+      "english": "efficient",
+      "chinese": "高效的",
+      "phonetic": "/ɪˈfɪʃ.ənt/",
+      "chinese_explanation": "不浪费的",
+      "english_explanation": "working well without waste",
+      "example_sentence": "This machine is very efficient."
+    },
+    {
+      "english": "fundamental",
+      "chinese": "基本的",
+      "phonetic": "/ˌfʌn.dəˈmen.təl/",
+      "chinese_explanation": "最重要的",
+      "english_explanation": "forming the base",
+      "example_sentence": "Reading is a fundamental skill."
+    },
+    {
+      "english": "gradually",
+      "chinese": "逐渐地",
+      "phonetic": "/ˈɡrædʒ.u.ə.li/",
+      "chinese_explanation": "慢慢地",
+      "english_explanation": "slowly over time",
+      "example_sentence": "The weather gradually improved."
+    },
+    {
+      "english": "highlight",
+      "chinese": "强调",
+      "phonetic": "/ˈhaɪ.laɪt/",
+      "chinese_explanation": "突出重点",
+      "english_explanation": "to emphasize something",
+      "example_sentence": "Highlight the key points."
+    },
+    {
+      "english": "investigate",
+      "chinese": "调查",
+      "phonetic": "/ɪnˈves.tɪ.ɡeɪt/",
+      "chinese_explanation": "仔细研究",
+      "english_explanation": "to examine carefully",
+      "example_sentence": "Police investigated the case."
+    },
+    {
+      "english": "justify",
+      "chinese": "证明合理",
+      "phonetic": "/ˈdʒʌs.tɪ.faɪ/",
+      "chinese_explanation": "为...辩护",
+      "english_explanation": "to show something is right",
+      "example_sentence": "How do you justify this?"
+    },
+    {
+      "english": "landscape",
+      "chinese": "风景",
+      "phonetic": "/ˈlænd.skeɪp/",
+      "chinese_explanation": "自然景色",
+      "english_explanation": "the scenery of an area",
+      "example_sentence": "The landscape is beautiful."
+    },
+    {
+      "english": "manufacture",
+      "chinese": "制造",
+      "phonetic": "/ˌmæn.juˈfæk.tʃər/",
+      "chinese_explanation": "大量生产",
+      "english_explanation": "to make goods in a factory",
+      "example_sentence": "They manufacture cars."
+    },
+    {
+      "english": "negotiate",
+      "chinese": "谈判",
+      "phonetic": "/nɪˈɡoʊ.ʃi.eɪt/",
+      "chinese_explanation": "协商讨论",
+      "english_explanation": "to discuss to reach agreement",
+      "example_sentence": "They negotiated a deal."
+    },
+    {
+      "english": "obstacle",
+      "chinese": "障碍",
+      "phonetic": "/ˈɒb.stə.kəl/",
+      "chinese_explanation": "阻碍前进的东西",
+      "english_explanation": "something blocking the way",
+      "example_sentence": "Overcome every obstacle."
+    },
+    {
+      "english": "phenomenon",
+      "chinese": "现象",
+      "phonetic": "/fɪˈnɒm.ɪ.nən/",
+      "chinese_explanation": "可观察到的事实",
+      "english_explanation": "something that can be observed",
+      "example_sentence": "It is a natural phenomenon."
+    },
+    {
+      "english": "recommend",
+      "chinese": "推荐",
+      "phonetic": "/ˌrek.əˈmend/",
+      "chinese_explanation": "建议使用",
+      "english_explanation": "to suggest as good",
+      "example_sentence": "I recommend this book."
+    },
+    {
+      "english": "significant",
+      "chinese": "重要的",
+      "phonetic": "/sɪɡˈnɪf.ɪ.kənt/",
+      "chinese_explanation": "有重大意义的",
+      "english_explanation": "important or large enough",
+      "example_sentence": "A significant improvement."
+    },
+    {
+      "english": "technique",
+      "chinese": "技术",
+      "phonetic": "/tekˈniːk/",
+      "chinese_explanation": "做事的方法",
+      "english_explanation": "a way of doing something",
+      "example_sentence": "Learn new painting techniques."
+    },
+    {
+      "english": "universal",
+      "chinese": "普遍的",
+      "phonetic": "/ˌjuː.nɪˈvɜːr.səl/",
+      "chinese_explanation": "全世界的",
+      "english_explanation": "relating to everyone",
+      "example_sentence": "Music is a universal language."
+    },
+    {
+      "english": "volunteer",
+      "chinese": "志愿者",
+      "phonetic": "/ˌvɒl.ənˈtɪr/",
+      "chinese_explanation": "自愿帮忙的人",
+      "english_explanation": "a person who works for free",
+      "example_sentence": "She works as a volunteer."
+    },
+    {
+      "english": "widespread",
+      "chinese": "广泛的",
+      "phonetic": "/ˈwaɪd.spred/",
+      "chinese_explanation": "分布很广的",
+      "english_explanation": "found over a large area",
+      "example_sentence": "The disease became widespread."
+    },
+    {
+      "english": "appropriate",
+      "chinese": "适当的",
+      "phonetic": "/əˈproʊ.pri.ət/",
+      "chinese_explanation": "合适的",
+      "english_explanation": "suitable for the situation",
+      "example_sentence": "Wear appropriate clothes."
+    },
+    {
+      "english": "consequence",
+      "chinese": "后果",
+      "phonetic": "/ˈkɒn.sɪ.kwəns/",
+      "chinese_explanation": "结果",
+      "english_explanation": "a result of an action",
+      "example_sentence": "Think about the consequences."
+    },
+    {
+      "english": "determine",
+      "chinese": "决定",
+      "phonetic": "/dɪˈtɜːr.mɪn/",
+      "chinese_explanation": "下定决心",
+      "english_explanation": "to decide firmly",
+      "example_sentence": "She determined to succeed."
+    },
+    {
+      "english": "elaborate",
+      "chinese": "详细的",
+      "phonetic": "/ɪˈlæb.ər.ət/",
+      "chinese_explanation": "精心制作的",
+      "english_explanation": "detailed and complex",
+      "example_sentence": "An elaborate plan was made."
+    },
+    {
+      "english": "fascinate",
+      "chinese": "迷住",
+      "phonetic": "/ˈfæs.ɪ.neɪt/",
+      "chinese_explanation": "强烈吸引",
+      "english_explanation": "to attract strongly",
+      "example_sentence": "The story fascinated me."
+    },
+    {
+      "english": "genuine",
+      "chinese": "真正的",
+      "phonetic": "/ˈdʒen.ju.ɪn/",
+      "chinese_explanation": "真实的",
+      "english_explanation": "real and authentic",
+      "example_sentence": "This is a genuine diamond."
+    },
+    {
+      "english": "hypothesis",
+      "chinese": "假设",
+      "phonetic": "/haɪˈpɒθ.ə.sɪs/",
+      "chinese_explanation": "未经证实的理论",
+      "english_explanation": "an unproven idea",
+      "example_sentence": "Test the hypothesis."
+    },
+    {
+      "english": "interpret",
+      "chinese": "解释",
+      "phonetic": "/ɪnˈtɜːr.prɪt/",
+      "chinese_explanation": "理解含义",
+      "english_explanation": "to explain the meaning",
+      "example_sentence": "How do you interpret this?"
+    },
+    {
+      "english": "legislation",
+      "chinese": "立法",
+      "phonetic": "/ˌledʒ.ɪsˈleɪ.ʃən/",
+      "chinese_explanation": "法律法规",
+      "english_explanation": "laws made by government",
+      "example_sentence": "New legislation was passed."
+    }
+  ]
+}

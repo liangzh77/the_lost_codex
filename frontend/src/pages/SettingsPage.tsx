@@ -9,6 +9,8 @@ import Button from '../components/Button';
 interface Bank {
   id: number;
   name: string;
+  total: number;
+  learned: number;
 }
 
 export default function SettingsPage() {
@@ -59,8 +61,19 @@ export default function SettingsPage() {
         <div className="bg-white rounded-2xl p-4 space-y-3">
           <h3 className="text-sm font-medium text-gray-400">可用词库</h3>
           {banks.map((b) => (
-            <div key={b.id} className="py-2 border-b border-gray-50 last:border-0 text-base text-gray-700">
-              {b.name}
+            <div key={b.id} className="py-2 border-b border-gray-50 last:border-0">
+              <div className="flex justify-between items-center">
+                <span className="text-base text-gray-700">{b.name}</span>
+                <span className="text-xs text-gray-400">{b.learned}/{b.total}</span>
+              </div>
+              {b.total > 0 && (
+                <div className="mt-1.5 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-blue-400 rounded-full transition-all"
+                    style={{ width: `${Math.round((b.learned / b.total) * 100)}%` }}
+                  />
+                </div>
+              )}
             </div>
           ))}
         </div>

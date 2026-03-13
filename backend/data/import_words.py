@@ -1,20 +1,75 @@
 import json
 import sys
 import os
+import glob
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from database import engine, Base, SessionLocal
 from models import WordBank, Word
 
-def import_words(json_path: str):
+
+def import_bank_file(db, json_path: str) -> int:
+    """导入单个词库文件，返回新增单词数"""
+    with open(json_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    name = data["name"]
+    display_order = data.get("display_order", 0)
+
+    existing = db.query(WordBank).filter(WordBank.name == name).first()
+    if existing:
+        bank = existing
+    else:
+        bank = WordBank(name=name, display_order=display_order)
+        db.add(bank)
+        db.flush()
+
+    count = 0
+    for w in data.get("words", []):
+        if db.query(Word).filter(Word.english == w["english"], Word.word_bank_id == bank.id).first():
+            continue
+        word = Word(
+            english=w["english"],
+            chinese=w["chinese"],
+            phonetic=w.get("phonetic", ""),
+            chinese_explanation=w.get("chinese_explanation", ""),
+            english_explanation=w.get("english_explanation", ""),
+            example_sentence=w.get("example_sentence", ""),
+            word_bank_id=bank.id,
+        )
+        db.add(word)
+        count += 1
+
+    return count
+
+
+def import_from_dir(banks_dir: str):
+    """从 banks 目录导入所有词库文件"""
+    Base.metadata.create_all(bind=engine)
+    db = SessionLocal()
+    total = 0
+
+    files = sorted(glob.glob(os.path.join(banks_dir, "*.json")))
+    for f in files:
+        count = import_bank_file(db, f)
+        name = os.path.basename(f).replace(".json", "")
+        print(f"  {name}: +{count}")
+        total += count
+
+    db.commit()
+    db.close()
+    print(f"导入完成：{total} 个新单词（{len(files)} 个词库）")
+
+
+def import_full_file(json_path: str):
+    """从 words_full.json 导入（兼容旧格式）"""
     Base.metadata.create_all(bind=engine)
     db = SessionLocal()
 
     with open(json_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    # 导入词库
     bank_map = {}
     for bank_info in data["word_banks"]:
         existing = db.query(WordBank).filter(WordBank.name == bank_info["name"]).first()
@@ -26,15 +81,11 @@ def import_words(json_path: str):
             db.flush()
             bank_map[bank_info["name"]] = bank
 
-    # 导入单词
     count = 0
     for bank_name, words in data["words"].items():
         bank = bank_map[bank_name]
         for w in words:
-            existing = db.query(Word).filter(
-                Word.english == w["english"], Word.word_bank_id == bank.id
-            ).first()
-            if existing:
+            if db.query(Word).filter(Word.english == w["english"], Word.word_bank_id == bank.id).first():
                 continue
             word = Word(
                 english=w["english"],
@@ -54,5 +105,15 @@ def import_words(json_path: str):
 
 
 if __name__ == "__main__":
-    path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(__file__), "words_full.json")
-    import_words(path)
+    data_dir = os.path.dirname(os.path.abspath(__file__))
+    banks_dir = os.path.join(data_dir, "banks")
+
+    if len(sys.argv) > 1:
+        # 指定文件则按旧方式导入
+        import_full_file(sys.argv[1])
+    elif os.path.isdir(banks_dir):
+        # 默认从 banks 目录导入
+        import_from_dir(banks_dir)
+    else:
+        # 回退到 words_full.json
+        import_full_file(os.path.join(data_dir, "words_full.json"))

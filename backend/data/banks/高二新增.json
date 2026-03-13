@@ -1,0 +1,246 @@
+{
+  "name": "高二新增",
+  "display_order": 6,
+  "words": [
+    {
+      "english": "acknowledge",
+      "chinese": "承认",
+      "phonetic": "/əkˈnɒl.ɪdʒ/",
+      "chinese_explanation": "认可事实",
+      "english_explanation": "to accept as true",
+      "example_sentence": "He acknowledged his mistake."
+    },
+    {
+      "english": "bureaucracy",
+      "chinese": "官僚主义",
+      "phonetic": "/bjʊˈrɒk.rə.si/",
+      "chinese_explanation": "繁琐的行政",
+      "english_explanation": "complex official procedures",
+      "example_sentence": "Too much bureaucracy slows things."
+    },
+    {
+      "english": "compromise",
+      "chinese": "妥协",
+      "phonetic": "/ˈkɒm.prə.maɪz/",
+      "chinese_explanation": "互相让步",
+      "english_explanation": "to settle by making concessions",
+      "example_sentence": "They reached a compromise."
+    },
+    {
+      "english": "dilemma",
+      "chinese": "困境",
+      "phonetic": "/dɪˈlem.ə/",
+      "chinese_explanation": "两难选择",
+      "english_explanation": "a difficult choice",
+      "example_sentence": "She faced a moral dilemma."
+    },
+    {
+      "english": "empathy",
+      "chinese": "共情",
+      "phonetic": "/ˈem.pə.θi/",
+      "chinese_explanation": "理解他人感受",
+      "english_explanation": "understanding others' feelings",
+      "example_sentence": "Show empathy to others."
+    },
+    {
+      "english": "fluctuate",
+      "chinese": "波动",
+      "phonetic": "/ˈflʌk.tʃu.eɪt/",
+      "chinese_explanation": "上下变化",
+      "english_explanation": "to change frequently",
+      "example_sentence": "Prices fluctuate daily."
+    },
+    {
+      "english": "globalization",
+      "chinese": "全球化",
+      "phonetic": "/ˌɡloʊ.bəl.aɪˈzeɪ.ʃən/",
+      "chinese_explanation": "世界一体化",
+      "english_explanation": "worldwide integration",
+      "example_sentence": "Globalization connects economies."
+    },
+    {
+      "english": "hierarchy",
+      "chinese": "等级制度",
+      "phonetic": "/ˈhaɪ.ə.rɑːr.ki/",
+      "chinese_explanation": "上下级关系",
+      "english_explanation": "a system of ranking",
+      "example_sentence": "The company hierarchy is clear."
+    },
+    {
+      "english": "implement",
+      "chinese": "实施",
+      "phonetic": "/ˈɪm.plɪ.ment/",
+      "chinese_explanation": "执行计划",
+      "english_explanation": "to put into action",
+      "example_sentence": "Implement the new policy."
+    },
+    {
+      "english": "jeopardize",
+      "chinese": "危及",
+      "phonetic": "/ˈdʒep.ər.daɪz/",
+      "chinese_explanation": "使处于危险",
+      "english_explanation": "to put at risk",
+      "example_sentence": "Don't jeopardize your future."
+    },
+    {
+      "english": "legitimate",
+      "chinese": "合法的",
+      "phonetic": "/lɪˈdʒɪt.ɪ.mət/",
+      "chinese_explanation": "正当的",
+      "english_explanation": "lawful and acceptable",
+      "example_sentence": "A legitimate business."
+    },
+    {
+      "english": "manipulate",
+      "chinese": "操纵",
+      "phonetic": "/məˈnɪp.jə.leɪt/",
+      "chinese_explanation": "控制他人",
+      "english_explanation": "to control unfairly",
+      "example_sentence": "Don't manipulate people."
+    },
+    {
+      "english": "notorious",
+      "chinese": "臭名昭著的",
+      "phonetic": "/noʊˈtɔːr.i.əs/",
+      "chinese_explanation": "因坏事出名",
+      "english_explanation": "famous for something bad",
+      "example_sentence": "A notorious criminal."
+    },
+    {
+      "english": "optimistic",
+      "chinese": "乐观的",
+      "phonetic": "/ˌɒp.tɪˈmɪs.tɪk/",
+      "chinese_explanation": "积极向上的",
+      "english_explanation": "expecting good things",
+      "example_sentence": "She is optimistic about the future."
+    },
+    {
+      "english": "prejudice",
+      "chinese": "偏见",
+      "phonetic": "/ˈpredʒ.ə.dɪs/",
+      "chinese_explanation": "不公正的看法",
+      "english_explanation": "unfair opinion",
+      "example_sentence": "Fight against prejudice."
+    },
+    {
+      "english": "reinforce",
+      "chinese": "加强",
+      "phonetic": "/ˌriː.ɪnˈfɔːrs/",
+      "chinese_explanation": "使更强",
+      "english_explanation": "to make stronger",
+      "example_sentence": "Reinforce the structure."
+    },
+    {
+      "english": "sophisticated",
+      "chinese": "复杂精密的",
+      "phonetic": "/səˈfɪs.tɪ.keɪ.tɪd/",
+      "chinese_explanation": "精致的",
+      "english_explanation": "complex and advanced",
+      "example_sentence": "A sophisticated system."
+    },
+    {
+      "english": "transparent",
+      "chinese": "透明的",
+      "phonetic": "/trænˈspær.ənt/",
+      "chinese_explanation": "可以看穿的",
+      "english_explanation": "easy to see through",
+      "example_sentence": "A transparent process."
+    },
+    {
+      "english": "undermine",
+      "chinese": "削弱",
+      "phonetic": "/ˌʌn.dərˈmaɪn/",
+      "chinese_explanation": "暗中破坏",
+      "english_explanation": "to weaken gradually",
+      "example_sentence": "Don't undermine his confidence."
+    },
+    {
+      "english": "vulnerable",
+      "chinese": "脆弱的",
+      "phonetic": "/ˈvʌl.nər.ə.bəl/",
+      "chinese_explanation": "容易受伤的",
+      "english_explanation": "easily harmed",
+      "example_sentence": "Children are vulnerable."
+    },
+    {
+      "english": "ambiguous",
+      "chinese": "模糊的",
+      "phonetic": "/æmˈbɪɡ.ju.əs/",
+      "chinese_explanation": "含义不清的",
+      "english_explanation": "unclear in meaning",
+      "example_sentence": "An ambiguous statement."
+    },
+    {
+      "english": "contradict",
+      "chinese": "矛盾",
+      "phonetic": "/ˌkɒn.trəˈdɪkt/",
+      "chinese_explanation": "相互对立",
+      "english_explanation": "to say the opposite",
+      "example_sentence": "The facts contradict his story."
+    },
+    {
+      "english": "deteriorate",
+      "chinese": "恶化",
+      "phonetic": "/dɪˈtɪr.i.ə.reɪt/",
+      "chinese_explanation": "变得更差",
+      "english_explanation": "to become worse",
+      "example_sentence": "His health deteriorated."
+    },
+    {
+      "english": "exploit",
+      "chinese": "利用",
+      "phonetic": "/ɪkˈsplɔɪt/",
+      "chinese_explanation": "开发或剥削",
+      "english_explanation": "to use for benefit",
+      "example_sentence": "Exploit natural resources wisely."
+    },
+    {
+      "english": "formulate",
+      "chinese": "制定",
+      "phonetic": "/ˈfɔːr.mjə.leɪt/",
+      "chinese_explanation": "拟定方案",
+      "english_explanation": "to create a plan",
+      "example_sentence": "Formulate a strategy."
+    },
+    {
+      "english": "indigenous",
+      "chinese": "本土的",
+      "phonetic": "/ɪnˈdɪdʒ.ə.nəs/",
+      "chinese_explanation": "原产的",
+      "english_explanation": "native to a place",
+      "example_sentence": "Indigenous cultures are rich."
+    },
+    {
+      "english": "mandatory",
+      "chinese": "强制的",
+      "phonetic": "/ˈmæn.də.tɔːr.i/",
+      "chinese_explanation": "必须的",
+      "english_explanation": "required by law",
+      "example_sentence": "Attendance is mandatory."
+    },
+    {
+      "english": "paradigm",
+      "chinese": "范式",
+      "phonetic": "/ˈpær.ə.daɪm/",
+      "chinese_explanation": "典型模式",
+      "english_explanation": "a typical pattern",
+      "example_sentence": "A new paradigm in science."
+    },
+    {
+      "english": "scrutinize",
+      "chinese": "仔细检查",
+      "phonetic": "/ˈskruː.tɪ.naɪz/",
+      "chinese_explanation": "审视",
+      "english_explanation": "to examine closely",
+      "example_sentence": "Scrutinize the evidence."
+    },
+    {
+      "english": "testimony",
+      "chinese": "证词",
+      "phonetic": "/ˈtes.tɪ.moʊ.ni/",
+      "chinese_explanation": "证人的陈述",
+      "english_explanation": "a statement in court",
+      "example_sentence": "She gave her testimony."
+    }
+  ]
+}

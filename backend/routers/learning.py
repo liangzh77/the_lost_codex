@@ -1,10 +1,11 @@
 import random
 from datetime import date, datetime
+from concurrent.futures import ThreadPoolExecutor
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 from sqlalchemy import func
-from database import get_db
+from database import get_db, SessionLocal
 from models import User, Word, WordBank, UserWordProgress, LearningRecord, LearningGroup
 from auth import get_current_user
 from services.spaced_repetition import get_next_review_date, is_mastered, TOTAL_STAGES
@@ -91,6 +92,20 @@ def start_new_words(
     else:
         raise HTTPException(status_code=400, detail="请指定词库或自定义单词")
 
+    # 补全缺失详细信息的单词
+    need_commit = False
+    for w in words:
+        if not w.chinese:
+            info = complete_word_info(w.english)
+            w.chinese = info.get("chinese", "")
+            w.phonetic = info.get("phonetic", "")
+            w.chinese_explanation = info.get("chinese_explanation", "")
+            w.english_explanation = info.get("english_explanation", "")
+            w.example_sentence = info.get("example_sentence", "")
+            need_commit = True
+    if need_commit:
+        db.commit()
+
     return [
         {
             "id": w.id,
@@ -103,6 +118,115 @@ def start_new_words(
         }
         for w in words
     ]
+
+
+# ---------- 抽取新词（不补全） ----------
+
+@router.post("/new-pick")
+def pick_new_words(
+    body: StartNewRequest,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    """从词库随机抽取一组新词，返回基本信息（不做AI补全）"""
+    if body.word_bank_id:
+        learned_ids = (
+            db.query(UserWordProgress.word_id)
+            .filter(UserWordProgress.user_id == user.id)
+            .subquery()
+        )
+        words = (
+            db.query(Word)
+            .filter(Word.word_bank_id == body.word_bank_id)
+            .filter(~Word.id.in_(db.query(learned_ids.c.word_id)))
+            .order_by(func.random())
+            .limit(user.group_size)
+            .all()
+        )
+    else:
+        raise HTTPException(status_code=400, detail="请指定词库")
+
+    return [
+        {
+            "id": w.id,
+            "english": w.english,
+            "chinese": w.chinese,
+            "needs_complete": not bool(w.chinese),
+        }
+        for w in words
+    ]
+
+
+# ---------- 补全单个单词 ----------
+
+@router.post("/complete/{word_id}")
+def complete_single_word(
+    word_id: int,
+    db: Session = Depends(get_db),
+):
+    """用AI补全单个单词的详细信息"""
+    word = db.query(Word).filter(Word.id == word_id).first()
+    if not word:
+        raise HTTPException(status_code=404, detail="单词不存在")
+    if not word.chinese:
+        info = complete_word_info(word.english)
+        word.chinese = info.get("chinese", "")
+        word.phonetic = info.get("phonetic", "")
+        word.chinese_explanation = info.get("chinese_explanation", "")
+        word.english_explanation = info.get("english_explanation", "")
+        word.example_sentence = info.get("example_sentence", "")
+        db.commit()
+    return {
+        "id": word.id,
+        "english": word.english,
+        "chinese": word.chinese,
+        "phonetic": word.phonetic,
+        "chinese_explanation": word.chinese_explanation,
+        "english_explanation": word.english_explanation,
+        "example_sentence": word.example_sentence,
+    }
+
+
+# ---------- 批量补全 ----------
+
+class BatchCompleteRequest(BaseModel):
+    word_ids: list[int]
+
+
+def _complete_one_word(word_id: int) -> dict:
+    """在独立 session 中补全一个单词（用于线程池）"""
+    db = SessionLocal()
+    try:
+        word = db.query(Word).filter(Word.id == word_id).first()
+        if not word:
+            return {}
+        if not word.chinese:
+            info = complete_word_info(word.english)
+            word.chinese = info.get("chinese", "")
+            word.phonetic = info.get("phonetic", "")
+            word.chinese_explanation = info.get("chinese_explanation", "")
+            word.english_explanation = info.get("english_explanation", "")
+            word.example_sentence = info.get("example_sentence", "")
+            db.commit()
+        return {
+            "id": word.id,
+            "english": word.english,
+            "chinese": word.chinese,
+            "phonetic": word.phonetic,
+            "chinese_explanation": word.chinese_explanation,
+            "english_explanation": word.english_explanation,
+            "example_sentence": word.example_sentence,
+        }
+    finally:
+        db.close()
+
+
+@router.post("/complete-batch")
+def complete_batch_words(body: BatchCompleteRequest):
+    """并发补全多个单词的详细信息"""
+    with ThreadPoolExecutor(max_workers=min(len(body.word_ids), 10)) as pool:
+        results = list(pool.map(_complete_one_word, body.word_ids))
+    return [r for r in results if r]
 
 
 # ---------- 今日复习 ----------
@@ -177,10 +301,10 @@ def get_quiz(
     if not quiz_type or quiz_type not in valid_types:
         quiz_type = random.choice(valid_types)
 
-    # 获取干扰项（尽量3个，不足则有多少用多少）
+    # 获取干扰项（只从已有详细信息的单词中选）
     distractors = (
         db.query(Word)
-        .filter(Word.id != word_id)
+        .filter(Word.id != word_id, func.length(Word.chinese) > 0)
         .order_by(func.random())
         .limit(3)
         .all()
@@ -199,8 +323,8 @@ def get_quiz(
         correct = word.chinese_explanation
         options = [w.chinese_explanation for w in distractors]
 
-    # 去重并确保正确答案在选项中
-    options = [o for o in options if o != correct]
+    # 去重并过滤空值，确保正确答案在选项中
+    options = [o for o in options if o and o != correct]
     options.append(correct)
     random.shuffle(options)
 

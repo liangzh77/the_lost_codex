@@ -1,0 +1,246 @@
+{
+  "name": "六级新增",
+  "display_order": 9,
+  "words": [
+    {
+      "english": "alleviate",
+      "chinese": "减轻",
+      "phonetic": "/əˈliː.vi.eɪt/",
+      "chinese_explanation": "缓解痛苦",
+      "english_explanation": "to make less severe",
+      "example_sentence": "Alleviate the pain."
+    },
+    {
+      "english": "brevity",
+      "chinese": "简洁",
+      "phonetic": "/ˈbrev.ɪ.ti/",
+      "chinese_explanation": "简短",
+      "english_explanation": "shortness of expression",
+      "example_sentence": "Brevity is the soul of wit."
+    },
+    {
+      "english": "clandestine",
+      "chinese": "秘密的",
+      "phonetic": "/klænˈdes.tɪn/",
+      "chinese_explanation": "暗中进行的",
+      "english_explanation": "done secretly",
+      "example_sentence": "A clandestine meeting."
+    },
+    {
+      "english": "detriment",
+      "chinese": "损害",
+      "phonetic": "/ˈdet.rɪ.mənt/",
+      "chinese_explanation": "伤害",
+      "english_explanation": "harm or damage",
+      "example_sentence": "To the detriment of health."
+    },
+    {
+      "english": "exacerbate",
+      "chinese": "加剧",
+      "phonetic": "/ɪɡˈzæs.ər.beɪt/",
+      "chinese_explanation": "使恶化",
+      "english_explanation": "to make worse",
+      "example_sentence": "The drought exacerbated the crisis."
+    },
+    {
+      "english": "fallacy",
+      "chinese": "谬论",
+      "phonetic": "/ˈfæl.ə.si/",
+      "chinese_explanation": "错误的推理",
+      "english_explanation": "a false belief",
+      "example_sentence": "A logical fallacy."
+    },
+    {
+      "english": "gratuitous",
+      "chinese": "无端的",
+      "phonetic": "/ɡrəˈtjuː.ɪ.təs/",
+      "chinese_explanation": "不必要的",
+      "english_explanation": "unnecessary",
+      "example_sentence": "Gratuitous violence in films."
+    },
+    {
+      "english": "hegemony",
+      "chinese": "霸权",
+      "phonetic": "/hɪˈdʒem.ə.ni/",
+      "chinese_explanation": "支配地位",
+      "english_explanation": "dominance over others",
+      "example_sentence": "Cultural hegemony."
+    },
+    {
+      "english": "impeccable",
+      "chinese": "无可挑剔的",
+      "phonetic": "/ɪmˈpek.ə.bəl/",
+      "chinese_explanation": "完美的",
+      "english_explanation": "flawless",
+      "example_sentence": "Impeccable manners."
+    },
+    {
+      "english": "judiciously",
+      "chinese": "明智地",
+      "phonetic": "/dʒuːˈdɪʃ.əs.li/",
+      "chinese_explanation": "审慎地",
+      "english_explanation": "with good judgment",
+      "example_sentence": "Spend money judiciously."
+    },
+    {
+      "english": "labyrinth",
+      "chinese": "迷宫",
+      "phonetic": "/ˈlæb.ə.rɪnθ/",
+      "chinese_explanation": "复杂的通道",
+      "english_explanation": "a complex maze",
+      "example_sentence": "A labyrinth of corridors."
+    },
+    {
+      "english": "magnanimous",
+      "chinese": "宽宏大量的",
+      "phonetic": "/mæɡˈnæn.ɪ.məs/",
+      "chinese_explanation": "慷慨宽容的",
+      "english_explanation": "generous and forgiving",
+      "example_sentence": "A magnanimous gesture."
+    },
+    {
+      "english": "nonchalant",
+      "chinese": "漫不经心的",
+      "phonetic": "/ˌnɒn.ʃəˈlɑːnt/",
+      "chinese_explanation": "若无其事的",
+      "english_explanation": "calm and relaxed",
+      "example_sentence": "He appeared nonchalant."
+    },
+    {
+      "english": "ostensible",
+      "chinese": "表面上的",
+      "phonetic": "/ɒˈsten.sɪ.bəl/",
+      "chinese_explanation": "看似的",
+      "english_explanation": "appearing to be true",
+      "example_sentence": "The ostensible reason."
+    },
+    {
+      "english": "pernicious",
+      "chinese": "有害的",
+      "phonetic": "/pərˈnɪʃ.əs/",
+      "chinese_explanation": "造成伤害的",
+      "english_explanation": "causing great harm",
+      "example_sentence": "A pernicious influence."
+    },
+    {
+      "english": "quintessential",
+      "chinese": "典型的",
+      "phonetic": "/ˌkwɪn.tɪˈsen.ʃəl/",
+      "chinese_explanation": "最具代表性的",
+      "english_explanation": "the most typical",
+      "example_sentence": "A quintessential example."
+    },
+    {
+      "english": "repercussion",
+      "chinese": "反响",
+      "phonetic": "/ˌriː.pərˈkʌʃ.ən/",
+      "chinese_explanation": "后果影响",
+      "english_explanation": "an unintended consequence",
+      "example_sentence": "Serious repercussions."
+    },
+    {
+      "english": "surreptitious",
+      "chinese": "偷偷的",
+      "phonetic": "/ˌsɜːr.əpˈtɪʃ.əs/",
+      "chinese_explanation": "暗中的",
+      "english_explanation": "done secretly",
+      "example_sentence": "A surreptitious glance."
+    },
+    {
+      "english": "tenacious",
+      "chinese": "坚韧的",
+      "phonetic": "/tɪˈneɪ.ʃəs/",
+      "chinese_explanation": "不放弃的",
+      "english_explanation": "holding firmly",
+      "example_sentence": "A tenacious fighter."
+    },
+    {
+      "english": "unequivocal",
+      "chinese": "明确的",
+      "phonetic": "/ˌʌn.ɪˈkwɪv.ə.kəl/",
+      "chinese_explanation": "毫不含糊的",
+      "english_explanation": "completely clear",
+      "example_sentence": "An unequivocal answer."
+    },
+    {
+      "english": "vindicate",
+      "chinese": "证明清白",
+      "phonetic": "/ˈvɪn.dɪ.keɪt/",
+      "chinese_explanation": "为...平反",
+      "english_explanation": "to prove right",
+      "example_sentence": "He was vindicated."
+    },
+    {
+      "english": "whimsical",
+      "chinese": "异想天开的",
+      "phonetic": "/ˈwɪm.zɪ.kəl/",
+      "chinese_explanation": "古怪有趣的",
+      "english_explanation": "playfully unusual",
+      "example_sentence": "A whimsical design."
+    },
+    {
+      "english": "zealous",
+      "chinese": "热心的",
+      "phonetic": "/ˈzel.əs/",
+      "chinese_explanation": "充满热情的",
+      "english_explanation": "very enthusiastic",
+      "example_sentence": "A zealous supporter."
+    },
+    {
+      "english": "acquiesce",
+      "chinese": "默许",
+      "phonetic": "/ˌæk.wiˈes/",
+      "chinese_explanation": "勉强同意",
+      "english_explanation": "to accept reluctantly",
+      "example_sentence": "She acquiesced to the plan."
+    },
+    {
+      "english": "belligerent",
+      "chinese": "好战的",
+      "phonetic": "/bəˈlɪdʒ.ər.ənt/",
+      "chinese_explanation": "挑衅的",
+      "english_explanation": "hostile and aggressive",
+      "example_sentence": "A belligerent attitude."
+    },
+    {
+      "english": "conundrum",
+      "chinese": "难题",
+      "phonetic": "/kəˈnʌn.drəm/",
+      "chinese_explanation": "棘手的问题",
+      "english_explanation": "a difficult problem",
+      "example_sentence": "An ethical conundrum."
+    },
+    {
+      "english": "draconian",
+      "chinese": "严厉的",
+      "phonetic": "/drəˈkoʊ.ni.ən/",
+      "chinese_explanation": "极其严苛的",
+      "english_explanation": "excessively harsh",
+      "example_sentence": "Draconian measures."
+    },
+    {
+      "english": "ephemeral",
+      "chinese": "短暂的",
+      "phonetic": "/ɪˈfem.ər.əl/",
+      "chinese_explanation": "转瞬即逝的",
+      "english_explanation": "lasting a very short time",
+      "example_sentence": "Ephemeral beauty."
+    },
+    {
+      "english": "fortuitous",
+      "chinese": "偶然的",
+      "phonetic": "/fɔːrˈtjuː.ɪ.təs/",
+      "chinese_explanation": "碰巧的",
+      "english_explanation": "happening by chance",
+      "example_sentence": "A fortuitous encounter."
+    },
+    {
+      "english": "galvanize",
+      "chinese": "激励",
+      "phonetic": "/ˈɡæl.və.naɪz/",
+      "chinese_explanation": "激发行动",
+      "english_explanation": "to shock into action",
+      "example_sentence": "The speech galvanized the crowd."
+    }
+  ]
+}

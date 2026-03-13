@@ -1,0 +1,246 @@
+{
+  "name": "高三新增",
+  "display_order": 7,
+  "words": [
+    {
+      "english": "accumulate",
+      "chinese": "积累",
+      "phonetic": "/əˈkjuː.mjə.leɪt/",
+      "chinese_explanation": "逐渐增加",
+      "english_explanation": "to gather over time",
+      "example_sentence": "Accumulate experience."
+    },
+    {
+      "english": "breakthrough",
+      "chinese": "突破",
+      "phonetic": "/ˈbreɪk.θruː/",
+      "chinese_explanation": "重大进展",
+      "english_explanation": "an important discovery",
+      "example_sentence": "A scientific breakthrough."
+    },
+    {
+      "english": "catastrophe",
+      "chinese": "灾难",
+      "phonetic": "/kəˈtæs.trə.fi/",
+      "chinese_explanation": "严重的灾祸",
+      "english_explanation": "a terrible disaster",
+      "example_sentence": "An environmental catastrophe."
+    },
+    {
+      "english": "discrimination",
+      "chinese": "歧视",
+      "phonetic": "/dɪˌskrɪm.ɪˈneɪ.ʃən/",
+      "chinese_explanation": "不公平对待",
+      "english_explanation": "unfair treatment",
+      "example_sentence": "Fight against discrimination."
+    },
+    {
+      "english": "endeavor",
+      "chinese": "努力",
+      "phonetic": "/ɪnˈdev.ər/",
+      "chinese_explanation": "尽力尝试",
+      "english_explanation": "to try hard",
+      "example_sentence": "Endeavor to do your best."
+    },
+    {
+      "english": "feasible",
+      "chinese": "可行的",
+      "phonetic": "/ˈfiː.zə.bəl/",
+      "chinese_explanation": "能实现的",
+      "english_explanation": "possible to do",
+      "example_sentence": "Is this plan feasible?"
+    },
+    {
+      "english": "grievance",
+      "chinese": "不满",
+      "phonetic": "/ˈɡriː.vəns/",
+      "chinese_explanation": "抱怨的理由",
+      "english_explanation": "a complaint",
+      "example_sentence": "Air your grievances."
+    },
+    {
+      "english": "humanitarian",
+      "chinese": "人道主义的",
+      "phonetic": "/hjuːˌmæn.ɪˈter.i.ən/",
+      "chinese_explanation": "关心人类福利的",
+      "english_explanation": "caring about human welfare",
+      "example_sentence": "Humanitarian aid was sent."
+    },
+    {
+      "english": "infrastructure",
+      "chinese": "基础设施",
+      "phonetic": "/ˈɪn.frə.strʌk.tʃər/",
+      "chinese_explanation": "基本建设",
+      "english_explanation": "basic systems of a country",
+      "example_sentence": "Improve the infrastructure."
+    },
+    {
+      "english": "jurisdiction",
+      "chinese": "管辖权",
+      "phonetic": "/ˌdʒʊr.ɪsˈdɪk.ʃən/",
+      "chinese_explanation": "司法权限",
+      "english_explanation": "legal authority",
+      "example_sentence": "Under federal jurisdiction."
+    },
+    {
+      "english": "keen",
+      "chinese": "热切的",
+      "phonetic": "/kiːn/",
+      "chinese_explanation": "渴望的",
+      "english_explanation": "eager and enthusiastic",
+      "example_sentence": "She is keen to learn."
+    },
+    {
+      "english": "literacy",
+      "chinese": "读写能力",
+      "phonetic": "/ˈlɪt.ər.ə.si/",
+      "chinese_explanation": "识字水平",
+      "english_explanation": "ability to read and write",
+      "example_sentence": "Improve adult literacy."
+    },
+    {
+      "english": "metabolism",
+      "chinese": "新陈代谢",
+      "phonetic": "/məˈtæb.ə.lɪz.əm/",
+      "chinese_explanation": "体内化学过程",
+      "english_explanation": "chemical processes in the body",
+      "example_sentence": "Exercise boosts metabolism."
+    },
+    {
+      "english": "negligible",
+      "chinese": "可忽略的",
+      "phonetic": "/ˈneɡ.lɪ.dʒə.bəl/",
+      "chinese_explanation": "微不足道的",
+      "english_explanation": "too small to matter",
+      "example_sentence": "The difference is negligible."
+    },
+    {
+      "english": "overwhelming",
+      "chinese": "压倒性的",
+      "phonetic": "/ˌoʊ.vərˈwel.mɪŋ/",
+      "chinese_explanation": "势不可挡的",
+      "english_explanation": "very strong",
+      "example_sentence": "Overwhelming support."
+    },
+    {
+      "english": "prevalent",
+      "chinese": "流行的",
+      "phonetic": "/ˈprev.ə.lənt/",
+      "chinese_explanation": "普遍存在的",
+      "english_explanation": "widespread",
+      "example_sentence": "The disease is prevalent."
+    },
+    {
+      "english": "quota",
+      "chinese": "配额",
+      "phonetic": "/ˈkwoʊ.tə/",
+      "chinese_explanation": "限定数量",
+      "english_explanation": "a limited amount",
+      "example_sentence": "Meet the sales quota."
+    },
+    {
+      "english": "resilient",
+      "chinese": "有韧性的",
+      "phonetic": "/rɪˈzɪl.i.ənt/",
+      "chinese_explanation": "恢复力强的",
+      "english_explanation": "able to recover quickly",
+      "example_sentence": "Children are resilient."
+    },
+    {
+      "english": "sustainable",
+      "chinese": "可持续的",
+      "phonetic": "/səˈsteɪ.nə.bəl/",
+      "chinese_explanation": "能长期维持的",
+      "english_explanation": "able to continue long term",
+      "example_sentence": "Sustainable development."
+    },
+    {
+      "english": "turbulent",
+      "chinese": "动荡的",
+      "phonetic": "/ˈtɜːr.bjə.lənt/",
+      "chinese_explanation": "不稳定的",
+      "english_explanation": "full of sudden changes",
+      "example_sentence": "A turbulent period in history."
+    },
+    {
+      "english": "unprecedented",
+      "chinese": "史无前例的",
+      "phonetic": "/ʌnˈpres.ɪ.den.tɪd/",
+      "chinese_explanation": "从未有过的",
+      "english_explanation": "never happened before",
+      "example_sentence": "An unprecedented event."
+    },
+    {
+      "english": "versatile",
+      "chinese": "多才多艺的",
+      "phonetic": "/ˈvɜːr.sə.taɪl/",
+      "chinese_explanation": "用途广泛的",
+      "english_explanation": "able to do many things",
+      "example_sentence": "A versatile performer."
+    },
+    {
+      "english": "warrant",
+      "chinese": "授权",
+      "phonetic": "/ˈwɒr.ənt/",
+      "chinese_explanation": "正当理由",
+      "english_explanation": "to justify or authorize",
+      "example_sentence": "The situation warrants action."
+    },
+    {
+      "english": "aesthetic",
+      "chinese": "审美的",
+      "phonetic": "/esˈθet.ɪk/",
+      "chinese_explanation": "关于美的",
+      "english_explanation": "relating to beauty",
+      "example_sentence": "An aesthetic design."
+    },
+    {
+      "english": "benchmark",
+      "chinese": "基准",
+      "phonetic": "/ˈbentʃ.mɑːrk/",
+      "chinese_explanation": "衡量标准",
+      "english_explanation": "a standard for comparison",
+      "example_sentence": "Set a benchmark."
+    },
+    {
+      "english": "chronic",
+      "chinese": "慢性的",
+      "phonetic": "/ˈkrɒn.ɪk/",
+      "chinese_explanation": "长期的",
+      "english_explanation": "lasting a long time",
+      "example_sentence": "A chronic illness."
+    },
+    {
+      "english": "deficit",
+      "chinese": "赤字",
+      "phonetic": "/ˈdef.ɪ.sɪt/",
+      "chinese_explanation": "亏损",
+      "english_explanation": "a shortage of money",
+      "example_sentence": "A budget deficit."
+    },
+    {
+      "english": "empirical",
+      "chinese": "经验的",
+      "phonetic": "/ɪmˈpɪr.ɪ.kəl/",
+      "chinese_explanation": "基于实验的",
+      "english_explanation": "based on observation",
+      "example_sentence": "Empirical evidence."
+    },
+    {
+      "english": "fiscal",
+      "chinese": "财政的",
+      "phonetic": "/ˈfɪs.kəl/",
+      "chinese_explanation": "与财务有关的",
+      "english_explanation": "relating to government money",
+      "example_sentence": "Fiscal policy changes."
+    },
+    {
+      "english": "genocide",
+      "chinese": "种族灭绝",
+      "phonetic": "/ˈdʒen.ə.saɪd/",
+      "chinese_explanation": "大规模屠杀",
+      "english_explanation": "mass killing of a group",
+      "example_sentence": "Prevent genocide."
+    }
+  ]
+}

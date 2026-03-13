@@ -1,0 +1,246 @@
+{
+  "name": "高一新增",
+  "display_order": 5,
+  "words": [
+    {
+      "english": "abandon",
+      "chinese": "放弃",
+      "phonetic": "/əˈbæn.dən/",
+      "chinese_explanation": "不再坚持",
+      "english_explanation": "to give up completely",
+      "example_sentence": "He abandoned the plan."
+    },
+    {
+      "english": "beneficial",
+      "chinese": "有益的",
+      "phonetic": "/ˌben.ɪˈfɪʃ.əl/",
+      "chinese_explanation": "有好处的",
+      "english_explanation": "having a good effect",
+      "example_sentence": "Exercise is beneficial to health."
+    },
+    {
+      "english": "circumstance",
+      "chinese": "情况",
+      "phonetic": "/ˈsɜːr.kəm.stæns/",
+      "chinese_explanation": "周围的条件",
+      "english_explanation": "a condition or situation",
+      "example_sentence": "Under no circumstance give up."
+    },
+    {
+      "english": "demonstrate",
+      "chinese": "展示",
+      "phonetic": "/ˈdem.ən.streɪt/",
+      "chinese_explanation": "证明或演示",
+      "english_explanation": "to show clearly",
+      "example_sentence": "He demonstrated the experiment."
+    },
+    {
+      "english": "efficient",
+      "chinese": "高效的",
+      "phonetic": "/ɪˈfɪʃ.ənt/",
+      "chinese_explanation": "不浪费时间的",
+      "english_explanation": "working well without waste",
+      "example_sentence": "She is an efficient worker."
+    },
+    {
+      "english": "fundamental",
+      "chinese": "基本的",
+      "phonetic": "/ˌfʌn.dəˈmen.təl/",
+      "chinese_explanation": "最重要的",
+      "english_explanation": "forming the base",
+      "example_sentence": "A fundamental principle."
+    },
+    {
+      "english": "gradually",
+      "chinese": "逐渐地",
+      "phonetic": "/ˈɡrædʒ.u.ə.li/",
+      "chinese_explanation": "慢慢地",
+      "english_explanation": "slowly over time",
+      "example_sentence": "The weather gradually improved."
+    },
+    {
+      "english": "highlight",
+      "chinese": "强调",
+      "phonetic": "/ˈhaɪ.laɪt/",
+      "chinese_explanation": "突出重点",
+      "english_explanation": "to emphasize",
+      "example_sentence": "Highlight the key points."
+    },
+    {
+      "english": "illustrate",
+      "chinese": "说明",
+      "phonetic": "/ˈɪl.ə.streɪt/",
+      "chinese_explanation": "用例子解释",
+      "english_explanation": "to explain with examples",
+      "example_sentence": "The chart illustrates the trend."
+    },
+    {
+      "english": "justify",
+      "chinese": "证明合理",
+      "phonetic": "/ˈdʒʌs.tɪ.faɪ/",
+      "chinese_explanation": "为...辩护",
+      "english_explanation": "to show something is right",
+      "example_sentence": "How can you justify this?"
+    },
+    {
+      "english": "landscape",
+      "chinese": "风景",
+      "phonetic": "/ˈlænd.skeɪp/",
+      "chinese_explanation": "自然景色",
+      "english_explanation": "the scenery of an area",
+      "example_sentence": "A beautiful mountain landscape."
+    },
+    {
+      "english": "magnificent",
+      "chinese": "壮丽的",
+      "phonetic": "/mæɡˈnɪf.ɪ.sənt/",
+      "chinese_explanation": "极其美丽的",
+      "english_explanation": "extremely beautiful",
+      "example_sentence": "A magnificent sunset."
+    },
+    {
+      "english": "numerous",
+      "chinese": "许多的",
+      "phonetic": "/ˈnjuː.mər.əs/",
+      "chinese_explanation": "大量的",
+      "english_explanation": "very many",
+      "example_sentence": "Numerous people attended."
+    },
+    {
+      "english": "overcome",
+      "chinese": "克服",
+      "phonetic": "/ˌoʊ.vərˈkʌm/",
+      "chinese_explanation": "战胜困难",
+      "english_explanation": "to succeed against difficulty",
+      "example_sentence": "She overcame her fear."
+    },
+    {
+      "english": "perspective",
+      "chinese": "视角",
+      "phonetic": "/pərˈspek.tɪv/",
+      "chinese_explanation": "看问题的角度",
+      "english_explanation": "a way of thinking",
+      "example_sentence": "See it from my perspective."
+    },
+    {
+      "english": "reluctant",
+      "chinese": "不情愿的",
+      "phonetic": "/rɪˈlʌk.tənt/",
+      "chinese_explanation": "勉强的",
+      "english_explanation": "unwilling to do something",
+      "example_sentence": "He was reluctant to leave."
+    },
+    {
+      "english": "strategy",
+      "chinese": "策略",
+      "phonetic": "/ˈstræt.ə.dʒi/",
+      "chinese_explanation": "计划方案",
+      "english_explanation": "a plan to achieve a goal",
+      "example_sentence": "We need a new strategy."
+    },
+    {
+      "english": "thorough",
+      "chinese": "彻底的",
+      "phonetic": "/ˈθɜːr.oʊ/",
+      "chinese_explanation": "完全的",
+      "english_explanation": "complete and careful",
+      "example_sentence": "A thorough investigation."
+    },
+    {
+      "english": "ultimately",
+      "chinese": "最终",
+      "phonetic": "/ˈʌl.tɪ.mət.li/",
+      "chinese_explanation": "到最后",
+      "english_explanation": "in the end",
+      "example_sentence": "He ultimately succeeded."
+    },
+    {
+      "english": "vivid",
+      "chinese": "生动的",
+      "phonetic": "/ˈvɪv.ɪd/",
+      "chinese_explanation": "鲜明的",
+      "english_explanation": "bright and clear",
+      "example_sentence": "She has a vivid imagination."
+    },
+    {
+      "english": "welfare",
+      "chinese": "福利",
+      "phonetic": "/ˈwel.fer/",
+      "chinese_explanation": "幸福安康",
+      "english_explanation": "health and happiness",
+      "example_sentence": "Child welfare is important."
+    },
+    {
+      "english": "absorb",
+      "chinese": "吸收",
+      "phonetic": "/əbˈzɔːrb/",
+      "chinese_explanation": "接纳进入",
+      "english_explanation": "to take in",
+      "example_sentence": "Plants absorb sunlight."
+    },
+    {
+      "english": "campaign",
+      "chinese": "运动",
+      "phonetic": "/kæmˈpeɪn/",
+      "chinese_explanation": "有组织的活动",
+      "english_explanation": "an organized effort",
+      "example_sentence": "An advertising campaign."
+    },
+    {
+      "english": "deadline",
+      "chinese": "截止日期",
+      "phonetic": "/ˈded.laɪn/",
+      "chinese_explanation": "最后期限",
+      "english_explanation": "the last day for something",
+      "example_sentence": "Meet the deadline."
+    },
+    {
+      "english": "evaluate",
+      "chinese": "评估",
+      "phonetic": "/ɪˈvæl.ju.eɪt/",
+      "chinese_explanation": "判断价值",
+      "english_explanation": "to judge the value",
+      "example_sentence": "Evaluate your performance."
+    },
+    {
+      "english": "flexible",
+      "chinese": "灵活的",
+      "phonetic": "/ˈflek.sə.bəl/",
+      "chinese_explanation": "可变通的",
+      "english_explanation": "able to change easily",
+      "example_sentence": "Be flexible with your plans."
+    },
+    {
+      "english": "gratitude",
+      "chinese": "感激",
+      "phonetic": "/ˈɡræt.ɪ.tjuːd/",
+      "chinese_explanation": "感恩之情",
+      "english_explanation": "a feeling of thankfulness",
+      "example_sentence": "Express your gratitude."
+    },
+    {
+      "english": "harmony",
+      "chinese": "和谐",
+      "phonetic": "/ˈhɑːr.mə.ni/",
+      "chinese_explanation": "协调一致",
+      "english_explanation": "a state of agreement",
+      "example_sentence": "Live in harmony with nature."
+    },
+    {
+      "english": "initiative",
+      "chinese": "主动性",
+      "phonetic": "/ɪˈnɪʃ.ə.tɪv/",
+      "chinese_explanation": "积极主动",
+      "english_explanation": "the ability to act first",
+      "example_sentence": "Take the initiative."
+    },
+    {
+      "english": "luxury",
+      "chinese": "奢侈",
+      "phonetic": "/ˈlʌk.ʃər.i/",
+      "chinese_explanation": "昂贵的享受",
+      "english_explanation": "expensive comfort",
+      "example_sentence": "A luxury hotel."
+    }
+  ]
+}

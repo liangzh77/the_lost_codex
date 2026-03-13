@@ -1,0 +1,246 @@
+{
+  "name": "雅思",
+  "display_order": 11,
+  "words": [
+    {
+      "english": "ameliorate",
+      "chinese": "改善",
+      "phonetic": "/əˈmiːl.jə.reɪt/",
+      "chinese_explanation": "使变好",
+      "english_explanation": "to make better",
+      "example_sentence": "Ameliorate living conditions."
+    },
+    {
+      "english": "burgeon",
+      "chinese": "迅速发展",
+      "phonetic": "/ˈbɜːr.dʒən/",
+      "chinese_explanation": "蓬勃增长",
+      "english_explanation": "to grow rapidly",
+      "example_sentence": "A burgeoning industry."
+    },
+    {
+      "english": "commensurate",
+      "chinese": "相称的",
+      "phonetic": "/kəˈmen.sər.ət/",
+      "chinese_explanation": "成比例的",
+      "english_explanation": "proportional",
+      "example_sentence": "Salary commensurate with experience."
+    },
+    {
+      "english": "delineate",
+      "chinese": "描绘",
+      "phonetic": "/dɪˈlɪn.i.eɪt/",
+      "chinese_explanation": "勾画轮廓",
+      "english_explanation": "to describe precisely",
+      "example_sentence": "Delineate the boundaries."
+    },
+    {
+      "english": "exonerate",
+      "chinese": "免罪",
+      "phonetic": "/ɪɡˈzɒn.ər.eɪt/",
+      "chinese_explanation": "证明无罪",
+      "english_explanation": "to clear of blame",
+      "example_sentence": "He was exonerated."
+    },
+    {
+      "english": "facetious",
+      "chinese": "滑稽的",
+      "phonetic": "/fəˈsiː.ʃəs/",
+      "chinese_explanation": "不正经的",
+      "english_explanation": "joking inappropriately",
+      "example_sentence": "A facetious comment."
+    },
+    {
+      "english": "garrulous",
+      "chinese": "话多的",
+      "phonetic": "/ˈɡær.ə.ləs/",
+      "chinese_explanation": "唠叨的",
+      "english_explanation": "excessively talkative",
+      "example_sentence": "A garrulous neighbor."
+    },
+    {
+      "english": "haphazard",
+      "chinese": "随意的",
+      "phonetic": "/hæpˈhæz.ərd/",
+      "chinese_explanation": "无计划的",
+      "english_explanation": "lacking organization",
+      "example_sentence": "A haphazard approach."
+    },
+    {
+      "english": "idiosyncratic",
+      "chinese": "独特的",
+      "phonetic": "/ˌɪd.i.əˈsɪŋ.krə.tɪk/",
+      "chinese_explanation": "与众不同的",
+      "english_explanation": "peculiar to an individual",
+      "example_sentence": "An idiosyncratic style."
+    },
+    {
+      "english": "juxtapose",
+      "chinese": "并置",
+      "phonetic": "/ˌdʒʌk.stəˈpoʊz/",
+      "chinese_explanation": "对比放置",
+      "english_explanation": "to place together for contrast",
+      "example_sentence": "Juxtapose old and new."
+    },
+    {
+      "english": "laconic",
+      "chinese": "简洁的",
+      "phonetic": "/ləˈkɒn.ɪk/",
+      "chinese_explanation": "言简意赅的",
+      "english_explanation": "using few words",
+      "example_sentence": "A laconic reply."
+    },
+    {
+      "english": "mundane",
+      "chinese": "平凡的",
+      "phonetic": "/mʌnˈdeɪn/",
+      "chinese_explanation": "日常的",
+      "english_explanation": "ordinary and dull",
+      "example_sentence": "Mundane daily tasks."
+    },
+    {
+      "english": "nefarious",
+      "chinese": "邪恶的",
+      "phonetic": "/nɪˈfer.i.əs/",
+      "chinese_explanation": "极坏的",
+      "english_explanation": "wicked",
+      "example_sentence": "A nefarious scheme."
+    },
+    {
+      "english": "obfuscate",
+      "chinese": "混淆",
+      "phonetic": "/ˈɒb.fʌ.skeɪt/",
+      "chinese_explanation": "使模糊",
+      "english_explanation": "to make unclear",
+      "example_sentence": "Don't obfuscate the issue."
+    },
+    {
+      "english": "perfunctory",
+      "chinese": "敷衍的",
+      "phonetic": "/pərˈfʌŋk.tər.i/",
+      "chinese_explanation": "草率的",
+      "english_explanation": "done without care",
+      "example_sentence": "A perfunctory inspection."
+    },
+    {
+      "english": "recalcitrant",
+      "chinese": "不服从的",
+      "phonetic": "/rɪˈkæl.sɪ.trənt/",
+      "chinese_explanation": "倔强的",
+      "english_explanation": "stubbornly disobedient",
+      "example_sentence": "A recalcitrant child."
+    },
+    {
+      "english": "sanguine",
+      "chinese": "乐观的",
+      "phonetic": "/ˈsæŋ.ɡwɪn/",
+      "chinese_explanation": "充满信心的",
+      "english_explanation": "optimistic",
+      "example_sentence": "She remained sanguine."
+    },
+    {
+      "english": "taciturn",
+      "chinese": "沉默寡言的",
+      "phonetic": "/ˈtæs.ɪ.tɜːrn/",
+      "chinese_explanation": "不爱说话的",
+      "english_explanation": "saying very little",
+      "example_sentence": "A taciturn man."
+    },
+    {
+      "english": "ubiquitous",
+      "chinese": "无处不在的",
+      "phonetic": "/juːˈbɪk.wɪ.təs/",
+      "chinese_explanation": "到处存在的",
+      "english_explanation": "present everywhere",
+      "example_sentence": "Ubiquitous advertising."
+    },
+    {
+      "english": "vacillate",
+      "chinese": "犹豫不决",
+      "phonetic": "/ˈvæs.ɪ.leɪt/",
+      "chinese_explanation": "摇摆不定",
+      "english_explanation": "to waver in decisions",
+      "example_sentence": "Stop vacillating and decide."
+    },
+    {
+      "english": "watershed",
+      "chinese": "转折点",
+      "phonetic": "/ˈwɔː.tər.ʃed/",
+      "chinese_explanation": "分水岭",
+      "english_explanation": "a crucial turning point",
+      "example_sentence": "A watershed in history."
+    },
+    {
+      "english": "xenophobia",
+      "chinese": "仇外心理",
+      "phonetic": "/ˌzen.əˈfoʊ.bi.ə/",
+      "chinese_explanation": "排外",
+      "english_explanation": "fear of foreigners",
+      "example_sentence": "Combat xenophobia."
+    },
+    {
+      "english": "yearning",
+      "chinese": "渴望",
+      "phonetic": "/ˈjɜːr.nɪŋ/",
+      "chinese_explanation": "强烈的向往",
+      "english_explanation": "a strong desire",
+      "example_sentence": "A yearning for freedom."
+    },
+    {
+      "english": "zealot",
+      "chinese": "狂热者",
+      "phonetic": "/ˈzel.ət/",
+      "chinese_explanation": "极端分子",
+      "english_explanation": "a fanatical person",
+      "example_sentence": "A political zealot."
+    },
+    {
+      "english": "acrimonious",
+      "chinese": "尖刻的",
+      "phonetic": "/ˌæk.rɪˈmoʊ.ni.əs/",
+      "chinese_explanation": "充满敌意的",
+      "english_explanation": "angry and bitter",
+      "example_sentence": "An acrimonious debate."
+    },
+    {
+      "english": "cacophony",
+      "chinese": "刺耳声",
+      "phonetic": "/kəˈkɒf.ən.i/",
+      "chinese_explanation": "噪音",
+      "english_explanation": "harsh unpleasant sounds",
+      "example_sentence": "A cacophony of car horns."
+    },
+    {
+      "english": "dichotomy",
+      "chinese": "二分法",
+      "phonetic": "/daɪˈkɒt.ə.mi/",
+      "chinese_explanation": "对立划分",
+      "english_explanation": "a division into two",
+      "example_sentence": "The dichotomy between rich and poor."
+    },
+    {
+      "english": "equivocal",
+      "chinese": "模棱两可的",
+      "phonetic": "/ɪˈkwɪv.ə.kəl/",
+      "chinese_explanation": "含糊的",
+      "english_explanation": "ambiguous",
+      "example_sentence": "An equivocal response."
+    },
+    {
+      "english": "fastidious",
+      "chinese": "挑剔的",
+      "phonetic": "/fæˈstɪd.i.əs/",
+      "chinese_explanation": "一丝不苟的",
+      "english_explanation": "very attentive to detail",
+      "example_sentence": "A fastidious eater."
+    },
+    {
+      "english": "gregarious",
+      "chinese": "合群的",
+      "phonetic": "/ɡrɪˈɡer.i.əs/",
+      "chinese_explanation": "喜欢社交的",
+      "english_explanation": "sociable",
+      "example_sentence": "A gregarious personality."
+    }
+  ]
+}
