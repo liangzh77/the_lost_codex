@@ -10,7 +10,6 @@ accolade
 acquiesce
 acrimony
 adamant
-adhere
 admonish
 adroit
 adversity
@@ -19,9 +18,7 @@ affable
 affirmation
 affluent
 aggravate
-aggression
 agitate
-alleviate
 aloof
 altercation
 altruistic
@@ -42,11 +39,9 @@ apprehension
 archaic
 ardent
 arrogant
-articulate
 ascertain
 aspiration
 assertion
-assimilate
 astute
 atone
 atrocity
@@ -72,7 +67,6 @@ capricious
 catalyst
 caustic
 censure
-chronic
 circumspect
 circumvent
 clandestine
@@ -83,22 +77,17 @@ coherent
 collateral
 commensurate
 compassion
-compel
 complacent
 concede
 conciliate
 condescend
 condone
 confiscate
-confront
 conjecture
 connotation
 conscientious
 conspicuous
-contempt
-contend
 contrite
-convey
 conviction
 copious
 corroborate
@@ -144,7 +133,6 @@ dispel
 dissonance
 dissuade
 diverge
-divert
 docile
 dogmatic
 dominate
@@ -161,7 +149,6 @@ embellish
 eminent
 empathy
 emulate
-endorse
 engross
 enigmatic
 enumerate
@@ -172,11 +159,9 @@ erratic
 estrange
 euphemism
 evade
-exacerbate
 exalt
 exasperate
 exemplary
-exert
 exonerate
 exorbitant
 expedient
@@ -187,7 +172,6 @@ exuberant
 fabricate
 fallacy
 fanatical
-feasible
 fervent
 foreshadow
 fortify
@@ -195,7 +179,6 @@ frugal
 futile
 grandiose
 gratuitous
-grievance
 hamper
 haphazard
 harbinger
@@ -206,10 +189,8 @@ idiosyncrasy
 imminent
 impartial
 impede
-implicit
 incessant
 incite
-indifferent
 indulge
 infer
 ingenious
@@ -217,7 +198,6 @@ innate
 instigate
 intangible
 intimidate
-invoke
 irrational
 jeopardize
 juxtapose
@@ -230,7 +210,6 @@ mitigate
 mundane
 negate
 negligent
-neutral
 nullify
 obsolete
 ominous
@@ -259,7 +238,6 @@ retaliate
 revere
 scrutinize
 segregate
-skepticism
 slander
 solemn
 stagnate
