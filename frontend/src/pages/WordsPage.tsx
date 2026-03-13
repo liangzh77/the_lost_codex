@@ -30,9 +30,13 @@ export default function WordsPage() {
   }, [tab]);
 
   const handleWordClick = async (id: number) => {
-    const res = await getWord(id);
-    setCardWord(res.data);
-    setCardOpen(true);
+    try {
+      const res = await getWord(id);
+      setCardWord(res.data);
+      setCardOpen(true);
+    } catch (err) {
+      console.error('获取单词详情失败', err);
+    }
   };
 
   const tabs: { key: Tab; label: string }[] = [

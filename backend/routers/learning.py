@@ -5,9 +5,10 @@ from pydantic import BaseModel
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from database import get_db
-from models import User, Word, UserWordProgress, LearningRecord
+from models import User, Word, WordBank, UserWordProgress, LearningRecord
 from auth import get_current_user
 from services.spaced_repetition import get_next_review_date, is_mastered, TOTAL_STAGES
+from services.ai_complete import complete_word_info
 
 router = APIRouter(prefix="/api/learning", tags=["learning"])
 
@@ -21,6 +22,21 @@ class ConfirmDoneRequest(BaseModel):
     word_ids: list[int]
 
 
+class CheckWordsRequest(BaseModel):
+    words: list[str]
+
+
+@router.post("/check-words")
+def check_words(body: CheckWordsRequest, db: Session = Depends(get_db)):
+    """检查哪些词在词库中已存在"""
+    existing = db.query(Word.english).filter(Word.english.in_(body.words)).all()
+    found = {w[0].lower() for w in existing}
+    return {
+        "existing": [w for w in body.words if w.lower() in found],
+        "new": [w for w in body.words if w.lower() not in found],
+    }
+
+
 # ---------- 学新词 ----------
 
 @router.post("/new")
@@ -32,6 +48,31 @@ def start_new_words(
     """从词库随机抽取一组新词，或根据用户输入查找单词"""
     if body.custom_words:
         words = db.query(Word).filter(Word.english.in_(body.custom_words)).all()
+        found = {w.english.lower() for w in words}
+        not_found = [w for w in body.custom_words if w.lower() not in found]
+        # 词库中没有的单词自动创建，用AI补全信息，放入"自定义单词"词库
+        if not_found:
+            custom_bank = db.query(WordBank).filter(WordBank.name == "自定义单词").first()
+            if not custom_bank:
+                custom_bank = WordBank(name="自定义单词", display_order=99)
+                db.add(custom_bank)
+                db.flush()
+            for nf in not_found:
+                info = complete_word_info(nf)
+                new_word = Word(
+                    english=nf,
+                    chinese=info.get("chinese", ""),
+                    phonetic=info.get("phonetic", ""),
+                    chinese_explanation=info.get("chinese_explanation", ""),
+                    english_explanation=info.get("english_explanation", ""),
+                    example_sentence=info.get("example_sentence", ""),
+                    word_bank_id=custom_bank.id,
+                )
+                db.add(new_word)
+                db.flush()
+                words.append(new_word)
+        if not_found:
+            db.commit()
     elif body.word_bank_id:
         # 排除用户已在学习的单词
         learned_ids = (
@@ -122,6 +163,7 @@ def get_today_review_count(
 @router.get("/quiz/{word_id}")
 def get_quiz(
     word_id: int,
+    quiz_type: str | None = None,
     user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
 ):
@@ -130,10 +172,12 @@ def get_quiz(
     if not word:
         raise HTTPException(status_code=404, detail="单词不存在")
 
-    # 随机选题型
-    quiz_type = random.choice(["cn_to_en", "en_to_cn", "en_to_explanation"])
+    # 指定题型或随机选
+    valid_types = ["cn_to_en", "en_to_cn", "en_to_explanation"]
+    if not quiz_type or quiz_type not in valid_types:
+        quiz_type = random.choice(valid_types)
 
-    # 获取3个干扰项
+    # 获取干扰项（尽量3个，不足则有多少用多少）
     distractors = (
         db.query(Word)
         .filter(Word.id != word_id)
@@ -145,16 +189,19 @@ def get_quiz(
     if quiz_type == "cn_to_en":
         question = word.chinese
         correct = word.english
-        options = [w.english for w in distractors] + [correct]
+        options = [w.english for w in distractors]
     elif quiz_type == "en_to_cn":
         question = word.english
         correct = word.chinese
-        options = [w.chinese for w in distractors] + [correct]
+        options = [w.chinese for w in distractors]
     else:
         question = word.english
         correct = word.chinese_explanation
-        options = [w.chinese_explanation for w in distractors] + [correct]
+        options = [w.chinese_explanation for w in distractors]
 
+    # 去重并确保正确答案在选项中
+    options = [o for o in options if o != correct]
+    options.append(correct)
     random.shuffle(options)
 
     return {
@@ -232,7 +279,7 @@ def get_recent_words(
         if r.word_id not in seen:
             seen.add(r.word_id)
             w = r.word
-            result.append({"id": w.id, "english": w.english, "chinese": w.chinese})
+            result.append({"id": w.id, "english": w.english, "chinese": w.chinese, "studied_at": str(r.studied_at)})
     return result
 
 
@@ -274,3 +321,22 @@ def get_mastered_words(
         {"id": p.word.id, "english": p.word.english, "chinese": p.word.chinese}
         for p in progress_list
     ]
+
+
+@router.get("/stats")
+def get_learning_stats(
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    """用户学习统计"""
+    learning = (
+        db.query(UserWordProgress)
+        .filter(UserWordProgress.user_id == user.id, UserWordProgress.current_stage < TOTAL_STAGES)
+        .count()
+    )
+    mastered = (
+        db.query(UserWordProgress)
+        .filter(UserWordProgress.user_id == user.id, UserWordProgress.current_stage >= TOTAL_STAGES)
+        .count()
+    )
+    return {"learning": learning, "mastered": mastered}

@@ -1,16 +1,30 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
+from sqlalchemy import func
 from database import get_db
-from models import WordBank, Word
+from models import WordBank, Word, UserWordProgress
 from auth import get_current_user, User
 
 router = APIRouter(prefix="/api/words", tags=["words"])
 
 
 @router.get("/banks")
-def list_word_banks(db: Session = Depends(get_db)):
+def list_word_banks(
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
     banks = db.query(WordBank).order_by(WordBank.display_order).all()
-    return [{"id": b.id, "name": b.name} for b in banks]
+    result = []
+    for b in banks:
+        total = db.query(func.count(Word.id)).filter(Word.word_bank_id == b.id).scalar()
+        learned = (
+            db.query(func.count(UserWordProgress.id))
+            .join(Word, UserWordProgress.word_id == Word.id)
+            .filter(Word.word_bank_id == b.id, UserWordProgress.user_id == user.id)
+            .scalar()
+        )
+        result.append({"id": b.id, "name": b.name, "total": total, "learned": learned})
+    return result
 
 
 @router.get("/bank/{bank_id}")

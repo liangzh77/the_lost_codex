@@ -54,5 +54,5 @@ def import_words(json_path: str):
 
 
 if __name__ == "__main__":
-    path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(__file__), "test_words.json")
+    path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(__file__), "words_full.json")
     import_words(path)

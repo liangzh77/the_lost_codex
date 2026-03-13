@@ -12,7 +12,7 @@ interface Bank {
 }
 
 export default function SettingsPage() {
-  const { user, logout } = useAuth();
+  const { user, logout, refreshUser } = useAuth();
   const [banks, setBanks] = useState<Bank[]>([]);
   const [groupSize, setGroupSize] = useState(user?.group_size || 10);
   const [saving, setSaving] = useState(false);
@@ -25,6 +25,7 @@ export default function SettingsPage() {
     setSaving(true);
     try {
       await api.put('/users/settings', { group_size: groupSize });
+      await refreshUser();
       alert('保存成功');
     } catch {
       alert('保存失败');

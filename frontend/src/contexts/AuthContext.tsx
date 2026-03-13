@@ -12,6 +12,7 @@ interface AuthContextType {
   token: string | null;
   setToken: (token: string | null) => void;
   logout: () => void;
+  refreshUser: () => Promise<void>;
   loading: boolean;
 }
 
@@ -33,6 +34,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUser(null);
   };
 
+  const refreshUser = async () => {
+    try {
+      const res = await getMe();
+      setUser(res.data);
+    } catch {}
+  };
+
   useEffect(() => {
     if (token) {
       getMe()
@@ -45,7 +53,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [token]);
 
   return (
-    <AuthContext.Provider value={{ user, token, setToken, logout, loading }}>
+    <AuthContext.Provider value={{ user, token, setToken, logout, refreshUser, loading }}>
       {children}
     </AuthContext.Provider>
   );

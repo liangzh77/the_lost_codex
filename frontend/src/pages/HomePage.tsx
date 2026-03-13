@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { getTodayReviewCount } from '../api';
+import { getTodayReviewCount, getLearningStats } from '../api';
 import NavBar from '../components/NavBar';
 import TabBar from '../components/TabBar';
 import Card from '../components/Card';
@@ -11,9 +11,11 @@ export default function HomePage() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const [reviewCount, setReviewCount] = useState(0);
+  const [stats, setStats] = useState({ learning: 0, mastered: 0 });
 
   useEffect(() => {
     getTodayReviewCount().then((res) => setReviewCount(res.data.count));
+    getLearningStats().then((res) => setStats(res.data));
   }, []);
 
   return (
@@ -31,6 +33,17 @@ export default function HomePage() {
           <p className="text-gray-400 text-sm">你好，{user?.username}</p>
           <h2 className="text-4xl font-bold text-gray-900 mt-2">{reviewCount}</h2>
           <p className="text-gray-400 text-sm mt-1">今日待复习</p>
+        </div>
+
+        <div className="flex gap-3">
+          <div className="flex-1 bg-white rounded-2xl p-4 text-center">
+            <p className="text-2xl font-bold text-blue-500">{stats.learning}</p>
+            <p className="text-xs text-gray-400 mt-1">在学中</p>
+          </div>
+          <div className="flex-1 bg-white rounded-2xl p-4 text-center">
+            <p className="text-2xl font-bold text-green-500">{stats.mastered}</p>
+            <p className="text-xs text-gray-400 mt-1">已掌握</p>
+          </div>
         </div>
 
         {reviewCount > 0 && (
