@@ -1,5 +1,3 @@
-import Modal from './Modal';
-
 interface WordInfo {
   id: number;
   english: string;
@@ -13,33 +11,25 @@ interface WordInfo {
 interface Props {
   word: WordInfo | null;
   open: boolean;
-  onClose: () => void;
 }
 
-export default function WordCard({ word, open, onClose }: Props) {
-  if (!word) return null;
+export default function WordCard({ word, open }: Props) {
+  if (!word || !open) return null;
   return (
-    <Modal open={open} onClose={onClose}>
-      <div className="space-y-3">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900">{word.english}</h2>
-          <p className="text-sm text-gray-400 mt-1">{word.phonetic}</p>
-        </div>
-        <div className="text-center text-xl text-gray-700">{word.chinese}</div>
-        <div className="bg-gray-50 rounded-xl p-3 space-y-2 text-sm">
-          <div>
-            <span className="text-gray-400">中文释义：</span>
-            <span className="text-gray-700">{word.chinese_explanation}</span>
-          </div>
-          <div>
-            <span className="text-gray-400">英文释义：</span>
-            <span className="text-gray-700">{word.english_explanation}</span>
-          </div>
-        </div>
-        <div className="bg-blue-50 rounded-xl p-3 text-sm text-gray-600 italic">
-          {word.example_sentence}
-        </div>
+    <div className="fixed bottom-0 left-0 right-0 z-50 max-w-lg mx-auto bg-white rounded-t-2xl shadow-lg border-t border-gray-100 p-4 space-y-2">
+      <div className="w-10 h-1 bg-gray-200 rounded-full mx-auto mb-2" />
+      <div className="text-center">
+        <h3 className="text-xl font-bold text-gray-900">{word.english}</h3>
+        <p className="text-xs text-gray-400">{word.phonetic}</p>
       </div>
-    </Modal>
+      <div className="text-center text-lg text-gray-700">{word.chinese}</div>
+      <div className="bg-gray-50 rounded-xl p-3 space-y-1 text-sm">
+        <div><span className="text-gray-400">中文释义：</span><span className="text-gray-700">{word.chinese_explanation}</span></div>
+        <div><span className="text-gray-400">英文释义：</span><span className="text-gray-700">{word.english_explanation}</span></div>
+      </div>
+      <div className="bg-blue-50 rounded-xl p-3 text-sm text-gray-600 italic">
+        {word.example_sentence}
+      </div>
+    </div>
   );
 }

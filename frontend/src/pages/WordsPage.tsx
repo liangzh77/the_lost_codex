@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getRecentWords, getLearningWords, getMasteredWords, getRecentGroups, getLearningGroups, getGroupWords, getWord } from '../api';
+import { getRecentWords, getLearningWords, getMasteredWords, getRecentGroups, getLearningGroups, getMasteredGroups, getGroupWords, getWord } from '../api';
 import NavBar from '../components/NavBar';
 import TabBar from '../components/TabBar';
 import WordCard from '../components/WordCard';
@@ -41,11 +41,11 @@ export default function WordsPage() {
     setLoading(true);
     setExpandedGroup(null);
     setGroupWords([]);
-    if (subTab === 'words' || tab === 'mastered') {
+    if (subTab === 'words') {
       const fn = tab === 'recent' ? getRecentWords : tab === 'learning' ? getLearningWords : getMasteredWords;
       fn().then((res) => setWords(res.data)).finally(() => setLoading(false));
     } else {
-      const fn = tab === 'recent' ? getRecentGroups : getLearningGroups;
+      const fn = tab === 'recent' ? getRecentGroups : tab === 'learning' ? getLearningGroups : getMasteredGroups;
       fn().then((res) => setGroups(res.data)).finally(() => setLoading(false));
     }
   }, [tab, subTab]);
@@ -61,7 +61,8 @@ export default function WordsPage() {
     setGroupWords(res.data);
   };
 
-  const handleWordClick = async (id: number) => {
+  const handleWordClick = async (id: number, e: React.MouseEvent) => {
+    e.stopPropagation();
     try {
       const res = await getWord(id);
       setCardWord(res.data);
@@ -83,7 +84,14 @@ export default function WordsPage() {
     { key: 'mastered', label: '已掌握' },
   ];
 
-  const showSubTab = tab !== 'mastered';
+  const showSubTab = true;
+
+  const formatTimeAgo = (dateStr: string) => {
+    const diff = Math.floor((Date.now() - new Date(dateStr).getTime()) / 86400000);
+    if (diff === 0) return '今天';
+    if (diff === 1) return '昨天';
+    return `${diff}天前`;
+  };
 
   const renderWordList = (list: WordItem[]) => (
     <div className="space-y-2">
@@ -91,22 +99,22 @@ export default function WordsPage() {
         <div
           key={w.id}
           className="bg-white rounded-xl p-3 flex justify-between items-center cursor-pointer active:scale-[0.98] transition-transform"
-          onClick={() => handleWordClick(w.id)}
+          onClick={(e) => handleWordClick(w.id, e)}
         >
           <div>
             <p className="text-base font-medium text-gray-900">{w.english}</p>
             <p className="text-sm text-gray-400">{w.chinese}</p>
           </div>
-          {tab === 'learning' && w.stage !== undefined && (
-            <span className="text-xs text-blue-400 bg-blue-50 px-2 py-1 rounded-lg">
-              第{w.stage}轮
-            </span>
-          )}
-          {tab === 'recent' && w.studied_at && (
-            <span className="text-xs text-gray-300">
-              {new Date(w.studied_at).toLocaleDateString()}
-            </span>
-          )}
+          <div className="flex items-center gap-2">
+            {w.studied_at && (
+              <span className="text-xs text-gray-300">{formatTimeAgo(w.studied_at)}</span>
+            )}
+            {w.stage !== undefined && (
+              <span className="text-xs text-blue-400 bg-blue-50 px-2 py-1 rounded-lg">
+                第{w.stage}轮
+              </span>
+            )}
+          </div>
         </div>
       ))}
     </div>
@@ -139,7 +147,7 @@ export default function WordsPage() {
                 <div
                   key={w.id}
                   className="bg-gray-50 rounded-lg p-2 flex justify-between items-center cursor-pointer"
-                  onClick={() => handleWordClick(w.id)}
+                  onClick={(e) => handleWordClick(w.id, e)}
                 >
                   <div>
                     <p className="text-sm font-medium text-gray-800">{w.english}</p>
@@ -158,7 +166,7 @@ export default function WordsPage() {
   );
 
   return (
-    <div className="pb-20">
+    <div className="pb-20" onClick={() => setCardOpen(false)}>
       <NavBar title="单词" />
       <div className="flex border-b border-gray-100 bg-white">
         {tabs.map((t) => (
@@ -172,15 +180,15 @@ export default function WordsPage() {
         ))}
       </div>
       {showSubTab && (
-        <div className="flex gap-2 px-4 pt-2">
+        <div className="flex border-b border-gray-50 bg-white">
           <button
-            className={`px-3 py-1 text-sm rounded-full ${subTab === 'groups' ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-500'}`}
+            className={`flex-1 py-2 text-sm font-medium transition ${subTab === 'groups' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-400'}`}
             onClick={() => setSubTab('groups')}
           >
             组
           </button>
           <button
-            className={`px-3 py-1 text-sm rounded-full ${subTab === 'words' ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-500'}`}
+            className={`flex-1 py-2 text-sm font-medium transition ${subTab === 'words' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-400'}`}
             onClick={() => setSubTab('words')}
           >
             单词
@@ -190,7 +198,7 @@ export default function WordsPage() {
       <div className="px-4 pt-3">
         {loading ? (
           <p className="text-center text-gray-400 py-10">加载中...</p>
-        ) : (subTab === 'groups' && showSubTab) ? (
+        ) : subTab === 'groups' ? (
           groups.length === 0 ? (
             <p className="text-center text-gray-400 py-10">暂无学习组</p>
           ) : renderGroupList()
@@ -200,7 +208,7 @@ export default function WordsPage() {
           ) : renderWordList(words)
         )}
       </div>
-      <WordCard word={cardWord} open={cardOpen} onClose={() => setCardOpen(false)} />
+      <WordCard word={cardWord} open={cardOpen} />
       <TabBar />
     </div>
   );

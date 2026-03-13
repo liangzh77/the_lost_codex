@@ -43,4 +43,6 @@ export const getRecentGroups = () => api.get('/learning/groups/recent');
 
 export const getLearningGroups = () => api.get('/learning/groups/learning');
 
+export const getMasteredGroups = () => api.get('/learning/groups/mastered');
+
 export const getGroupWords = (groupId: number) => api.get(`/learning/groups/${groupId}/words`);

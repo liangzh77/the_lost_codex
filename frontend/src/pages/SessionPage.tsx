@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { getQuiz, confirmDone } from '../api';
 import NavBar from '../components/NavBar';
 import Button from '../components/Button';
+import WordCard from '../components/WordCard';
 
 interface WordInfo {
   id: number;
@@ -77,11 +78,15 @@ export default function SessionPage() {
     setShowCard(true);
   };
 
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
   const handleNext = () => {
     if (currentIndex < words.length - 1) {
       setCurrentIndex(currentIndex + 1);
-    } else {
-      setPhase('done');
     }
   };
 
@@ -112,24 +117,6 @@ export default function SessionPage() {
 
   const word = words[currentIndex];
 
-  // 底部单词卡片（非模态，不遮挡）
-  const bottomCard = showCard && word && (
-    <div className="border-t border-gray-100 bg-white p-4 space-y-2">
-      <div className="text-center">
-        <h3 className="text-xl font-bold text-gray-900">{word.english}</h3>
-        <p className="text-xs text-gray-400">{word.phonetic}</p>
-      </div>
-      <div className="text-center text-lg text-gray-700">{word.chinese}</div>
-      <div className="bg-gray-50 rounded-xl p-3 space-y-1 text-sm">
-        <div><span className="text-gray-400">中文释义：</span><span className="text-gray-700">{word.chinese_explanation}</span></div>
-        <div><span className="text-gray-400">英文释义：</span><span className="text-gray-700">{word.english_explanation}</span></div>
-      </div>
-      <div className="bg-blue-50 rounded-xl p-3 text-sm text-gray-600 italic">
-        {word.example_sentence}
-      </div>
-    </div>
-  );
-
   // 第一次学习：展示完整信息
   if (phase === 'first_look') {
     return (
@@ -156,20 +143,18 @@ export default function SessionPage() {
     );
   }
 
-  // 测试完成
+  // 题型选择
   if (phase === 'done') {
     return (
       <div className="pb-6">
-        <NavBar title="学习完成" />
+        <NavBar title="题型选择" onBack={() => navigate('/home')} />
         <div className="px-4 pt-10 space-y-4 text-center">
-          <p className="text-5xl">🎉</p>
-          <p className="text-lg text-gray-700">这组单词你已经过了一遍</p>
           {totalCount > 0 && (
             <p className="text-sm text-gray-500">
               正确率：{correctCount}/{totalCount}（{Math.round((correctCount / totalCount) * 100)}%）
             </p>
           )}
-          <p className="text-sm text-gray-400">选择一种方式再练一次，或确认学完</p>
+          <p className="text-sm text-gray-400">选择一种题型继续练习</p>
           <div className="space-y-3 pt-4">
             <Button size="lg" variant="secondary" onClick={() => handleAgain('cn_to_en')}>中文 → 选英文</Button>
             <Button size="lg" variant="secondary" onClick={() => handleAgain('en_to_cn')}>英文 → 选中文</Button>
@@ -183,10 +168,10 @@ export default function SessionPage() {
 
   // 测试阶段
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen" onClick={() => setShowCard(false)}>
       <NavBar
         title={`测试 ${currentIndex + 1}/${words.length}`}
-        onBack={() => navigate('/home')}
+        onBack={() => setPhase('done')}
       />
       <div className="flex-1 px-4 pt-6 space-y-4">
         {quizLoading ? (
@@ -200,7 +185,7 @@ export default function SessionPage() {
               </p>
               <h2
                 className="text-2xl font-bold text-gray-900 cursor-pointer"
-                onClick={() => setShowCard(true)}
+                onClick={(e) => { e.stopPropagation(); setShowCard(true); }}
               >
                 {quiz.question}
               </h2>
@@ -217,22 +202,28 @@ export default function SessionPage() {
                   <button
                     key={i}
                     className={`w-full rounded-xl p-4 text-left text-base transition ${cls}`}
-                    onClick={() => handleSelect(opt)}
+                    onClick={(e) => { e.stopPropagation(); handleSelect(opt); }}
                   >
                     {opt}
                   </button>
                 );
               })}
             </div>
-            {showResult && (
-              <Button size="lg" onClick={handleNext}>
-                {currentIndex < words.length - 1 ? '下一题' : '完成'}
+            <div className="flex gap-3">
+              <Button size="md" className="flex-1" variant={currentIndex > 0 ? 'primary' : 'secondary'} onClick={handlePrev} disabled={currentIndex === 0}>
+                上一题
               </Button>
-            )}
+              <Button size="md" className="flex-1" variant={currentIndex < words.length - 1 ? 'primary' : 'secondary'} onClick={handleNext} disabled={currentIndex >= words.length - 1}>
+                下一题
+              </Button>
+              <Button size="md" className="flex-1" variant="ghost" onClick={() => setPhase('done')}>
+                题型
+              </Button>
+            </div>
           </>
         )}
       </div>
-      {bottomCard}
+      <WordCard word={word} open={showCard} />
     </div>
   );
 }

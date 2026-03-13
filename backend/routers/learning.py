@@ -290,7 +290,12 @@ def get_recent_words(
         if r.word_id not in seen:
             seen.add(r.word_id)
             w = r.word
-            result.append({"id": w.id, "english": w.english, "chinese": w.chinese, "studied_at": str(r.studied_at)})
+            # 获取当前学习阶段
+            progress = db.query(UserWordProgress).filter(
+                UserWordProgress.user_id == user.id, UserWordProgress.word_id == w.id
+            ).first()
+            stage = progress.current_stage if progress else 0
+            result.append({"id": w.id, "english": w.english, "chinese": w.chinese, "studied_at": str(r.studied_at), "stage": stage})
     return result
 
 
@@ -308,10 +313,18 @@ def get_learning_words(
         )
         .all()
     )
-    return [
-        {"id": p.word.id, "english": p.word.english, "chinese": p.word.chinese, "stage": p.current_stage, "next_review": str(p.next_review_date)}
-        for p in progress_list
-    ]
+    result = []
+    for p in progress_list:
+        # 获取最近学习时间
+        last_record = (
+            db.query(LearningRecord)
+            .filter(LearningRecord.user_id == user.id, LearningRecord.word_id == p.word_id)
+            .order_by(LearningRecord.studied_at.desc())
+            .first()
+        )
+        studied_at = str(last_record.studied_at) if last_record else ""
+        result.append({"id": p.word.id, "english": p.word.english, "chinese": p.word.chinese, "stage": p.current_stage, "next_review": str(p.next_review_date), "studied_at": studied_at})
+    return result
 
 
 @router.get("/words/mastered")
@@ -375,6 +388,7 @@ def get_recent_groups(
             "created_at": str(g.created_at),
         }
         for g in groups
+        if len(g.words_progress) > 0
     ]
 
 
@@ -429,3 +443,27 @@ def get_group_words(
         }
         for p in group.words_progress
     ]
+
+
+@router.get("/groups/mastered")
+def get_mastered_groups(
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    """已掌握的组（组内所有词都已掌握）"""
+    groups = (
+        db.query(LearningGroup)
+        .filter(LearningGroup.user_id == user.id)
+        .order_by(LearningGroup.created_at.desc())
+        .all()
+    )
+    result = []
+    for g in groups:
+        if len(g.words_progress) > 0 and all(p.current_stage >= TOTAL_STAGES for p in g.words_progress):
+            result.append({
+                "id": g.id,
+                "name": g.name,
+                "word_count": len(g.words_progress),
+                "created_at": str(g.created_at),
+            })
+    return result
