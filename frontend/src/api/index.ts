@@ -38,3 +38,9 @@ export const getLearningWords = () => api.get('/learning/words/learning');
 export const getMasteredWords = () => api.get('/learning/words/mastered');
 
 export const getLearningStats = () => api.get('/learning/stats');
+
+export const getRecentGroups = () => api.get('/learning/groups/recent');
+
+export const getLearningGroups = () => api.get('/learning/groups/learning');
+
+export const getGroupWords = (groupId: number) => api.get(`/learning/groups/${groupId}/words`);

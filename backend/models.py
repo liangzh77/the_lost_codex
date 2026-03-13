@@ -4,6 +4,9 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from database import Base
 
 
+from typing import Optional
+
+
 class User(Base):
     __tablename__ = "users"
 
@@ -15,6 +18,7 @@ class User(Base):
 
     progress: Mapped[list["UserWordProgress"]] = relationship(back_populates="user")
     records: Mapped[list["LearningRecord"]] = relationship(back_populates="user")
+    groups: Mapped[list["LearningGroup"]] = relationship(back_populates="user")
 
 
 class WordBank(Base):
@@ -50,10 +54,12 @@ class UserWordProgress(Base):
     word_id: Mapped[int] = mapped_column(ForeignKey("words.id"), index=True)
     current_stage: Mapped[int] = mapped_column(Integer, default=0)
     next_review_date: Mapped[date] = mapped_column(Date)
+    group_id: Mapped[Optional[int]] = mapped_column(ForeignKey("learning_groups.id"), nullable=True, default=None)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
     user: Mapped["User"] = relationship(back_populates="progress")
     word: Mapped["Word"] = relationship()
+    group: Mapped[Optional["LearningGroup"]] = relationship(back_populates="words_progress")
 
 
 class LearningRecord(Base):
@@ -67,3 +73,15 @@ class LearningRecord(Base):
 
     user: Mapped["User"] = relationship(back_populates="records")
     word: Mapped["Word"] = relationship()
+
+
+class LearningGroup(Base):
+    __tablename__ = "learning_groups"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    name: Mapped[str] = mapped_column(String(100))
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
+    user: Mapped["User"] = relationship(back_populates="groups")
+    words_progress: Mapped[list["UserWordProgress"]] = relationship(back_populates="group")

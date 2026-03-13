@@ -5,7 +5,7 @@ from pydantic import BaseModel
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from database import get_db
-from models import User, Word, WordBank, UserWordProgress, LearningRecord
+from models import User, Word, WordBank, UserWordProgress, LearningRecord, LearningGroup
 from auth import get_current_user
 from services.spaced_repetition import get_next_review_date, is_mastered, TOTAL_STAGES
 from services.ai_complete import complete_word_info
@@ -225,6 +225,16 @@ def confirm_done(
     today = date.today()
     now = datetime.utcnow()
 
+    # 创建学习组
+    group_count = db.query(LearningGroup).filter(LearningGroup.user_id == user.id).count()
+    group = LearningGroup(
+        user_id=user.id,
+        name=f"第{group_count + 1}组",
+        created_at=now,
+    )
+    db.add(group)
+    db.flush()
+
     for word_id in body.word_ids:
         progress = (
             db.query(UserWordProgress)
@@ -232,16 +242,17 @@ def confirm_done(
             .first()
         )
         if progress:
-            # 已有进度，推进到下一阶段
             progress.current_stage += 1
             progress.next_review_date = get_next_review_date(progress.current_stage, today)
+            if not progress.group_id:
+                progress.group_id = group.id
         else:
-            # 新词，创建进度记录
             progress = UserWordProgress(
                 user_id=user.id,
                 word_id=word_id,
                 current_stage=1,
                 next_review_date=get_next_review_date(1, today),
+                group_id=group.id,
             )
             db.add(progress)
 
@@ -340,3 +351,81 @@ def get_learning_stats(
         .count()
     )
     return {"learning": learning, "mastered": mastered}
+
+
+# ---------- 组列表 ----------
+
+@router.get("/groups/recent")
+def get_recent_groups(
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    """最近的学习组（按时间倒序）"""
+    groups = (
+        db.query(LearningGroup)
+        .filter(LearningGroup.user_id == user.id)
+        .order_by(LearningGroup.created_at.desc())
+        .all()
+    )
+    return [
+        {
+            "id": g.id,
+            "name": g.name,
+            "word_count": len(g.words_progress),
+            "created_at": str(g.created_at),
+        }
+        for g in groups
+    ]
+
+
+@router.get("/groups/learning")
+def get_learning_groups(
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    """在学的组（组内有未掌握的词）"""
+    groups = (
+        db.query(LearningGroup)
+        .filter(LearningGroup.user_id == user.id)
+        .order_by(LearningGroup.created_at.desc())
+        .all()
+    )
+    result = []
+    for g in groups:
+        learning_count = sum(1 for p in g.words_progress if p.current_stage < TOTAL_STAGES)
+        if learning_count > 0:
+            result.append({
+                "id": g.id,
+                "name": g.name,
+                "word_count": len(g.words_progress),
+                "learning_count": learning_count,
+                "created_at": str(g.created_at),
+            })
+    return result
+
+
+@router.get("/groups/{group_id}/words")
+def get_group_words(
+    group_id: int,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    """某组的单词列表"""
+    group = db.query(LearningGroup).filter(
+        LearningGroup.id == group_id, LearningGroup.user_id == user.id
+    ).first()
+    if not group:
+        raise HTTPException(status_code=404, detail="组不存在")
+    return [
+        {
+            "id": p.word.id,
+            "english": p.word.english,
+            "chinese": p.word.chinese,
+            "phonetic": p.word.phonetic,
+            "chinese_explanation": p.word.chinese_explanation,
+            "english_explanation": p.word.english_explanation,
+            "example_sentence": p.word.example_sentence,
+            "stage": p.current_stage,
+        }
+        for p in group.words_progress
+    ]
