@@ -29,10 +29,32 @@ def list_word_banks(
 
 
 @router.get("/bank/{bank_id}")
-def list_words_in_bank(bank_id: int, db: Session = Depends(get_db)):
+def list_words_in_bank(
+    bank_id: int,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
     words = db.query(Word).filter(Word.word_bank_id == bank_id).all()
-    return [
-        {
+    word_ids = [w.id for w in words]
+    progress_map = {}
+    if word_ids:
+        rows = (
+            db.query(UserWordProgress.word_id, UserWordProgress.current_stage)
+            .filter(UserWordProgress.user_id == user.id, UserWordProgress.word_id.in_(word_ids))
+            .all()
+        )
+        progress_map = {r.word_id: r.current_stage for r in rows}
+    total_stages = len((user.review_intervals or "1,2,4,7,15,30").split(","))
+    result = []
+    for w in words:
+        stage = progress_map.get(w.id)
+        if stage is None:
+            status = None
+        elif stage >= total_stages:
+            status = "mastered"
+        else:
+            status = "learning"
+        result.append({
             "id": w.id,
             "english": w.english,
             "chinese": w.chinese,
@@ -40,9 +62,9 @@ def list_words_in_bank(bank_id: int, db: Session = Depends(get_db)):
             "chinese_explanation": w.chinese_explanation,
             "english_explanation": w.english_explanation,
             "example_sentence": w.example_sentence,
-        }
-        for w in words
-    ]
+            "status": status,
+        })
+    return result
 
 
 @router.get("/{word_id}")

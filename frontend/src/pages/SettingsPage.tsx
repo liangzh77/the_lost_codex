@@ -25,7 +25,7 @@ export default function SettingsPage() {
   const [saving, setSaving] = useState(false);
   const [savingIntervals, setSavingIntervals] = useState(false);
   const [expandedBank, setExpandedBank] = useState<number | null>(null);
-  const [bankWords, setBankWords] = useState<{ id: number; english: string; chinese: string }[]>([]);
+  const [bankWords, setBankWords] = useState<{ id: number; english: string; chinese: string; status: string | null }[]>([]);
   const [cardOpen, setCardOpen] = useState(false);
   const [cardWord, setCardWord] = useState<any>(null);
   const [loadingWordIds, setLoadingWordIds] = useState<Set<number>>(new Set());
@@ -216,9 +216,13 @@ export default function SettingsPage() {
                         className={`text-xs rounded px-1.5 py-0.5 cursor-pointer transition ${
                           isLoading
                             ? 'bg-blue-100 text-blue-400 animate-pulse'
-                            : hasInfo
-                              ? 'text-gray-600 bg-gray-50 hover:bg-blue-50 hover:text-blue-500'
-                              : 'text-gray-300 bg-gray-50 hover:bg-gray-100'
+                            : w.status === 'mastered'
+                              ? 'text-green-600 bg-green-50 hover:bg-green-100'
+                              : w.status === 'learning'
+                                ? 'text-orange-500 bg-orange-50 hover:bg-orange-100'
+                                : hasInfo
+                                  ? 'text-gray-600 bg-gray-50 hover:bg-blue-50 hover:text-blue-500'
+                                  : 'text-gray-300 bg-gray-50 hover:bg-gray-100'
                         }`}
                         onClick={() => handleWordClick(w.id)}
                       >
