@@ -51,7 +51,14 @@ def start_new_words(
 ):
     """从词库随机抽取一组新词，或根据用户输入查找单词"""
     if body.custom_words:
-        words = db.query(Word).filter(Word.english.in_(body.custom_words)).all()
+        all_matches = db.query(Word).filter(Word.english.in_(body.custom_words)).all()
+        # 按 english 去重：优先选有详细信息的（chinese 非空）
+        seen: dict[str, Word] = {}
+        for w in all_matches:
+            key = w.english.lower()
+            if key not in seen or (not seen[key].chinese and w.chinese):
+                seen[key] = w
+        words = list(seen.values())
         found = {w.english.lower() for w in words}
         not_found = [w for w in body.custom_words if w.lower() not in found]
         # 词库中没有的单词自动创建，用AI补全信息，放入"自定义单词"词库
@@ -100,12 +107,13 @@ def start_new_words(
     for w in words:
         if not w.chinese:
             info = complete_word_info(w.english)
-            w.chinese = info.get("chinese", "")
-            w.phonetic = info.get("phonetic", "")
-            w.chinese_explanation = info.get("chinese_explanation", "")
-            w.english_explanation = info.get("english_explanation", "")
-            w.example_sentence = info.get("example_sentence", "")
-            need_commit = True
+            if info.get("chinese"):
+                w.chinese = info["chinese"]
+                w.phonetic = info.get("phonetic", "")
+                w.chinese_explanation = info.get("chinese_explanation", "")
+                w.english_explanation = info.get("english_explanation", "")
+                w.example_sentence = info.get("example_sentence", "")
+                need_commit = True
     if need_commit:
         db.commit()
 

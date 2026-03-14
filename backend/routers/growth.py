@@ -1,7 +1,7 @@
 from datetime import date, datetime, timedelta
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy.orm import Session
-from sqlalchemy import func, cast, Date
+from sqlalchemy import func
 from database import get_db
 from models import User, LearningRecord, UserAchievement, UserWordProgress
 from auth import get_current_user
@@ -73,11 +73,11 @@ def get_heatmap(
     start = date.today() - timedelta(days=days - 1)
     rows = (
         db.query(
-            cast(LearningRecord.studied_at, Date).label("day"),
+            func.date(LearningRecord.studied_at).label("day"),
             func.count(LearningRecord.id).label("count"),
         )
         .filter(LearningRecord.user_id == user.id, LearningRecord.studied_at >= datetime.combine(start, datetime.min.time()))
-        .group_by(cast(LearningRecord.studied_at, Date))
+        .group_by(func.date(LearningRecord.studied_at))
         .all()
     )
     data = {str(r.day): r.count for r in rows}

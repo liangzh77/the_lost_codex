@@ -44,6 +44,7 @@ export default function SessionPage() {
     const types = ['cn_to_en', 'en_to_cn', 'en_to_explanation'];
     return types[Math.floor(Math.random() * types.length)];
   });
+  const [spellingCorrect, setSpellingCorrect] = useState(0);
   const [spellingInput, setSpellingInput] = useState('');
   const [spellingSubmitted, setSpellingSubmitted] = useState(false);
   const spellingRef = useRef<HTMLInputElement>(null);
@@ -95,6 +96,7 @@ export default function SessionPage() {
     setTotalCount((c) => c + 1);
     if (spellingInput.toLowerCase().trim() === word.english.toLowerCase()) {
       setCorrectCount((c) => c + 1);
+      setSpellingCorrect((c) => c + 1);
     }
   };
 
@@ -125,6 +127,7 @@ export default function SessionPage() {
     setCurrentIndex(0);
     setCorrectCount(0);
     setTotalCount(0);
+    setSpellingCorrect(0);
     setShowCard(false);
     setSpellingInput('');
     setSpellingSubmitted(false);
@@ -133,7 +136,7 @@ export default function SessionPage() {
   };
 
   const handleConfirmDone = async () => {
-    await confirmDone(words.map((w) => w.id));
+    await confirmDone(words.map((w) => w.id), totalCount, correctCount, spellingCorrect);
     navigate('/home');
   };
 

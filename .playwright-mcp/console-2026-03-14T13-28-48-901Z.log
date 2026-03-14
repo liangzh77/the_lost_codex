@@ -1,0 +1,48 @@
+[      97ms] [WARNING] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. @ http://localhost:5173/node_modules/.vite/deps/recharts.js?v=1153dd37:9080
+[      97ms] [WARNING] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. @ http://localhost:5173/node_modules/.vite/deps/recharts.js?v=1153dd37:9080
+[     125ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/api/growth/stats:0
+[     126ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/api/growth/energy-curve?days=30:0
+[     126ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/api/growth/heatmap?days=90:0
+[     126ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/api/growth/achievements:0
+[     126ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/api/growth/stats:0
+[     126ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/api/growth/energy-curve?days=30:0
+[     127ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/api/growth/heatmap?days=90:0
+[     127ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/api/growth/achievements:0
+[     134ms] AxiosError: Request failed with status code 404
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:1319:7)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:1682:7)
+    at Axios.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:2328:41)
+[     135ms] AxiosError: Request failed with status code 404
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:1319:7)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:1682:7)
+    at Axios.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:2328:41)
+[     135ms] AxiosError: Request failed with status code 404
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:1319:7)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:1682:7)
+    at Axios.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:2328:41)
+[     135ms] AxiosError: Request failed with status code 404
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:1319:7)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:1682:7)
+    at Axios.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:2328:41)
+[     136ms] AxiosError: Request failed with status code 404
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:1319:7)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:1682:7)
+    at Axios.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:2328:41)
+[     136ms] AxiosError: Request failed with status code 404
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:1319:7)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:1682:7)
+    at Axios.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:2328:41)
+[     136ms] AxiosError: Request failed with status code 404
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:1319:7)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:1682:7)
+    at Axios.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:2328:41)
+[     136ms] AxiosError: Request failed with status code 404
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:1319:7)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:1682:7)
+    at Axios.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=1153dd37:2328:41)
