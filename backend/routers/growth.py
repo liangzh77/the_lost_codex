@@ -14,8 +14,8 @@ LEVEL_THRESHOLDS = [0, 10, 30, 70, 150, 300, 500, 800, 1200, 2000, 3000]
 ACHIEVEMENTS = {
     "deep_cultivator": {"name": "深耕者", "desc": "单日印记≥200", "icon": "🌱"},
     "high_energy": {"name": "高能反应", "desc": "累计能量≥500", "icon": "⚡"},
-    "spelling_hunter": {"name": "拼写猎人", "desc": "连续3天拼写能量占比>60%", "icon": "🎯"},
-    "quality_inspector": {"name": "质检员", "desc": "连续10次学习都答对过半", "icon": "🔍"},
+    "spelling_master": {"name": "拼写大师", "desc": "累计拼写正确≥100次", "icon": "🎯"},
+    "century": {"name": "百词斩", "desc": "累计学习≥100个单词", "icon": "💯"},
     "tenacity": {"name": "韧性印记", "desc": "完成所有第30天复习", "icon": "🌉"},
 }
 
@@ -160,37 +160,15 @@ def get_achievements(
             progress = min(total_e / 500, 1.0)
             target = f"累计能量 {total_e}/500"
 
-        elif key == "spelling_hunter":
-            # check last 3 days
-            days_ok = 0
-            for d in range(3):
-                day = today - timedelta(days=d)
-                day_records = [r for r in all_records if r.studied_at.date() == day]
-                if day_records:
-                    total_e = sum(calc_energy(r) for r in day_records)
-                    spell_e = sum(r.spelling_correct * 2 for r in day_records)
-                    if total_e > 0 and spell_e / total_e > 0.6:
-                        days_ok += 1
-            progress = days_ok / 3
-            target = f"连续{days_ok}/3天拼写能量>60%"
+        elif key == "spelling_master":
+            total_spelling = sum(r.spelling_correct for r in all_records)
+            progress = min(total_spelling / 100, 1.0)
+            target = f"累计拼写正确 {total_spelling}/100"
 
-        elif key == "quality_inspector":
-            # check last N confirms (group by studied_at batch)
-            from itertools import groupby
-            sorted_records = sorted(all_records, key=lambda r: r.studied_at)
-            batches = []
-            for _, group in groupby(sorted_records, key=lambda r: r.studied_at):
-                batch = list(group)
-                if batch[0].total_questions > 0:
-                    batches.append(batch[0].correct_answers > batch[0].total_questions / 2)
-            consecutive = 0
-            for b in reversed(batches):
-                if b:
-                    consecutive += 1
-                else:
-                    break
-            progress = min(consecutive / 10, 1.0)
-            target = f"连续{consecutive}/10次答对过半"
+        elif key == "century":
+            unique_words = len(set(r.word_id for r in all_records))
+            progress = min(unique_words / 100, 1.0)
+            target = f"已学 {unique_words}/100 个单词"
 
         elif key == "tenacity":
             total_stages = get_total_stages(user.review_intervals)
