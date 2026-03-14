@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { getGrowthStats, getHeatmap, getEnergyCurve, getAchievements } from '../api';
 import NavBar from '../components/NavBar';
 import TabBar from '../components/TabBar';
-import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 
 type ChartTab = 'energy' | 'heatmap';
 
@@ -101,19 +101,53 @@ export default function GrowthPage() {
           </div>
 
           {chartTab === 'energy' ? (
-            <div className="h-48">
+            <div className="h-52">
               <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={energyData}>
-                  <XAxis dataKey="date" tick={{ fontSize: 10 }} tickFormatter={(v) => v.slice(5)} />
-                  <YAxis tick={{ fontSize: 10 }} width={30} />
-                  <Tooltip />
-                  <Area type="monotone" dataKey="energy" stroke="#3b82f6" fill="#dbeafe" name="能量" />
-                  <Area type="monotone" dataKey="imprints" stroke="#a855f7" fill="#f3e8ff" name="印记" />
+                <AreaChart data={energyData} margin={{ top: 8, right: 4, left: -12, bottom: 0 }}>
+                  <defs>
+                    <linearGradient id="gradEnergy" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#3b82f6" stopOpacity={0.25} />
+                      <stop offset="100%" stopColor="#3b82f6" stopOpacity={0.02} />
+                    </linearGradient>
+                    <linearGradient id="gradImprints" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#a855f7" stopOpacity={0.2} />
+                      <stop offset="100%" stopColor="#a855f7" stopOpacity={0.02} />
+                    </linearGradient>
+                  </defs>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" vertical={false} />
+                  <XAxis
+                    dataKey="date"
+                    axisLine={false}
+                    tickLine={false}
+                    tick={{ fontSize: 11, fill: '#a1a1aa' }}
+                    tickFormatter={(v) => v.slice(5)}
+                    tickMargin={8}
+                  />
+                  <YAxis
+                    axisLine={false}
+                    tickLine={false}
+                    tick={{ fontSize: 11, fill: '#a1a1aa' }}
+                    width={36}
+                    tickMargin={4}
+                  />
+                  <Tooltip
+                    contentStyle={{
+                      borderRadius: 12,
+                      border: 'none',
+                      boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
+                      padding: '8px 14px',
+                      fontSize: 13,
+                    }}
+                    labelFormatter={(v) => `${v}`}
+                    cursor={{ stroke: '#d4d4d8', strokeWidth: 1 }}
+                  />
+                  <Area type="monotone" dataKey="energy" stroke="#3b82f6" strokeWidth={2.5} fill="url(#gradEnergy)" name="能量" dot={false} activeDot={{ r: 4, strokeWidth: 2, fill: '#fff' }} />
+                  <Area type="monotone" dataKey="imprints" stroke="#a855f7" strokeWidth={2} fill="url(#gradImprints)" name="印记" dot={false} activeDot={{ r: 4, strokeWidth: 2, fill: '#fff' }} />
                 </AreaChart>
               </ResponsiveContainer>
             </div>
           ) : (
-            <div className="space-y-1">
+            <div>
               {renderHeatmap(heatmapData)}
             </div>
           )}
@@ -164,26 +198,80 @@ function renderHeatmap(data: { date: string; count: number }[]) {
   }
   if (week.length > 0) weeks.push(week);
 
+  // Pad first week to start from Monday
+  if (weeks.length > 0 && weeks[0].length < 7) {
+    const pad = 7 - weeks[0].length;
+    weeks[0] = Array(pad).fill(null).map((_, i) => ({ date: `pad-${i}`, count: -1 })).concat(weeks[0]);
+  }
+
   const getColor = (count: number) => {
+    if (count < 0) return 'bg-transparent';
     if (count === 0) return 'bg-gray-100';
     if (count <= 3) return 'bg-green-200';
     if (count <= 10) return 'bg-green-400';
     return 'bg-green-600';
   };
 
+  const dayLabels = ['日', '一', '二', '三', '四', '五', '六'];
+
+  // Collect month labels
+  const monthLabels: { index: number; label: string }[] = [];
+  let lastMonth = '';
+  weeks.forEach((w, wi) => {
+    const firstReal = w.find((d) => d.count >= 0);
+    if (firstReal) {
+      const m = firstReal.date.slice(0, 7);
+      if (m !== lastMonth) {
+        monthLabels.push({ index: wi, label: `${parseInt(firstReal.date.slice(5, 7))}月` });
+        lastMonth = m;
+      }
+    }
+  });
+
   return (
-    <div className="flex gap-0.5 overflow-x-auto">
-      {weeks.map((w, wi) => (
-        <div key={wi} className="flex flex-col gap-0.5">
-          {w.map((d) => (
-            <div
-              key={d.date}
-              className={`w-3 h-3 rounded-sm ${getColor(d.count)}`}
-              title={`${d.date}: ${d.count}次`}
-            />
+    <div className="space-y-1.5">
+      {/* Month labels */}
+      <div className="flex" style={{ paddingLeft: 28 }}>
+        {weeks.map((_, wi) => {
+          const ml = monthLabels.find((m) => m.index === wi);
+          return (
+            <div key={wi} className="flex-1 text-center">
+              <span className="text-[10px] text-gray-400">{ml ? ml.label : ''}</span>
+            </div>
+          );
+        })}
+      </div>
+      {/* Grid */}
+      <div className="flex gap-0">
+        {/* Day labels */}
+        <div className="flex flex-col justify-around pr-1.5 shrink-0" style={{ width: 28 }}>
+          {dayLabels.map((l, i) => (
+            <span key={i} className="text-[10px] text-gray-400 text-right leading-none">{i % 2 === 1 ? l : ''}</span>
           ))}
         </div>
-      ))}
+        {/* Weeks grid - stretch to fill */}
+        <div className="flex flex-1 gap-[3px]">
+          {weeks.map((w, wi) => (
+            <div key={wi} className="flex flex-col flex-1 gap-[3px]">
+              {w.map((d, di) => (
+                <div
+                  key={d.date}
+                  className={`aspect-square rounded-[3px] ${getColor(d.count)}`}
+                  title={d.count >= 0 ? `${d.date}: ${d.count}次` : ''}
+                />
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* Legend */}
+      <div className="flex items-center justify-end gap-1 pt-1">
+        <span className="text-[10px] text-gray-400">少</span>
+        {['bg-gray-100', 'bg-green-200', 'bg-green-400', 'bg-green-600'].map((c) => (
+          <div key={c} className={`w-2.5 h-2.5 rounded-[2px] ${c}`} />
+        ))}
+        <span className="text-[10px] text-gray-400">多</span>
+      </div>
     </div>
   );
 }
