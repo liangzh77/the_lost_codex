@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { getQuiz, confirmDone } from '../api';
 import NavBar from '../components/NavBar';
 import Button from '../components/Button';
 import WordCard from '../components/WordCard';
+import { diffSpelling } from '../utils/diffSpelling';
 
 interface WordInfo {
   id: number;
@@ -43,6 +44,9 @@ export default function SessionPage() {
     const types = ['cn_to_en', 'en_to_cn', 'en_to_explanation'];
     return types[Math.floor(Math.random() * types.length)];
   });
+  const [spellingInput, setSpellingInput] = useState('');
+  const [spellingSubmitted, setSpellingSubmitted] = useState(false);
+  const spellingRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (!words || words.length === 0) navigate('/home');
@@ -50,7 +54,14 @@ export default function SessionPage() {
 
   useEffect(() => {
     if (phase === 'quiz' && words && currentIndex < words.length) {
-      loadQuiz(words[currentIndex].id, quizType);
+      if (quizType === 'spelling') {
+        setSpellingInput('');
+        setSpellingSubmitted(false);
+        setShowCard(false);
+        setTimeout(() => spellingRef.current?.focus(), 100);
+      } else {
+        loadQuiz(words[currentIndex].id, quizType);
+      }
     }
   }, [phase, currentIndex, quizType]);
 
@@ -78,13 +89,24 @@ export default function SessionPage() {
     setShowCard(true);
   };
 
+  const submitSpelling = () => {
+    if (quizType !== 'spelling' || spellingSubmitted) return;
+    setSpellingSubmitted(true);
+    setTotalCount((c) => c + 1);
+    if (spellingInput.toLowerCase().trim() === word.english.toLowerCase()) {
+      setCorrectCount((c) => c + 1);
+    }
+  };
+
   const handlePrev = () => {
+    submitSpelling();
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
     }
   };
 
   const handleNext = () => {
+    submitSpelling();
     if (currentIndex < words.length - 1) {
       setCurrentIndex(currentIndex + 1);
     }
@@ -104,6 +126,8 @@ export default function SessionPage() {
     setCorrectCount(0);
     setTotalCount(0);
     setShowCard(false);
+    setSpellingInput('');
+    setSpellingSubmitted(false);
     setQuizType(type);
     setPhase('quiz');
   };
@@ -159,6 +183,7 @@ export default function SessionPage() {
             <Button size="lg" variant="secondary" onClick={() => handleAgain('cn_to_en')}>中文 → 选英文</Button>
             <Button size="lg" variant="secondary" onClick={() => handleAgain('en_to_cn')}>英文 → 选中文</Button>
             <Button size="lg" variant="secondary" onClick={() => handleAgain('en_to_explanation')}>英文 → 选中文释义</Button>
+            <Button size="lg" variant="secondary" onClick={() => handleAgain('spelling')}>中文 → 拼写英文</Button>
             <Button size="lg" onClick={handleConfirmDone}>学完了</Button>
           </div>
         </div>
@@ -166,15 +191,74 @@ export default function SessionPage() {
     );
   }
 
+  // 拼写模式渲染
+  const renderSpelling = () => {
+    const diff = diffSpelling(spellingInput, word.english);
+    const isCorrect = spellingInput.toLowerCase().trim() === word.english.toLowerCase();
+
+    return (
+      <>
+        <div className="bg-white rounded-2xl p-6 shadow-sm text-center">
+          <p className="text-xs text-gray-400 mb-2">拼写英文</p>
+          <h2
+            className="text-2xl font-bold text-gray-900 cursor-pointer"
+            onClick={(e) => { e.stopPropagation(); setShowCard(true); }}
+          >
+            {word.chinese}
+          </h2>
+          <p className="text-xs text-gray-300 mt-1">{word.phonetic}</p>
+        </div>
+        <div className="bg-white rounded-2xl p-4 shadow-sm space-y-3">
+          <div className="flex flex-wrap gap-0.5 min-h-[2rem] items-center justify-center">
+            {diff.chars.map((c, i) => (
+              <span
+                key={i}
+                className={`text-2xl font-mono font-bold ${
+                  c.status === 'correct' ? 'text-green-500' :
+                  c.status === 'wrong' ? 'text-red-500' :
+                  'text-orange-400'
+                }`}
+              >
+                {c.char}
+              </span>
+            ))}
+            {!spellingSubmitted && <span className="text-2xl font-mono text-gray-300 animate-pulse">|</span>}
+          </div>
+          {spellingSubmitted && (
+            <div className="text-center">
+              {isCorrect ? (
+                <p className="text-green-500 text-sm">正确!</p>
+              ) : (
+                <p className="text-sm"><span className="text-red-500">正确答案：</span><span className="text-gray-700 font-bold">{word.english}</span></p>
+              )}
+            </div>
+          )}
+          <input
+            ref={spellingRef}
+            type="text"
+            value={spellingInput}
+            onChange={(e) => { if (!spellingSubmitted) setSpellingInput(e.target.value); }}
+            className="w-full text-center text-lg py-2 border-b-2 border-gray-200 outline-none focus:border-blue-400 bg-transparent"
+            placeholder="输入英文拼写..."
+            autoFocus
+            disabled={spellingSubmitted}
+          />
+        </div>
+      </>
+    );
+  };
+
   // 测试阶段
   return (
     <div className="flex flex-col min-h-screen" onClick={() => setShowCard(false)}>
       <NavBar
-        title={`测试 ${currentIndex + 1}/${words.length}`}
-        onBack={() => setPhase('done')}
+        title={`测试 ${currentIndex + 1}/${words.length}　✓${correctCount}`}
+        onBack={() => { submitSpelling(); setPhase('done'); }}
       />
       <div className="flex-1 px-4 pt-6 space-y-4">
-        {quizLoading ? (
+        {quizType === 'spelling' ? (
+          renderSpelling()
+        ) : quizLoading ? (
           <p className="text-center text-gray-400 py-10">加载中...</p>
         ) : quiz && (
           <>
@@ -209,21 +293,21 @@ export default function SessionPage() {
                 );
               })}
             </div>
-            <div className="flex gap-3">
-              <Button size="md" className="flex-1" variant={currentIndex > 0 ? 'primary' : 'secondary'} onClick={handlePrev} disabled={currentIndex === 0}>
-                上一题
-              </Button>
-              <Button size="md" className="flex-1" variant={currentIndex < words.length - 1 ? 'primary' : 'secondary'} onClick={handleNext} disabled={currentIndex >= words.length - 1}>
-                下一题
-              </Button>
-              <Button size="md" className="flex-1" variant="ghost" onClick={() => setPhase('done')}>
-                题型
-              </Button>
-            </div>
           </>
         )}
+        <div className="flex gap-3">
+          <Button size="md" className="flex-1" variant={currentIndex > 0 ? 'primary' : 'secondary'} onClick={handlePrev} disabled={currentIndex === 0}>
+            上一题
+          </Button>
+          <Button size="md" className="flex-1" variant={currentIndex < words.length - 1 ? 'primary' : 'secondary'} onClick={handleNext} disabled={currentIndex >= words.length - 1}>
+            下一题
+          </Button>
+          <Button size="md" className="flex-1" variant="ghost" onClick={() => { submitSpelling(); setPhase('done'); }}>
+            题型
+          </Button>
+        </div>
       </div>
-      <WordCard word={word} open={showCard} />
+      <WordCard word={word} open={showCard} onClose={() => setShowCard(false)} />
     </div>
   );
 }

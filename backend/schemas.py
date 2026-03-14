@@ -16,6 +16,7 @@ class UserOut(BaseModel):
     id: int
     username: str
     group_size: int
+    review_intervals: str
     created_at: datetime
 
     model_config = {"from_attributes": True}
@@ -27,4 +28,5 @@ class Token(BaseModel):
 
 
 class UserSettings(BaseModel):
-    group_size: int
+    group_size: int | None = None
+    review_intervals: str | None = None

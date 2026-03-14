@@ -23,6 +23,8 @@ interface GroupItem {
   word_count: number;
   learning_count?: number;
   created_at: string;
+  days_until_review?: number | null;
+  needs_review?: boolean;
 }
 
 export default function WordsPage() {
@@ -87,7 +89,12 @@ export default function WordsPage() {
   const showSubTab = true;
 
   const formatTimeAgo = (dateStr: string) => {
-    const diff = Math.floor((Date.now() - new Date(dateStr).getTime()) / 86400000);
+    const d = new Date(dateStr);
+    const today = new Date();
+    // 按日历日期比较
+    const dateOnly = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+    const todayOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    const diff = Math.round((todayOnly.getTime() - dateOnly.getTime()) / 86400000);
     if (diff === 0) return '今天';
     if (diff === 1) return '昨天';
     return `${diff}天前`;
@@ -131,15 +138,29 @@ export default function WordsPage() {
                 <p className="text-base font-medium text-gray-900">{g.name}</p>
               </div>
               <p className="text-xs text-gray-400 ml-5">
-                {g.word_count}个词 · {new Date(g.created_at).toLocaleDateString()}
+                {g.word_count}个词 · {formatTimeAgo(g.created_at)}
+                {g.days_until_review != null && (
+                  g.needs_review
+                    ? <span className="text-red-500 ml-1">· 需要复习</span>
+                    : <span className="ml-1">· {g.days_until_review}天后复习</span>
+                )}
               </p>
             </div>
-            <button
-              className="text-sm text-blue-500 px-3 py-1"
-              onClick={(e) => { e.stopPropagation(); handleStudyGroup(g.id); }}
-            >
-              学习
-            </button>
+            {g.needs_review ? (
+              <button
+                className="text-sm text-white bg-blue-500 px-3 py-1 rounded-lg"
+                onClick={(e) => { e.stopPropagation(); handleStudyGroup(g.id); }}
+              >
+                复习
+              </button>
+            ) : (
+              <button
+                className="text-sm text-blue-500 px-3 py-1"
+                onClick={(e) => { e.stopPropagation(); handleStudyGroup(g.id); }}
+              >
+                学习
+              </button>
+            )}
           </div>
           {expandedGroup === g.id && groupWords.length > 0 && (
             <div className="ml-4 mt-1 space-y-1">
@@ -208,7 +229,7 @@ export default function WordsPage() {
           ) : renderWordList(words)
         )}
       </div>
-      <WordCard word={cardWord} open={cardOpen} />
+      <WordCard word={cardWord} open={cardOpen} onClose={() => setCardOpen(false)} />
       <TabBar />
     </div>
   );

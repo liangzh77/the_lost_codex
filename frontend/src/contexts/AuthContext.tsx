@@ -5,6 +5,7 @@ interface User {
   id: number;
   username: string;
   group_size: number;
+  review_intervals: string;
 }
 
 interface AuthContextType {

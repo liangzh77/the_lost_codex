@@ -8,7 +8,7 @@ from sqlalchemy import func
 from database import get_db, SessionLocal
 from models import User, Word, WordBank, UserWordProgress, LearningRecord, LearningGroup
 from auth import get_current_user
-from services.spaced_repetition import get_next_review_date, is_mastered, TOTAL_STAGES
+from services.spaced_repetition import get_next_review_date, is_mastered, TOTAL_STAGES, get_total_stages
 from services.ai_complete import complete_word_info
 
 router = APIRouter(prefix="/api/learning", tags=["learning"])
@@ -243,7 +243,7 @@ def get_today_review(
         .filter(
             UserWordProgress.user_id == user.id,
             UserWordProgress.next_review_date <= today,
-            UserWordProgress.current_stage < TOTAL_STAGES,
+            UserWordProgress.current_stage < get_total_stages(user.review_intervals),
         )
         .all()
     )
@@ -275,7 +275,7 @@ def get_today_review_count(
         .filter(
             UserWordProgress.user_id == user.id,
             UserWordProgress.next_review_date <= today,
-            UserWordProgress.current_stage < TOTAL_STAGES,
+            UserWordProgress.current_stage < get_total_stages(user.review_intervals),
         )
         .count()
     )
@@ -347,7 +347,7 @@ def confirm_done(
 ):
     """用户确认学完一组单词，更新进度和记录"""
     today = date.today()
-    now = datetime.utcnow()
+    now = datetime.now()
 
     # 创建学习组
     group_count = db.query(LearningGroup).filter(LearningGroup.user_id == user.id).count()
@@ -367,7 +367,7 @@ def confirm_done(
         )
         if progress:
             progress.current_stage += 1
-            progress.next_review_date = get_next_review_date(progress.current_stage, today)
+            progress.next_review_date = get_next_review_date(progress.current_stage, today, user.review_intervals)
             if not progress.group_id:
                 progress.group_id = group.id
         else:
@@ -375,7 +375,7 @@ def confirm_done(
                 user_id=user.id,
                 word_id=word_id,
                 current_stage=1,
-                next_review_date=get_next_review_date(1, today),
+                next_review_date=get_next_review_date(1, today, user.review_intervals),
                 group_id=group.id,
             )
             db.add(progress)
@@ -433,7 +433,7 @@ def get_learning_words(
         db.query(UserWordProgress)
         .filter(
             UserWordProgress.user_id == user.id,
-            UserWordProgress.current_stage < TOTAL_STAGES,
+            UserWordProgress.current_stage < get_total_stages(user.review_intervals),
         )
         .all()
     )
@@ -461,7 +461,7 @@ def get_mastered_words(
         db.query(UserWordProgress)
         .filter(
             UserWordProgress.user_id == user.id,
-            UserWordProgress.current_stage >= TOTAL_STAGES,
+            UserWordProgress.current_stage >= get_total_stages(user.review_intervals),
         )
         .all()
     )
@@ -479,12 +479,12 @@ def get_learning_stats(
     """用户学习统计"""
     learning = (
         db.query(UserWordProgress)
-        .filter(UserWordProgress.user_id == user.id, UserWordProgress.current_stage < TOTAL_STAGES)
+        .filter(UserWordProgress.user_id == user.id, UserWordProgress.current_stage < get_total_stages(user.review_intervals))
         .count()
     )
     mastered = (
         db.query(UserWordProgress)
-        .filter(UserWordProgress.user_id == user.id, UserWordProgress.current_stage >= TOTAL_STAGES)
+        .filter(UserWordProgress.user_id == user.id, UserWordProgress.current_stage >= get_total_stages(user.review_intervals))
         .count()
     )
     return {"learning": learning, "mastered": mastered}
@@ -498,30 +498,7 @@ def get_recent_groups(
     db: Session = Depends(get_db),
 ):
     """最近的学习组（按时间倒序）"""
-    groups = (
-        db.query(LearningGroup)
-        .filter(LearningGroup.user_id == user.id)
-        .order_by(LearningGroup.created_at.desc())
-        .all()
-    )
-    return [
-        {
-            "id": g.id,
-            "name": g.name,
-            "word_count": len(g.words_progress),
-            "created_at": str(g.created_at),
-        }
-        for g in groups
-        if len(g.words_progress) > 0
-    ]
-
-
-@router.get("/groups/learning")
-def get_learning_groups(
-    user: User = Depends(get_current_user),
-    db: Session = Depends(get_db),
-):
-    """在学的组（组内有未掌握的词）"""
+    today = date.today()
     groups = (
         db.query(LearningGroup)
         .filter(LearningGroup.user_id == user.id)
@@ -530,14 +507,54 @@ def get_learning_groups(
     )
     result = []
     for g in groups:
-        learning_count = sum(1 for p in g.words_progress if p.current_stage < TOTAL_STAGES)
+        if len(g.words_progress) == 0:
+            continue
+        # 找组内最早的复习日期
+        review_dates = [p.next_review_date for p in g.words_progress if p.current_stage < get_total_stages(user.review_intervals)]
+        next_review = min(review_dates) if review_dates else None
+        days_until = (next_review - today).days if next_review else None
+        result.append({
+            "id": g.id,
+            "name": g.name,
+            "word_count": len(g.words_progress),
+            "created_at": str(g.created_at),
+            "next_review_date": str(next_review) if next_review else None,
+            "days_until_review": days_until,
+            "needs_review": days_until is not None and days_until <= 0,
+        })
+    return result
+
+
+@router.get("/groups/learning")
+def get_learning_groups(
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    """在学的组（组内有未掌握的词）"""
+    today = date.today()
+    groups = (
+        db.query(LearningGroup)
+        .filter(LearningGroup.user_id == user.id)
+        .order_by(LearningGroup.created_at.desc())
+        .all()
+    )
+    result = []
+    total_stages = get_total_stages(user.review_intervals)
+    for g in groups:
+        learning_count = sum(1 for p in g.words_progress if p.current_stage < total_stages)
         if learning_count > 0:
+            review_dates = [p.next_review_date for p in g.words_progress if p.current_stage < total_stages]
+            next_review = min(review_dates) if review_dates else None
+            days_until = (next_review - today).days if next_review else None
             result.append({
                 "id": g.id,
                 "name": g.name,
                 "word_count": len(g.words_progress),
                 "learning_count": learning_count,
                 "created_at": str(g.created_at),
+                "next_review_date": str(next_review) if next_review else None,
+                "days_until_review": days_until,
+                "needs_review": days_until is not None and days_until <= 0,
             })
     return result
 
@@ -583,7 +600,7 @@ def get_mastered_groups(
     )
     result = []
     for g in groups:
-        if len(g.words_progress) > 0 and all(p.current_stage >= TOTAL_STAGES for p in g.words_progress):
+        if len(g.words_progress) > 0 and all(p.current_stage >= get_total_stages(user.review_intervals) for p in g.words_progress):
             result.append({
                 "id": g.id,
                 "name": g.name,

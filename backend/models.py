@@ -14,7 +14,8 @@ class User(Base):
     username: Mapped[str] = mapped_column(String(50), unique=True, index=True)
     password_hash: Mapped[str] = mapped_column(String(128))
     group_size: Mapped[int] = mapped_column(Integer, default=10)
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    review_intervals: Mapped[str] = mapped_column(String(200), default="1,2,4,7,15,30")
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.now)
 
     progress: Mapped[list["UserWordProgress"]] = relationship(back_populates="user")
     records: Mapped[list["LearningRecord"]] = relationship(back_populates="user")
@@ -55,7 +56,7 @@ class UserWordProgress(Base):
     current_stage: Mapped[int] = mapped_column(Integer, default=0)
     next_review_date: Mapped[date] = mapped_column(Date)
     group_id: Mapped[Optional[int]] = mapped_column(ForeignKey("learning_groups.id"), nullable=True, default=None)
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.now)
 
     user: Mapped["User"] = relationship(back_populates="progress")
     word: Mapped["Word"] = relationship()
@@ -68,7 +69,7 @@ class LearningRecord(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
     word_id: Mapped[int] = mapped_column(ForeignKey("words.id"), index=True)
-    studied_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    studied_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.now)
     stage_at_time: Mapped[int] = mapped_column(Integer, default=0)
 
     user: Mapped["User"] = relationship(back_populates="records")
@@ -81,7 +82,7 @@ class LearningGroup(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
     name: Mapped[str] = mapped_column(String(100))
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.now)
 
     user: Mapped["User"] = relationship(back_populates="groups")
     words_progress: Mapped[list["UserWordProgress"]] = relationship(back_populates="group")

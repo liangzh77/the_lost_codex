@@ -11,12 +11,21 @@ interface WordInfo {
 interface Props {
   word: WordInfo | null;
   open: boolean;
+  onClose?: () => void;
 }
 
-export default function WordCard({ word, open }: Props) {
+export default function WordCard({ word, open, onClose }: Props) {
   if (!word || !open) return null;
+
+  const handleCardClick = () => {
+    // 如果用户正在选择文字，不关闭
+    const selection = window.getSelection();
+    if (selection && selection.toString().length > 0) return;
+    onClose?.();
+  };
+
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 max-w-lg mx-auto bg-white rounded-t-2xl shadow-lg border-t border-gray-100 p-4 space-y-2">
+    <div className="fixed bottom-0 left-0 right-0 z-50 max-w-lg mx-auto bg-white rounded-t-2xl shadow-lg border-t border-gray-100 p-4 space-y-2" onClick={handleCardClick}>
       <div className="w-10 h-1 bg-gray-200 rounded-full mx-auto mb-2" />
       <div className="text-center">
         <h3 className="text-xl font-bold text-gray-900">{word.english}</h3>

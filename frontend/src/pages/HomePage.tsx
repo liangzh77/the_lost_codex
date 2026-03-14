@@ -36,13 +36,15 @@ export default function HomePage() {
           </div>
         </div>
 
-        {reviewCount > 0 && (
-          <Card>
-            <Button size="lg" onClick={() => navigate('/learn/review')}>
-              开始复习
-            </Button>
-          </Card>
-        )}
+        <Card>
+          <Button
+            size="lg"
+            onClick={() => navigate('/words')}
+            disabled={reviewCount === 0}
+          >
+            开始复习
+          </Button>
+        </Card>
 
         <Card>
           <Button size="lg" variant="secondary" onClick={() => navigate('/learn/new')}>
