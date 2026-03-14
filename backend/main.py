@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from database import engine, Base
-from routers import users, words, learning
+from routers import users, words, learning, growth
 
 app = FastAPI(title="The Lost Codex", description="脑空白 — 背单词应用")
 
@@ -16,6 +16,7 @@ app.add_middleware(
 app.include_router(users.router)
 app.include_router(words.router)
 app.include_router(learning.router)
+app.include_router(growth.router)
 
 
 @app.on_event("startup")

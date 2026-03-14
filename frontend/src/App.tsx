@@ -7,6 +7,7 @@ import SessionPage from './pages/SessionPage';
 import ReviewPage from './pages/ReviewPage';
 import WordsPage from './pages/WordsPage';
 import SettingsPage from './pages/SettingsPage';
+import GrowthPage from './pages/GrowthPage';
 import './index.css';
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
@@ -27,6 +28,7 @@ function AppRoutes() {
       <Route path="/learn/session" element={<PrivateRoute><SessionPage /></PrivateRoute>} />
       <Route path="/learn/review" element={<PrivateRoute><ReviewPage /></PrivateRoute>} />
       <Route path="/words" element={<PrivateRoute><WordsPage /></PrivateRoute>} />
+      <Route path="/growth" element={<PrivateRoute><GrowthPage /></PrivateRoute>} />
       <Route path="/settings" element={<PrivateRoute><SettingsPage /></PrivateRoute>} />
       <Route path="*" element={<Navigate to={token ? '/home' : '/login'} />} />
     </Routes>

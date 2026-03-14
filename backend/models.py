@@ -71,9 +71,23 @@ class LearningRecord(Base):
     word_id: Mapped[int] = mapped_column(ForeignKey("words.id"), index=True)
     studied_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.now)
     stage_at_time: Mapped[int] = mapped_column(Integer, default=0)
+    total_questions: Mapped[int] = mapped_column(Integer, default=0)
+    correct_answers: Mapped[int] = mapped_column(Integer, default=0)
+    spelling_correct: Mapped[int] = mapped_column(Integer, default=0)
 
     user: Mapped["User"] = relationship(back_populates="records")
     word: Mapped["Word"] = relationship()
+
+
+class UserAchievement(Base):
+    __tablename__ = "user_achievements"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    achievement_key: Mapped[str] = mapped_column(String(50))
+    unlocked_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.now)
+
+    user: Mapped["User"] = relationship()
 
 
 class LearningGroup(Base):

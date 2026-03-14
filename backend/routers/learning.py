@@ -21,6 +21,9 @@ class StartNewRequest(BaseModel):
 
 class ConfirmDoneRequest(BaseModel):
     word_ids: list[int]
+    total_questions: int = 0
+    correct_answers: int = 0
+    spelling_correct: int = 0
 
 
 class CheckWordsRequest(BaseModel):
@@ -392,6 +395,9 @@ def confirm_done(
             word_id=word_id,
             studied_at=now,
             stage_at_time=progress.current_stage,
+            total_questions=body.total_questions,
+            correct_answers=body.correct_answers,
+            spelling_correct=body.spelling_correct,
         )
         db.add(record)
 

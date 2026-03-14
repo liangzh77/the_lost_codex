@@ -37,8 +37,8 @@ export const getTodayReviewCount = () => api.get('/learning/review/today/count')
 export const getQuiz = (wordId: number, quizType?: string) =>
   api.get(`/learning/quiz/${wordId}`, { params: quizType ? { quiz_type: quizType } : {} });
 
-export const confirmDone = (wordIds: number[]) =>
-  api.post('/learning/confirm', { word_ids: wordIds });
+export const confirmDone = (wordIds: number[], totalQuestions = 0, correctAnswers = 0, spellingCorrect = 0) =>
+  api.post('/learning/confirm', { word_ids: wordIds, total_questions: totalQuestions, correct_answers: correctAnswers, spelling_correct: spellingCorrect });
 
 export const getRecentWords = () => api.get('/learning/words/recent');
 
@@ -55,3 +55,11 @@ export const getLearningGroups = () => api.get('/learning/groups/learning');
 export const getMasteredGroups = () => api.get('/learning/groups/mastered');
 
 export const getGroupWords = (groupId: number) => api.get(`/learning/groups/${groupId}/words`);
+
+export const getGrowthStats = () => api.get('/growth/stats');
+
+export const getHeatmap = (days = 90) => api.get(`/growth/heatmap?days=${days}`);
+
+export const getEnergyCurve = (days = 30) => api.get(`/growth/energy-curve?days=${days}`);
+
+export const getAchievements = () => api.get('/growth/achievements');
