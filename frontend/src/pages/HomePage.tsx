@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
 import { getTodayReviewCount, getLearningStats } from '../api';
 import NavBar from '../components/NavBar';
 import TabBar from '../components/TabBar';
@@ -8,7 +7,6 @@ import Card from '../components/Card';
 import Button from '../components/Button';
 
 export default function HomePage() {
-  const { user, logout } = useAuth();
   const navigate = useNavigate();
   const [reviewCount, setReviewCount] = useState(0);
   const [stats, setStats] = useState({ learning: 0, mastered: 0 });
@@ -20,18 +18,10 @@ export default function HomePage() {
 
   return (
     <div className="pb-20">
-      <NavBar
-        title="脑空白"
-        right={
-          <button className="text-sm text-gray-400" onClick={logout}>
-            退出
-          </button>
-        }
-      />
+      <NavBar title="脑空白" />
       <div className="px-4 pt-6 space-y-4">
         <div className="text-center py-6">
-          <p className="text-gray-400 text-sm">你好，{user?.username}</p>
-          <h2 className="text-4xl font-bold text-gray-900 mt-2">{reviewCount}</h2>
+          <h2 className="text-4xl font-bold text-gray-900">{reviewCount}</h2>
           <p className="text-gray-400 text-sm mt-1">今日待复习</p>
         </div>
 

@@ -14,7 +14,7 @@ interface Bank {
 }
 
 export default function SettingsPage() {
-  const { user, logout, refreshUser } = useAuth();
+  const { user, refreshUser } = useAuth();
   const [banks, setBanks] = useState<Bank[]>([]);
   const [groupSize, setGroupSize] = useState(user?.group_size || 10);
   const [saving, setSaving] = useState(false);
@@ -76,11 +76,6 @@ export default function SettingsPage() {
               )}
             </div>
           ))}
-        </div>
-
-        <div className="bg-white rounded-2xl p-4">
-          <p className="text-sm text-gray-400 mb-2">账号：{user?.username}</p>
-          <Button size="md" variant="ghost" onClick={logout}>退出登录</Button>
         </div>
       </div>
       <TabBar />

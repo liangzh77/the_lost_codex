@@ -1,3 +1,5 @@
+import UserBadge from './UserBadge';
+
 interface Props {
   title: string;
   right?: React.ReactNode;
@@ -16,7 +18,7 @@ export default function NavBar({ title, right, onBack }: Props) {
           )}
         </div>
         <h1 className="text-base font-semibold text-gray-900">{title}</h1>
-        <div className="w-16 flex justify-end">{right}</div>
+        <div className="w-16 flex justify-end">{right ?? <UserBadge />}</div>
       </div>
     </div>
   );
