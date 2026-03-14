@@ -22,6 +22,7 @@ interface GroupItem {
   name: string;
   word_count: number;
   learning_count?: number;
+  stage?: number;
   created_at: string;
   days_until_review?: number | null;
   needs_review?: boolean;
@@ -118,7 +119,7 @@ export default function WordsPage() {
             )}
             {w.stage !== undefined && (
               <span className="text-xs text-blue-400 bg-blue-50 px-2 py-1 rounded-lg">
-                第{w.stage}轮
+                已学{w.stage}轮
               </span>
             )}
           </div>
@@ -136,6 +137,9 @@ export default function WordsPage() {
               <div className="flex items-center gap-2">
                 <span className="text-sm text-gray-400">{expandedGroup === g.id ? '▼' : '▶'}</span>
                 <p className="text-base font-medium text-gray-900">{g.name}</p>
+                {g.stage !== undefined && (
+                  <span className="text-xs text-blue-400 bg-blue-50 px-1.5 py-0.5 rounded">已学{g.stage}轮</span>
+                )}
               </div>
               <p className="text-xs text-gray-400 ml-5">
                 {g.word_count}个词 · {formatTimeAgo(g.created_at)}
@@ -158,7 +162,7 @@ export default function WordsPage() {
                 className="text-sm text-blue-500 px-3 py-1"
                 onClick={(e) => { e.stopPropagation(); handleStudyGroup(g.id); }}
               >
-                学习
+                复习
               </button>
             )}
           </div>

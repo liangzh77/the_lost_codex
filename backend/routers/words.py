@@ -53,12 +53,13 @@ def get_word(word_id: int, db: Session = Depends(get_db)):
     # 自动补全缺失的详细信息
     if not word.chinese:
         info = complete_word_info(word.english)
-        word.chinese = info.get("chinese", "")
-        word.phonetic = info.get("phonetic", "")
-        word.chinese_explanation = info.get("chinese_explanation", "")
-        word.english_explanation = info.get("english_explanation", "")
-        word.example_sentence = info.get("example_sentence", "")
-        db.commit()
+        if info.get("chinese"):
+            word.chinese = info["chinese"]
+            word.phonetic = info.get("phonetic", "")
+            word.chinese_explanation = info.get("chinese_explanation", "")
+            word.english_explanation = info.get("english_explanation", "")
+            word.example_sentence = info.get("example_sentence", "")
+            db.commit()
     return {
         "id": word.id,
         "english": word.english,

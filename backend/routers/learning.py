@@ -202,12 +202,13 @@ def _complete_one_word(word_id: int) -> dict:
             return {}
         if not word.chinese:
             info = complete_word_info(word.english)
-            word.chinese = info.get("chinese", "")
-            word.phonetic = info.get("phonetic", "")
-            word.chinese_explanation = info.get("chinese_explanation", "")
-            word.english_explanation = info.get("english_explanation", "")
-            word.example_sentence = info.get("example_sentence", "")
-            db.commit()
+            if info.get("chinese"):
+                word.chinese = info["chinese"]
+                word.phonetic = info.get("phonetic", "")
+                word.chinese_explanation = info.get("chinese_explanation", "")
+                word.english_explanation = info.get("english_explanation", "")
+                word.example_sentence = info.get("example_sentence", "")
+                db.commit()
         return {
             "id": word.id,
             "english": word.english,
@@ -366,8 +367,13 @@ def confirm_done(
             .first()
         )
         if progress:
-            progress.current_stage += 1
-            progress.next_review_date = get_next_review_date(progress.current_stage, today, user.review_intervals)
+            if today >= progress.next_review_date:
+                # 到了复习日期，推进到下一轮
+                progress.current_stage += 1
+                progress.next_review_date = get_next_review_date(progress.current_stage, today, user.review_intervals)
+            else:
+                # 还没到复习日期，重置当前轮的倒计时
+                progress.next_review_date = get_next_review_date(progress.current_stage, today, user.review_intervals)
             if not progress.group_id:
                 progress.group_id = group.id
         else:
@@ -513,10 +519,13 @@ def get_recent_groups(
         review_dates = [p.next_review_date for p in g.words_progress if p.current_stage < get_total_stages(user.review_intervals)]
         next_review = min(review_dates) if review_dates else None
         days_until = (next_review - today).days if next_review else None
+        stages = [p.current_stage for p in g.words_progress]
+        min_stage = min(stages) if stages else 0
         result.append({
             "id": g.id,
             "name": g.name,
             "word_count": len(g.words_progress),
+            "stage": min_stage,
             "created_at": str(g.created_at),
             "next_review_date": str(next_review) if next_review else None,
             "days_until_review": days_until,
@@ -546,11 +555,14 @@ def get_learning_groups(
             review_dates = [p.next_review_date for p in g.words_progress if p.current_stage < total_stages]
             next_review = min(review_dates) if review_dates else None
             days_until = (next_review - today).days if next_review else None
+            stages = [p.current_stage for p in g.words_progress]
+            min_stage = min(stages) if stages else 0
             result.append({
                 "id": g.id,
                 "name": g.name,
                 "word_count": len(g.words_progress),
                 "learning_count": learning_count,
+                "stage": min_stage,
                 "created_at": str(g.created_at),
                 "next_review_date": str(next_review) if next_review else None,
                 "days_until_review": days_until,
