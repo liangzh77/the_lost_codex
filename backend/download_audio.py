@@ -65,7 +65,7 @@ def download_audio(word: str, url: str, output_dir: Path) -> bool:
 
 def main():
     db = SessionLocal()
-    output_dir = Path(__file__).parent.parent / 'audio'
+    output_dir = Path(__file__).parent / 'audio'
     output_dir.mkdir(exist_ok=True)
 
     words = db.query(Word).all()
@@ -103,7 +103,7 @@ def main():
             failed += 1
 
         # 限速
-        time.sleep(0.5)
+        time.sleep(0.1)
 
     db.close()
     print(f"\n完成！成功: {success}, 失败: {failed}")
