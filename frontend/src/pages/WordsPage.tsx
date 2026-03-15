@@ -233,7 +233,7 @@ export default function WordsPage() {
           ) : renderWordList(words)
         )}
       </div>
-      <WordCard word={cardWord} open={cardOpen} onClose={() => setCardOpen(false)} />
+      <WordCard word={cardWord} open={cardOpen} onClose={() => setCardOpen(false)} playOnClick={false} />
       <TabBar />
     </div>
   );

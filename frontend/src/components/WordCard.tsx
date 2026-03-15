@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import { getWordAudio } from '../api';
+
 interface WordInfo {
   id: number;
   english: string;
@@ -12,21 +15,42 @@ interface Props {
   word: WordInfo | null;
   open: boolean;
   onClose?: () => void;
+  playOnClick?: boolean; // 是否点击时播放，默认 true
 }
 
-export default function WordCard({ word, open, onClose }: Props) {
+export default function WordCard({ word, open, onClose, playOnClick = true }: Props) {
+  const playAudio = () => {
+    if (word) {
+      const audio = new Audio(getWordAudio(word.english));
+      audio.play().catch(() => {});
+    }
+  };
+
+  useEffect(() => {
+    if (word && open) {
+      playAudio();
+    }
+  }, [word, open]);
+
   if (!word || !open) return null;
 
   const handleCardClick = () => {
     // 如果用户正在选择文字，不关闭
     const selection = window.getSelection();
     if (selection && selection.toString().length > 0) return;
-    onClose?.();
+
+    // playOnClick=true: 点击播放发音
+    // playOnClick=false: 点击关闭卡片
+    if (playOnClick) {
+      playAudio();
+    } else {
+      onClose?.();
+    }
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 max-w-lg mx-auto bg-white rounded-t-2xl shadow-lg border-t border-gray-100 p-4 space-y-2" onClick={handleCardClick}>
-      <div className="w-10 h-1 bg-gray-200 rounded-full mx-auto mb-2" />
+    <div className="fixed bottom-0 left-0 right-0 z-50 max-w-lg mx-auto bg-white rounded-t-2xl shadow-lg border-t border-gray-100 p-4 space-y-2">
+      <div className="w-10 h-1 bg-gray-200 rounded-full mx-auto mb-2" onClick={handleCardClick} />
       <div className="text-center">
         <h3 className="text-xl font-bold text-gray-900">{word.english}</h3>
         <p className="text-xs text-gray-400">{word.phonetic}</p>

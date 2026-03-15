@@ -63,3 +63,5 @@ export const getHeatmap = (days = 90) => api.get(`/growth/heatmap?days=${days}`)
 export const getEnergyCurve = (days = 30) => api.get(`/growth/imprint-curve?days=${days}`);
 
 export const getAchievements = () => api.get('/growth/achievements');
+
+export const getWordAudio = (word: string) => `/api/audio/${encodeURIComponent(word)}`;

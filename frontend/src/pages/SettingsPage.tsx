@@ -240,7 +240,7 @@ export default function SettingsPage() {
           ))}
         </div>
       </div>
-      <WordCard word={cardWord} open={cardOpen} onClose={() => setCardOpen(false)} />
+      <WordCard word={cardWord} open={cardOpen} onClose={() => setCardOpen(false)} playOnClick={false} />
       <TabBar />
     </div>
   );

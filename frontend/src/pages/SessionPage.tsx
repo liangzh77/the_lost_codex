@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { getQuiz, confirmDone, getGrowthStats } from '../api';
+import { getQuiz, confirmDone, getGrowthStats, getWordAudio } from '../api';
 import NavBar from '../components/NavBar';
 import Button from '../components/Button';
 import WordCard from '../components/WordCard';
@@ -54,6 +54,7 @@ export default function SessionPage() {
   const [todayImprints, setTodayImprints] = useState(0);
   const [totalImprints, setTotalImprints] = useState(0);
   const [imprintBounce, setImprintBounce] = useState(false);
+  const [showPhonetic, setShowPhonetic] = useState(false);
 
   useEffect(() => {
     getGrowthStats().then((r) => {
@@ -131,8 +132,22 @@ export default function SessionPage() {
         setSpellingSubmitted(false);
         setShowCard(false);
         setTimeout(() => spellingRef.current?.focus(), 100);
+        // 拼写题：只有显示音标时才播放发音
+        if (showPhonetic) {
+          setTimeout(() => {
+            const audio = new Audio(getWordAudio(words[currentIndex].english));
+            audio.play().catch(() => {});
+          }, 300);
+        }
       } else {
         loadQuiz(words[currentIndex].id, quizType);
+        // 其他题型：英文相关题型自动播放
+        if (quizType === 'cn_to_en' || quizType === 'en_to_cn' || quizType === 'en_to_explanation') {
+          setTimeout(() => {
+            const audio = new Audio(getWordAudio(words[currentIndex].english));
+            audio.play().catch(() => {});
+          }, 300);
+        }
       }
     }
   }, [phase, currentIndex, quizType]);
@@ -158,6 +173,11 @@ export default function SessionPage() {
     if (option === quiz?.correct_answer) {
       setCorrectCount((c) => c + 1);
       if (e) flyImprint(e.currentTarget as HTMLElement, 1);
+      // 英文选中文、英文选释义时播放发音
+      if (quizType === 'cn_to_en' || quizType === 'en_to_cn' || quizType === 'en_to_explanation') {
+        const audio = new Audio(getWordAudio(word.english));
+        audio.play().catch(() => {});
+      }
     }
     setShowCard(true);
   };
@@ -294,11 +314,36 @@ export default function SessionPage() {
           <p className="text-xs text-gray-400 mb-2">拼写英文</p>
           <h2
             className="text-2xl font-bold text-gray-900 cursor-pointer"
-            onClick={(e) => { e.stopPropagation(); setShowCard(true); }}
+            onClick={(e) => {
+              e.stopPropagation();
+              if (showCard) {
+                const audio = new Audio(getWordAudio(word.english));
+                audio.play().catch(() => {});
+              } else {
+                setShowCard(true);
+              }
+            }}
           >
             {word.chinese}
           </h2>
-          <p className="text-xs text-gray-300 mt-1">{word.phonetic}</p>
+          <div className="flex items-center justify-center gap-2 mt-1">
+            {showPhonetic && <p className="text-xs text-gray-400">{word.phonetic}</p>}
+            <button
+              className="text-xs text-blue-500 underline"
+              onClick={(e) => {
+                e.stopPropagation();
+                const newState = !showPhonetic;
+                setShowPhonetic(newState);
+                // 显示音标时播放发音
+                if (newState) {
+                  const audio = new Audio(getWordAudio(word.english));
+                  audio.play().catch(() => {});
+                }
+              }}
+            >
+              {showPhonetic ? '隐藏' : '显示'}音标
+            </button>
+          </div>
         </div>
         <div className="bg-white rounded-2xl p-4 shadow-sm space-y-3">
           <div className="flex flex-wrap gap-0.5 min-h-[2rem] items-center justify-center">
@@ -364,7 +409,17 @@ export default function SessionPage() {
               </p>
               <h2
                 className="text-2xl font-bold text-gray-900 cursor-pointer"
-                onClick={(e) => { e.stopPropagation(); setShowCard(true); }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (showCard) {
+                    // 卡片已打开，再次点击播放发音
+                    const audio = new Audio(getWordAudio(word.english));
+                    audio.play().catch(() => {});
+                  } else {
+                    // 卡片未打开，打开卡片
+                    setShowCard(true);
+                  }
+                }}
               >
                 {quiz.question}
               </h2>
@@ -405,7 +460,7 @@ export default function SessionPage() {
           </Button>
         </div>
       </div>
-      <WordCard word={word} open={showCard} onClose={() => setShowCard(false)} />
+      <WordCard word={word} open={showCard} onClose={() => setShowCard(false)} playOnClick={false} />
     </div>
   );
 }
