@@ -9,7 +9,8 @@ ARK_API_URL = "https://ark.cn-beijing.volces.com/api/v3/responses"
 ARK_API_KEY = "3ecc5d48-8986-4027-a052-2f63010e2f3d"
 ARK_MODEL = "doubao-seed-2-0-pro-260215"
 
-BATCH_SIZES = [10, 5, 3, 2, 1]
+BATCH_SIZE = 10
+MAX_RETRIES = 5
 
 
 def build_prompt(words: list[str]) -> str:
@@ -69,23 +70,24 @@ def call_api(prompt: str) -> list[dict] | None:
         return None
 
 
-def complete_batch(words: list[Word], batch_size_idx: int = 0) -> int:
-    """尝试补全一批单词，返回成功数量。失败时自动减小批次。"""
-    if batch_size_idx >= len(BATCH_SIZES):
-        print(f"  [跳过] 所有批次大小都失败")
-        return 0
+def complete_batch(words: list[Word]) -> int:
+    """尝试补全一批单词，返回成功数量。失败时重试，连续失败MAX_RETRIES次则停止。"""
+    english_list = [w.english for w in words]
 
-    batch_size = BATCH_SIZES[batch_size_idx]
-    english_list = [w.english for w in words[:batch_size]]
+    for attempt in range(1, MAX_RETRIES + 1):
+        print(f"  第{attempt}次尝试: {english_list}")
+        prompt = build_prompt(english_list)
+        result = call_api(prompt)
 
-    print(f"  尝试批次大小={batch_size}: {english_list}")
-    prompt = build_prompt(english_list)
-    result = call_api(prompt)
+        if result is not None:
+            break
 
-    if result is None:
-        print(f"  批次大小={batch_size} 失败，缩小批次...")
-        # 递归尝试更小的批次
-        return complete_batch(words, batch_size_idx + 1)
+        print(f"  第{attempt}次失败，{'重试...' if attempt < MAX_RETRIES else '放弃此批次'}")
+        if attempt < MAX_RETRIES:
+            time.sleep(1)
+    else:
+        print(f"  [跳过] 连续{MAX_RETRIES}次失败")
+        return -1  # 返回-1表示连续失败，通知调用方停止
 
     # 解析结果，按english匹配更新
     result_map = {}
@@ -95,7 +97,7 @@ def complete_batch(words: list[Word], batch_size_idx: int = 0) -> int:
             result_map[eng] = item
 
     success = 0
-    for w in words[:batch_size]:
+    for w in words:
         info = result_map.get(w.english.lower())
         if info and info.get("chinese"):
             w.chinese = info["chinese"]
@@ -133,19 +135,20 @@ def main():
     i = 0
     while i < total:
         remaining = incomplete[i:]
-        batch_size = min(BATCH_SIZES[0], len(remaining))
-        batch = remaining[:batch_size]
+        batch = remaining[:BATCH_SIZE]
 
         print(f"\n[{i + 1}-{i + len(batch)}/{total}] 处理中...")
-        success = complete_batch(batch, 0)
-        completed += success
+        success = complete_batch(batch)
 
-        # 提交数据库
+        if success == -1:
+            print(f"\n连续{MAX_RETRIES}次失败，停止处理。")
+            break
+
+        completed += success
         db.commit()
 
         i += len(batch)
 
-        # 限速
         if i < total:
             time.sleep(0.5)
 

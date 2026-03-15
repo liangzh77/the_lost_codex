@@ -3,244 +3,3148 @@
   "display_order": 10,
   "words": [
     {
-      "english": "aberration",
-      "chinese": "偏差",
-      "phonetic": "/ˌæb.əˈreɪ.ʃən/",
-      "chinese_explanation": "异常现象",
-      "english_explanation": "a departure from normal",
-      "example_sentence": "A statistical aberration."
+      "english": "abiotic",
+      "chinese": "非生物的",
+      "phonetic": "/ˌeɪbaɪˈɒtɪk/",
+      "chinese_explanation": "无生命的，非生物的",
+      "english_explanation": "not related to living things",
+      "example_sentence": "Light is an important abiotic factor."
     },
     {
-      "english": "bolster",
-      "chinese": "支持",
-      "phonetic": "/ˈboʊl.stər/",
-      "chinese_explanation": "加强",
-      "english_explanation": "to support or strengthen",
-      "example_sentence": "Bolster the economy."
+      "english": "abrasion",
+      "chinese": "磨损；擦伤",
+      "phonetic": "/əˈbreɪ.ʒən/",
+      "chinese_explanation": "擦伤，磨损",
+      "english_explanation": "A scrape on skin or surface",
+      "example_sentence": "She got a small abrasion on her knee."
     },
     {
-      "english": "coalesce",
-      "chinese": "合并",
-      "phonetic": "/ˌkoʊ.əˈles/",
-      "chinese_explanation": "融合在一起",
-      "english_explanation": "to come together",
-      "example_sentence": "Ideas coalesced into a plan."
+      "english": "accretion",
+      "chinese": "积聚；堆积物",
+      "phonetic": "/əˈkriːʃn/",
+      "chinese_explanation": "积聚；堆积",
+      "english_explanation": "Gradual increase by addition",
+      "example_sentence": "The accretion of dust makes the floor dirty."
     },
     {
-      "english": "debilitate",
-      "chinese": "使衰弱",
-      "phonetic": "/dɪˈbɪl.ɪ.teɪt/",
-      "chinese_explanation": "削弱体力",
-      "english_explanation": "to make weak",
-      "example_sentence": "The illness debilitated him."
+      "english": "acidity",
+      "chinese": "酸性；酸度；尖刻",
+      "phonetic": "/əˈsɪdəti/",
+      "chinese_explanation": "酸性；酸度",
+      "english_explanation": "Acid level of a substance",
+      "example_sentence": "The acidity of lemon juice is very high."
     },
     {
-      "english": "elucidate",
-      "chinese": "阐明",
-      "phonetic": "/ɪˈluː.sɪ.deɪt/",
-      "chinese_explanation": "解释清楚",
-      "english_explanation": "to make clear",
-      "example_sentence": "Elucidate the theory."
+      "english": "adaptation",
+      "chinese": "适应；改编本",
+      "phonetic": "/ˌædæpˈteɪʃn/",
+      "chinese_explanation": "适应；改编",
+      "english_explanation": "Process of adapting to sth",
+      "example_sentence": "The film is an adaptation of a novel."
     },
     {
-      "english": "frivolous",
-      "chinese": "轻浮的",
-      "phonetic": "/ˈfrɪv.əl.əs/",
-      "chinese_explanation": "不严肃的",
-      "english_explanation": "not serious",
-      "example_sentence": "A frivolous remark."
+      "english": "adhesion",
+      "chinese": "黏附；附着力；支持",
+      "phonetic": "/ədˈhiːʒn/",
+      "chinese_explanation": "黏附；附着力",
+      "english_explanation": "Ability to stick to surface",
+      "example_sentence": "This glue has good adhesion to wood."
     },
     {
-      "english": "gregarious",
-      "chinese": "群居的",
-      "phonetic": "/ɡrɪˈɡer.i.əs/",
-      "chinese_explanation": "爱交际的",
-      "english_explanation": "fond of company",
-      "example_sentence": "Humans are gregarious."
+      "english": "aerobic",
+      "chinese": "需氧的；有氧健身的",
+      "phonetic": "/eəˈrəʊbɪk/",
+      "chinese_explanation": "有氧的；需氧的",
+      "english_explanation": "Needing oxygen to function",
+      "example_sentence": "Jogging is a popular aerobic exercise."
+    },
+    {
+      "english": "algae",
+      "chinese": "藻类，海藻",
+      "phonetic": "/ˈældʒiː/",
+      "chinese_explanation": "藻类植物",
+      "english_explanation": "Simple aquatic plants",
+      "example_sentence": "Algae grow quickly in warm water."
+    },
+    {
+      "english": "alluvial",
+      "chinese": "冲积的，淤积的",
+      "phonetic": "/əˈluːviəl/",
+      "chinese_explanation": "河流淤积形成的",
+      "english_explanation": "Relating to sediment deposited by rivers",
+      "example_sentence": "Alluvial soil is highly fertile."
+    },
+    {
+      "english": "altimeter",
+      "chinese": "高度计，测高仪",
+      "phonetic": "/ælˈtɪmɪtə(r)/",
+      "chinese_explanation": "测高仪器",
+      "english_explanation": "Device measuring altitude",
+      "example_sentence": "The pilot checked the altimeter regularly."
+    },
+    {
+      "english": "amalgamate",
+      "chinese": "合并，融合",
+      "phonetic": "/əˈmælɡəmeɪt/",
+      "chinese_explanation": "合并混合",
+      "english_explanation": "Combine into one group",
+      "example_sentence": "The two schools will amalgamate next year."
+    },
+    {
+      "english": "ambient",
+      "chinese": "周围的，环境的",
+      "phonetic": "/ˈæmbiənt/",
+      "chinese_explanation": "周围环境的",
+      "english_explanation": "Relating to surroundings",
+      "example_sentence": "The ambient music helps me relax."
+    },
+    {
+      "english": "amphibian",
+      "chinese": "两栖动物",
+      "phonetic": "/æmˈfɪbiən/",
+      "chinese_explanation": "两栖类生物",
+      "english_explanation": "Animal living on land and water",
+      "example_sentence": "A frog is a common amphibian."
+    },
+    {
+      "english": "anaerobic",
+      "chinese": "厌氧的，无氧的",
+      "phonetic": "/ˌæneˈroʊbɪk/",
+      "chinese_explanation": "无需氧气的",
+      "english_explanation": "Not needing oxygen to survive",
+      "example_sentence": "Anaerobic bacteria live in deep soil."
+    },
+    {
+      "english": "anatomy",
+      "chinese": "解剖学，解剖",
+      "phonetic": "/əˈnætəmi/",
+      "chinese_explanation": "解剖学",
+      "english_explanation": "Study of body structures",
+      "example_sentence": "We study human anatomy in college."
+    },
+    {
+      "english": "anthropology",
+      "chinese": "人类学",
+      "phonetic": "/ˌænθrəˈpɒlədʒi/",
+      "chinese_explanation": "研究人类的学科",
+      "english_explanation": "Study of human societies and cultures",
+      "example_sentence": "Anthropology is his favorite subject."
+    },
+    {
+      "english": "aquifer",
+      "chinese": "含水层，蓄水层",
+      "phonetic": "/ˈækwɪfər/",
+      "chinese_explanation": "地下含水层",
+      "english_explanation": "Underground rock holding water",
+      "example_sentence": "The city gets water from a deep aquifer."
+    },
+    {
+      "english": "arable",
+      "chinese": "可耕种的，适于耕作的",
+      "phonetic": "/ˈærəbl/",
+      "chinese_explanation": "适于耕种的",
+      "english_explanation": "Suitable for growing crops",
+      "example_sentence": "This region has much arable land."
+    },
+    {
+      "english": "archaeology",
+      "chinese": "考古学",
+      "phonetic": "/ˌɑːrkiˈɑːlədʒi/",
+      "chinese_explanation": "考古学",
+      "english_explanation": "Study of ancient human remains",
+      "example_sentence": "He chose archaeology as his major."
+    },
+    {
+      "english": "arid",
+      "chinese": "干旱的；荒芜的",
+      "phonetic": "/ˈær.ɪd/",
+      "chinese_explanation": "干旱的",
+      "english_explanation": "extremely dry",
+      "example_sentence": "The desert has an arid climate."
+    },
+    {
+      "english": "artifact",
+      "chinese": "人工制品；手工艺品",
+      "phonetic": "/ˈɑː.tɪ.fækt/",
+      "chinese_explanation": "人工制品",
+      "english_explanation": "man-made object",
+      "example_sentence": "This artifact is from the Tang Dynasty."
+    },
+    {
+      "english": "assay",
+      "chinese": "化验；测定；试验",
+      "phonetic": "/əˈseɪ/",
+      "chinese_explanation": "化验测定",
+      "english_explanation": "test substance quality",
+      "example_sentence": "They assay the ore for silver content."
+    },
+    {
+      "english": "asteroid",
+      "chinese": "小行星；海盘车",
+      "phonetic": "/ˈæs.tə.rɔɪd/",
+      "chinese_explanation": "小行星",
+      "english_explanation": "small rocky space object",
+      "example_sentence": "An asteroid passed near Earth last month."
+    },
+    {
+      "english": "atrophy",
+      "chinese": "萎缩；衰退",
+      "phonetic": "/ˈæ.trə.fi/",
+      "chinese_explanation": "萎缩，衰退",
+      "english_explanation": "gradual wasting away",
+      "example_sentence": "Lack of exercise causes muscle atrophy."
+    },
+    {
+      "english": "auditory",
+      "chinese": "听觉的；听力的",
+      "phonetic": "/ˈɔː.də.tri/",
+      "chinese_explanation": "听觉的",
+      "english_explanation": "related to hearing",
+      "example_sentence": "The auditory nerve transmits sound signals."
+    },
+    {
+      "english": "aurora",
+      "chinese": "极光；曙光",
+      "phonetic": "/ɔːˈrɔː.rə/",
+      "chinese_explanation": "极光",
+      "english_explanation": "polar natural light display",
+      "example_sentence": "We watched the aurora in Arctic areas."
+    },
+    {
+      "english": "autotroph",
+      "chinese": "自养生物",
+      "phonetic": "/ˈɔː.tə.trəʊf/",
+      "chinese_explanation": "自养生物",
+      "english_explanation": "organism makes own food",
+      "example_sentence": "Green plants are a common autotroph."
+    },
+    {
+      "english": "avalanche",
+      "chinese": "雪崩",
+      "phonetic": "/ˈævəlɑːntʃ/",
+      "chinese_explanation": "大量积雪突然崩塌",
+      "english_explanation": "mass of snow sliding down a mountain",
+      "example_sentence": "The avalanche trapped three skiers last week."
+    },
+    {
+      "english": "avian",
+      "chinese": "鸟的；鸟类的",
+      "phonetic": "/ˈeɪ.vi.ən/",
+      "chinese_explanation": "鸟类的",
+      "english_explanation": "related to birds",
+      "example_sentence": "Avian influenza spreads quickly among birds."
+    },
+    {
+      "english": "bacterium",
+      "chinese": "细菌（单数形式）",
+      "phonetic": "/bækˈtɪə.ri.əm/",
+      "chinese_explanation": "细菌",
+      "english_explanation": "tiny single-celled organism",
+      "example_sentence": "A bacterium may cause this infectious disease."
+    },
+    {
+      "english": "barometer",
+      "chinese": "气压计",
+      "phonetic": "/bəˈrɒmɪtə(r)/",
+      "chinese_explanation": "测量大气压强",
+      "english_explanation": "Measures atmospheric pressure",
+      "example_sentence": "The barometer indicates a coming storm."
+    },
+    {
+      "english": "basalt",
+      "chinese": "玄武岩",
+      "phonetic": "/bəˈsɔːlt/",
+      "chinese_explanation": "一种火山岩石",
+      "english_explanation": "A common volcanic rock",
+      "example_sentence": "The local ground is mostly made of basalt."
+    },
+    {
+      "english": "biodiversity",
+      "chinese": "生物多样性",
+      "phonetic": "/ˌbaɪəʊdaɪˈvɜːsəti/",
+      "chinese_explanation": "生物多样程度",
+      "english_explanation": "Variety of living species",
+      "example_sentence": "Coral reefs have extremely rich biodiversity."
+    },
+    {
+      "english": "biome",
+      "chinese": "生物群落",
+      "phonetic": "/ˈbaɪəʊm/",
+      "chinese_explanation": "大型生态群落",
+      "english_explanation": "Major ecological community",
+      "example_sentence": "The Amazon rainforest is a tropical biome."
+    },
+    {
+      "english": "biosphere",
+      "chinese": "生物圈",
+      "phonetic": "/ˈbaɪəʊsfɪə(r)/",
+      "chinese_explanation": "全球生命圈层",
+      "english_explanation": "Global life supporting zone",
+      "example_sentence": "The biosphere includes all living things on Earth."
+    },
+    {
+      "english": "bivalve",
+      "chinese": "双壳类动物",
+      "phonetic": "/ˈbaɪvælv/",
+      "chinese_explanation": "双壳软体动物",
+      "english_explanation": "Mollusc with two shells",
+      "example_sentence": "Clam is a kind of edible bivalve."
+    },
+    {
+      "english": "boreal",
+      "chinese": "北方的，寒带的",
+      "phonetic": "/ˈbɔːriəl/",
+      "chinese_explanation": "北方寒带的",
+      "english_explanation": "Relating to northern regions",
+      "example_sentence": "Many reindeer live in boreal areas."
+    },
+    {
+      "english": "botanical",
+      "chinese": "植物学的",
+      "phonetic": "/bəˈtænɪkl/",
+      "chinese_explanation": "与植物学相关的",
+      "english_explanation": "Related to plant science",
+      "example_sentence": "We visited a local botanical garden last week."
+    },
+    {
+      "english": "brackish",
+      "chinese": "微咸的，半咸的",
+      "phonetic": "/ˈbrækɪʃ/",
+      "chinese_explanation": "水味略咸的",
+      "english_explanation": "Slightly salty in taste",
+      "example_sentence": "Brackish water is found where rivers meet the sea."
+    },
+    {
+      "english": "buoyancy",
+      "chinese": "浮力；浮性；乐观",
+      "phonetic": "/ˈbɔɪ.ən.si/",
+      "chinese_explanation": "浮力，浮性",
+      "english_explanation": "Ability to float in liquid",
+      "example_sentence": "Wood has good buoyancy in water."
+    },
+    {
+      "english": "calcify",
+      "chinese": "钙化，石化",
+      "phonetic": "/ˈkælsɪfaɪ/",
+      "chinese_explanation": "硬化成钙质的",
+      "english_explanation": "Harden with calcium deposits",
+      "example_sentence": "Cartilage may calcify as you get older."
+    },
+    {
+      "english": "canopy",
+      "chinese": "天篷；树冠层",
+      "phonetic": "/ˈkænəpi/",
+      "chinese_explanation": "顶棚，树冠层",
+      "english_explanation": "overhanging cover or roof",
+      "example_sentence": "The trees formed a green canopy above us."
+    },
+    {
+      "english": "carnivore",
+      "chinese": "食肉动物",
+      "phonetic": "/ˈkɑːnɪvɔː(r)/",
+      "chinese_explanation": "食肉动物",
+      "english_explanation": "animal that eats meat",
+      "example_sentence": "A lion is a large carnivore."
+    },
+    {
+      "english": "cartography",
+      "chinese": "制图学，地图绘制",
+      "phonetic": "/kɑːˈtɒɡrəfi/",
+      "chinese_explanation": "地图绘制学",
+      "english_explanation": "art of making maps",
+      "example_sentence": "He studies cartography in college."
+    },
+    {
+      "english": "celestial",
+      "chinese": "天空的，天体的",
+      "phonetic": "/səˈlestiəl/",
+      "chinese_explanation": "与天空天体相关",
+      "english_explanation": "related to the sky or space",
+      "example_sentence": "The moon is a celestial body."
+    },
+    {
+      "english": "cellulose",
+      "chinese": "纤维素",
+      "phonetic": "/ˈsel.jə.ləʊs/",
+      "chinese_explanation": "植物纤维主要成分",
+      "english_explanation": "main component of plant fibers",
+      "example_sentence": "Cotton contains large amounts of cellulose."
+    },
+    {
+      "english": "centrifugal",
+      "chinese": "离心的",
+      "phonetic": "/ˌsenˈtrɪfjəɡl/",
+      "chinese_explanation": "离心的",
+      "english_explanation": "moving away from center",
+      "example_sentence": "This machine uses centrifugal force."
+    },
+    {
+      "english": "chlorophyll",
+      "chinese": "叶绿素",
+      "phonetic": "/ˈklɒrəfɪl, ˈklɔːrəfɪl/",
+      "chinese_explanation": "植物绿色光合色素",
+      "english_explanation": "Green pigment for plant photosynthesis",
+      "example_sentence": "Chlorophyll gives leaves their green color."
+    },
+    {
+      "english": "chromosome",
+      "chinese": "染色体",
+      "phonetic": "/ˈkrəʊməsəʊm/",
+      "chinese_explanation": "染色体",
+      "english_explanation": "genetic structure in cells",
+      "example_sentence": "Each human cell has 46 chromosomes."
+    },
+    {
+      "english": "chronology",
+      "chinese": "年表；年代学",
+      "phonetic": "/krəˈnɒlədʒi/",
+      "chinese_explanation": "年代顺序记录",
+      "english_explanation": "time order of events",
+      "example_sentence": "The book includes a chronology of the author's life."
+    },
+    {
+      "english": "clay",
+      "chinese": "黏土，陶土",
+      "phonetic": "/kleɪ/",
+      "chinese_explanation": "黏土，陶土",
+      "english_explanation": "sticky earth for making pottery",
+      "example_sentence": "The potter shaped the clay into a bowl."
+    },
+    {
+      "english": "combustion",
+      "chinese": "燃烧，燃烧过程",
+      "phonetic": "/kəmˈbʌstʃən/",
+      "chinese_explanation": "燃烧过程",
+      "english_explanation": "process of burning something",
+      "example_sentence": "Combustion of coal releases carbon dioxide."
+    },
+    {
+      "english": "commensalism",
+      "chinese": "共栖，偏利共生",
+      "phonetic": "/kəˈmensəlɪzəm/",
+      "chinese_explanation": "生物共栖关系",
+      "english_explanation": "symbiosis benefiting one species",
+      "example_sentence": "Remoras and sharks have a commensalism relationship."
+    },
+    {
+      "english": "condensation",
+      "chinese": "凝结，冷凝",
+      "phonetic": "/ˌkɒndenˈseɪʃn/",
+      "chinese_explanation": "凝结，冷凝",
+      "english_explanation": "gas turning into liquid",
+      "example_sentence": "Condensation formed on the cold window."
+    },
+    {
+      "english": "conduction",
+      "chinese": "传导（热、电等）",
+      "phonetic": "/kənˈdʌkʃn/",
+      "chinese_explanation": "热/电等传导",
+      "english_explanation": "transfer of heat or electricity",
+      "example_sentence": "Copper is good for heat conduction."
+    },
+    {
+      "english": "conifer",
+      "chinese": "针叶树",
+      "phonetic": "/ˈkɒnɪfə(r)/",
+      "chinese_explanation": "结球果的常绿树",
+      "english_explanation": "evergreen cone-bearing tree",
+      "example_sentence": "A pine is a common conifer."
+    },
+    {
+      "english": "continental",
+      "chinese": "大陆的，洲的",
+      "phonetic": "/ˌkɒntɪˈnentl/",
+      "chinese_explanation": "与大陆相关的",
+      "english_explanation": "relating to a large continent",
+      "example_sentence": "This is a continental climate."
+    },
+    {
+      "english": "convection",
+      "chinese": "对流",
+      "phonetic": "/kənˈvekʃn/",
+      "chinese_explanation": "流体热传递方式",
+      "english_explanation": "heat transfer through fluid flow",
+      "example_sentence": "Convection makes warm air rise."
+    },
+    {
+      "english": "convergent",
+      "chinese": "趋同的，汇合的",
+      "phonetic": "/kənˈvɜːdʒənt/",
+      "chinese_explanation": "向同一点靠拢的",
+      "english_explanation": "moving towards the same point",
+      "example_sentence": "The two lines are convergent."
+    },
+    {
+      "english": "coral",
+      "chinese": "珊瑚",
+      "phonetic": "/ˈkɒrəl/",
+      "chinese_explanation": "海洋造礁生物",
+      "english_explanation": "reef-forming marine creature",
+      "example_sentence": "Small fish swim around the coral."
+    },
+    {
+      "english": "correlation",
+      "chinese": "相关性，关联",
+      "phonetic": "/ˌkɒrəˈleɪʃn/",
+      "chinese_explanation": "事物间的关联度",
+      "english_explanation": "mutual connection between things",
+      "example_sentence": "There's a correlation between exercise and health."
+    },
+    {
+      "english": "cortex",
+      "chinese": "皮层，皮质",
+      "phonetic": "/ˈkɔːteks/",
+      "chinese_explanation": "器官的外层组织",
+      "english_explanation": "outer layer of a body organ",
+      "example_sentence": "The cerebral cortex controls thinking."
+    },
+    {
+      "english": "cosmology",
+      "chinese": "宇宙学",
+      "phonetic": "/kɒzˈmɒlədʒi/",
+      "chinese_explanation": "研究宇宙的学科",
+      "english_explanation": "study of the universe's origin",
+      "example_sentence": "Cosmology explores space evolution."
+    },
+    {
+      "english": "crater",
+      "chinese": "火山口，陨石坑",
+      "phonetic": "/ˈkreɪtə(r)/",
+      "chinese_explanation": "碗状凹坑结构",
+      "english_explanation": "bowl-shaped pit on a surface",
+      "example_sentence": "The moon has many large craters."
+    },
+    {
+      "english": "cretaceous",
+      "chinese": "白垩纪的",
+      "phonetic": "/krɪˈteɪʃəs/",
+      "chinese_explanation": "恐龙生存的地质期",
+      "english_explanation": "relating to Cretaceous period",
+      "example_sentence": "Dinosaurs lived in the Cretaceous period."
+    },
+    {
+      "english": "crust",
+      "chinese": "地壳；面包皮；硬壳",
+      "phonetic": "/krʌst/",
+      "chinese_explanation": "坚硬的外层",
+      "english_explanation": "hard outer layer of sth",
+      "example_sentence": "The Earth's crust is relatively thin."
+    },
+    {
+      "english": "crystalline",
+      "chinese": "结晶的；水晶般的",
+      "phonetic": "/ˈkrɪstəlaɪn/",
+      "chinese_explanation": "晶体结构的",
+      "english_explanation": "having crystal structure",
+      "example_sentence": "The ice shows a crystalline pattern."
+    },
+    {
+      "english": "deciduous",
+      "chinese": "落叶的；每年落叶的",
+      "phonetic": "/dɪˈsɪdʒuəs/",
+      "chinese_explanation": "冬季落叶的",
+      "english_explanation": "shed leaves annually",
+      "example_sentence": "Oak is a common deciduous tree."
+    },
+    {
+      "english": "decompose",
+      "chinese": "分解；腐烂；腐败",
+      "phonetic": "/ˌdiːkəmˈpəʊz/",
+      "chinese_explanation": "腐烂；分解",
+      "english_explanation": "decay or break down",
+      "example_sentence": "Fruits decompose quickly in hot weather."
+    },
+    {
+      "english": "deforestation",
+      "chinese": "毁林；森林砍伐",
+      "phonetic": "/ˌdiːˌfɒrɪˈsteɪʃn/",
+      "chinese_explanation": "砍伐森林行为",
+      "english_explanation": "cutting down forests",
+      "example_sentence": "Deforestation threatens wild animal habitats."
+    },
+    {
+      "english": "delta",
+      "chinese": "三角洲；德尔塔",
+      "phonetic": "/ˈdeltə/",
+      "chinese_explanation": "河口三角洲",
+      "english_explanation": "river mouth landform",
+      "example_sentence": "The Yangtze Delta is economically developed."
+    },
+    {
+      "english": "dendrite",
+      "chinese": "树突；树枝石",
+      "phonetic": "/ˈdendraɪt/",
+      "chinese_explanation": "枝状突起结构",
+      "english_explanation": "branched nerve cell projection",
+      "example_sentence": "Dendrites receive signals from other neurons."
+    },
+    {
+      "english": "density",
+      "chinese": "密度；浓度；稠密",
+      "phonetic": "/ˈdensəti/",
+      "chinese_explanation": "物质疏密程度",
+      "english_explanation": "mass per unit volume",
+      "example_sentence": "Aluminum has a lower density than iron."
+    },
+    {
+      "english": "deposition",
+      "chinese": "沉积；沉积物；证词",
+      "phonetic": "/ˌdepəˈzɪʃn/",
+      "chinese_explanation": "沉积作用",
+      "english_explanation": "sediment depositing process",
+      "example_sentence": "Wind deposition forms sand dunes in deserts."
+    },
+    {
+      "english": "desalination",
+      "chinese": "海水淡化；脱盐作用",
+      "phonetic": "/ˌdiːˌsælɪˈneɪʃn/",
+      "chinese_explanation": "海水淡化技术",
+      "english_explanation": "removing salt from seawater",
+      "example_sentence": "Desalination solves freshwater shortage in arid coastal areas."
+    },
+    {
+      "english": "desiccation",
+      "chinese": "干燥；脱水",
+      "phonetic": "/ˌdesɪˈkeɪʃn/",
+      "chinese_explanation": "干燥，脱水",
+      "english_explanation": "process of drying completely",
+      "example_sentence": "Desiccation is common in arid regions."
+    },
+    {
+      "english": "diatom",
+      "chinese": "硅藻",
+      "phonetic": "/ˈdaɪətəm/",
+      "chinese_explanation": "浮游硅藻",
+      "english_explanation": "type of microscopic algae",
+      "example_sentence": "Diatoms are abundant in ocean water."
+    },
+    {
+      "english": "diffusion",
+      "chinese": "扩散；传播",
+      "phonetic": "/dɪˈfjuːʒn/",
+      "chinese_explanation": "扩散，传播",
+      "english_explanation": "process of spreading widely",
+      "example_sentence": "Diffusion of perfume filled the room quickly."
+    },
+    {
+      "english": "dinosaur",
+      "chinese": "恐龙",
+      "phonetic": "/ˈdaɪnəsɔː(r)/",
+      "chinese_explanation": "史前爬行动物",
+      "english_explanation": "extinct prehistoric reptile",
+      "example_sentence": "Children love dinosaur toys very much."
+    },
+    {
+      "english": "disperse",
+      "chinese": "分散；驱散",
+      "phonetic": "/dɪˈspɜːs/",
+      "chinese_explanation": "散开，驱散",
+      "english_explanation": "spread over a wide area",
+      "example_sentence": "The crowd began to disperse after the game."
+    },
+    {
+      "english": "distillation",
+      "chinese": "蒸馏；净化",
+      "phonetic": "/ˌdɪstɪˈleɪʃn/",
+      "chinese_explanation": "蒸馏，提纯",
+      "english_explanation": "process of purifying liquid",
+      "example_sentence": "Distillation is used to make pure water."
+    },
+    {
+      "english": "divergent",
+      "chinese": "不同的；发散的",
+      "phonetic": "/daɪˈvɜːdʒənt/",
+      "chinese_explanation": "有分歧的",
+      "english_explanation": "differing from each other",
+      "example_sentence": "They hold divergent views on this issue."
+    },
+    {
+      "english": "domesticate",
+      "chinese": "驯化；驯养",
+      "phonetic": "/dəˈmestɪkeɪt/",
+      "chinese_explanation": "驯化动植物",
+      "english_explanation": "tame for human use",
+      "example_sentence": "People began to domesticate cattle thousands of years ago."
+    },
+    {
+      "english": "dune",
+      "chinese": "沙丘",
+      "phonetic": "/djuːn/",
+      "chinese_explanation": "沙堆，沙丘",
+      "english_explanation": "sand hill formed by wind",
+      "example_sentence": "We saw a huge dune in the desert."
+    },
+    {
+      "english": "ecosystem",
+      "chinese": "生态系统",
+      "phonetic": "/ˈiːkəʊsɪstəm/",
+      "chinese_explanation": "生态系统",
+      "english_explanation": "community of living organisms",
+      "example_sentence": "Wetland is a very important ecosystem."
+    },
+    {
+      "english": "electrode",
+      "chinese": "电极",
+      "phonetic": "/ɪˈlek.trəʊd/",
+      "chinese_explanation": "电路导电元件",
+      "english_explanation": "Conductive part in circuit",
+      "example_sentence": "The electrode conducts electricity stably."
+    },
+    {
+      "english": "elevation",
+      "chinese": "海拔，高程",
+      "phonetic": "/ˌel.ɪˈveɪ.ʃən/",
+      "chinese_explanation": "海拔高度",
+      "english_explanation": "Height above sea level",
+      "example_sentence": "The peak's elevation is 4500 meters."
+    },
+    {
+      "english": "embryo",
+      "chinese": "胚胎",
+      "phonetic": "/ˈem.bri.əʊ/",
+      "chinese_explanation": "生物胚胎",
+      "english_explanation": "Early developing organism",
+      "example_sentence": "The embryo develops slowly in the womb."
+    },
+    {
+      "english": "endothermic",
+      "chinese": "吸热的",
+      "phonetic": "/ˌen.dəʊˈθɜː.mɪk/",
+      "chinese_explanation": "吸热的",
+      "english_explanation": "Absorbing heat in reaction",
+      "example_sentence": "This chemical process is endothermic."
+    },
+    {
+      "english": "enzyme",
+      "chinese": "酶",
+      "phonetic": "/ˈen.zaɪm/",
+      "chinese_explanation": "生物催化剂",
+      "english_explanation": "Biological catalytic substance",
+      "example_sentence": "Enzyme speeds up digestive reactions."
+    },
+    {
+      "english": "epoch",
+      "chinese": "纪元，时代",
+      "phonetic": "/ˈiː.pɒk/",
+      "chinese_explanation": "历史时期",
+      "english_explanation": "Important historical period",
+      "example_sentence": "The invention opened a new epoch."
+    },
+    {
+      "english": "equator",
+      "chinese": "赤道",
+      "phonetic": "/ɪˈkweɪ.tər/",
+      "chinese_explanation": "地球赤道",
+      "english_explanation": "Middle imaginary line of Earth",
+      "example_sentence": "The equator receives most sunlight."
+    },
+    {
+      "english": "equilibrium",
+      "chinese": "平衡，均衡",
+      "phonetic": "/ˌiː.kwɪˈlɪb.ri.əm/",
+      "chinese_explanation": "平衡状态",
+      "english_explanation": "Stable balanced state",
+      "example_sentence": "The ecosystem keeps its equilibrium well."
+    },
+    {
+      "english": "eruption",
+      "chinese": "喷发，爆发",
+      "phonetic": "/ɪˈrʌp.ʃən/",
+      "chinese_explanation": "火山喷发",
+      "english_explanation": "Volcano's sudden burst",
+      "example_sentence": "The volcano eruption destroyed many villages."
+    },
+    {
+      "english": "estuary",
+      "chinese": "河口，河口湾",
+      "phonetic": "/ˈes.tʃu.ər.i/",
+      "chinese_explanation": "河流入海口",
+      "english_explanation": "River mouth meeting sea",
+      "example_sentence": "Many aquatic species live in the estuary."
+    },
+    {
+      "english": "eutrophication",
+      "chinese": "富营养化",
+      "phonetic": "/ˌjuː.trə.fɪˈkeɪ.ʃən/",
+      "chinese_explanation": "水体富营养化",
+      "english_explanation": "Excessive nutrients in water body",
+      "example_sentence": "Eutrophication may cause algal blooms in lakes."
+    },
+    {
+      "english": "evaporation",
+      "chinese": "蒸发",
+      "phonetic": "/ɪˌvæp.əˈreɪ.ʃən/",
+      "chinese_explanation": "液体蒸发过程",
+      "english_explanation": "Liquid turns into vapor",
+      "example_sentence": "Evaporation is a key part of the water cycle."
+    },
+    {
+      "english": "exoskeleton",
+      "chinese": "外骨骼",
+      "phonetic": "/ˌek.səʊˈskel.ə.tən/",
+      "chinese_explanation": "生物外部骨骼",
+      "english_explanation": "External hard skeleton of creatures",
+      "example_sentence": "Insects have a hard exoskeleton to protect themselves."
+    },
+    {
+      "english": "extinction",
+      "chinese": "灭绝",
+      "phonetic": "/ɪkˈstɪŋk.ʃən/",
+      "chinese_explanation": "物种彻底消失",
+      "english_explanation": "Species die out completely",
+      "example_sentence": "Human activities have accelerated species extinction."
+    },
+    {
+      "english": "extrusive",
+      "chinese": "喷出的",
+      "phonetic": "/ɪkˈstruː.sɪv/",
+      "chinese_explanation": "（地质）喷出的",
+      "english_explanation": "Formed by erupted magma",
+      "example_sentence": "Basalt is a common extrusive igneous rock."
+    },
+    {
+      "english": "fauna",
+      "chinese": "动物群",
+      "phonetic": "/ˈfɔː.nə/",
+      "chinese_explanation": "某区域动物群",
+      "english_explanation": "Animals of a specific region",
+      "example_sentence": "The fauna of the Amazon rainforest is diverse."
+    },
+    {
+      "english": "fern",
+      "chinese": "蕨类植物",
+      "phonetic": "/fɜːn/",
+      "chinese_explanation": "蕨类植物",
+      "english_explanation": "Seedless non-flowering plant",
+      "example_sentence": "The fern grows well in wet and shady places."
+    },
+    {
+      "english": "fission",
+      "chinese": "裂变",
+      "phonetic": "/ˈfɪʃ.ən/",
+      "chinese_explanation": "核/细胞分裂",
+      "english_explanation": "Splitting of nucleus or cell",
+      "example_sentence": "Nuclear fission releases huge amounts of energy."
+    },
+    {
+      "english": "flora",
+      "chinese": "植物群",
+      "phonetic": "/ˈflɔː.rə/",
+      "chinese_explanation": "某区域植物群",
+      "english_explanation": "Plants of a specific region",
+      "example_sentence": "Alpine flora has strong adaptability to cold weather."
+    },
+    {
+      "english": "fluorescent",
+      "chinese": "荧光的",
+      "phonetic": "/ˌflɔːˈres.ənt/",
+      "chinese_explanation": "发荧光的",
+      "english_explanation": "Emitting light when irradiated",
+      "example_sentence": "Fluorescent lamps are more energy-efficient than incandescent ones."
+    },
+    {
+      "english": "foliage",
+      "chinese": "叶，枝叶，叶簇",
+      "phonetic": "/ˈfəʊ.li.ɪdʒ/",
+      "chinese_explanation": "植物叶片总称",
+      "english_explanation": "all leaves of a plant",
+      "example_sentence": "Warm sunlight filters through the green foliage."
+    },
+    {
+      "english": "formation",
+      "chinese": "形成；构造；编队",
+      "phonetic": "/fɔːˈmeɪ.ʃən/",
+      "chinese_explanation": "形成，构造",
+      "english_explanation": "process of forming something",
+      "example_sentence": "Scientists study the formation of volcanoes."
+    },
+    {
+      "english": "fracture",
+      "chinese": "破裂；骨折；断裂",
+      "phonetic": "/ˈfræk.tʃər/",
+      "chinese_explanation": "破裂，骨折",
+      "english_explanation": "break or crack in object",
+      "example_sentence": "He got a wrist fracture when playing basketball."
+    },
+    {
+      "english": "fungus",
+      "chinese": "真菌，蕈，菌类",
+      "phonetic": "/ˈfʌŋ.ɡəs/",
+      "chinese_explanation": "真菌类生物",
+      "english_explanation": "simple organism like mushroom",
+      "example_sentence": "Mushroom is a kind of edible fungus."
+    },
+    {
+      "english": "gene",
+      "chinese": "基因，遗传因子",
+      "phonetic": "/dʒiːn/",
+      "chinese_explanation": "遗传基本单位",
+      "english_explanation": "basic unit of heredity",
+      "example_sentence": "This gene affects the growth of crops."
+    },
+    {
+      "english": "genetics",
+      "chinese": "遗传学",
+      "phonetic": "/dʒəˈnetɪks/",
+      "chinese_explanation": "研究生物遗传的学科",
+      "english_explanation": "Study of genes and heredity",
+      "example_sentence": "He is studying genetics at university."
+    },
+    {
+      "english": "geology",
+      "chinese": "地质学",
+      "phonetic": "/dʒiˈɒlədʒi/",
+      "chinese_explanation": "研究地质的科学",
+      "english_explanation": "Science of earth's physical structure",
+      "example_sentence": "She shows great interest in geology."
+    },
+    {
+      "english": "geothermal",
+      "chinese": "地热的；地热能的",
+      "phonetic": "/ˌdʒiː.əʊˈθɜː.məl/",
+      "chinese_explanation": "与地球内热相关",
+      "english_explanation": "related to heat inside the earth",
+      "example_sentence": "Geothermal energy is a clean renewable resource."
+    },
+    {
+      "english": "germinate",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "glacier",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "glucose",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "gorge",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "granite",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "grassland",
+      "chinese": "草原；草地",
+      "phonetic": "/ˈɡrɑːslænd; ˈɡræslænd/",
+      "chinese_explanation": "长满草的开阔区域",
+      "english_explanation": "large area covered with grass",
+      "example_sentence": "Many sheep graze on the grassland."
+    },
+    {
+      "english": "groundwater",
+      "chinese": "地下水",
+      "phonetic": "/ˈɡraʊndwɔːtə(r)/",
+      "chinese_explanation": "地下储存的水",
+      "english_explanation": "Water stored under the ground",
+      "example_sentence": "Many rural areas drink clean groundwater."
+    },
+    {
+      "english": "hemisphere",
+      "chinese": "半球",
+      "phonetic": "/ˈhemɪsfɪə(r)/",
+      "chinese_explanation": "地球的半个球体",
+      "english_explanation": "Half of a sphere or planet",
+      "example_sentence": "China is in the Northern Hemisphere."
+    },
+    {
+      "english": "herbivore",
+      "chinese": "食草动物",
+      "phonetic": "/ˈhɜːbɪvɔː(r)/",
+      "chinese_explanation": "只吃植物的动物",
+      "english_explanation": "Animal that only eats plants",
+      "example_sentence": "A sheep is a common herbivore."
+    },
+    {
+      "english": "heredity",
+      "chinese": "遗传",
+      "phonetic": "/həˈredəti/",
+      "chinese_explanation": "基因特征的传承",
+      "english_explanation": "Passing of traits between generations",
+      "example_sentence": "Eye color is decided by heredity."
+    },
+    {
+      "english": "hibernate",
+      "chinese": "冬眠",
+      "phonetic": "/ˈhaɪbəneɪt/",
+      "chinese_explanation": "动物冬季休眠",
+      "english_explanation": "Animals sleep through cold winter",
+      "example_sentence": "Frogs hibernate in mud in winter."
     },
     {
       "english": "homogeneous",
-      "chinese": "同质的",
-      "phonetic": "/ˌhoʊ.məˈdʒiː.ni.əs/",
-      "chinese_explanation": "成分相同的",
-      "english_explanation": "of the same kind",
-      "example_sentence": "A homogeneous mixture."
+      "chinese": "同种类的；同质的；均匀的",
+      "phonetic": "/ˌhɒməˈdʒiːniəs/, /ˌhoʊməˈdʒiːniəs/",
+      "chinese_explanation": "同类的，同质的",
+      "english_explanation": "of the same kind or type",
+      "example_sentence": "The members of this group are homogeneous."
     },
     {
-      "english": "innate",
-      "chinese": "天生的",
-      "phonetic": "/ɪˈneɪt/",
-      "chinese_explanation": "与生俱来的",
-      "english_explanation": "inborn",
-      "example_sentence": "An innate talent."
+      "english": "humidity",
+      "chinese": "湿度",
+      "phonetic": "/hjuːˈmɪdəti/",
+      "chinese_explanation": "空气中水汽含量",
+      "english_explanation": "Amount of water vapor in air",
+      "example_sentence": "Summer here has very high humidity."
     },
     {
-      "english": "juxtaposition",
-      "chinese": "并列",
-      "phonetic": "/ˌdʒʌk.stə.pəˈzɪʃ.ən/",
-      "chinese_explanation": "并排对比",
-      "english_explanation": "placing side by side",
-      "example_sentence": "An interesting juxtaposition."
+      "english": "humus",
+      "chinese": "腐殖质",
+      "phonetic": "/ˈhjuːməs/",
+      "chinese_explanation": "土壤有机成分",
+      "english_explanation": "Organic matter in soil",
+      "example_sentence": "Humus makes soil more suitable for planting."
     },
     {
-      "english": "kinship",
-      "chinese": "亲属关系",
-      "phonetic": "/ˈkɪn.ʃɪp/",
-      "chinese_explanation": "血缘关系",
-      "english_explanation": "family relationship",
-      "example_sentence": "A sense of kinship."
+      "english": "hybrid",
+      "chinese": "杂交种，混合体",
+      "phonetic": "/ˈhaɪbrɪd/",
+      "chinese_explanation": "不同物种杂交体",
+      "english_explanation": "Offspring of two different species",
+      "example_sentence": "A mule is a hybrid of horse and donkey."
     },
     {
-      "english": "lucrative",
-      "chinese": "有利可图的",
-      "phonetic": "/ˈluː.krə.tɪv/",
-      "chinese_explanation": "赚钱的",
-      "english_explanation": "producing profit",
-      "example_sentence": "A lucrative business."
+      "english": "hydraulic",
+      "chinese": "液压的，水力的",
+      "phonetic": "/haɪˈdrɔːlɪk/",
+      "chinese_explanation": "靠液体压力运作的",
+      "english_explanation": "Operated by liquid pressure",
+      "example_sentence": "This machine uses a hydraulic system."
     },
     {
-      "english": "mitigate",
-      "chinese": "缓和",
-      "phonetic": "/ˈmɪt.ɪ.ɡeɪt/",
-      "chinese_explanation": "减轻影响",
-      "english_explanation": "to make less severe",
-      "example_sentence": "Mitigate the damage."
+      "english": "hydrogen",
+      "chinese": "氢，氢气",
+      "phonetic": "/ˈhaɪdrədʒən/",
+      "chinese_explanation": "最轻的化学元素",
+      "english_explanation": "Lightest chemical element",
+      "example_sentence": "Water contains hydrogen and oxygen."
     },
     {
-      "english": "nuance",
-      "chinese": "细微差别",
-      "phonetic": "/ˈnjuː.ɑːns/",
-      "chinese_explanation": "微妙之处",
-      "english_explanation": "a subtle difference",
-      "example_sentence": "Understand the nuances."
+      "english": "hydrology",
+      "chinese": "水文学",
+      "phonetic": "/haɪˈdrɒlədʒi/",
+      "chinese_explanation": "研究水体的学科",
+      "english_explanation": "Study of water on Earth",
+      "example_sentence": "Hydrology is important for water resource management."
     },
     {
-      "english": "opaque",
-      "chinese": "不透明的",
-      "phonetic": "/oʊˈpeɪk/",
-      "chinese_explanation": "看不透的",
-      "english_explanation": "not transparent",
-      "example_sentence": "An opaque glass."
+      "english": "iceberg",
+      "chinese": "冰山",
+      "phonetic": "/ˈaɪsbɜːɡ/",
+      "chinese_explanation": "海中巨大浮冰",
+      "english_explanation": "large floating ice mass",
+      "example_sentence": "The iceberg hit the Titanic."
     },
     {
-      "english": "proliferate",
-      "chinese": "激增",
-      "phonetic": "/prəˈlɪf.ər.eɪt/",
-      "chinese_explanation": "迅速增加",
-      "english_explanation": "to increase rapidly",
-      "example_sentence": "Rumors proliferated."
+      "english": "igneous",
+      "chinese": "火成的；火成岩",
+      "phonetic": "/ˈɪɡniəs/",
+      "chinese_explanation": "岩浆形成的岩石",
+      "english_explanation": "formed from cooled magma",
+      "example_sentence": "Granite is a common igneous rock."
     },
     {
-      "english": "quandary",
-      "chinese": "困惑",
-      "phonetic": "/ˈkwɒn.dər.i/",
-      "chinese_explanation": "进退两难",
-      "english_explanation": "a state of uncertainty",
-      "example_sentence": "In a quandary about what to do."
+      "english": "incubate",
+      "chinese": "孵化；孵育；培养",
+      "phonetic": "/ˈɪŋkjubeɪt/",
+      "chinese_explanation": "孵卵，培育发展",
+      "english_explanation": "hatch eggs by keeping warm",
+      "example_sentence": "Birds incubate eggs in nests."
     },
     {
-      "english": "rudimentary",
-      "chinese": "基础的",
-      "phonetic": "/ˌruː.dɪˈmen.tər.i/",
-      "chinese_explanation": "初步的",
-      "english_explanation": "basic and simple",
-      "example_sentence": "Rudimentary knowledge."
+      "english": "inertia",
+      "chinese": "惯性；惰性",
+      "phonetic": "/ɪˈnɜːʃə/",
+      "chinese_explanation": "物体的惯性属性",
+      "english_explanation": "tendency to remain unchanged",
+      "example_sentence": "Inertia makes moving cars hard to stop."
     },
     {
-      "english": "sporadic",
-      "chinese": "零星的",
-      "phonetic": "/spəˈræd.ɪk/",
-      "chinese_explanation": "偶尔发生的",
-      "english_explanation": "occurring irregularly",
-      "example_sentence": "Sporadic rainfall."
+      "english": "infrared",
+      "chinese": "红外线；红外线的",
+      "phonetic": "/ˌɪnfrəˈred/",
+      "chinese_explanation": "红外辐射光线",
+      "english_explanation": "radiation beyond red light",
+      "example_sentence": "Infrared cameras work well at night."
     },
     {
-      "english": "transient",
-      "chinese": "短暂的",
-      "phonetic": "/ˈtræn.zi.ənt/",
-      "chinese_explanation": "临时的",
-      "english_explanation": "lasting only briefly",
-      "example_sentence": "A transient feeling."
+      "english": "insectivore",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
     },
     {
-      "english": "usurp",
-      "chinese": "篡夺",
-      "phonetic": "/juːˈzɜːrp/",
-      "chinese_explanation": "非法夺取",
-      "english_explanation": "to seize power illegally",
-      "example_sentence": "Usurp the throne."
+      "english": "insolation",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
     },
     {
-      "english": "venerate",
-      "chinese": "尊敬",
-      "phonetic": "/ˈven.ər.eɪt/",
-      "chinese_explanation": "崇敬",
-      "english_explanation": "to regard with respect",
-      "example_sentence": "Venerate the elders."
+      "english": "invertebrate",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
     },
     {
-      "english": "wane",
-      "chinese": "衰退",
-      "phonetic": "/weɪn/",
-      "chinese_explanation": "逐渐减弱",
-      "english_explanation": "to decrease gradually",
-      "example_sentence": "Interest began to wane."
+      "english": "ion",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "isotope",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "juvenile",
+      "chinese": "青少年的；青少年",
+      "phonetic": "/ˈdʒuːvənaɪl/",
+      "chinese_explanation": "未成年的，年少的",
+      "english_explanation": "relating to young people",
+      "example_sentence": "He is a promising juvenile tennis player."
+    },
+    {
+      "english": "lagoon",
+      "chinese": "潟湖，环礁湖",
+      "phonetic": "/ləˈɡuːn/",
+      "chinese_explanation": "沿海浅水湖",
+      "english_explanation": "Shallow coastal lake",
+      "example_sentence": "This tropical island has a clear lagoon."
+    },
+    {
+      "english": "larva",
+      "chinese": "幼虫，幼体",
+      "phonetic": "/ˈlɑːvə/",
+      "chinese_explanation": "昆虫幼体",
+      "english_explanation": "Immature insect form",
+      "example_sentence": "A caterpillar is the larva of a butterfly."
+    },
+    {
+      "english": "latitude",
+      "chinese": "纬度",
+      "phonetic": "/ˈlætɪtjuːd/",
+      "chinese_explanation": "地理纬度",
+      "english_explanation": "Distance north/south of equator",
+      "example_sentence": "This city is located at a low latitude."
+    },
+    {
+      "english": "lava",
+      "chinese": "熔岩，火山岩",
+      "phonetic": "/ˈlɑːvə/",
+      "chinese_explanation": "火山熔岩",
+      "english_explanation": "Molten rock from volcano",
+      "example_sentence": "Hot lava flowed down the volcano."
+    },
+    {
+      "english": "lichen",
+      "chinese": "地衣",
+      "phonetic": "/ˈlaɪkən/",
+      "chinese_explanation": "地衣植物",
+      "english_explanation": "Fungus-algae symbiotic organism",
+      "example_sentence": "Lichen grows on the old stone wall."
+    },
+    {
+      "english": "limestone",
+      "chinese": "石灰岩",
+      "phonetic": "/ˈlaɪmstəʊn/",
+      "chinese_explanation": "碳酸钙沉积岩",
+      "english_explanation": "Calcium carbonate sedimentary rock",
+      "example_sentence": "Many caves are formed in limestone."
+    },
+    {
+      "english": "lithosphere",
+      "chinese": "岩石圈",
+      "phonetic": "/ˈlɪθəsfɪə(r)/",
+      "chinese_explanation": "地球岩石外层",
+      "english_explanation": "Earth's solid outer rocky layer",
+      "example_sentence": "The movement of the lithosphere may cause earthquakes."
+    },
+    {
+      "english": "longitude",
+      "chinese": "经度",
+      "phonetic": "/ˈlɒŋɡɪtjuːd/",
+      "chinese_explanation": "地理经度",
+      "english_explanation": "Distance east/west of meridian",
+      "example_sentence": "We use longitude to locate places east-west."
+    },
+    {
+      "english": "luminous",
+      "chinese": "发光的，明亮的",
+      "phonetic": "/ˈluːmɪnəs/",
+      "chinese_explanation": "发光发亮的",
+      "english_explanation": "Emitting or reflecting bright light",
+      "example_sentence": "The watch has a luminous dial."
+    },
+    {
+      "english": "lunar",
+      "chinese": "月球的，阴历的",
+      "phonetic": "/ˈluːnə(r)/",
+      "chinese_explanation": "和月球相关的",
+      "english_explanation": "Related to the moon",
+      "example_sentence": "Lunar eclipses occur several times a year."
+    },
+    {
+      "english": "magma",
+      "chinese": "岩浆",
+      "phonetic": "/ˈmæɡ.mə/",
+      "chinese_explanation": "地下熔融状岩石",
+      "english_explanation": "Molten rock beneath Earth's surface",
+      "example_sentence": "Magma can erupt from volcanoes as lava."
+    },
+    {
+      "english": "mammal",
+      "chinese": "哺乳动物",
+      "phonetic": "/ˈmæml/",
+      "chinese_explanation": "哺乳类动物",
+      "english_explanation": "Animal that feeds milk to young",
+      "example_sentence": "A dolphin is a warm-blooded mammal."
+    },
+    {
+      "english": "mangrove",
+      "chinese": "红树林，红树",
+      "phonetic": "/ˈmæŋɡrəʊv/",
+      "chinese_explanation": "热带海岸植物",
+      "english_explanation": "tropical coastal tree",
+      "example_sentence": "Mangroves protect coastlines from storm damage."
+    },
+    {
+      "english": "mantle",
+      "chinese": "地幔；披风，罩层",
+      "phonetic": "/ˈmæntl/",
+      "chinese_explanation": "地幔；覆盖物",
+      "english_explanation": "earth layer or cloak",
+      "example_sentence": "The Earth's mantle is very hot."
+    },
+    {
+      "english": "marsh",
+      "chinese": "沼泽，湿地",
+      "phonetic": "/mɑːʃ/",
+      "chinese_explanation": "低洼湿地",
+      "english_explanation": "wet soft land area",
+      "example_sentence": "Frogs are common in the marsh."
+    },
+    {
+      "english": "meridian",
+      "chinese": "子午线，经线",
+      "phonetic": "/məˈrɪdiən/",
+      "chinese_explanation": "经度基准线",
+      "english_explanation": "line of longitude",
+      "example_sentence": "The Prime Meridian is at 0° longitude."
+    },
+    {
+      "english": "mesa",
+      "chinese": "平顶山，台地",
+      "phonetic": "/ˈmeɪsə/",
+      "chinese_explanation": "平顶高地",
+      "english_explanation": "flat-topped high hill",
+      "example_sentence": "We saw a beautiful mesa in the desert."
+    },
+    {
+      "english": "metabolism",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "metamorphic",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "meteorology",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "microbe",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "mineral",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "mollusk",
+      "chinese": "软体动物",
+      "phonetic": "/ˈmɒləsk/",
+      "chinese_explanation": "无脊椎软体动物",
+      "english_explanation": "a soft-bodied invertebrate animal",
+      "example_sentence": "A snail is a common mollusk."
+    },
+    {
+      "english": "monsoon",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "moraine",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "morphology",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "moss",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "mutation",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "mutualism",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "nebula",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "nectar",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "niche",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "nitrogen",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "nocturnal",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "nucleus",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "nutrient",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "observatory",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "omnivore",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "ore",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "organism",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "osmosis",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "outcrop",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "oxidation",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "ozone",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "paleontology",
+      "chinese": "古生物学",
+      "phonetic": "/ˌpæl.i.ɒnˈtɒl.ə.dʒi/",
+      "chinese_explanation": "研究古生物的科学",
+      "english_explanation": "Study of ancient life forms",
+      "example_sentence": "He majors in paleontology at university."
+    },
+    {
+      "english": "parasite",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "peninsula",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "permafrost",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "permeability",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "petrify",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "photosynthesis",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "phylum",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "pigment",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "plankton",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "plateau",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "pollen",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "pollinate",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "polymer",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "population",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "prairie",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "precipitation",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "predator",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "primate",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "probe",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "prokaryote",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "propagation",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "protein",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "proton",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "pulsar",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "quarantine",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "quartz",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "radiation",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "radioactive",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "reef",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "refraction",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "regeneration",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "reptile",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "reservoir",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "respiration",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "rift",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "rotation",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "runoff",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "salinity",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "satellite",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "savanna",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "sediment",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "seismic",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "semiconductor",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "sequoia",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "silt",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "solar",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "solstice",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "soluble",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "sonar",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "species",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "specimen",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "spore",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "stalactite",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "stalagmite",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "stamen",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "steppe",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "stimulus",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "stratosphere",
+      "chinese": "平流层，同温层",
+      "phonetic": "/ˈstrætəsfɪə(r)/",
+      "chinese_explanation": "大气平流层",
+      "english_explanation": "Upper layer of Earth's atmosphere",
+      "example_sentence": "The plane flew in the stratosphere."
+    },
+    {
+      "english": "stratum",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "subduction",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "substrate",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "sulfur",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "symbiosis",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "synthesis",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "tectonic",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "temperate",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "terrestrial",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "thermodynamics",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "tidal",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "topography",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "toxin",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "transpiration",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "tributary",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "tropical",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "troposphere",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "tsunami",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "tundra",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "turbine",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "ultraviolet",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "understory",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "uranium",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "velocity",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "vertebrate",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "volcanic",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "watershed",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "weathering",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "wetland",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "zoology",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "aeration",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "allele",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "amplitude",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
     },
     {
       "english": "anomaly",
-      "chinese": "异常",
-      "phonetic": "/əˈnɒm.ə.li/",
-      "chinese_explanation": "不正常的事",
-      "english_explanation": "something unusual",
-      "example_sentence": "A genetic anomaly."
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
     },
     {
-      "english": "benign",
-      "chinese": "良性的",
-      "phonetic": "/bɪˈnaɪn/",
-      "chinese_explanation": "无害的",
-      "english_explanation": "not harmful",
-      "example_sentence": "A benign tumor."
+      "english": "aquatic",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
     },
     {
-      "english": "cursory",
-      "chinese": "粗略的",
-      "phonetic": "/ˈkɜːr.sər.i/",
-      "chinese_explanation": "匆忙的",
-      "english_explanation": "hasty and superficial",
-      "example_sentence": "A cursory glance."
+      "english": "archipelago",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
     },
     {
-      "english": "disseminate",
-      "chinese": "传播",
-      "phonetic": "/dɪˈsem.ɪ.neɪt/",
-      "chinese_explanation": "散布信息",
-      "english_explanation": "to spread widely",
-      "example_sentence": "Disseminate information."
+      "english": "bedrock",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
     },
     {
-      "english": "enigma",
-      "chinese": "谜",
-      "phonetic": "/ɪˈnɪɡ.mə/",
-      "chinese_explanation": "难以理解的事",
-      "english_explanation": "a mystery",
-      "example_sentence": "She remains an enigma."
+      "english": "benthic",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
     },
     {
-      "english": "futile",
-      "chinese": "徒劳的",
-      "phonetic": "/ˈfjuː.taɪl/",
-      "chinese_explanation": "无用的",
-      "english_explanation": "pointless",
-      "example_sentence": "A futile attempt."
+      "english": "biogeography",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
     },
     {
-      "english": "harbinger",
-      "chinese": "先兆",
-      "phonetic": "/ˈhɑːr.bɪn.dʒər/",
-      "chinese_explanation": "预兆",
-      "english_explanation": "a sign of what is coming",
-      "example_sentence": "A harbinger of spring."
+      "english": "biomass",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "caldera",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "capillary",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "carnivorous",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "cavity",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "circumference",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "coexistence",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "colonization",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "combustible",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "confluence",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "coniferous",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "crevasse",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "cultivar",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "decomposition",
+      "chinese": "分解；腐烂；解体",
+      "phonetic": "/ˌdiː.kɒm.pəˈzɪʃ.ən/",
+      "chinese_explanation": "分解腐烂的过程",
+      "english_explanation": "process of breaking down or decaying",
+      "example_sentence": "Decomposition of dead leaves enriches the soil."
+    },
+    {
+      "english": "desertification",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "dew",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "dormancy",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "evapotranspiration",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "exfoliation",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "fermentation",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "fissure",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "floodplain",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "fluorescence",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "fossilization",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "geomorphology",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "germination",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "glaciation",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "gyre",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "herbaceous",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "heterogeneous",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "hibernation",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "homologous",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "hydroelectric",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "infiltration",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "insulation",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "ionosphere",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "isthmus",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "karst",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "landform",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "leaching",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "lithification",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "metamorphism",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "microorganism",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "oceanography",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "omnivorous",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "organic",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "oscillation",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "parasitism",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "phytoplankton",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "pollination",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "predation",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "salinization",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "sedimentary",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "seismology",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "silicate",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "speciation",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "stratification",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "taxonomy",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "thermosphere",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "tropism",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "aggregate",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "atmosphere",
+      "chinese": "大气；气氛；氛围",
+      "phonetic": "/ˈætməsfɪə(r)/",
+      "chinese_explanation": "大气，氛围",
+      "english_explanation": "Air or surrounding mood",
+      "example_sentence": "The atmosphere here is very warm."
+    },
+    {
+      "english": "axis",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "carbon",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "catalyst",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "coalesce",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "conservation",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "curriculum",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "debris",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "demographic",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "discharge",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "dissolve",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "dormant",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "drainage",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "drought",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "earthquake",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "ecology",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "emission",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "endemic",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "erosion",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "evolution",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "excavation",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "fertile",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "fossil",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "frequency",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "friction",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "galaxy",
+      "chinese": "星系；银河系",
+      "phonetic": "/ˈɡæləksi/",
+      "chinese_explanation": "恒星构成的天体系统",
+      "english_explanation": "A large system of stars",
+      "example_sentence": "The Milky Way is our home galaxy."
+    },
+    {
+      "english": "greenhouse",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "habitat",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "hormone",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "hypothesis",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "immunity",
+      "chinese": "免疫力；豁免权",
+      "phonetic": "/ɪˈmjuːnəti/",
+      "chinese_explanation": "免疫能力，豁免权利",
+      "english_explanation": "Protection against disease or exemption",
+      "example_sentence": "Vaccines can give people immunity to certain diseases."
+    },
+    {
+      "english": "indigenous",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "irrigation",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "kinetic",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "marine",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "membrane",
+      "chinese": "膜；薄膜；细胞膜",
+      "phonetic": "/ˈmem.breɪn/",
+      "chinese_explanation": "薄的分隔膜层",
+      "english_explanation": "Thin layer separating two regions",
+      "example_sentence": "The cell membrane protects the inner cell."
+    },
+    {
+      "english": "migration",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "molecule",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "orbit",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "proximity",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "reproduction",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "simulate",
+      "chinese": "模拟；模仿；假装",
+      "phonetic": "/ˈsɪmjuleɪt/",
+      "chinese_explanation": "模拟，模仿",
+      "english_explanation": "imitate or copy something",
+      "example_sentence": "We use software to simulate driving tests."
+    },
+    {
+      "english": "spectrum",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "succession",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "vegetation",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "gradient",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "maritime",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "simulation",
+      "chinese": "模拟，仿真",
+      "phonetic": "/ˌsɪmjuˈleɪʃn/",
+      "chinese_explanation": "模拟真实情况",
+      "english_explanation": "Imitation of real situations",
+      "example_sentence": "We held a fire simulation last week."
     }
   ]
 }

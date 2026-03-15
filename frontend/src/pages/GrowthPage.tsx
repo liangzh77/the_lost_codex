@@ -166,7 +166,6 @@ export default function GrowthPage() {
                     cursor={{ stroke: '#d4d4d8', strokeWidth: 1 }}
                   />
                   <Area type="monotone" dataKey="imprints" stroke="#3b82f6" strokeWidth={2.5} fill="url(#gradImprints)" name="印记" dot={false} activeDot={{ r: 4, strokeWidth: 2, fill: '#fff' }} />
-                  <Area type="monotone" dataKey="spelling_imprints" stroke="#a855f7" strokeWidth={2} fill="url(#gradSpelling)" name="拼写印记" dot={false} activeDot={{ r: 4, strokeWidth: 2, fill: '#fff' }} />
                 </AreaChart>
               </ResponsiveContainer>
                 ) : (

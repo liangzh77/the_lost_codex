@@ -3,244 +3,1932 @@
   "display_order": 9,
   "words": [
     {
-      "english": "alleviate",
-      "chinese": "减轻",
-      "phonetic": "/əˈliː.vi.eɪt/",
-      "chinese_explanation": "缓解痛苦",
-      "english_explanation": "to make less severe",
-      "example_sentence": "Alleviate the pain."
+      "english": "abrupt",
+      "chinese": "突然的；唐突的",
+      "phonetic": "/əˈbrʌpt/",
+      "chinese_explanation": "突然的，唐突的",
+      "english_explanation": "sudden and unexpected",
+      "example_sentence": "He made an abrupt decision to quit."
     },
     {
-      "english": "brevity",
-      "chinese": "简洁",
-      "phonetic": "/ˈbrev.ɪ.ti/",
-      "chinese_explanation": "简短",
-      "english_explanation": "shortness of expression",
-      "example_sentence": "Brevity is the soul of wit."
+      "english": "absurd",
+      "chinese": "荒谬的；荒唐的",
+      "phonetic": "/əbˈsɜːd/",
+      "chinese_explanation": "荒谬的，荒唐的",
+      "english_explanation": "ridiculous and unreasonable",
+      "example_sentence": "It's absurd to believe such a rumor."
     },
     {
-      "english": "clandestine",
-      "chinese": "秘密的",
-      "phonetic": "/klænˈdes.tɪn/",
-      "chinese_explanation": "暗中进行的",
-      "english_explanation": "done secretly",
-      "example_sentence": "A clandestine meeting."
+      "english": "abyss",
+      "chinese": "深渊；绝境",
+      "phonetic": "/əˈbɪs/",
+      "chinese_explanation": "深渊，绝境",
+      "english_explanation": "a very deep hole",
+      "example_sentence": "He fell into the abyss of despair."
     },
     {
-      "english": "detriment",
-      "chinese": "损害",
-      "phonetic": "/ˈdet.rɪ.mənt/",
-      "chinese_explanation": "伤害",
-      "english_explanation": "harm or damage",
-      "example_sentence": "To the detriment of health."
+      "english": "accomplice",
+      "chinese": "共犯；同谋",
+      "phonetic": "/əˈkʌmplɪs/",
+      "chinese_explanation": "共犯，同谋",
+      "english_explanation": "person helping commit a crime",
+      "example_sentence": "The police caught the thief and his accomplice."
     },
     {
-      "english": "exacerbate",
-      "chinese": "加剧",
-      "phonetic": "/ɪɡˈzæs.ər.beɪt/",
-      "chinese_explanation": "使恶化",
-      "english_explanation": "to make worse",
-      "example_sentence": "The drought exacerbated the crisis."
+      "english": "accord",
+      "chinese": "一致；符合；协议",
+      "phonetic": "/əˈkɔːd/",
+      "chinese_explanation": "一致，协议，符合",
+      "english_explanation": "agreement; match with sth",
+      "example_sentence": "Our views are in accord on this matter."
     },
     {
-      "english": "fallacy",
-      "chinese": "谬论",
-      "phonetic": "/ˈfæl.ə.si/",
-      "chinese_explanation": "错误的推理",
-      "english_explanation": "a false belief",
-      "example_sentence": "A logical fallacy."
+      "english": "accountability",
+      "chinese": "责任；问责制",
+      "phonetic": "/əˌkaʊntəˈbɪləti/",
+      "chinese_explanation": "责任，问责制",
+      "english_explanation": "responsibility for one's actions",
+      "example_sentence": "Public officials must face accountability for mistakes."
     },
     {
-      "english": "gratuitous",
-      "chinese": "无端的",
-      "phonetic": "/ɡrəˈtjuː.ɪ.təs/",
-      "chinese_explanation": "不必要的",
-      "english_explanation": "unnecessary",
-      "example_sentence": "Gratuitous violence in films."
+      "english": "accrue",
+      "chinese": "积累，自然增加",
+      "phonetic": "/əˈkruː/",
+      "chinese_explanation": "积累，增益",
+      "english_explanation": "increase gradually over time",
+      "example_sentence": "Interest will accrue on your savings account."
     },
     {
-      "english": "hegemony",
-      "chinese": "霸权",
-      "phonetic": "/hɪˈdʒem.ə.ni/",
-      "chinese_explanation": "支配地位",
-      "english_explanation": "dominance over others",
-      "example_sentence": "Cultural hegemony."
+      "english": "acquaint",
+      "chinese": "使熟悉，使了解",
+      "phonetic": "/əˈkweɪnt/",
+      "chinese_explanation": "使熟悉，告知",
+      "english_explanation": "make someone know something",
+      "example_sentence": "Please acquaint yourself with the new policy."
     },
     {
-      "english": "impeccable",
-      "chinese": "无可挑剔的",
-      "phonetic": "/ɪmˈpek.ə.bəl/",
-      "chinese_explanation": "完美的",
-      "english_explanation": "flawless",
-      "example_sentence": "Impeccable manners."
+      "english": "acumen",
+      "chinese": "精明，敏锐，洞察力",
+      "phonetic": "/ˈækjəmən/",
+      "chinese_explanation": "敏锐，洞察力",
+      "english_explanation": "ability to make good judgments",
+      "example_sentence": "His business acumen brought him great success."
     },
     {
-      "english": "judiciously",
-      "chinese": "明智地",
-      "phonetic": "/dʒuːˈdɪʃ.əs.li/",
-      "chinese_explanation": "审慎地",
-      "english_explanation": "with good judgment",
-      "example_sentence": "Spend money judiciously."
+      "english": "adept",
+      "chinese": "擅长的，内行，能手",
+      "phonetic": "/əˈdept/",
+      "chinese_explanation": "熟练的，擅长的",
+      "english_explanation": "skilled at doing something",
+      "example_sentence": "He is adept at playing the piano."
     },
     {
-      "english": "labyrinth",
-      "chinese": "迷宫",
-      "phonetic": "/ˈlæb.ə.rɪnθ/",
-      "chinese_explanation": "复杂的通道",
-      "english_explanation": "a complex maze",
-      "example_sentence": "A labyrinth of corridors."
+      "english": "adherent",
+      "chinese": "拥护者，追随者，信徒",
+      "phonetic": "/ədˈhɪərənt/",
+      "chinese_explanation": "拥护者，追随者",
+      "english_explanation": "supporter of an idea or group",
+      "example_sentence": "He is a firm adherent of environmental protection."
     },
     {
-      "english": "magnanimous",
-      "chinese": "宽宏大量的",
-      "phonetic": "/mæɡˈnæn.ɪ.məs/",
-      "chinese_explanation": "慷慨宽容的",
-      "english_explanation": "generous and forgiving",
-      "example_sentence": "A magnanimous gesture."
+      "english": "adjunct",
+      "chinese": "附属物，附件，助手",
+      "phonetic": "/ˈædʒʌŋkt/",
+      "chinese_explanation": "附属物，附加的",
+      "english_explanation": "something added as extra",
+      "example_sentence": "The course is an adjunct to the main program."
     },
     {
-      "english": "nonchalant",
-      "chinese": "漫不经心的",
-      "phonetic": "/ˌnɒn.ʃəˈlɑːnt/",
-      "chinese_explanation": "若无其事的",
-      "english_explanation": "calm and relaxed",
-      "example_sentence": "He appeared nonchalant."
+      "english": "advent",
+      "chinese": "到来，出现，降临",
+      "phonetic": "/ˈædvent/",
+      "chinese_explanation": "到来，出现",
+      "english_explanation": "arrival of something important",
+      "example_sentence": "The advent of smartphones changed our lives."
     },
     {
-      "english": "ostensible",
-      "chinese": "表面上的",
-      "phonetic": "/ɒˈsten.sɪ.bəl/",
-      "chinese_explanation": "看似的",
-      "english_explanation": "appearing to be true",
-      "example_sentence": "The ostensible reason."
+      "english": "adversary",
+      "chinese": "对手，敌手，反对者",
+      "phonetic": "/ˈædvəsəri/",
+      "chinese_explanation": "对手，敌手",
+      "english_explanation": "person you compete or fight against",
+      "example_sentence": "He beat his strongest adversary in the game."
     },
     {
-      "english": "pernicious",
-      "chinese": "有害的",
-      "phonetic": "/pərˈnɪʃ.əs/",
-      "chinese_explanation": "造成伤害的",
-      "english_explanation": "causing great harm",
-      "example_sentence": "A pernicious influence."
+      "english": "affinity",
+      "chinese": "密切关系，亲和力，共鸣",
+      "phonetic": "/əˈfɪnəti/",
+      "chinese_explanation": "共鸣，亲和力",
+      "english_explanation": "natural liking for someone or something",
+      "example_sentence": "She has a special affinity for cats."
     },
     {
-      "english": "quintessential",
-      "chinese": "典型的",
-      "phonetic": "/ˌkwɪn.tɪˈsen.ʃəl/",
-      "chinese_explanation": "最具代表性的",
-      "english_explanation": "the most typical",
-      "example_sentence": "A quintessential example."
+      "english": "afflict",
+      "chinese": "使痛苦，折磨，使苦恼",
+      "phonetic": "/əˈflɪkt/",
+      "chinese_explanation": "使痛苦，折磨",
+      "english_explanation": "cause pain or suffering to someone",
+      "example_sentence": "The disease afflicts many elderly people."
     },
     {
-      "english": "repercussion",
-      "chinese": "反响",
-      "phonetic": "/ˌriː.pərˈkʌʃ.ən/",
-      "chinese_explanation": "后果影响",
-      "english_explanation": "an unintended consequence",
-      "example_sentence": "Serious repercussions."
+      "english": "agile",
+      "chinese": "敏捷的，灵活的",
+      "phonetic": "/ˈædʒaɪl/",
+      "chinese_explanation": "灵活敏捷的",
+      "english_explanation": "quick and nimble in movement",
+      "example_sentence": "He is as agile as a little monkey."
     },
     {
-      "english": "surreptitious",
-      "chinese": "偷偷的",
-      "phonetic": "/ˌsɜːr.əpˈtɪʃ.əs/",
-      "chinese_explanation": "暗中的",
-      "english_explanation": "done secretly",
-      "example_sentence": "A surreptitious glance."
+      "english": "alchemy",
+      "chinese": "炼金术，魔力",
+      "phonetic": "/ˈælkəmi/",
+      "chinese_explanation": "古代炼金术",
+      "english_explanation": "medieval chemistry seeking gold",
+      "example_sentence": "Alchemy was popular in the Middle Ages."
     },
     {
-      "english": "tenacious",
-      "chinese": "坚韧的",
-      "phonetic": "/tɪˈneɪ.ʃəs/",
-      "chinese_explanation": "不放弃的",
-      "english_explanation": "holding firmly",
-      "example_sentence": "A tenacious fighter."
+      "english": "alienate",
+      "chinese": "使疏远，离间",
+      "phonetic": "/ˈeɪliəneɪt/",
+      "chinese_explanation": "使关系疏远",
+      "english_explanation": "make someone feel isolated",
+      "example_sentence": "His rudeness will alienate his friends soon."
     },
     {
-      "english": "unequivocal",
-      "chinese": "明确的",
-      "phonetic": "/ˌʌn.ɪˈkwɪv.ə.kəl/",
-      "chinese_explanation": "毫不含糊的",
-      "english_explanation": "completely clear",
-      "example_sentence": "An unequivocal answer."
+      "english": "allegiance",
+      "chinese": "忠诚，效忠",
+      "phonetic": "/əˈliːdʒəns/",
+      "chinese_explanation": "忠诚，拥戴",
+      "english_explanation": "loyalty to a person or group",
+      "example_sentence": "He pledged allegiance to his motherland."
     },
     {
-      "english": "vindicate",
-      "chinese": "证明清白",
-      "phonetic": "/ˈvɪn.dɪ.keɪt/",
-      "chinese_explanation": "为...平反",
-      "english_explanation": "to prove right",
-      "example_sentence": "He was vindicated."
+      "english": "allot",
+      "chinese": "分配，分派",
+      "phonetic": "/əˈlɒt/",
+      "chinese_explanation": "分配，分派",
+      "english_explanation": "distribute shares of something",
+      "example_sentence": "We will allot each member a small task."
     },
     {
-      "english": "whimsical",
-      "chinese": "异想天开的",
-      "phonetic": "/ˈwɪm.zɪ.kəl/",
-      "chinese_explanation": "古怪有趣的",
-      "english_explanation": "playfully unusual",
-      "example_sentence": "A whimsical design."
+      "english": "allure",
+      "chinese": "吸引力，诱惑",
+      "phonetic": "/əˈlʊə(r)/",
+      "chinese_explanation": "有吸引力",
+      "english_explanation": "quality of being attractive",
+      "example_sentence": "The allure of the sea is irresistible."
     },
     {
-      "english": "zealous",
-      "chinese": "热心的",
-      "phonetic": "/ˈzel.əs/",
-      "chinese_explanation": "充满热情的",
-      "english_explanation": "very enthusiastic",
-      "example_sentence": "A zealous supporter."
+      "english": "annihilate",
+      "chinese": "歼灭，彻底消灭",
+      "phonetic": "/əˈnaɪəleɪt/",
+      "chinese_explanation": "彻底消灭",
+      "english_explanation": "destroy completely",
+      "example_sentence": "The army tried to annihilate the enemy force."
     },
     {
-      "english": "acquiesce",
-      "chinese": "默许",
-      "phonetic": "/ˌæk.wiˈes/",
-      "chinese_explanation": "勉强同意",
-      "english_explanation": "to accept reluctantly",
-      "example_sentence": "She acquiesced to the plan."
+      "english": "antagonist",
+      "chinese": "对手，敌手",
+      "phonetic": "/ænˈtæɡənɪst/",
+      "chinese_explanation": "对手，敌手",
+      "english_explanation": "opponent in a conflict",
+      "example_sentence": "He is the main antagonist in this film."
+    },
+    {
+      "english": "antiquated",
+      "chinese": "过时的，陈旧的",
+      "phonetic": "/ˈæntɪkweɪtɪd/",
+      "chinese_explanation": "陈旧过时的",
+      "english_explanation": "old-fashioned and outdated",
+      "example_sentence": "That antiquated phone can't take photos."
+    },
+    {
+      "english": "apprehend",
+      "chinese": "逮捕，理解",
+      "phonetic": "/ˌæprɪˈhend/",
+      "chinese_explanation": "逮捕，领会",
+      "english_explanation": "arrest someone or understand",
+      "example_sentence": "The police apprehended the thief last night."
+    },
+    {
+      "english": "arduous",
+      "chinese": "费力的；艰难的；艰苦的",
+      "phonetic": "/ˈɑːdʒuəs/",
+      "chinese_explanation": "费力的，艰苦的",
+      "english_explanation": "needing much effort",
+      "example_sentence": "Climbing the mountain is an arduous task."
+    },
+    {
+      "english": "articulation",
+      "chinese": "发音；吐字；清晰表达",
+      "phonetic": "/ɑːˌtɪkjuˈleɪʃn/",
+      "chinese_explanation": "发音；清晰表达",
+      "english_explanation": "clear way of speaking",
+      "example_sentence": "Her articulation is perfect for public speaking."
+    },
+    {
+      "english": "attrition",
+      "chinese": "消耗；损耗；自然减员",
+      "phonetic": "/əˈtrɪʃn/",
+      "chinese_explanation": "消耗；人员损耗",
+      "english_explanation": "gradual weakening or reduction",
+      "example_sentence": "The team shrank due to staff attrition."
+    },
+    {
+      "english": "axiom",
+      "chinese": "公理；格言；普遍真理",
+      "phonetic": "/ˈæksiəm/",
+      "chinese_explanation": "公理；公认真理",
+      "english_explanation": "widely accepted true rule",
+      "example_sentence": "This math axiom is taught in primary school."
     },
     {
       "english": "belligerent",
-      "chinese": "好战的",
-      "phonetic": "/bəˈlɪdʒ.ər.ənt/",
-      "chinese_explanation": "挑衅的",
-      "english_explanation": "hostile and aggressive",
-      "example_sentence": "A belligerent attitude."
+      "chinese": "好战的；好斗的；交战的",
+      "phonetic": "/bəˈlɪdʒərənt/",
+      "chinese_explanation": "好战的，好斗的",
+      "english_explanation": "aggressive and eager to fight",
+      "example_sentence": "He took a belligerent attitude towards strangers."
     },
     {
-      "english": "conundrum",
-      "chinese": "难题",
-      "phonetic": "/kəˈnʌn.drəm/",
-      "chinese_explanation": "棘手的问题",
-      "english_explanation": "a difficult problem",
-      "example_sentence": "An ethical conundrum."
+      "english": "bureaucratic",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
     },
     {
-      "english": "draconian",
-      "chinese": "严厉的",
-      "phonetic": "/drəˈkoʊ.ni.ən/",
-      "chinese_explanation": "极其严苛的",
-      "english_explanation": "excessively harsh",
-      "example_sentence": "Draconian measures."
+      "english": "capitulate",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
     },
     {
-      "english": "ephemeral",
-      "chinese": "短暂的",
-      "phonetic": "/ɪˈfem.ər.əl/",
-      "chinese_explanation": "转瞬即逝的",
-      "english_explanation": "lasting a very short time",
-      "example_sentence": "Ephemeral beauty."
+      "english": "cognition",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
     },
     {
-      "english": "fortuitous",
-      "chinese": "偶然的",
-      "phonetic": "/fɔːrˈtjuː.ɪ.təs/",
-      "chinese_explanation": "碰巧的",
-      "english_explanation": "happening by chance",
-      "example_sentence": "A fortuitous encounter."
+      "english": "contentious",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
     },
     {
-      "english": "galvanize",
-      "chinese": "激励",
-      "phonetic": "/ˈɡæl.və.naɪz/",
-      "chinese_explanation": "激发行动",
-      "english_explanation": "to shock into action",
-      "example_sentence": "The speech galvanized the crowd."
+      "english": "contingent",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "contraband",
+      "chinese": "禁运品，走私货",
+      "phonetic": "/ˈkɒntrəbænd/",
+      "chinese_explanation": "禁运走私物品",
+      "english_explanation": "illegally traded prohibited goods",
+      "example_sentence": "Customs seized a lot of contraband at the border."
+    },
+    {
+      "english": "culminate",
+      "chinese": "达到顶点；以…告终",
+      "phonetic": "/ˈkʌlmɪneɪt/",
+      "chinese_explanation": "达顶点，终了",
+      "english_explanation": "reach highest point or end",
+      "example_sentence": "Their efforts culminated in a big victory."
+    },
+    {
+      "english": "decipher",
+      "chinese": "破译；辨认（难认文字）",
+      "phonetic": "/dɪˈsaɪfə(r)/",
+      "chinese_explanation": "破译，辨认",
+      "english_explanation": "decode obscure writing or codes",
+      "example_sentence": "I can't decipher his messy handwriting."
+    },
+    {
+      "english": "defiance",
+      "chinese": "违抗，蔑视，反抗",
+      "phonetic": "/dɪˈfaɪəns/",
+      "chinese_explanation": "违抗，蔑视",
+      "english_explanation": "open resistance to authority",
+      "example_sentence": "He acted in defiance of the school rules."
+    },
+    {
+      "english": "delineate",
+      "chinese": "详细描述；描画",
+      "phonetic": "/dɪˈlɪnieɪt/",
+      "chinese_explanation": "描述，描画",
+      "english_explanation": "describe or draw clearly",
+      "example_sentence": "The report delineates our future work goals."
+    },
+    {
+      "english": "dissent",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "encroach",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "evasive",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "exhaustive",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "exponent",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "forthright",
+      "chinese": "直率的，坦诚的",
+      "phonetic": "/ˈfɔːθraɪt/",
+      "chinese_explanation": "直率坦诚的",
+      "english_explanation": "direct and honest",
+      "example_sentence": "He gave a forthright answer to the question."
+    },
+    {
+      "english": "fraudulent",
+      "chinese": "欺诈的，诈骗的",
+      "phonetic": "/ˈfrɔːdjələnt/",
+      "chinese_explanation": "欺骗性的",
+      "english_explanation": "dishonest and deceptive",
+      "example_sentence": "The company was accused of fraudulent practices."
+    },
+    {
+      "english": "frivolous",
+      "chinese": "轻浮的，无关紧要的",
+      "phonetic": "/ˈfrɪvələs/",
+      "chinese_explanation": "轻浮无意义的",
+      "english_explanation": "not serious or important",
+      "example_sentence": "Stop wasting time on frivolous activities."
+    },
+    {
+      "english": "hegemony",
+      "chinese": "霸权，支配权",
+      "phonetic": "/hɪˈdʒeməni/",
+      "chinese_explanation": "统治主导权",
+      "english_explanation": "dominance over others",
+      "example_sentence": "The country aimed for global hegemony for decades."
+    },
+    {
+      "english": "heresy",
+      "chinese": "异端邪说，离经叛道的观点",
+      "phonetic": "/ˈherəsi/",
+      "chinese_explanation": "异端邪说",
+      "english_explanation": "belief against official doctrine",
+      "example_sentence": "His opinions were considered heresy at that time."
+    },
+    {
+      "english": "hypocrite",
+      "chinese": "伪君子，虚伪的人",
+      "phonetic": "/ˈhɪpəkrɪt/",
+      "chinese_explanation": "虚伪的人",
+      "english_explanation": "person who pretends to be virtuous",
+      "example_sentence": "Only a hypocrite would preach one thing and do another."
+    },
+    {
+      "english": "illicit",
+      "chinese": "非法的，违禁的",
+      "phonetic": "/ɪˈlɪsɪt/",
+      "chinese_explanation": "违法违禁的",
+      "english_explanation": "not allowed by law",
+      "example_sentence": "He was caught selling illicit drugs last month."
+    },
+    {
+      "english": "inadvertent",
+      "chinese": "无意的，疏忽的",
+      "phonetic": "/ˌɪnədˈvɜːtənt/",
+      "chinese_explanation": "无意疏忽的",
+      "english_explanation": "done without intention",
+      "example_sentence": "The mistake was completely inadvertent and not planned."
+    },
+    {
+      "english": "indignant",
+      "chinese": "愤慨的，愤愤不平的",
+      "phonetic": "/ɪnˈdɪɡnənt/",
+      "chinese_explanation": "愤怒愤慨的",
+      "english_explanation": "angry at unfair treatment",
+      "example_sentence": "She was indignant when she got the unfair dismissal notice."
+    },
+    {
+      "english": "intricate",
+      "chinese": "错综复杂的，精细的",
+      "phonetic": "/ˈɪntrɪkət/",
+      "chinese_explanation": "复杂精细的",
+      "english_explanation": "having many complex details",
+      "example_sentence": "The artist spent months making the intricate wood carving."
+    },
+    {
+      "english": "latent",
+      "chinese": "潜在的，潜伏的",
+      "phonetic": "/ˈleɪ.tnt/",
+      "chinese_explanation": "潜伏的，潜在的",
+      "english_explanation": "Existing but not yet obvious",
+      "example_sentence": "The virus may remain latent for years."
+    },
+    {
+      "english": "militant",
+      "chinese": "好战的，激进分子",
+      "phonetic": "/ˈmɪl.ɪ.tənt/",
+      "chinese_explanation": "好战的，激进的",
+      "english_explanation": "Aggressive in supporting political causes",
+      "example_sentence": "He was a militant human rights activist."
+    },
+    {
+      "english": "notorious",
+      "chinese": "声名狼藉的，臭名昭著的",
+      "phonetic": "/nəʊˈtɔː.ri.əs/",
+      "chinese_explanation": "臭名昭著的",
+      "english_explanation": "Well known for bad actions",
+      "example_sentence": "The region is notorious for its smuggling activities."
+    },
+    {
+      "english": "nuance",
+      "chinese": "细微差别，微妙之处",
+      "phonetic": "/ˈnjuː.ɑːns/",
+      "chinese_explanation": "细微差别",
+      "english_explanation": "Small subtle difference in meaning",
+      "example_sentence": "You need to understand the nuance of this word."
+    },
+    {
+      "english": "orthodox",
+      "chinese": "正统的，传统的",
+      "phonetic": "/ˈɔː.θə.dɒks/",
+      "chinese_explanation": "正统的，传统的",
+      "english_explanation": "Following traditional accepted beliefs",
+      "example_sentence": "He holds very orthodox views on education."
+    },
+    {
+      "english": "outrage",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "pervasive",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "polarize",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "precedent",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "prejudice",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "premise",
+      "chinese": "前提；假定",
+      "phonetic": "/ˈprem.ɪs/",
+      "chinese_explanation": "前提，假定",
+      "english_explanation": "Basic assumption for argument",
+      "example_sentence": "His research is based on a false premise."
+    },
+    {
+      "english": "prevalent",
+      "chinese": "流行的；普遍存在的",
+      "phonetic": "/ˈprev.əl.ənt/",
+      "chinese_explanation": "流行的，普遍的",
+      "english_explanation": "Common among many people",
+      "example_sentence": "Smoking is less prevalent now than before."
+    },
+    {
+      "english": "propaganda",
+      "chinese": "宣传；鼓吹",
+      "phonetic": "/ˌprɒp.əˈɡæn.də/",
+      "chinese_explanation": "宣传，鼓吹",
+      "english_explanation": "Biased promotional information",
+      "example_sentence": "The government launched anti-drug propaganda recently."
+    },
+    {
+      "english": "ruthless",
+      "chinese": "无情的，残忍的",
+      "phonetic": "/ˈruːθ.ləs/",
+      "chinese_explanation": "无情的，冷酷的",
+      "english_explanation": "Showing no pity or mercy",
+      "example_sentence": "The ruthless king punished all rebels."
+    },
+    {
+      "english": "sovereign",
+      "chinese": "有主权的；君主",
+      "phonetic": "/ˈsɒv.rɪn/",
+      "chinese_explanation": "主权的；君主",
+      "english_explanation": "Independent in self-governance",
+      "example_sentence": "China is a sovereign independent country."
+    },
+    {
+      "english": "spontaneous",
+      "chinese": "自发的，非筹划的",
+      "phonetic": "/spɒnˈteɪ.ni.əs/",
+      "chinese_explanation": "自发的，自然的",
+      "english_explanation": "Done without prior planning",
+      "example_sentence": "The audience gave a spontaneous applause."
+    },
+    {
+      "english": "stagnant",
+      "chinese": "停滞的，不发展的",
+      "phonetic": "/ˈstæɡ.nənt/",
+      "chinese_explanation": "停滞的，萧条的",
+      "english_explanation": "Not developing or progressing",
+      "example_sentence": "The local economy has been stagnant for years."
+    },
+    {
+      "english": "stigma",
+      "chinese": "耻辱，污名",
+      "phonetic": "/ˈstɪɡ.mə/",
+      "chinese_explanation": "耻辱，污名",
+      "english_explanation": "Mark of shame or disgrace",
+      "example_sentence": "There is still a stigma surrounding mental illness."
+    },
+    {
+      "english": "stringent",
+      "chinese": "严格的，严厉的",
+      "phonetic": "/ˈstrɪn.dʒənt/",
+      "chinese_explanation": "严格的，严苛的",
+      "english_explanation": "Very strict and severe",
+      "example_sentence": "The school has stringent rules for student conduct."
+    },
+    {
+      "english": "subtle",
+      "chinese": "不易察觉的，微妙的",
+      "phonetic": "/ˈsʌt.l/",
+      "chinese_explanation": "微妙的，隐晦的",
+      "english_explanation": "Hard to notice clearly",
+      "example_sentence": "There is a subtle difference between the two designs."
+    },
+    {
+      "english": "susceptible",
+      "chinese": "易受影响的；易感染的",
+      "phonetic": "/səˈseptəbl/",
+      "chinese_explanation": "易受影响的",
+      "english_explanation": "Easily affected by sth",
+      "example_sentence": "Young plants are susceptible to cold weather."
+    },
+    {
+      "english": "sustenance",
+      "chinese": "食物；营养；生计",
+      "phonetic": "/ˈsʌstənəns/",
+      "chinese_explanation": "食物；生计",
+      "english_explanation": "Food needed to live",
+      "example_sentence": "Local crops provide most of their sustenance."
+    },
+    {
+      "english": "tangible",
+      "chinese": "有形的；切实的；可触摸的",
+      "phonetic": "/ˈtændʒəbl/",
+      "chinese_explanation": "有形的，实在的",
+      "english_explanation": "Real and touchable",
+      "example_sentence": "The policy brought tangible benefits to people."
+    },
+    {
+      "english": "tentative",
+      "chinese": "试探性的；暂定的；犹豫的",
+      "phonetic": "/ˈtentətɪv/",
+      "chinese_explanation": "暂定的，试探的",
+      "english_explanation": "Not yet definite",
+      "example_sentence": "We reached a tentative agreement yesterday."
+    },
+    {
+      "english": "toxic",
+      "chinese": "有毒的；有害的",
+      "phonetic": "/ˈtɒksɪk/",
+      "chinese_explanation": "有毒的，有害的",
+      "english_explanation": "Containing poison",
+      "example_sentence": "This kind of mushroom is highly toxic."
+    },
+    {
+      "english": "vigilant",
+      "chinese": "警惕的；警觉的；警戒的",
+      "phonetic": "/ˈvɪdʒɪlənt/",
+      "chinese_explanation": "警惕的，警觉的",
+      "english_explanation": "Alert to dangers",
+      "example_sentence": "You must be vigilant when walking alone at night."
+    },
+    {
+      "english": "volatile",
+      "chinese": "易变的；动荡的；挥发性的",
+      "phonetic": "/ˈvɒlətaɪl/",
+      "chinese_explanation": "易变的，挥发的",
+      "english_explanation": "Likely to change suddenly",
+      "example_sentence": "The volatile situation made everyone nervous."
+    },
+    {
+      "english": "abhor",
+      "chinese": "憎恨；厌恶；痛恨",
+      "phonetic": "/əbˈhɔː(r)/",
+      "chinese_explanation": "憎恨，厌恶",
+      "english_explanation": "Hate sth very much",
+      "example_sentence": "I abhor people who tell lies."
+    },
+    {
+      "english": "abrogate",
+      "chinese": "废除，废止（法律、协议等）",
+      "phonetic": "/ˈæbrəɡeɪt/",
+      "chinese_explanation": "废除，废止",
+      "english_explanation": "Officially cancel a law",
+      "example_sentence": "The court decided to abrogate the unfair law."
+    },
+    {
+      "english": "adulation",
+      "chinese": "奉承；谄媚；吹捧",
+      "phonetic": "/ˌædʒuˈleɪʃn/",
+      "chinese_explanation": "奉承，吹捧",
+      "english_explanation": "Excessive admiration",
+      "example_sentence": "He grew tired of the constant adulation from fans."
+    },
+    {
+      "english": "ambivalence",
+      "chinese": "矛盾心理",
+      "phonetic": "/æmˈbɪvələns/",
+      "chinese_explanation": "矛盾情绪",
+      "english_explanation": "Mixed conflicting feelings",
+      "example_sentence": "She felt ambivalence about moving abroad."
+    },
+    {
+      "english": "anachronistic",
+      "chinese": "不合时代的",
+      "phonetic": "/əˌnækrəˈnɪstɪk/",
+      "chinese_explanation": "过时落伍的",
+      "english_explanation": "Out of historical time",
+      "example_sentence": "The old phone looks anachronistic today."
+    },
+    {
+      "english": "apologist",
+      "chinese": "辩护者，辩解者",
+      "phonetic": "/əˈpɒlədʒɪst/",
+      "chinese_explanation": "辩解辩护者",
+      "english_explanation": "Defender of an idea",
+      "example_sentence": "He is an apologist for the new policy."
+    },
+    {
+      "english": "archetype",
+      "chinese": "典型，原型",
+      "phonetic": "/ˈɑːkitaɪp/",
+      "chinese_explanation": "典型原型",
+      "english_explanation": "Ideal typical example",
+      "example_sentence": "The hero is a common story archetype."
+    },
+    {
+      "english": "ardor",
+      "chinese": "热情，热忱",
+      "phonetic": "/ˈɑːdə(r)/",
+      "chinese_explanation": "热情热忱",
+      "english_explanation": "Strong passionate enthusiasm",
+      "example_sentence": "His ardor for learning impressed us."
+    },
+    {
+      "english": "ascetic",
+      "chinese": "禁欲的，苦行者",
+      "phonetic": "/əˈsetɪk/",
+      "chinese_explanation": "禁欲苦行的",
+      "english_explanation": "Living simply without luxuries",
+      "example_sentence": "The ascetic monk lived in a small cave."
+    },
+    {
+      "english": "assiduous",
+      "chinese": "勤勉的，刻苦的",
+      "phonetic": "/əˈsɪdʒuəs/",
+      "chinese_explanation": "勤勉刻苦的",
+      "english_explanation": "Diligent and hardworking",
+      "example_sentence": "She is assiduous in her math study."
+    },
+    {
+      "english": "auspicious",
+      "chinese": "吉祥的，吉利的",
+      "phonetic": "/ɔːˈspɪʃəs/",
+      "chinese_explanation": "吉祥吉利的",
+      "english_explanation": "Signaling good fortune",
+      "example_sentence": "The sunny day is auspicious for our trip."
+    },
+    {
+      "english": "autocratic",
+      "chinese": "独裁的，专制的",
+      "phonetic": "/ˌɔːtəˈkrætɪk/",
+      "chinese_explanation": "独裁专制的",
+      "english_explanation": "Exercising absolute power",
+      "example_sentence": "The autocratic leader ignored public opinions."
+    },
+    {
+      "english": "besiege",
+      "chinese": "围攻，包围",
+      "phonetic": "/bɪˈsiːdʒ/",
+      "chinese_explanation": "围攻围困",
+      "english_explanation": "Surround to cut off supplies",
+      "example_sentence": "Soldiers began to besiege the castle."
+    },
+    {
+      "english": "blasphemy",
+      "chinese": "亵渎神明；亵渎",
+      "phonetic": "/ˈblæs.fə.mi/",
+      "chinese_explanation": "亵渎神明",
+      "english_explanation": "act of insulting a god",
+      "example_sentence": "His words were considered blasphemy by the church."
+    },
+    {
+      "english": "brazen",
+      "chinese": "厚颜无耻的；黄铜制的",
+      "phonetic": "/ˈbreɪ.zən/",
+      "chinese_explanation": "厚颜无耻的",
+      "english_explanation": "shameless and bold",
+      "example_sentence": "She had the brazen nerve to lie to my face."
+    },
+    {
+      "english": "catharsis",
+      "chinese": "宣泄；净化",
+      "phonetic": "/kəˈθɑː.sɪs/",
+      "chinese_explanation": "情绪宣泄",
+      "english_explanation": "release of strong feelings",
+      "example_sentence": "Crying is a form of catharsis for many people."
+    },
+    {
+      "english": "collusion",
+      "chinese": "勾结；串通",
+      "phonetic": "/kəˈluː.ʒən/",
+      "chinese_explanation": "串通合谋",
+      "english_explanation": "secret agreement for fraud",
+      "example_sentence": "The two companies were accused of collusion to raise prices."
+    },
+    {
+      "english": "confound",
+      "chinese": "使困惑；挫败",
+      "phonetic": "/kənˈfaʊnd/",
+      "chinese_explanation": "使困惑",
+      "english_explanation": "confuse or puzzle someone",
+      "example_sentence": "The difficult math problem confounded all the students."
+    },
+    {
+      "english": "conspire",
+      "chinese": "共谋；密谋",
+      "phonetic": "/kənˈspaɪər/",
+      "chinese_explanation": "密谋策划",
+      "english_explanation": "plan secretly with others",
+      "example_sentence": "The men conspired to rob the bank last month."
+    },
+    {
+      "english": "cursory",
+      "chinese": "粗略的；草率的",
+      "phonetic": "/ˈkɜː.sər.i/",
+      "chinese_explanation": "粗略草率的",
+      "english_explanation": "done quickly without care",
+      "example_sentence": "He only gave the report a cursory glance before signing it."
+    },
+    {
+      "english": "defy",
+      "chinese": "违抗；反抗",
+      "phonetic": "/dɪˈfaɪ/",
+      "chinese_explanation": "违抗反抗",
+      "english_explanation": "refuse to obey someone",
+      "example_sentence": "The brave girl decided to defy the unfair rule."
+    },
+    {
+      "english": "desecrate",
+      "chinese": "亵渎；污损",
+      "phonetic": "/ˈdes.ɪ.kreɪt/",
+      "chinese_explanation": "亵渎圣物",
+      "english_explanation": "damage a sacred place or thing",
+      "example_sentence": "Vandals tried to desecrate the ancient temple last week."
+    },
+    {
+      "english": "diffident",
+      "chinese": "羞怯的；缺乏自信的",
+      "phonetic": "/ˈdɪf.ɪ.dənt/",
+      "chinese_explanation": "缺乏自信的",
+      "english_explanation": "lacking self-confidence",
+      "example_sentence": "The diffident student rarely spoke up in class."
+    },
+    {
+      "english": "disparage",
+      "chinese": "贬低，轻视，诋毁",
+      "phonetic": "/dɪˈspær.ɪdʒ/",
+      "chinese_explanation": "贬低，轻视",
+      "english_explanation": "belittle or speak contemptuously of",
+      "example_sentence": "Don't disparage her efforts to help others."
+    },
+    {
+      "english": "dissipate",
+      "chinese": "消散，驱散，挥霍",
+      "phonetic": "/ˈdɪs.ɪ.peɪt/",
+      "chinese_explanation": "消散，挥霍",
+      "english_explanation": "gradually disappear or waste",
+      "example_sentence": "The morning fog will dissipate soon."
+    },
+    {
+      "english": "dogma",
+      "chinese": "教条，信条，教义",
+      "phonetic": "/ˈdɒɡ.mə/",
+      "chinese_explanation": "教条，信条",
+      "english_explanation": "fixed accepted belief",
+      "example_sentence": "They strictly follow the religious dogma."
+    },
+    {
+      "english": "domineering",
+      "chinese": "专横的，盛气凌人的",
+      "phonetic": "/ˌdɒm.ɪˈnɪə.rɪŋ/",
+      "chinese_explanation": "专横霸道的",
+      "english_explanation": "arrogantly overbearing",
+      "example_sentence": "His domineering tone made others angry."
+    },
+    {
+      "english": "embroil",
+      "chinese": "使卷入，使牵连",
+      "phonetic": "/ɪmˈbrɔɪl/",
+      "chinese_explanation": "使卷入，牵连",
+      "english_explanation": "involve in conflict",
+      "example_sentence": "He was embroiled in a meaningless argument."
+    },
+    {
+      "english": "endemic",
+      "chinese": "地方性的，风土的",
+      "phonetic": "/enˈdem.ɪk/",
+      "chinese_explanation": "地方性的",
+      "english_explanation": "native to a region",
+      "example_sentence": "This plant is endemic to southwest China."
+    },
+    {
+      "english": "engulf",
+      "chinese": "吞没，淹没，吞噬",
+      "phonetic": "/ɪnˈɡʌlf/",
+      "chinese_explanation": "吞没，淹没",
+      "english_explanation": "completely cover or surround",
+      "example_sentence": "Huge waves engulfed the small fishing boat."
+    },
+    {
+      "english": "enmity",
+      "chinese": "敌意，仇恨，敌对",
+      "phonetic": "/ˈen.mə.ti/",
+      "chinese_explanation": "敌意，仇恨",
+      "english_explanation": "deep hostility or hatred",
+      "example_sentence": "There is long-term enmity between the two teams."
+    },
+    {
+      "english": "fathom",
+      "chinese": "理解，弄清；英寻",
+      "phonetic": "/ˈfæð.əm/",
+      "chinese_explanation": "理解，弄清",
+      "english_explanation": "understand or measure depth",
+      "example_sentence": "I can't fathom his strange idea at all."
+    },
+    {
+      "english": "feign",
+      "chinese": "假装，装作，伪造",
+      "phonetic": "/feɪn/",
+      "chinese_explanation": "假装，佯装",
+      "english_explanation": "pretend to have a feeling",
+      "example_sentence": "She feigned illness to skip the boring meeting."
+    },
+    {
+      "english": "fervor",
+      "chinese": "热情，热忱",
+      "phonetic": "/ˈfɜːrvər/",
+      "chinese_explanation": "热情，热忱",
+      "english_explanation": "great warmth and enthusiasm",
+      "example_sentence": "His political fervor inspired many young people."
+    },
+    {
+      "english": "flagrant",
+      "chinese": "公然的，明目张胆的",
+      "phonetic": "/ˈfleɪɡrənt/",
+      "chinese_explanation": "公然的，恶劣的",
+      "english_explanation": "obviously wrong and shocking",
+      "example_sentence": "This is a flagrant violation of school rules."
+    },
+    {
+      "english": "foment",
+      "chinese": "煽动，挑起（事端）",
+      "phonetic": "/foʊˈment/",
+      "chinese_explanation": "煽动，挑起",
+      "english_explanation": "stir up conflict or trouble",
+      "example_sentence": "They attempted to foment unrest among the public."
+    },
+    {
+      "english": "forestall",
+      "chinese": "预先阻止，先发制人",
+      "phonetic": "/fɔːrˈstɔːl/",
+      "chinese_explanation": "预先阻止",
+      "english_explanation": "prevent sth in advance",
+      "example_sentence": "We took measures to forestall possible supply shortages."
+    },
+    {
+      "english": "forsake",
+      "chinese": "抛弃，遗弃，放弃",
+      "phonetic": "/fərˈseɪk/",
+      "chinese_explanation": "抛弃，放弃",
+      "english_explanation": "abandon sb or sth completely",
+      "example_sentence": "He would never forsake his friends when they need help."
+    },
+    {
+      "english": "garner",
+      "chinese": "获得，收集，积攒",
+      "phonetic": "/ˈɡɑːrnər/",
+      "chinese_explanation": "收集，获得",
+      "english_explanation": "gather or collect sth",
+      "example_sentence": "Her performance garnered widespread praise from critics."
+    },
+    {
+      "english": "glean",
+      "chinese": "慢慢收集，四处搜集",
+      "phonetic": "/ɡliːn/",
+      "chinese_explanation": "收集，拾得",
+      "english_explanation": "collect info bit by bit",
+      "example_sentence": "I gleaned a lot of useful information from the old books."
+    },
+    {
+      "english": "grapple",
+      "chinese": "搏斗，努力解决（问题）",
+      "phonetic": "/ˈɡræpl/",
+      "chinese_explanation": "搏斗，设法解决",
+      "english_explanation": "struggle to deal with sth",
+      "example_sentence": "The team is grappling with a tough technical problem."
+    },
+    {
+      "english": "guile",
+      "chinese": "狡诈，诡计，欺诈",
+      "phonetic": "/ɡaɪl/",
+      "chinese_explanation": "狡诈，诡计",
+      "english_explanation": "dishonest but clever trick",
+      "example_sentence": "He used guile to win the game instead of real strength."
+    },
+    {
+      "english": "hasten",
+      "chinese": "加速，催促，赶快",
+      "phonetic": "/ˈheɪsn/",
+      "chinese_explanation": "加速，急忙",
+      "english_explanation": "hurry or speed up sth",
+      "example_sentence": "We need to hasten the project to meet the deadline."
+    },
+    {
+      "english": "hyperbole",
+      "chinese": "夸张法（修辞）",
+      "phonetic": "/haɪˈpɜːbəli/",
+      "chinese_explanation": "夸张修辞手法",
+      "english_explanation": "exaggerated statement for effect",
+      "example_sentence": "We often use hyperbole to emphasize a point."
+    },
+    {
+      "english": "impetuous",
+      "chinese": "冲动的，鲁莽的",
+      "phonetic": "/ɪmˈpetʃuəs/",
+      "chinese_explanation": "鲁莽冲动的",
+      "english_explanation": "acting without careful thought",
+      "example_sentence": "His impetuous decision caused big trouble."
+    },
+    {
+      "english": "impunity",
+      "chinese": "免受惩罚，免罪",
+      "phonetic": "/ɪmˈpjuːnəti/",
+      "chinese_explanation": "免受惩罚",
+      "english_explanation": "exemption from punishment",
+      "example_sentence": "No one can break laws with impunity."
+    },
+    {
+      "english": "incisive",
+      "chinese": "尖锐的，深刻的",
+      "phonetic": "/ɪnˈsaɪsɪv/",
+      "chinese_explanation": "尖锐深刻的",
+      "english_explanation": "clear and sharp in thought",
+      "example_sentence": "She made an incisive analysis of the problem."
+    },
+    {
+      "english": "incongruous",
+      "chinese": "不协调的，不一致的",
+      "phonetic": "/ɪnˈkɒŋɡruəs/",
+      "chinese_explanation": "不协调的",
+      "english_explanation": "not in harmony with surroundings",
+      "example_sentence": "His casual clothes look incongruous at the party."
+    },
+    {
+      "english": "inept",
+      "chinese": "笨拙的，不称职的",
+      "phonetic": "/ɪˈnept/",
+      "chinese_explanation": "无能笨拙的",
+      "english_explanation": "lacking skill or ability",
+      "example_sentence": "He is inept at dealing with conflicts."
+    },
+    {
+      "english": "insolent",
+      "chinese": "傲慢的，无礼的",
+      "phonetic": "/ˈɪnsələnt/",
+      "chinese_explanation": "傲慢无礼的",
+      "english_explanation": "rude and disrespectful",
+      "example_sentence": "The insolent student talked back to his teacher."
+    },
+    {
+      "english": "insular",
+      "chinese": "狭隘的，保守的",
+      "phonetic": "/ˈɪnsjələ(r)/",
+      "chinese_explanation": "思想狭隘的",
+      "english_explanation": "narrow-minded and isolated",
+      "example_sentence": "His insular view limits his development."
+    },
+    {
+      "english": "intransigent",
+      "chinese": "不妥协的，顽固的",
+      "phonetic": "/ɪnˈtrænzɪdʒənt/",
+      "chinese_explanation": "拒不妥协的",
+      "english_explanation": "unwilling to change opinions",
+      "example_sentence": "The intransigent boss rejected all our proposals."
+    },
+    {
+      "english": "laud",
+      "chinese": "赞美，称赞",
+      "phonetic": "/lɔːd/",
+      "chinese_explanation": "赞美，称赞",
+      "english_explanation": "praise someone highly",
+      "example_sentence": "Critics laud his new novel as a masterpiece."
+    },
+    {
+      "english": "lax",
+      "chinese": "不严格的；松懈的；松弛的",
+      "phonetic": "/læks/",
+      "chinese_explanation": "不严格的，松懈的",
+      "english_explanation": "not strict or careful enough",
+      "example_sentence": "The school has lax security rules."
+    },
+    {
+      "english": "lethargic",
+      "chinese": "无精打采的；嗜睡的",
+      "phonetic": "/ləˈθɑːdʒɪk/",
+      "chinese_explanation": "无精打采的",
+      "english_explanation": "feeling tired with no energy",
+      "example_sentence": "He felt lethargic after the long trip."
+    },
+    {
+      "english": "loathe",
+      "chinese": "厌恶，憎恨",
+      "phonetic": "/ləʊð/",
+      "chinese_explanation": "厌恶，憎恨",
+      "english_explanation": "hate sth or sb very much",
+      "example_sentence": "I loathe having to get up early."
+    },
+    {
+      "english": "lucrative",
+      "chinese": "获利多的，赚大钱的",
+      "phonetic": "/ˈluːkrətɪv/",
+      "chinese_explanation": "获利多的，赚钱的",
+      "english_explanation": "producing a lot of profit",
+      "example_sentence": "He runs a lucrative restaurant business."
+    },
+    {
+      "english": "magnanimous",
+      "chinese": "宽宏大量的，大度的",
+      "phonetic": "/mæɡˈnænɪməs/",
+      "chinese_explanation": "宽宏大量的",
+      "english_explanation": "very generous and forgiving",
+      "example_sentence": "He was magnanimous in defeat and praised his rival."
+    },
+    {
+      "english": "malevolent",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "meager",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "mendacious",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "mercenary",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "mollify",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "morose",
+      "chinese": "adj. 闷闷不乐的，阴郁的",
+      "phonetic": "/məˈrəʊs/",
+      "chinese_explanation": "阴郁的，闷闷不乐",
+      "english_explanation": "unhappy, silent and bad-tempered",
+      "example_sentence": "He looked morose after losing the game."
+    },
+    {
+      "english": "myopic",
+      "chinese": "adj. 近视的；目光短浅的",
+      "phonetic": "/maɪˈɒpɪk/",
+      "chinese_explanation": "近视的，短视的",
+      "english_explanation": "nearsighted, lacking long-term judgement",
+      "example_sentence": "The myopic policy caused long-term harm."
+    },
+    {
+      "english": "nefarious",
+      "chinese": "adj. 邪恶的，穷凶极恶的",
+      "phonetic": "/nɪˈfeəriəs/",
+      "chinese_explanation": "邪恶的，不法的",
+      "english_explanation": "wicked, immoral and illegal",
+      "example_sentence": "The gang planned many nefarious activities."
+    },
+    {
+      "english": "nihilism",
+      "chinese": "n. 虚无主义",
+      "phonetic": "/ˈnaɪɪlɪzəm/",
+      "chinese_explanation": "虚无主义",
+      "english_explanation": "belief that life has no meaning",
+      "example_sentence": "Some philosophers support nihilism."
+    },
+    {
+      "english": "nonchalant",
+      "chinese": "adj. 冷淡的，漠不关心的",
+      "phonetic": "/ˈnɒnʃələnt/",
+      "chinese_explanation": "冷淡的，无所谓的",
+      "english_explanation": "calm, casual and unconcerned",
+      "example_sentence": "She was nonchalant about her success."
+    },
+    {
+      "english": "oblivious",
+      "chinese": "adj. 未察觉的，遗忘的",
+      "phonetic": "/əˈblɪviəs/",
+      "chinese_explanation": "未察觉的，忘我的",
+      "english_explanation": "not aware of surrounding things",
+      "example_sentence": "He was oblivious to the warning."
+    },
+    {
+      "english": "obstinate",
+      "chinese": "adj. 固执的，倔强的",
+      "phonetic": "/ˈɒbstɪnət/",
+      "chinese_explanation": "固执的，倔强的",
+      "english_explanation": "stubborn, refusing to change mind",
+      "example_sentence": "The obstinate child refused to eat."
+    },
+    {
+      "english": "obtuse",
+      "chinese": "adj. 迟钝的，愚笨的；钝角的",
+      "phonetic": "/əbˈtjuːs/",
+      "chinese_explanation": "迟钝的，愚笨的",
+      "english_explanation": "slow to understand things",
+      "example_sentence": "Don't be so obtuse to his hints."
+    },
+    {
+      "english": "onerous",
+      "chinese": "adj. 繁重的，费力的",
+      "phonetic": "/ˈəʊnərəs/",
+      "chinese_explanation": "繁重的，费力的",
+      "english_explanation": "needing much effort to finish",
+      "example_sentence": "This is a really onerous task."
+    },
+    {
+      "english": "opaque",
+      "chinese": "adj. 不透明的；难懂的",
+      "phonetic": "/əʊˈpeɪk/",
+      "chinese_explanation": "不透明的，晦涩的",
+      "english_explanation": "cannot be seen through",
+      "example_sentence": "The wall is made of opaque material."
+    },
+    {
+      "english": "opportunistic",
+      "chinese": "机会主义的，投机取巧的",
+      "phonetic": "/ˌɒpətjuːˈnɪstɪk/",
+      "chinese_explanation": "机会主义的",
+      "english_explanation": "seizing opportunities selfishly",
+      "example_sentence": "He is an opportunistic politician."
+    },
+    {
+      "english": "ostensible",
+      "chinese": "表面上的，假装的",
+      "phonetic": "/ɒˈstensəbl/",
+      "chinese_explanation": "表面上的",
+      "english_explanation": "seeming true but not real",
+      "example_sentence": "His ostensible reason was to study."
+    },
+    {
+      "english": "overt",
+      "chinese": "公开的，明显的",
+      "phonetic": "/əʊˈvɜːt/",
+      "chinese_explanation": "公开明显的",
+      "english_explanation": "done openly and publicly",
+      "example_sentence": "The company showed overt interest in the project."
+    },
+    {
+      "english": "pander",
+      "chinese": "迎合，奉迎（不良需求）",
+      "phonetic": "/ˈpændə(r)/",
+      "chinese_explanation": "迎合讨好",
+      "english_explanation": "cater to others' bad desires",
+      "example_sentence": "He never panders to vulgar tastes."
+    },
+    {
+      "english": "paranoid",
+      "chinese": "多疑的，偏执狂的",
+      "phonetic": "/ˈpærənɔɪd/",
+      "chinese_explanation": "多疑偏执的",
+      "english_explanation": "unreasonably distrustful of others",
+      "example_sentence": "He is paranoid about being followed."
+    },
+    {
+      "english": "parochial",
+      "chinese": "狭隘的，地方观念的",
+      "phonetic": "/pəˈrəʊkiəl/",
+      "chinese_explanation": "思想狭隘的",
+      "english_explanation": "having a limited narrow view",
+      "example_sentence": "His parochial view limits his development."
+    },
+    {
+      "english": "patronage",
+      "chinese": "赞助，光顾，庇护",
+      "phonetic": "/ˈpætrənɪdʒ/",
+      "chinese_explanation": "赞助，光顾",
+      "english_explanation": "support given to others",
+      "example_sentence": "Thank you for your patronage."
+    },
+    {
+      "english": "pejorative",
+      "chinese": "贬义的，贬损的",
+      "phonetic": "/pɪˈdʒɒrətɪv/",
+      "chinese_explanation": "贬义贬损的",
+      "english_explanation": "expressing disapproval or contempt",
+      "example_sentence": "He used a pejorative word for them."
+    },
+    {
+      "english": "pernicious",
+      "chinese": "有害的，恶性的",
+      "phonetic": "/pəˈnɪʃəs/",
+      "chinese_explanation": "有害恶性的",
+      "english_explanation": "having very harmful effects",
+      "example_sentence": "Smoking has pernicious effects on health."
+    },
+    {
+      "english": "pertinent",
+      "chinese": "相关的，切题的",
+      "phonetic": "/ˈpɜːtɪnənt/",
+      "chinese_explanation": "相关切题的",
+      "english_explanation": "relevant to the current topic",
+      "example_sentence": "Please ask only pertinent questions."
+    },
+    {
+      "english": "petty",
+      "chinese": "小气的；琐碎的；次要的",
+      "phonetic": "/ˈpeti/",
+      "chinese_explanation": "小气的，琐碎的",
+      "english_explanation": "unimportant; mean-spirited",
+      "example_sentence": "Don't be so petty about unimportant matters."
+    },
+    {
+      "english": "pious",
+      "chinese": "虔诚的；道貌岸然的",
+      "phonetic": "/ˈpaɪəs/",
+      "chinese_explanation": "虔诚的，伪善的",
+      "english_explanation": "devoutly religious; hypocritical",
+      "example_sentence": "She is a pious follower of the religion."
+    },
+    {
+      "english": "placate",
+      "chinese": "安抚，抚慰，使平静",
+      "phonetic": "/pləˈkeɪt/",
+      "chinese_explanation": "安抚，使平静",
+      "english_explanation": "pacify someone who is angry",
+      "example_sentence": "He tried to placate his crying baby."
+    },
+    {
+      "english": "plunder",
+      "chinese": "抢劫，掠夺；劫掠物",
+      "phonetic": "/ˈplʌndə(r)/",
+      "chinese_explanation": "抢劫，掠夺",
+      "english_explanation": "steal goods during war or riot",
+      "example_sentence": "The invaders began to plunder the village."
+    },
+    {
+      "english": "pompous",
+      "chinese": "自大的，浮夸的，炫耀的",
+      "phonetic": "/ˈpɒmpəs/",
+      "chinese_explanation": "自大的，浮夸的",
+      "english_explanation": "arrogant and self-important",
+      "example_sentence": "He is a pompous official everyone dislikes."
+    },
+    {
+      "english": "preclude",
+      "chinese": "排除，妨碍，阻止",
+      "phonetic": "/prɪˈkluːd/",
+      "chinese_explanation": "排除，阻止",
+      "english_explanation": "prevent something from happening",
+      "example_sentence": "His injury will preclude him from playing."
+    },
+    {
+      "english": "predatory",
+      "chinese": "掠夺性的；捕食性的",
+      "phonetic": "/ˈpredətri/",
+      "chinese_explanation": "掠夺的，捕食的",
+      "english_explanation": "preying on others; exploitative",
+      "example_sentence": "Lions are predatory animals living in grasslands."
+    },
+    {
+      "english": "prodigal",
+      "chinese": "挥霍的，浪费的；浪子",
+      "phonetic": "/ˈprɒdɪɡl/",
+      "chinese_explanation": "挥霍的，浪费的",
+      "english_explanation": "spending money wastefully",
+      "example_sentence": "The prodigal son finally returned home."
+    },
+    {
+      "english": "profligate",
+      "chinese": "挥霍的，放荡的，浪费的",
+      "phonetic": "/ˈprɒflɪɡət/",
+      "chinese_explanation": "挥霍的，放荡的",
+      "english_explanation": "extravagant and morally loose",
+      "example_sentence": "He is criticized for his profligate lifestyle."
+    },
+    {
+      "english": "proliferate",
+      "chinese": "激增，繁殖，扩散",
+      "phonetic": "/prəˈlɪfəreɪt/",
+      "chinese_explanation": "激增，繁殖扩散",
+      "english_explanation": "increase rapidly in number",
+      "example_sentence": "Rabbits proliferate very quickly in warm areas."
+    },
+    {
+      "english": "propitious",
+      "chinese": "吉利的；有利的；适合的",
+      "phonetic": "/prəˈpɪʃəs/",
+      "chinese_explanation": "吉祥的，有利的",
+      "english_explanation": "auspicious and favorable",
+      "example_sentence": "This timing is propitious for our project."
+    },
+    {
+      "english": "provincial",
+      "chinese": "省的；地方性的；狭隘的",
+      "phonetic": "/prəˈvɪnʃl/",
+      "chinese_explanation": "地方的，狭隘的",
+      "english_explanation": "local and narrow-minded",
+      "example_sentence": "His views are surprisingly provincial."
+    },
+    {
+      "english": "punitive",
+      "chinese": "惩罚性的；刑罚的",
+      "phonetic": "/ˈpjuːnətɪv/",
+      "chinese_explanation": "惩罚性的",
+      "english_explanation": "intended as punishment",
+      "example_sentence": "The school imposed punitive rules."
+    },
+    {
+      "english": "quell",
+      "chinese": "镇压；平息；制止",
+      "phonetic": "/kwel/",
+      "chinese_explanation": "镇压，平息",
+      "english_explanation": "put an end to unrest",
+      "example_sentence": "Police acted quickly to quell the protest."
+    },
+    {
+      "english": "rampant",
+      "chinese": "猖獗的；泛滥的；失控的",
+      "phonetic": "/ˈræmpənt/",
+      "chinese_explanation": "猖獗的，失控的",
+      "english_explanation": "widespread and out of control",
+      "example_sentence": "Disease was rampant in the poor area."
+    },
+    {
+      "english": "rancor",
+      "chinese": "深仇；积怨；怨恨",
+      "phonetic": "/ˈræŋkə(r)/",
+      "chinese_explanation": "积怨，怨恨",
+      "english_explanation": "long lasting bitter hatred",
+      "example_sentence": "They parted without any rancor."
+    },
+    {
+      "english": "rebuke",
+      "chinese": "指责；斥责；训斥",
+      "phonetic": "/rɪˈbjuːk/",
+      "chinese_explanation": "斥责，训斥",
+      "english_explanation": "scold someone sharply",
+      "example_sentence": "The coach rebuked the careless player."
+    },
+    {
+      "english": "recant",
+      "chinese": "宣布放弃；撤回（声明）",
+      "phonetic": "/rɪˈkænt/",
+      "chinese_explanation": "撤回，放弃主张",
+      "english_explanation": "take back a former belief",
+      "example_sentence": "He refused to recant his opinion."
+    },
+    {
+      "english": "reckless",
+      "chinese": "鲁莽的；不计后果的",
+      "phonetic": "/ˈrekləs/",
+      "chinese_explanation": "鲁莽的，莽撞的",
+      "english_explanation": "not caring about risks",
+      "example_sentence": "Reckless driving leads to accidents."
+    },
+    {
+      "english": "rectify",
+      "chinese": "纠正；校正；修正",
+      "phonetic": "/ˈrektɪfaɪ/",
+      "chinese_explanation": "纠正，修正",
+      "english_explanation": "correct something wrong",
+      "example_sentence": "Please rectify your mistake as soon as possible."
+    },
+    {
+      "english": "redress",
+      "chinese": "纠正；赔偿",
+      "phonetic": "/rɪˈdres/",
+      "chinese_explanation": "纠正；补偿",
+      "english_explanation": "Remedy a wrong or injustice.",
+      "example_sentence": "They sought redress for unfair treatment."
+    },
+    {
+      "english": "relentless",
+      "chinese": "不懈的；无情的",
+      "phonetic": "/rɪˈlentləs/",
+      "chinese_explanation": "不懈的；无情的",
+      "english_explanation": "Never stopping or weakening.",
+      "example_sentence": "He is a relentless sports lover."
+    },
+    {
+      "english": "remorse",
+      "chinese": "懊悔；悔恨",
+      "phonetic": "/rɪˈmɔːs/",
+      "chinese_explanation": "懊悔，悔恨",
+      "english_explanation": "Deep sense of regret.",
+      "example_sentence": "He felt remorse for telling lies."
+    },
+    {
+      "english": "reprehensible",
+      "chinese": "应受斥责的",
+      "phonetic": "/ˌreprɪˈhensəbl/",
+      "chinese_explanation": "应受谴责的",
+      "english_explanation": "Deserving strong criticism.",
+      "example_sentence": "His rude behavior is reprehensible."
+    },
+    {
+      "english": "reticent",
+      "chinese": "沉默寡言的",
+      "phonetic": "/ˈretɪsnt/",
+      "chinese_explanation": "缄默的，话少的",
+      "english_explanation": "Unwilling to speak much.",
+      "example_sentence": "She is reticent about her private life."
+    },
+    {
+      "english": "revile",
+      "chinese": "辱骂；斥责",
+      "phonetic": "/rɪˈvaɪl/",
+      "chinese_explanation": "辱骂，斥责",
+      "english_explanation": "Abuse or criticize angrily.",
+      "example_sentence": "Critics reviled his poor new film."
+    },
+    {
+      "english": "rife",
+      "chinese": "盛行的；普遍的",
+      "phonetic": "/raɪf/",
+      "chinese_explanation": "盛行的，普遍的",
+      "english_explanation": "Widespread and common.",
+      "example_sentence": "Rumors are rife in the small town."
+    },
+    {
+      "english": "robust",
+      "chinese": "强健的；结实的",
+      "phonetic": "/rəʊˈbʌst/",
+      "chinese_explanation": "健壮的，结实的",
+      "english_explanation": "Strong and healthy.",
+      "example_sentence": "He keeps a robust body through exercise."
+    },
+    {
+      "english": "rogue",
+      "chinese": "无赖；捣蛋鬼",
+      "phonetic": "/rəʊɡ/",
+      "chinese_explanation": "无赖，捣蛋鬼",
+      "english_explanation": "Mischievous or dishonest person.",
+      "example_sentence": "The little rogue hid my textbook."
+    },
+    {
+      "english": "ruthlessness",
+      "chinese": "无情；冷酷",
+      "phonetic": "/ˈruːθləsnəs/",
+      "chinese_explanation": "无情，冷酷",
+      "english_explanation": "Quality of being cruel.",
+      "example_sentence": "His ruthlessness made others avoid him."
+    },
+    {
+      "english": "sabotage",
+      "chinese": "蓄意破坏；暗中妨害",
+      "phonetic": "/ˈsæbətɑːʒ/",
+      "chinese_explanation": "蓄意破坏",
+      "english_explanation": "Damage something intentionally",
+      "example_sentence": "They tried to sabotage the project."
+    },
+    {
+      "english": "sarcastic",
+      "chinese": "讽刺的，挖苦的",
+      "phonetic": "/sɑːˈkæstɪk/",
+      "chinese_explanation": "讽刺挖苦的",
+      "english_explanation": "Using irony to mock others",
+      "example_sentence": "His sarcastic words hurt her feelings."
+    },
+    {
+      "english": "scapegoat",
+      "chinese": "替罪羊，代人受过者",
+      "phonetic": "/ˈskeɪpɡəʊt/",
+      "chinese_explanation": "替罪羊",
+      "english_explanation": "Blame for others' mistakes",
+      "example_sentence": "He became a scapegoat for the team's loss."
+    },
+    {
+      "english": "scorn",
+      "chinese": "轻蔑，鄙视；不屑",
+      "phonetic": "/skɔːn/",
+      "chinese_explanation": "轻蔑鄙视",
+      "english_explanation": "Feeling of great contempt",
+      "example_sentence": "He expressed scorn for the silly idea."
+    },
+    {
+      "english": "seditious",
+      "chinese": "煽动叛乱的，煽动性的",
+      "phonetic": "/sɪˈdɪʃəs/",
+      "chinese_explanation": "煽动叛乱的",
+      "english_explanation": "Inciting resistance to authority",
+      "example_sentence": "He was charged with spreading seditious content."
+    },
+    {
+      "english": "servile",
+      "chinese": "奴性的，恭顺的",
+      "phonetic": "/ˈsɜːvaɪl/",
+      "chinese_explanation": "奴性的",
+      "english_explanation": "Excessively willing to obey",
+      "example_sentence": "His servile behavior disgusted everyone."
+    },
+    {
+      "english": "shrewd",
+      "chinese": "精明的，机敏的",
+      "phonetic": "/ʃruːd/",
+      "chinese_explanation": "精明机敏的",
+      "english_explanation": "Sharp in practical judgement",
+      "example_sentence": "She made a shrewd investment last year."
+    },
+    {
+      "english": "sinister",
+      "chinese": "邪恶的，险恶的",
+      "phonetic": "/ˈsɪnɪstə(r)/",
+      "chinese_explanation": "邪恶险恶的",
+      "english_explanation": "Threatening harm or evil",
+      "example_sentence": "The dark alley had a sinister atmosphere."
+    },
+    {
+      "english": "smug",
+      "chinese": "自鸣得意的，沾沾自喜的",
+      "phonetic": "/smʌɡ/",
+      "chinese_explanation": "自鸣得意的",
+      "english_explanation": "Excessively self-satisfied",
+      "example_sentence": "He gave a smug look after passing the exam."
+    },
+    {
+      "english": "solicit",
+      "chinese": "请求，索要，招揽",
+      "phonetic": "/səˈlɪsɪt/",
+      "chinese_explanation": "请求招揽",
+      "english_explanation": "Ask for something formally",
+      "example_sentence": "The club plans to solicit new members next month."
+    },
+    {
+      "english": "somber",
+      "chinese": "忧郁的；昏暗的",
+      "phonetic": "/ˈsɒmbə(r)/",
+      "chinese_explanation": "阴郁昏暗的",
+      "english_explanation": "dark or sad in mood",
+      "example_sentence": "His face took on a somber expression."
+    },
+    {
+      "english": "spurious",
+      "chinese": "假的；伪造的",
+      "phonetic": "/ˈspjʊəriəs/",
+      "chinese_explanation": "虚假伪造的",
+      "english_explanation": "false and not genuine",
+      "example_sentence": "That is a spurious claim."
+    },
+    {
+      "english": "squander",
+      "chinese": "浪费；挥霍",
+      "phonetic": "/ˈskwɒndə(r)/",
+      "chinese_explanation": "浪费挥霍",
+      "english_explanation": "waste resources carelessly",
+      "example_sentence": "Don't squander your precious time."
+    },
+    {
+      "english": "stifle",
+      "chinese": "扼杀；使窒息",
+      "phonetic": "/ˈstaɪfl/",
+      "chinese_explanation": "压制使窒息",
+      "english_explanation": "suppress or stop breathing",
+      "example_sentence": "Strict rules stifle students' creativity."
+    },
+    {
+      "english": "stoic",
+      "chinese": "坚忍的；禁欲主义者",
+      "phonetic": "/ˈstəʊɪk/",
+      "chinese_explanation": "隐忍克制的",
+      "english_explanation": "show no pain feelings",
+      "example_sentence": "He was stoic when he got hurt."
+    },
+    {
+      "english": "strident",
+      "chinese": "刺耳的；强硬的",
+      "phonetic": "/ˈstraɪdnt/",
+      "chinese_explanation": "刺耳尖锐的",
+      "english_explanation": "loud harsh and grating",
+      "example_sentence": "Her strident voice made me annoyed."
+    },
+    {
+      "english": "stubborn",
+      "chinese": "顽固的；倔强的",
+      "phonetic": "/ˈstʌbən/",
+      "chinese_explanation": "固执倔强的",
+      "english_explanation": "unwilling to change mind",
+      "example_sentence": "The stubborn man refused to listen."
+    },
+    {
+      "english": "subversive",
+      "chinese": "颠覆性的；破坏性的",
+      "phonetic": "/səbˈvɜːsɪv/",
+      "chinese_explanation": "颠覆性的",
+      "english_explanation": "intending to destroy system",
+      "example_sentence": "He spread some subversive opinions."
+    },
+    {
+      "english": "succumb",
+      "chinese": "屈服；病死",
+      "phonetic": "/səˈkʌm/",
+      "chinese_explanation": "屈服或病逝",
+      "english_explanation": "yield to bad things",
+      "example_sentence": "He finally succumbed to temptation."
+    },
+    {
+      "english": "sullen",
+      "chinese": "愠怒的；闷闷不乐的",
+      "phonetic": "/ˈsʌlən/",
+      "chinese_explanation": "愠怒不悦的",
+      "english_explanation": "bad-tempered and silent",
+      "example_sentence": "The sullen girl didn't reply."
+    },
+    {
+      "english": "superficiality",
+      "chinese": "n. 浅薄，肤浅",
+      "phonetic": "/ˌsuːpəˌfɪʃiˈæləti/",
+      "chinese_explanation": "肤浅，表面性",
+      "english_explanation": "quality of being superficial",
+      "example_sentence": "His words show his obvious superficiality."
+    },
+    {
+      "english": "surpass",
+      "chinese": "v. 超过，胜过",
+      "phonetic": "/səˈpɑːs/",
+      "chinese_explanation": "超过，优于",
+      "english_explanation": "exceed in amount or quality",
+      "example_sentence": "Her grades surpass most classmates."
+    },
+    {
+      "english": "sycophant",
+      "chinese": "n. 谄媚者，马屁精",
+      "phonetic": "/ˈsɪkəfænt/",
+      "chinese_explanation": "谄媚奉承的人",
+      "english_explanation": "person who flatters for gain",
+      "example_sentence": "The sycophant always praises the leader."
+    },
+    {
+      "english": "taciturn",
+      "chinese": "adj. 沉默寡言的",
+      "phonetic": "/ˈtæsɪtɜːn/",
+      "chinese_explanation": "不爱说话的",
+      "english_explanation": "habitually quiet and untalkative",
+      "example_sentence": "The taciturn old man seldom chats."
+    },
+    {
+      "english": "tarnish",
+      "chinese": "v. 玷污；失去光泽",
+      "phonetic": "/ˈtɑːnɪʃ/",
+      "chinese_explanation": "失去光泽，玷污",
+      "english_explanation": "make less bright or pure",
+      "example_sentence": "Bad behavior will tarnish your image."
+    },
+    {
+      "english": "tenacity",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "timid",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "tirade",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "torment",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "treacherous",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "tyranny",
+      "chinese": "暴政，苛政，专制统治",
+      "phonetic": "/ˈtɪrəni/",
+      "chinese_explanation": "暴政，专制统治",
+      "english_explanation": "cruel and unfair rule",
+      "example_sentence": "The people rebelled against the king's tyranny."
+    },
+    {
+      "english": "unscrupulous",
+      "chinese": "不道德的，不择手段的",
+      "phonetic": "/ʌnˈskruːpjələs/",
+      "chinese_explanation": "不择手段的",
+      "english_explanation": "without moral principles",
+      "example_sentence": "That unscrupulous merchant sells fake goods."
+    },
+    {
+      "english": "usurp",
+      "chinese": "篡夺，侵占，篡位",
+      "phonetic": "/juːˈzɜːp/",
+      "chinese_explanation": "篡夺，侵占",
+      "english_explanation": "seize power illegally",
+      "example_sentence": "He plotted to usurp the leader's position."
+    },
+    {
+      "english": "vacuous",
+      "chinese": "空洞的，茫然的，无思想的",
+      "phonetic": "/ˈvækjuəs/",
+      "chinese_explanation": "空洞的，茫然的",
+      "english_explanation": "lacking thought or meaning",
+      "example_sentence": "He gave a vacuous reply to the question."
+    },
+    {
+      "english": "venerate",
+      "chinese": "崇敬，敬重，尊敬",
+      "phonetic": "/ˈvenəreɪt/",
+      "chinese_explanation": "崇敬，敬重",
+      "english_explanation": "respect deeply",
+      "example_sentence": "Local people venerate the old hero very much."
+    },
+    {
+      "english": "verbose",
+      "chinese": "冗长的，啰嗦的，赘述的",
+      "phonetic": "/vɜːˈbəʊs/",
+      "chinese_explanation": "冗长啰嗦的",
+      "english_explanation": "using too many words",
+      "example_sentence": "His verbose report wasted our time."
+    },
+    {
+      "english": "vex",
+      "chinese": "使烦恼，使恼怒，使困惑",
+      "phonetic": "/veks/",
+      "chinese_explanation": "使烦恼，激怒",
+      "english_explanation": "make someone annoyed",
+      "example_sentence": "His silly questions really vex me."
+    },
+    {
+      "english": "vilify",
+      "chinese": "诽谤，中伤，诋毁",
+      "phonetic": "/ˈvɪlɪfaɪ/",
+      "chinese_explanation": "诽谤，中伤",
+      "english_explanation": "slander someone publicly",
+      "example_sentence": "The media tried to vilify the innocent star."
+    },
+    {
+      "english": "vindictive",
+      "chinese": "怀恨的，有报复心的",
+      "phonetic": "/vɪnˈdɪktɪv/",
+      "chinese_explanation": "有报复心的",
+      "english_explanation": "wanting to take revenge",
+      "example_sentence": "She is a vindictive person who holds grudges."
+    },
+    {
+      "english": "virulent",
+      "chinese": "剧毒的，恶毒的，恶性的",
+      "phonetic": "/ˈvɪrələnt/",
+      "chinese_explanation": "剧毒的，恶毒的",
+      "english_explanation": "extremely poisonous or hostile",
+      "example_sentence": "This virulent disease spreads very fast."
+    },
+    {
+      "english": "vitriolic",
+      "chinese": "（言辞）尖酸刻薄的",
+      "phonetic": "/ˌvɪtriˈɒlɪk/",
+      "chinese_explanation": "尖酸刻薄的",
+      "english_explanation": "Cruel and critical in speech",
+      "example_sentence": "His vitriolic comments hurt her feelings."
+    },
+    {
+      "english": "wane",
+      "chinese": "衰落；减少；月亏",
+      "phonetic": "/weɪn/",
+      "chinese_explanation": "衰落；减少",
+      "english_explanation": "Become weaker or smaller",
+      "example_sentence": "The moon begins to wane after full moon."
+    },
+    {
+      "english": "wield",
+      "chinese": "手持；行使（权力）",
+      "phonetic": "/wiːld/",
+      "chinese_explanation": "行使；使用",
+      "english_explanation": "Use power or tool effectively",
+      "example_sentence": "He wields great power in the company."
+    },
+    {
+      "english": "xenophobia",
+      "chinese": "仇外；排外情绪",
+      "phonetic": "/ˌzenəˈfəʊbiə/",
+      "chinese_explanation": "仇外心理",
+      "english_explanation": "Hatred of strangers or foreigners",
+      "example_sentence": "Xenophobia can lead to social conflicts."
+    },
+    {
+      "english": "zealotry",
+      "chinese": "狂热行为；盲信",
+      "phonetic": "/ˈzelətri/",
+      "chinese_explanation": "狂热盲从",
+      "english_explanation": "Extreme uncritical enthusiasm",
+      "example_sentence": "His religious zealotry made others uneasy."
     }
   ]
 }

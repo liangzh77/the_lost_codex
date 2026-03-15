@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getRecentWords, getLearningWords, getMasteredWords, getRecentGroups, getLearningGroups, getMasteredGroups, getGroupWords, getWord } from '../api';
+import { getRecentWords, getLearningWords, getMasteredWords, getRecentGroups, getLearningGroups, getMasteredGroups, getGroupWords, getWord, getGrowthStats } from '../api';
 import NavBar from '../components/NavBar';
 import TabBar from '../components/TabBar';
 import WordCard from '../components/WordCard';
@@ -39,6 +39,15 @@ export default function WordsPage() {
   const [loading, setLoading] = useState(false);
   const [cardOpen, setCardOpen] = useState(false);
   const [cardWord, setCardWord] = useState<any>(null);
+  const [todayImprints, setTodayImprints] = useState(0);
+  const [totalImprints, setTotalImprints] = useState(0);
+
+  useEffect(() => {
+    getGrowthStats().then((r) => {
+      setTodayImprints(r.data.today_imprints);
+      setTotalImprints(r.data.total_imprints);
+    });
+  }, []);
 
   useEffect(() => {
     setLoading(true);
@@ -193,6 +202,10 @@ export default function WordsPage() {
   return (
     <div className="pb-20" onClick={() => setCardOpen(false)}>
       <NavBar title="单词" />
+      <div className="flex justify-center gap-4 py-2 bg-white/80 backdrop-blur border-b border-gray-100">
+        <span className="text-xs text-gray-400">今日印记 <span className="text-sm font-bold text-blue-500">{todayImprints}</span></span>
+        <span className="text-xs text-gray-400">总印记 <span className="text-sm font-bold text-gray-700">{totalImprints}</span></span>
+      </div>
       <div className="flex border-b border-gray-100 bg-white">
         {tabs.map((t) => (
           <button

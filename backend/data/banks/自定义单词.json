@@ -1,0 +1,54 @@
+{
+  "name": "自定义单词",
+  "display_order": 99,
+  "words": [
+    {
+      "english": "unicorn",
+      "chinese": "独角兽",
+      "phonetic": "/ˈjuːnɪkɔːn/",
+      "chinese_explanation": "传说中的独角神兽",
+      "english_explanation": "Mythical creature with one horn",
+      "example_sentence": "A unicorn appears in this fairy tale."
+    },
+    {
+      "english": "fantastic",
+      "chinese": "极好的，了不起的",
+      "phonetic": "/fænˈtæs.tɪk/",
+      "chinese_explanation": "极好的，很棒的",
+      "english_explanation": "extremely good or excellent",
+      "example_sentence": "You did a fantastic job!"
+    },
+    {
+      "english": "facial",
+      "chinese": "面部的；面部护理",
+      "phonetic": "/ˈfeɪʃl/",
+      "chinese_explanation": "与面部相关的",
+      "english_explanation": "Related to the face",
+      "example_sentence": "I bought a new facial mask yesterday."
+    },
+    {
+      "english": "expression",
+      "chinese": "表达；表情；措辞",
+      "phonetic": "/ɪkˈspreʃn/",
+      "chinese_explanation": "表达、表情、措辞",
+      "english_explanation": "showing feelings or look",
+      "example_sentence": "A smile is a happy expression."
+    },
+    {
+      "english": "universal",
+      "chinese": "普遍的；通用的；全世界的",
+      "phonetic": "/ˌjuːnɪˈvɜːsl/",
+      "chinese_explanation": "普遍的，通用的",
+      "english_explanation": "Common to all people and things",
+      "example_sentence": "Smiling is a universal expression."
+    },
+    {
+      "english": "essentially",
+      "chinese": "本质上；根本上；基本上",
+      "phonetic": "/ɪˈsenʃəli/",
+      "chinese_explanation": "本质上、根本上",
+      "english_explanation": "related to the basic nature",
+      "example_sentence": "Essentially, he is a good student."
+    }
+  ]
+}

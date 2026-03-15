@@ -3,244 +3,748 @@
   "display_order": 8,
   "words": [
     {
-      "english": "accommodate",
-      "chinese": "容纳",
-      "phonetic": "/əˈkɒm.ə.deɪt/",
-      "chinese_explanation": "提供住处",
-      "english_explanation": "to provide space for",
-      "example_sentence": "The hotel accommodates 200 guests."
+      "english": "abolish",
+      "chinese": "废除，废止，革除",
+      "phonetic": "/əˈbɒlɪʃ/",
+      "chinese_explanation": "废除，废止",
+      "english_explanation": "end officially",
+      "example_sentence": "The government decided to abolish the old law."
     },
     {
-      "english": "bureaucratic",
-      "chinese": "官僚的",
-      "phonetic": "/ˌbjʊr.əˈkræt.ɪk/",
-      "chinese_explanation": "行政繁琐的",
-      "english_explanation": "involving complex procedures",
-      "example_sentence": "Bureaucratic red tape."
+      "english": "accessible",
+      "chinese": "可到达的，可使用的，易懂的",
+      "phonetic": "/əkˈsesəbl/",
+      "chinese_explanation": "易接近的，可用的",
+      "english_explanation": "easy to reach or use",
+      "example_sentence": "The museum is accessible to wheelchair users."
     },
     {
-      "english": "comprehensive",
-      "chinese": "全面的",
-      "phonetic": "/ˌkɒm.prɪˈhen.sɪv/",
-      "chinese_explanation": "包罗万象的",
-      "english_explanation": "covering everything",
-      "example_sentence": "A comprehensive review."
+      "english": "acquisition",
+      "chinese": "获得，得到，收购",
+      "phonetic": "/ˌækwɪˈzɪʃn/",
+      "chinese_explanation": "获得，收购",
+      "english_explanation": "act of acquiring something",
+      "example_sentence": "The company made a new acquisition last month."
     },
     {
-      "english": "deterioration",
-      "chinese": "恶化",
-      "phonetic": "/dɪˌtɪr.i.əˈreɪ.ʃən/",
-      "chinese_explanation": "变坏的过程",
-      "english_explanation": "the process of getting worse",
-      "example_sentence": "Environmental deterioration."
+      "english": "aggregate",
+      "chinese": "合计的，总数的，聚合",
+      "phonetic": "/ˈæɡrɪɡət/",
+      "chinese_explanation": "合计的，总数的",
+      "english_explanation": "total combined amount",
+      "example_sentence": "The aggregate score of the game is 3:1."
     },
     {
-      "english": "entrepreneur",
-      "chinese": "企业家",
-      "phonetic": "/ˌɒn.trə.prəˈnɜːr/",
-      "chinese_explanation": "创业者",
-      "english_explanation": "a person who starts a business",
-      "example_sentence": "A successful entrepreneur."
+      "english": "audit",
+      "chinese": "审计，稽核，核查",
+      "phonetic": "/ˈɔːdɪt/",
+      "chinese_explanation": "审计，核查",
+      "english_explanation": "official check of accounts",
+      "example_sentence": "The company will have an annual audit next week."
     },
     {
-      "english": "fluctuation",
-      "chinese": "波动",
-      "phonetic": "/ˌflʌk.tʃuˈeɪ.ʃən/",
-      "chinese_explanation": "起伏变化",
-      "english_explanation": "irregular changes",
-      "example_sentence": "Price fluctuations are normal."
+      "english": "automate",
+      "chinese": "使自动化",
+      "phonetic": "/ˈɔːtəmeɪt/",
+      "chinese_explanation": "使自动化",
+      "english_explanation": "use machines to do work",
+      "example_sentence": "We need to automate the production process."
     },
     {
-      "english": "gregarious",
-      "chinese": "爱社交的",
-      "phonetic": "/ɡrɪˈɡer.i.əs/",
-      "chinese_explanation": "喜欢群居的",
-      "english_explanation": "enjoying company of others",
-      "example_sentence": "She is very gregarious."
+      "english": "avenue",
+      "chinese": "大街，林荫道，途径",
+      "phonetic": "/ˈævənjuː/",
+      "chinese_explanation": "大街，途径",
+      "english_explanation": "wide street or method",
+      "example_sentence": "There are many shops on this avenue."
     },
     {
-      "english": "hazardous",
-      "chinese": "危险的",
-      "phonetic": "/ˈhæz.ər.dəs/",
-      "chinese_explanation": "有害的",
-      "english_explanation": "risky and dangerous",
-      "example_sentence": "Hazardous waste disposal."
+      "english": "bankrupt",
+      "chinese": "破产的，倒闭的，破产者",
+      "phonetic": "/ˈbæŋkrʌpt/",
+      "chinese_explanation": "破产的，倒闭的",
+      "english_explanation": "unable to pay debts",
+      "example_sentence": "The small company went bankrupt last year."
     },
     {
-      "english": "incentive",
-      "chinese": "激励",
-      "phonetic": "/ɪnˈsen.tɪv/",
-      "chinese_explanation": "鼓励措施",
-      "english_explanation": "something that motivates",
-      "example_sentence": "Financial incentives for workers."
+      "english": "bilateral",
+      "chinese": "双边的，双方的",
+      "phonetic": "/ˌbaɪˈlætərəl/",
+      "chinese_explanation": "双边的，双方的",
+      "english_explanation": "involving two sides",
+      "example_sentence": "The two countries signed a bilateral trade agreement."
     },
     {
-      "english": "juxtapose",
-      "chinese": "并列",
-      "phonetic": "/ˌdʒʌk.stəˈpoʊz/",
-      "chinese_explanation": "并排比较",
-      "english_explanation": "to place side by side",
-      "example_sentence": "Juxtapose the two images."
+      "english": "bond",
+      "chinese": "n. 纽带；债券；契约 v. 结合；黏合",
+      "phonetic": "/bɒnd/",
+      "chinese_explanation": "纽带、债券、结合",
+      "english_explanation": "close link or legal agreement",
+      "example_sentence": "The bond between the two friends is very deep."
     },
     {
-      "english": "kinetic",
-      "chinese": "动力的",
-      "phonetic": "/kɪˈnet.ɪk/",
-      "chinese_explanation": "运动的",
-      "english_explanation": "relating to motion",
-      "example_sentence": "Kinetic energy."
+      "english": "constrain",
+      "chinese": "v. 约束；限制；强迫",
+      "phonetic": "/kənˈstreɪn/",
+      "chinese_explanation": "约束、限制、强迫",
+      "english_explanation": "limit or restrict sb/sth",
+      "example_sentence": "Strict rules constrain people's improper behavior."
     },
     {
-      "english": "leverage",
-      "chinese": "杠杆作用",
-      "phonetic": "/ˈlev.ər.ɪdʒ/",
-      "chinese_explanation": "利用优势",
-      "english_explanation": "to use to maximum advantage",
-      "example_sentence": "Leverage your skills."
+      "english": "efficient",
+      "chinese": "adj. 高效的；有能力的",
+      "phonetic": "/ɪˈfɪʃnt/",
+      "chinese_explanation": "效率高的，高效的",
+      "english_explanation": "working well with no waste",
+      "example_sentence": "She is an efficient secretary in the company."
     },
     {
-      "english": "meticulous",
-      "chinese": "一丝不苟的",
-      "phonetic": "/məˈtɪk.jə.ləs/",
-      "chinese_explanation": "非常仔细的",
-      "english_explanation": "very careful and precise",
-      "example_sentence": "Meticulous attention to detail."
+      "english": "emphasis",
+      "chinese": "n. 强调；重点；重要性",
+      "phonetic": "/ˈemfəsɪs/",
+      "chinese_explanation": "强调，重点，重要性",
+      "english_explanation": "special importance given to sth",
+      "example_sentence": "Our teacher puts emphasis on oral English practice."
     },
     {
-      "english": "nostalgia",
-      "chinese": "怀旧",
-      "phonetic": "/nɒˈstæl.dʒə/",
-      "chinese_explanation": "对过去的思念",
-      "english_explanation": "longing for the past",
-      "example_sentence": "A feeling of nostalgia."
+      "english": "legal",
+      "chinese": "adj. 法律的；合法的；法定的",
+      "phonetic": "/ˈliːɡl/",
+      "chinese_explanation": "法律的，合法的",
+      "english_explanation": "allowed or related to law",
+      "example_sentence": "It is legal to drive after getting a license."
     },
     {
-      "english": "obsolete",
-      "chinese": "过时的",
-      "phonetic": "/ˈɒb.sə.liːt/",
-      "chinese_explanation": "不再使用的",
-      "english_explanation": "no longer in use",
-      "example_sentence": "The technology is obsolete."
+      "english": "license",
+      "chinese": "n. 许可证；执照 v. 许可；批准",
+      "phonetic": "/ˈlaɪsns/",
+      "chinese_explanation": "许可证，执照，许可",
+      "english_explanation": "official permission to do sth",
+      "example_sentence": "You must show your driver's license when asked."
     },
     {
-      "english": "paradox",
-      "chinese": "悖论",
-      "phonetic": "/ˈpær.ə.dɒks/",
-      "chinese_explanation": "自相矛盾",
-      "english_explanation": "a contradictory statement",
-      "example_sentence": "A logical paradox."
+      "english": "majority",
+      "chinese": "n. 大多数；大部分；多数票",
+      "phonetic": "/məˈdʒɒrəti/",
+      "chinese_explanation": "大多数，大部分",
+      "english_explanation": "largest part of a group",
+      "example_sentence": "The majority of people here support the new policy."
     },
     {
-      "english": "quota",
-      "chinese": "定额",
-      "phonetic": "/ˈkwoʊ.tə/",
-      "chinese_explanation": "分配的份额",
-      "english_explanation": "an assigned amount",
-      "example_sentence": "Import quotas were set."
+      "english": "phase",
+      "chinese": "n. 阶段；时期；相位 v. 分阶段进行",
+      "phonetic": "/feɪz/",
+      "chinese_explanation": "阶段，时期，步骤",
+      "english_explanation": "a stage in a process",
+      "example_sentence": "The project is now in its final phase."
     },
     {
-      "english": "rationale",
-      "chinese": "理由",
-      "phonetic": "/ˌræʃ.əˈnæl/",
-      "chinese_explanation": "基本原因",
-      "english_explanation": "the reasons behind something",
-      "example_sentence": "Explain the rationale."
+      "english": "range",
+      "chinese": "n. 范围；幅度；系列 v. 变动；排列",
+      "phonetic": "/reɪndʒ/",
+      "chinese_explanation": "范围，幅度，系列",
+      "english_explanation": "scope between two limits",
+      "example_sentence": "This shop offers a wide range of daily goods."
     },
     {
-      "english": "scrutiny",
-      "chinese": "审查",
-      "phonetic": "/ˈskruː.tɪ.ni/",
-      "chinese_explanation": "仔细检查",
-      "english_explanation": "careful examination",
-      "example_sentence": "Under public scrutiny."
+      "english": "release",
+      "chinese": "v. 释放；发布；发行 n. 释放；发行物",
+      "phonetic": "/rɪˈliːs/",
+      "chinese_explanation": "释放，发布，发行",
+      "english_explanation": "set free or make public",
+      "example_sentence": "The movie will be released next week."
     },
     {
-      "english": "tangible",
-      "chinese": "有形的",
-      "phonetic": "/ˈtæn.dʒɪ.bəl/",
-      "chinese_explanation": "可触摸的",
-      "english_explanation": "able to be touched",
-      "example_sentence": "Tangible results."
+      "english": "technology",
+      "chinese": "n. 技术，科技",
+      "phonetic": "/tekˈnɒlədʒi/",
+      "chinese_explanation": "科学应用技艺",
+      "english_explanation": "practical use of scientific knowledge",
+      "example_sentence": "Technology makes our life much easier."
     },
     {
-      "english": "ubiquitous",
-      "chinese": "无处不在的",
-      "phonetic": "/juːˈbɪk.wɪ.təs/",
-      "chinese_explanation": "到处都有的",
-      "english_explanation": "found everywhere",
-      "example_sentence": "Smartphones are ubiquitous."
+      "english": "whereas",
+      "chinese": "conj. 然而，鉴于",
+      "phonetic": "/ˌweərˈæz/",
+      "chinese_explanation": "表转折对比",
+      "english_explanation": "used to show contrast",
+      "example_sentence": "He likes sports whereas I prefer reading."
     },
     {
-      "english": "viable",
-      "chinese": "可行的",
-      "phonetic": "/ˈvaɪ.ə.bəl/",
-      "chinese_explanation": "能成功的",
-      "english_explanation": "capable of working",
-      "example_sentence": "A viable solution."
+      "english": "academic",
+      "chinese": "adj. 学术的；n. 学者",
+      "phonetic": "/ˌækəˈdemɪk/",
+      "chinese_explanation": "和学术研究相关",
+      "english_explanation": "related to education and research",
+      "example_sentence": "He works in an academic institution."
     },
     {
-      "english": "watershed",
-      "chinese": "分水岭",
-      "phonetic": "/ˈwɔː.tər.ʃed/",
-      "chinese_explanation": "转折点",
-      "english_explanation": "a turning point",
-      "example_sentence": "A watershed moment."
+      "english": "agency",
+      "chinese": "n. 机构，代理处",
+      "phonetic": "/ˈeɪdʒənsi/",
+      "chinese_explanation": "专门办事机构",
+      "english_explanation": "organization providing specific service",
+      "example_sentence": "You can contact the travel agency for tickets."
     },
     {
-      "english": "adjacent",
-      "chinese": "邻近的",
-      "phonetic": "/əˈdʒeɪ.sənt/",
-      "chinese_explanation": "紧挨着的",
-      "english_explanation": "next to",
-      "example_sentence": "The adjacent building."
+      "english": "agree",
+      "chinese": "v. 同意，赞成",
+      "phonetic": "/əˈɡriː/",
+      "chinese_explanation": "认可他人意见",
+      "english_explanation": "have the same opinion as others",
+      "example_sentence": "I agree with your suggestion totally."
     },
     {
-      "english": "benevolent",
-      "chinese": "仁慈的",
-      "phonetic": "/bəˈnev.ə.lənt/",
-      "chinese_explanation": "善良的",
-      "english_explanation": "kind and generous",
-      "example_sentence": "A benevolent leader."
+      "english": "apply",
+      "chinese": "v. 申请；应用",
+      "phonetic": "/əˈplaɪ/",
+      "chinese_explanation": "申请或运用某物",
+      "english_explanation": "make request or use something",
+      "example_sentence": "You can apply for this job online."
     },
     {
-      "english": "cognitive",
-      "chinese": "认知的",
-      "phonetic": "/ˈkɒɡ.nɪ.tɪv/",
-      "chinese_explanation": "与思维有关的",
-      "english_explanation": "relating to thinking",
-      "example_sentence": "Cognitive development."
+      "english": "cause",
+      "chinese": "n. 原因；v. 导致",
+      "phonetic": "/kɔːz/",
+      "chinese_explanation": "引发某事的因素",
+      "english_explanation": "reason that makes something happen",
+      "example_sentence": "Smoking can cause serious health problems."
     },
     {
-      "english": "demographic",
-      "chinese": "人口统计的",
-      "phonetic": "/ˌdem.əˈɡræf.ɪk/",
-      "chinese_explanation": "人口特征的",
-      "english_explanation": "relating to population",
-      "example_sentence": "Demographic changes."
+      "english": "community",
+      "chinese": "n. 社区，团体",
+      "phonetic": "/kəˈmjuːnəti/",
+      "chinese_explanation": "聚居的群体",
+      "english_explanation": "group of people living together",
+      "example_sentence": "The local community holds activities every month."
     },
     {
-      "english": "eloquent",
-      "chinese": "雄辩的",
-      "phonetic": "/ˈel.ə.kwənt/",
-      "chinese_explanation": "口才好的",
-      "english_explanation": "fluent and persuasive",
-      "example_sentence": "An eloquent speech."
+      "english": "data",
+      "chinese": "n. 数据，资料",
+      "phonetic": "/ˈdeɪtə/",
+      "chinese_explanation": "信息集合形式",
+      "english_explanation": "collection of facts and information",
+      "example_sentence": "We collected enough data for the research."
     },
     {
-      "english": "frugal",
-      "chinese": "节俭的",
-      "phonetic": "/ˈfruː.ɡəl/",
-      "chinese_explanation": "不浪费的",
-      "english_explanation": "spending little money",
-      "example_sentence": "A frugal lifestyle."
+      "english": "decide",
+      "chinese": "v. 决定，判定",
+      "phonetic": "/dɪˈsaɪd/",
+      "chinese_explanation": "做出最终选择",
+      "english_explanation": "make a choice after thinking",
+      "example_sentence": "It's hard for me to decide which one to buy."
     },
     {
-      "english": "holistic",
-      "chinese": "整体的",
-      "phonetic": "/hoʊˈlɪs.tɪk/",
-      "chinese_explanation": "全面考虑的",
-      "english_explanation": "considering the whole",
-      "example_sentence": "A holistic approach."
+      "english": "estimate",
+      "chinese": "估计，估算；估价",
+      "phonetic": "/ˈestɪmeɪt/",
+      "chinese_explanation": "预估，估算",
+      "english_explanation": "to calculate roughly",
+      "example_sentence": "We need to estimate the cost first."
+    },
+    {
+      "english": "example",
+      "chinese": "例子，范例，榜样",
+      "phonetic": "/ɪɡˈzɑːmpl/",
+      "chinese_explanation": "示例，例子",
+      "english_explanation": "a representative case",
+      "example_sentence": "Let me give you an example."
+    },
+    {
+      "english": "fail",
+      "chinese": "失败，未能做到；不及格",
+      "phonetic": "/feɪl/",
+      "chinese_explanation": "失败，未达成",
+      "english_explanation": "to not succeed",
+      "example_sentence": "If you don't try, you will fail."
+    },
+    {
+      "english": "form",
+      "chinese": "形式，表格；形成",
+      "phonetic": "/fɔːm/",
+      "chinese_explanation": "形式，构成",
+      "english_explanation": "a type or shape",
+      "example_sentence": "Please fill in this application form."
+    },
+    {
+      "english": "gain",
+      "chinese": "获得，赢得；增益",
+      "phonetic": "/ɡeɪn/",
+      "chinese_explanation": "获得，得到",
+      "english_explanation": "to obtain something",
+      "example_sentence": "You can gain experience from practice."
+    },
+    {
+      "english": "goal",
+      "chinese": "目标，目的；进球",
+      "phonetic": "/ɡəʊl/",
+      "chinese_explanation": "目标，目的",
+      "english_explanation": "a desired target",
+      "example_sentence": "My first goal is to pass the exam."
+    },
+    {
+      "english": "handle",
+      "chinese": "处理，应对；把手",
+      "phonetic": "/ˈhændl/",
+      "chinese_explanation": "处理，操作",
+      "english_explanation": "to deal with something",
+      "example_sentence": "He can handle this problem well."
+    },
+    {
+      "english": "impact",
+      "chinese": "影响，作用；冲击力",
+      "phonetic": "/ˈɪmpækt/",
+      "chinese_explanation": "影响，作用",
+      "english_explanation": "a strong effect",
+      "example_sentence": "The bad weather has great impact on our trip."
+    },
+    {
+      "english": "improve",
+      "chinese": "改善，提升，提高",
+      "phonetic": "/ɪmˈpruːv/",
+      "chinese_explanation": "改善，提高",
+      "english_explanation": "to make better",
+      "example_sentence": "You should improve your spoken English."
+    },
+    {
+      "english": "include",
+      "chinese": "包含，包括，计入",
+      "phonetic": "/ɪnˈkluːd/",
+      "chinese_explanation": "包含，包括",
+      "english_explanation": "to contain as part",
+      "example_sentence": "The price includes all the meals."
+    },
+    {
+      "english": "increase",
+      "chinese": "（使）增加；增长",
+      "phonetic": "/ɪnˈkriːs/",
+      "chinese_explanation": "增加，增长",
+      "english_explanation": "become or make greater",
+      "example_sentence": "The price of vegetables increased last week."
+    },
+    {
+      "english": "influence",
+      "chinese": "影响；作用",
+      "phonetic": "/ˈɪnfluəns/",
+      "chinese_explanation": "影响，作用",
+      "english_explanation": "have an effect on sth",
+      "example_sentence": "Good books can influence people deeply."
+    },
+    {
+      "english": "inform",
+      "chinese": "通知；告知",
+      "phonetic": "/ɪnˈfɔːm/",
+      "chinese_explanation": "通知，告知",
+      "english_explanation": "give information to sb",
+      "example_sentence": "Please inform us of your arrival time."
+    },
+    {
+      "english": "intend",
+      "chinese": "打算；计划",
+      "phonetic": "/ɪnˈtend/",
+      "chinese_explanation": "打算，想要",
+      "english_explanation": "plan to do something",
+      "example_sentence": "I intend to study abroad next year."
+    },
+    {
+      "english": "interest",
+      "chinese": "兴趣；使感兴趣",
+      "phonetic": "/ˈɪntrəst/",
+      "chinese_explanation": "兴趣，关注",
+      "english_explanation": "curiosity about something",
+      "example_sentence": "He shows great interest in physics."
+    },
+    {
+      "english": "introduce",
+      "chinese": "介绍；引进",
+      "phonetic": "/ˌɪntrəˈdjuːs/",
+      "chinese_explanation": "介绍，引进",
+      "english_explanation": "make sb known to others",
+      "example_sentence": "Let me introduce my deskmate to you."
+    },
+    {
+      "english": "judge",
+      "chinese": "判断；法官",
+      "phonetic": "/dʒʌdʒ/",
+      "chinese_explanation": "判断，法官",
+      "english_explanation": "form an opinion on sth",
+      "example_sentence": "You can't judge a book by its cover."
+    },
+    {
+      "english": "lack",
+      "chinese": "缺乏；不足",
+      "phonetic": "/læk/",
+      "chinese_explanation": "缺乏，缺少",
+      "english_explanation": "have not enough of sth",
+      "example_sentence": "Many kids lack exercise these days."
+    },
+    {
+      "english": "lead",
+      "chinese": "领导；导致",
+      "phonetic": "/liːd/",
+      "chinese_explanation": "领导，引导",
+      "english_explanation": "guide a group of people",
+      "example_sentence": "He will lead us to visit the museum."
+    },
+    {
+      "english": "level",
+      "chinese": "水平；等级",
+      "phonetic": "/ˈlevl/",
+      "chinese_explanation": "水平，级别",
+      "english_explanation": "a standard of something",
+      "example_sentence": "Her English level is very high."
+    },
+    {
+      "english": "limit",
+      "chinese": "限制；限度；界限",
+      "phonetic": "/ˈlɪm.ɪt/",
+      "chinese_explanation": "限制，限度",
+      "english_explanation": "the maximum allowed amount",
+      "example_sentence": "There is a speed limit here."
+    },
+    {
+      "english": "major",
+      "chinese": "主要的；主修科目；少校",
+      "phonetic": "/ˈmeɪ.dʒər/",
+      "chinese_explanation": "主要的，主修",
+      "english_explanation": "most important; study subject",
+      "example_sentence": "My major is English literature."
+    },
+    {
+      "english": "market",
+      "chinese": "市场；集市；行情",
+      "phonetic": "/ˈmɑː.kɪt/",
+      "chinese_explanation": "市场，集市",
+      "english_explanation": "place for selling and buying goods",
+      "example_sentence": "We go to the market every weekend."
+    },
+    {
+      "english": "model",
+      "chinese": "模型；模特；模范；型号",
+      "phonetic": "/ˈmɒd.əl/",
+      "chinese_explanation": "模型，模范",
+      "english_explanation": "a pattern or example to follow",
+      "example_sentence": "The child built a model car."
+    },
+    {
+      "english": "nature",
+      "chinese": "自然；天性；本质",
+      "phonetic": "/ˈneɪ.tʃər/",
+      "chinese_explanation": "自然，本性",
+      "english_explanation": "the natural world around us",
+      "example_sentence": "We love exploring nature."
+    },
+    {
+      "english": "need",
+      "chinese": "需要；需求；必需品",
+      "phonetic": "/niːd/",
+      "chinese_explanation": "需要，需求",
+      "english_explanation": "require something you want",
+      "example_sentence": "I need a rest after work."
+    },
+    {
+      "english": "note",
+      "chinese": "笔记；便条；音符；注释",
+      "phonetic": "/nəʊt/",
+      "chinese_explanation": "笔记，便条",
+      "english_explanation": "short written message or record",
+      "example_sentence": "He wrote a note on the paper."
+    },
+    {
+      "english": "notice",
+      "chinese": "注意；通知；公告",
+      "phonetic": "/ˈnəʊ.tɪs/",
+      "chinese_explanation": "注意，通知",
+      "english_explanation": "pay attention to; announcement",
+      "example_sentence": "I didn't notice him come in."
+    },
+    {
+      "english": "offer",
+      "chinese": "提供；报价；主动提议",
+      "phonetic": "/ˈɒf.ər/",
+      "chinese_explanation": "提供，报价",
+      "english_explanation": "give something willingly",
+      "example_sentence": "She offered to help me carry bags."
+    },
+    {
+      "english": "origin",
+      "chinese": "起源；源头；出身",
+      "phonetic": "/ˈɒr.ɪ.dʒɪn/",
+      "chinese_explanation": "起源，出身",
+      "english_explanation": "the starting point of something",
+      "example_sentence": "No one knows its exact origin."
+    },
+    {
+      "english": "pattern",
+      "chinese": "图案；模式；范例",
+      "phonetic": "/ˈpæt.ən/",
+      "chinese_explanation": "样式，规律",
+      "english_explanation": "regular repeated design or sequence",
+      "example_sentence": "The cloth has a striped pattern."
+    },
+    {
+      "english": "plan",
+      "chinese": "计划；规划；打算",
+      "phonetic": "/plæn/",
+      "chinese_explanation": "做事的预先安排",
+      "english_explanation": "arrangement for future action",
+      "example_sentence": "I made a study plan for exams."
+    },
+    {
+      "english": "position",
+      "chinese": "位置；职位；立场",
+      "phonetic": "/pəˈzɪʃ.ən/",
+      "chinese_explanation": "所处地点或地位",
+      "english_explanation": "place where sb/sth is located",
+      "example_sentence": "Can you find your position on the map?"
+    },
+    {
+      "english": "practice",
+      "chinese": "练习；实践；惯例",
+      "phonetic": "/ˈpræk.tɪs/",
+      "chinese_explanation": "反复练习或实践",
+      "english_explanation": "repeated exercise to gain skill",
+      "example_sentence": "Daily practice helps improve your English."
+    },
+    {
+      "english": "present",
+      "chinese": "礼物；现在；颁发",
+      "phonetic": "/ˈprez.ənt; prɪˈzent/",
+      "chinese_explanation": "现在，礼物，颁发",
+      "english_explanation": "current time or a gift",
+      "example_sentence": "I got a nice present on my birthday."
+    },
+    {
+      "english": "produce",
+      "chinese": "生产；制造；农产品",
+      "phonetic": "/prəˈdjuːs; ˈprɒd.juːs/",
+      "chinese_explanation": "生产，产出产品",
+      "english_explanation": "make or grow goods",
+      "example_sentence": "The factory produces car parts every day."
+    },
+    {
+      "english": "protect",
+      "chinese": "保护；防护；维护",
+      "phonetic": "/prəˈtekt/",
+      "chinese_explanation": "守卫使不受伤害",
+      "english_explanation": "keep sb/sth safe from harm",
+      "example_sentence": "We should protect the environment."
+    },
+    {
+      "english": "purpose",
+      "chinese": "目的；意图；用途",
+      "phonetic": "/ˈpɜː.pəs/",
+      "chinese_explanation": "做某事的目的",
+      "english_explanation": "reason for doing something",
+      "example_sentence": "The main purpose of the trip is to relax."
+    },
+    {
+      "english": "raise",
+      "chinese": "提升；举起；筹集；养育",
+      "phonetic": "/reɪz/",
+      "chinese_explanation": "举起，提高，筹集",
+      "english_explanation": "lift or increase something",
+      "example_sentence": "She raised her hand to ask a question."
+    },
+    {
+      "english": "reach",
+      "chinese": "到达；抵达；够得着",
+      "phonetic": "/riːtʃ/",
+      "chinese_explanation": "到达，够到某物",
+      "english_explanation": "arrive at a place or get sth",
+      "example_sentence": "We will reach the city at 5 pm."
+    },
+    {
+      "english": "realize",
+      "chinese": "意识到；实现；领会",
+      "phonetic": "/ˈriːəlaɪz/",
+      "chinese_explanation": "意识到；实现",
+      "english_explanation": "become aware of; achieve sth",
+      "example_sentence": "I finally realize my mistake."
+    },
+    {
+      "english": "reason",
+      "chinese": "原因；理由；推理",
+      "phonetic": "/ˈriːzn/",
+      "chinese_explanation": "原因；推理",
+      "english_explanation": "cause; think logically",
+      "example_sentence": "Tell me the reason for your absence."
+    },
+    {
+      "english": "receive",
+      "chinese": "收到；接待；接收",
+      "phonetic": "/rɪˈsiːv/",
+      "chinese_explanation": "收到；接待",
+      "english_explanation": "get sth; be given sth",
+      "example_sentence": "I receive a gift from my friend."
+    },
+    {
+      "english": "refer",
+      "chinese": "提到；参考；涉及",
+      "phonetic": "/rɪˈfɜː(r)/",
+      "chinese_explanation": "提到；参考",
+      "english_explanation": "mention; consult for information",
+      "example_sentence": "Please refer to the user manual first."
+    },
+    {
+      "english": "remain",
+      "chinese": "仍然是；剩余；留下",
+      "phonetic": "/rɪˈmeɪn/",
+      "chinese_explanation": "剩余；仍然是",
+      "english_explanation": "stay; be left after others go",
+      "example_sentence": "Many problems remain to be solved."
+    },
+    {
+      "english": "report",
+      "chinese": "报告；报道；汇报",
+      "phonetic": "/rɪˈpɔːt/",
+      "chinese_explanation": "报告；报道",
+      "english_explanation": "give information of an event",
+      "example_sentence": "She will report the progress tomorrow."
+    },
+    {
+      "english": "result",
+      "chinese": "结果；后果；导致",
+      "phonetic": "/rɪˈzʌlt/",
+      "chinese_explanation": "结果；导致",
+      "english_explanation": "outcome of an event",
+      "example_sentence": "The final result is better than expected."
+    },
+    {
+      "english": "risk",
+      "chinese": "风险；危险；冒险",
+      "phonetic": "/rɪsk/",
+      "chinese_explanation": "风险；冒险",
+      "english_explanation": "possibility of loss or harm",
+      "example_sentence": "Don't take the risk of driving alone."
+    },
+    {
+      "english": "serve",
+      "chinese": "服务；接待；服役",
+      "phonetic": "/sɜːv/",
+      "chinese_explanation": "服务；接待",
+      "english_explanation": "work for; provide service",
+      "example_sentence": "The restaurant serves delicious noodles."
+    },
+    {
+      "english": "set",
+      "chinese": "放置；设置；一套",
+      "phonetic": "/set/",
+      "chinese_explanation": "放置；一套",
+      "english_explanation": "put sth; a group of things",
+      "example_sentence": "Please set the cup on the table."
+    },
+    {
+      "english": "share",
+      "chinese": "分享，共享，分担",
+      "phonetic": "/ʃeə(r)/",
+      "chinese_explanation": "分享，共享",
+      "english_explanation": "give part of sth to others",
+      "example_sentence": "We often share snacks with friends."
+    },
+    {
+      "english": "situation",
+      "chinese": "情况，形势，处境",
+      "phonetic": "/ˌsɪtʃuˈeɪʃn/",
+      "chinese_explanation": "情况，形势",
+      "english_explanation": "the general condition of things",
+      "example_sentence": "The current situation is getting better."
+    },
+    {
+      "english": "standard",
+      "chinese": "标准，规范，规格",
+      "phonetic": "/ˈstændəd/",
+      "chinese_explanation": "标准，规范",
+      "english_explanation": "a level of quality",
+      "example_sentence": "This product meets the national standard."
+    },
+    {
+      "english": "state",
+      "chinese": "状态，国家，州",
+      "phonetic": "/steɪt/",
+      "chinese_explanation": "状态，国家",
+      "english_explanation": "the condition of sb or sth",
+      "example_sentence": "He is in a good state today."
+    },
+    {
+      "english": "subject",
+      "chinese": "科目，主题，主语",
+      "phonetic": "/ˈsʌbdʒɪkt/",
+      "chinese_explanation": "科目，主题",
+      "english_explanation": "a topic or school course",
+      "example_sentence": "My favorite subject is English."
+    },
+    {
+      "english": "success",
+      "chinese": "成功，成就，胜利",
+      "phonetic": "/səkˈses/",
+      "chinese_explanation": "成功，成就",
+      "english_explanation": "the achievement of a goal",
+      "example_sentence": "Hard work leads to great success."
+    },
+    {
+      "english": "suggest",
+      "chinese": "建议，提议，暗示",
+      "phonetic": "/səˈdʒest/",
+      "chinese_explanation": "建议，提议",
+      "english_explanation": "put forward an idea",
+      "example_sentence": "I suggest we go for a walk."
+    },
+    {
+      "english": "system",
+      "chinese": "系统，体系，制度",
+      "phonetic": "/ˈsɪstəm/",
+      "chinese_explanation": "系统，体系",
+      "english_explanation": "a set of connected things",
+      "example_sentence": "The new operating system works well."
+    },
+    {
+      "english": "test",
+      "chinese": "测试，测验，考验",
+      "phonetic": "/test/",
+      "chinese_explanation": "测试，测验",
+      "english_explanation": "an exam or trial",
+      "example_sentence": "We will have a math test tomorrow."
+    },
+    {
+      "english": "track",
+      "chinese": "轨道，足迹，追踪",
+      "phonetic": "/træk/",
+      "chinese_explanation": "轨道，追踪",
+      "english_explanation": "path for trains or running",
+      "example_sentence": "The train runs on the track."
+    },
+    {
+      "english": "treat",
+      "chinese": "对待；治疗；款待",
+      "phonetic": "/triːt/",
+      "chinese_explanation": "对待，治疗，款待",
+      "english_explanation": "act towards; give pleasure",
+      "example_sentence": "She decided to treat herself to a cake."
+    },
+    {
+      "english": "understand",
+      "chinese": "理解；明白；领会",
+      "phonetic": "/ˌʌndəˈstænd/",
+      "chinese_explanation": "理解，明白，领会",
+      "english_explanation": "grasp the meaning of sth",
+      "example_sentence": "I can understand your current feelings."
+    },
+    {
+      "english": "value",
+      "chinese": "价值；重视",
+      "phonetic": "/ˈvæljuː/",
+      "chinese_explanation": "价值，重视",
+      "english_explanation": "worth; regard as important",
+      "example_sentence": "We should value our precious time."
+    },
+    {
+      "english": "view",
+      "chinese": "观点；看法；观看",
+      "phonetic": "/vjuː/",
+      "chinese_explanation": "观点，看法，观看",
+      "english_explanation": "opinion; things you see",
+      "example_sentence": "His view on this issue is quite different."
     }
   ]
 }

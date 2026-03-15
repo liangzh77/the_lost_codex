@@ -248,14 +248,21 @@ def get_today_review(
     user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
 ):
-    """获取今天需要复习的单词"""
+    """获取今天需要复习的单词（排除今天已复习的）"""
     today = date.today()
+    today_start = datetime(today.year, today.month, today.day)
+    reviewed_today = (
+        db.query(LearningRecord.word_id)
+        .filter(LearningRecord.user_id == user.id, LearningRecord.studied_at >= today_start)
+        .subquery()
+    )
     progress_list = (
         db.query(UserWordProgress)
         .filter(
             UserWordProgress.user_id == user.id,
             UserWordProgress.next_review_date <= today,
             UserWordProgress.current_stage < get_total_stages(user.review_intervals),
+            ~UserWordProgress.word_id.in_(db.query(reviewed_today.c.word_id)),
         )
         .all()
     )
@@ -280,18 +287,28 @@ def get_today_review_count(
     user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
 ):
-    """获取今天需要复习的单词数量"""
+    """获取今天需要复习的单词数量和组数（排除今天已复习的）"""
     today = date.today()
-    count = (
+    today_start = datetime(today.year, today.month, today.day)
+    # 今天已复习过的 word_id
+    reviewed_today = (
+        db.query(LearningRecord.word_id)
+        .filter(LearningRecord.user_id == user.id, LearningRecord.studied_at >= today_start)
+        .subquery()
+    )
+    pending = (
         db.query(UserWordProgress)
         .filter(
             UserWordProgress.user_id == user.id,
             UserWordProgress.next_review_date <= today,
             UserWordProgress.current_stage < get_total_stages(user.review_intervals),
+            ~UserWordProgress.word_id.in_(db.query(reviewed_today.c.word_id)),
         )
-        .count()
+        .all()
     )
-    return {"count": count}
+    word_count = len(pending)
+    group_ids = set(p.group_id for p in pending if p.group_id is not None)
+    return {"count": word_count, "group_count": len(group_ids)}
 
 
 # ---------- 生成测试题 ----------
@@ -536,12 +553,17 @@ def get_recent_groups(
         days_until = (next_review - today).days if next_review else None
         stages = [p.current_stage for p in g.words_progress]
         min_stage = min(stages) if stages else 0
+        # 最近学习时间：取组内单词最新的学习记录
+        word_ids = [p.word_id for p in g.words_progress]
+        last_studied = db.query(func.max(LearningRecord.studied_at)).filter(
+            LearningRecord.user_id == user.id, LearningRecord.word_id.in_(word_ids)
+        ).scalar() if word_ids else None
         result.append({
             "id": g.id,
             "name": g.name,
             "word_count": len(g.words_progress),
             "stage": min_stage,
-            "created_at": str(g.created_at),
+            "created_at": str(last_studied) if last_studied else str(g.created_at),
             "next_review_date": str(next_review) if next_review else None,
             "days_until_review": days_until,
             "needs_review": days_until is not None and days_until <= 0,
@@ -572,13 +594,17 @@ def get_learning_groups(
             days_until = (next_review - today).days if next_review else None
             stages = [p.current_stage for p in g.words_progress]
             min_stage = min(stages) if stages else 0
+            word_ids = [p.word_id for p in g.words_progress]
+            last_studied = db.query(func.max(LearningRecord.studied_at)).filter(
+                LearningRecord.user_id == user.id, LearningRecord.word_id.in_(word_ids)
+            ).scalar() if word_ids else None
             result.append({
                 "id": g.id,
                 "name": g.name,
                 "word_count": len(g.words_progress),
                 "learning_count": learning_count,
                 "stage": min_stage,
-                "created_at": str(g.created_at),
+                "created_at": str(last_studied) if last_studied else str(g.created_at),
                 "next_review_date": str(next_review) if next_review else None,
                 "days_until_review": days_until,
                 "needs_review": days_until is not None and days_until <= 0,
@@ -628,10 +654,14 @@ def get_mastered_groups(
     result = []
     for g in groups:
         if len(g.words_progress) > 0 and all(p.current_stage >= get_total_stages(user.review_intervals) for p in g.words_progress):
+            word_ids = [p.word_id for p in g.words_progress]
+            last_studied = db.query(func.max(LearningRecord.studied_at)).filter(
+                LearningRecord.user_id == user.id, LearningRecord.word_id.in_(word_ids)
+            ).scalar() if word_ids else None
             result.append({
                 "id": g.id,
                 "name": g.name,
                 "word_count": len(g.words_progress),
-                "created_at": str(g.created_at),
+                "created_at": str(last_studied) if last_studied else str(g.created_at),
             })
     return result

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { getWordAudio } from '../api';
 
 interface WordInfo {
@@ -19,6 +19,8 @@ interface Props {
 }
 
 export default function WordCard({ word, open, onClose, playOnClick = true }: Props) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
   const playAudio = () => {
     if (word) {
       const audio = new Audio(getWordAudio(word.english));
@@ -32,15 +34,24 @@ export default function WordCard({ word, open, onClose, playOnClick = true }: Pr
     }
   }, [word, open]);
 
+  // 点击卡片外部时关闭
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: MouseEvent) => {
+      if (cardRef.current && !cardRef.current.contains(e.target as Node)) {
+        onClose?.();
+      }
+    };
+    document.addEventListener('click', handler);
+    return () => document.removeEventListener('click', handler);
+  }, [open, onClose]);
+
   if (!word || !open) return null;
 
   const handleCardClick = () => {
-    // 如果用户正在选择文字，不关闭
     const selection = window.getSelection();
     if (selection && selection.toString().length > 0) return;
 
-    // playOnClick=true: 点击播放发音
-    // playOnClick=false: 点击关闭卡片
     if (playOnClick) {
       playAudio();
     } else {
@@ -49,8 +60,12 @@ export default function WordCard({ word, open, onClose, playOnClick = true }: Pr
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 max-w-lg mx-auto bg-white rounded-t-2xl shadow-lg border-t border-gray-100 p-4 space-y-2">
-      <div className="w-10 h-1 bg-gray-200 rounded-full mx-auto mb-2" onClick={handleCardClick} />
+    <div
+      ref={cardRef}
+      className="fixed bottom-0 left-0 right-0 z-50 max-w-lg mx-auto bg-white rounded-t-2xl shadow-lg border-t border-gray-100 p-4 space-y-2"
+      onClick={handleCardClick}
+    >
+      <div className="w-10 h-1 bg-gray-200 rounded-full mx-auto mb-2" />
       <div className="text-center">
         <h3 className="text-xl font-bold text-gray-900">{word.english}</h3>
         <p className="text-xs text-gray-400">{word.phonetic}</p>

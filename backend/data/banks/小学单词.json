@@ -3,244 +3,3876 @@
   "display_order": 1,
   "words": [
     {
+      "english": "a",
+      "chinese": "一个；一",
+      "phonetic": "/ə; eɪ/",
+      "chinese_explanation": "不定冠词，表一个",
+      "english_explanation": "Indefinite article for singular nouns",
+      "example_sentence": "I have a cute cat."
+    },
+    {
+      "english": "able",
+      "chinese": "能够的；有能力的",
+      "phonetic": "/ˈeɪbl/",
+      "chinese_explanation": "有能力的，能干的",
+      "english_explanation": "Capable of doing something",
+      "example_sentence": "He is able to play the piano."
+    },
+    {
+      "english": "about",
+      "chinese": "关于；大约；在周围",
+      "phonetic": "/əˈbaʊt/",
+      "chinese_explanation": "关于，大约",
+      "english_explanation": "Concerning; approximately",
+      "example_sentence": "Tell me about your summer vacation."
+    },
+    {
+      "english": "above",
+      "chinese": "在…上面；超过",
+      "phonetic": "/əˈbʌv/",
+      "chinese_explanation": "在上方，高于",
+      "english_explanation": "Higher than something",
+      "example_sentence": "The sun is above the mountain."
+    },
+    {
+      "english": "across",
+      "chinese": "穿过；横过；在对面",
+      "phonetic": "/əˈkrɒs/",
+      "chinese_explanation": "穿过，横过",
+      "english_explanation": "From one side to another",
+      "example_sentence": "You can walk across the street now."
+    },
+    {
+      "english": "add",
+      "chinese": "添加；增加；加起来",
+      "phonetic": "/æd/",
+      "chinese_explanation": "添加，增加",
+      "english_explanation": "Put something together; increase",
+      "example_sentence": "Please add some salt to the soup."
+    },
+    {
+      "english": "after",
+      "chinese": "在…之后；后来",
+      "phonetic": "/ˈɑːftə(r)/",
+      "chinese_explanation": "在…之后",
+      "english_explanation": "Later than something",
+      "example_sentence": "We often read books after dinner."
+    },
+    {
+      "english": "again",
+      "chinese": "再一次；又一次",
+      "phonetic": "/əˈɡen/",
+      "chinese_explanation": "再一次，又",
+      "english_explanation": "One more time",
+      "example_sentence": "Could you say that again please?"
+    },
+    {
+      "english": "age",
+      "chinese": "年龄；年纪；时代",
+      "phonetic": "/eɪdʒ/",
+      "chinese_explanation": "年龄，时代",
+      "english_explanation": "Length of time one has lived",
+      "example_sentence": "My grandma is 70 years of age."
+    },
+    {
+      "english": "ago",
+      "chinese": "以前；以往",
+      "phonetic": "/əˈɡəʊ/",
+      "chinese_explanation": "以前，过往",
+      "english_explanation": "Before the present time",
+      "example_sentence": "I moved here five years ago."
+    },
+    {
+      "english": "air",
+      "chinese": "空气",
+      "phonetic": "/eə(r)/",
+      "chinese_explanation": "空气，大气",
+      "english_explanation": "Gas we breathe daily",
+      "example_sentence": "Fresh air is good for health."
+    },
+    {
+      "english": "all",
+      "chinese": "全部的，所有的",
+      "phonetic": "/ɔːl/",
+      "chinese_explanation": "全部，所有",
+      "english_explanation": "Everything in a group",
+      "example_sentence": "All of us passed the exam."
+    },
+    {
+      "english": "also",
+      "chinese": "也，此外",
+      "phonetic": "/ˈɔːlsəʊ/",
+      "chinese_explanation": "也，同样",
+      "english_explanation": "In addition, too",
+      "example_sentence": "She also enjoys drawing pictures."
+    },
+    {
+      "english": "always",
+      "chinese": "总是，一直",
+      "phonetic": "/ˈɔːlweɪz/",
+      "chinese_explanation": "总是，始终",
+      "english_explanation": "At all times",
+      "example_sentence": "He always helps others in need."
+    },
+    {
+      "english": "am",
+      "chinese": "是（be动词第一人称单数）",
+      "phonetic": "/æm/",
+      "chinese_explanation": "是（第一人称）",
+      "english_explanation": "First person form of be",
+      "example_sentence": "I am very happy today."
+    },
+    {
+      "english": "an",
+      "chinese": "一（不定冠词，用于元音前）",
+      "phonetic": "/æn; ən/",
+      "chinese_explanation": "一个（元音前用）",
+      "english_explanation": "Indefinite article before vowels",
+      "example_sentence": "I ate an orange just now."
+    },
+    {
+      "english": "and",
+      "chinese": "和，与，并且",
+      "phonetic": "/ænd; ənd/",
+      "chinese_explanation": "和，与，并且",
+      "english_explanation": "Word to connect items",
+      "example_sentence": "My father and I like fishing."
+    },
+    {
+      "english": "animal",
+      "chinese": "动物",
+      "phonetic": "/ˈænɪml/",
+      "chinese_explanation": "动物，畜类",
+      "english_explanation": "Living creature not a plant",
+      "example_sentence": "The elephant is a huge animal."
+    },
+    {
+      "english": "answer",
+      "chinese": "回答，答案",
+      "phonetic": "/ˈɑːnsə(r)/",
+      "chinese_explanation": "回答，答案",
+      "english_explanation": "Reply to a question",
+      "example_sentence": "Do you know the right answer?"
+    },
+    {
+      "english": "ant",
+      "chinese": "蚂蚁",
+      "phonetic": "/ænt/",
+      "chinese_explanation": "蚂蚁，蚁类",
+      "english_explanation": "Small social insect",
+      "example_sentence": "An ant is climbing the tree."
+    },
+    {
+      "english": "any",
+      "chinese": "任何的；一些；任一",
+      "phonetic": "/ˈeni/",
+      "chinese_explanation": "任一，若干",
+      "english_explanation": "one or some of things",
+      "example_sentence": "Do you have any pens?"
+    },
+    {
       "english": "apple",
       "chinese": "苹果",
-      "phonetic": "/ˈæp.əl/",
-      "chinese_explanation": "一种常见水果",
-      "english_explanation": "a round fruit",
-      "example_sentence": "I eat an apple every day."
+      "phonetic": "/ˈæpl/",
+      "chinese_explanation": "常见食用水果",
+      "english_explanation": "a common sweet fruit",
+      "example_sentence": "An apple a day keeps doctors away."
+    },
+    {
+      "english": "are",
+      "chinese": "是（be动词第二/复数）",
+      "phonetic": "/ɑː(r); ə(r)/",
+      "chinese_explanation": "be动词复数形式",
+      "english_explanation": "plural present of 'be'",
+      "example_sentence": "We are good friends."
+    },
+    {
+      "english": "arm",
+      "chinese": "手臂；胳膊；上肢",
+      "phonetic": "/ɑːm/",
+      "chinese_explanation": "人体的上肢",
+      "english_explanation": "upper limb of human body",
+      "example_sentence": "He hurt his left arm yesterday."
+    },
+    {
+      "english": "art",
+      "chinese": "艺术；美术；文艺",
+      "phonetic": "/ɑːt/",
+      "chinese_explanation": "文艺美术统称",
+      "english_explanation": "creative human works",
+      "example_sentence": "She majors in art at college."
+    },
+    {
+      "english": "as",
+      "chinese": "如同；作为；当…时",
+      "phonetic": "/æz; əz/",
+      "chinese_explanation": "如同，作为",
+      "english_explanation": "similar to something",
+      "example_sentence": "He works as a teacher."
+    },
+    {
+      "english": "ask",
+      "chinese": "询问；请求；要求",
+      "phonetic": "/ɑːsk/",
+      "chinese_explanation": "提问，请求",
+      "english_explanation": "make a question to others",
+      "example_sentence": "You can ask the teacher for help."
+    },
+    {
+      "english": "at",
+      "chinese": "在（地点、时刻等）",
+      "phonetic": "/æt; ət/",
+      "chinese_explanation": "表地点时间介词",
+      "english_explanation": "prep for place or time",
+      "example_sentence": "We meet at the school gate."
+    },
+    {
+      "english": "aunt",
+      "chinese": "阿姨；姑姑；舅妈",
+      "phonetic": "/ɑːnt/",
+      "chinese_explanation": "父辈同辈女亲属",
+      "english_explanation": "sister of one's parent",
+      "example_sentence": "My aunt bought me a toy car."
+    },
+    {
+      "english": "autumn",
+      "chinese": "秋天；秋季",
+      "phonetic": "/ˈɔːtəm/",
+      "chinese_explanation": "一年的第三季",
+      "english_explanation": "season after summer",
+      "example_sentence": "Autumn is a harvest season."
+    },
+    {
+      "english": "away",
+      "chinese": "离开，远离",
+      "phonetic": "/əˈweɪ/",
+      "chinese_explanation": "离开，远离",
+      "english_explanation": "at or to a distance",
+      "example_sentence": "Please go away right now."
+    },
+    {
+      "english": "baby",
+      "chinese": "婴儿，宝宝",
+      "phonetic": "/ˈbeɪ.bi/",
+      "chinese_explanation": "年幼的孩子",
+      "english_explanation": "very young child",
+      "example_sentence": "The baby is sleeping peacefully."
+    },
+    {
+      "english": "back",
+      "chinese": "背部，返回，后面",
+      "phonetic": "/bæk/",
+      "chinese_explanation": "背部，返回",
+      "english_explanation": "rear part of body",
+      "example_sentence": "I will come back next week."
+    },
+    {
+      "english": "bad",
+      "chinese": "坏的，糟糕的",
+      "phonetic": "/bæd/",
+      "chinese_explanation": "不好的，差的",
+      "english_explanation": "not good or pleasant",
+      "example_sentence": "The food tastes really bad."
+    },
+    {
+      "english": "bag",
+      "chinese": "包，袋子",
+      "phonetic": "/bæɡ/",
+      "chinese_explanation": "装物品的袋子",
+      "english_explanation": "container for carrying items",
+      "example_sentence": "She carries a red hand bag."
+    },
+    {
+      "english": "ball",
+      "chinese": "球，舞会",
+      "phonetic": "/bɔːl/",
+      "chinese_explanation": "圆形球类玩具",
+      "english_explanation": "round object for sports",
+      "example_sentence": "He kicked the ball into the goal."
+    },
+    {
+      "english": "banana",
+      "chinese": "香蕉",
+      "phonetic": "/bəˈnɑː.nə/",
+      "chinese_explanation": "热带黄色水果",
+      "english_explanation": "long yellow tropical fruit",
+      "example_sentence": "I usually eat a banana for breakfast."
+    },
+    {
+      "english": "band",
+      "chinese": "乐队，束带，团伙",
+      "phonetic": "/bænd/",
+      "chinese_explanation": "乐队，带子",
+      "english_explanation": "group of musicians",
+      "example_sentence": "This pop band is very popular."
+    },
+    {
+      "english": "bank",
+      "chinese": "银行，河岸",
+      "phonetic": "/bæŋk/",
+      "chinese_explanation": "银行，河畔",
+      "english_explanation": "place to deposit money",
+      "example_sentence": "I need to go to the bank today."
+    },
+    {
+      "english": "bath",
+      "chinese": "洗澡，浴缸",
+      "phonetic": "/bɑːθ/",
+      "chinese_explanation": "沐浴，洗澡",
+      "english_explanation": "act of washing body",
+      "example_sentence": "I take a warm bath before bed."
+    },
+    {
+      "english": "be",
+      "chinese": "是；存在；成为",
+      "phonetic": "/biː/",
+      "chinese_explanation": "是，存在，成为",
+      "english_explanation": "link verb, exist",
+      "example_sentence": "Please be quiet in the library."
+    },
+    {
+      "english": "bear",
+      "chinese": "熊；忍受；承受",
+      "phonetic": "/beə(r)/",
+      "chinese_explanation": "熊；忍受，承担",
+      "english_explanation": "wild animal; tolerate",
+      "example_sentence": "I can't bear the loud noise."
+    },
+    {
+      "english": "bed",
+      "chinese": "床；河床；基座",
+      "phonetic": "/bed/",
+      "chinese_explanation": "床，床位，基座",
+      "english_explanation": "furniture for sleeping",
+      "example_sentence": "I usually make the bed after getting up."
+    },
+    {
+      "english": "bee",
+      "chinese": "蜜蜂；勤劳的人",
+      "phonetic": "/biː/",
+      "chinese_explanation": "蜜蜂，勤劳者",
+      "english_explanation": "honey-making flying insect",
+      "example_sentence": "A bee is flying among flowers."
+    },
+    {
+      "english": "before",
+      "chinese": "在…之前；以前",
+      "phonetic": "/bɪˈfɔː(r)/",
+      "chinese_explanation": "时间或位置在前",
+      "english_explanation": "earlier than something",
+      "example_sentence": "Wash your hands before meals."
+    },
+    {
+      "english": "behind",
+      "chinese": "在…的后面",
+      "phonetic": "/bɪˈhaɪnd/",
+      "chinese_explanation": "在…后面",
+      "english_explanation": "at the back of",
+      "example_sentence": "She stands behind the tree."
+    },
+    {
+      "english": "bell",
+      "chinese": "钟，铃",
+      "phonetic": "/bel/",
+      "chinese_explanation": "钟，铃",
+      "english_explanation": "a ringing device",
+      "example_sentence": "The bell rings at 8 a.m."
+    },
+    {
+      "english": "below",
+      "chinese": "在…下面",
+      "phonetic": "/bɪˈləʊ/",
+      "chinese_explanation": "在…下方",
+      "english_explanation": "lower than sth",
+      "example_sentence": "The temperature is below zero."
+    },
+    {
+      "english": "best",
+      "chinese": "最好的",
+      "phonetic": "/best/",
+      "chinese_explanation": "最好的",
+      "english_explanation": "the most excellent",
+      "example_sentence": "He is my best friend."
+    },
+    {
+      "english": "big",
+      "chinese": "大的",
+      "phonetic": "/bɪɡ/",
+      "chinese_explanation": "大的",
+      "english_explanation": "large in size",
+      "example_sentence": "There is a big box."
+    },
+    {
+      "english": "bike",
+      "chinese": "自行车；脚踏车",
+      "phonetic": "/baɪk/",
+      "chinese_explanation": "两轮代步工具",
+      "english_explanation": "two-wheeled vehicle",
+      "example_sentence": "I often ride a bike to school."
+    },
+    {
+      "english": "bird",
+      "chinese": "鸟，鸟类",
+      "phonetic": "/bɜːd/",
+      "chinese_explanation": "有羽有翅的卵生动物",
+      "english_explanation": "Feathered animal with wings",
+      "example_sentence": "A bird is flying in the sky."
+    },
+    {
+      "english": "black",
+      "chinese": "黑色的；黑色",
+      "phonetic": "/blæk/",
+      "chinese_explanation": "深暗的颜色",
+      "english_explanation": "a very dark color",
+      "example_sentence": "My cat has soft black fur."
+    },
+    {
+      "english": "blue",
+      "chinese": "蓝色的；蓝色",
+      "phonetic": "/bluː/",
+      "chinese_explanation": "天空的颜色",
+      "english_explanation": "color of clear sky",
+      "example_sentence": "The sky is bright blue today."
+    },
+    {
+      "english": "boat",
+      "chinese": "小船；轮船",
+      "phonetic": "/boʊt/",
+      "chinese_explanation": "水上交通工具",
+      "english_explanation": "small water transport",
+      "example_sentence": "We rowed a boat on the lake."
+    },
+    {
+      "english": "body",
+      "chinese": "身体；躯体",
+      "phonetic": "/ˈbɑːdi/",
+      "chinese_explanation": "人的生理躯体",
+      "english_explanation": "physical structure of person",
+      "example_sentence": "Exercise is good for your body."
     },
     {
       "english": "book",
-      "chinese": "书",
+      "chinese": "书；书籍",
       "phonetic": "/bʊk/",
-      "chinese_explanation": "用来阅读的印刷品",
-      "english_explanation": "printed pages bound together",
-      "example_sentence": "She is reading a book."
+      "chinese_explanation": "装订成册的读物",
+      "english_explanation": "printed reading material",
+      "example_sentence": "I like reading this interesting book."
+    },
+    {
+      "english": "box",
+      "chinese": "盒子；箱子",
+      "phonetic": "/bɑːks/",
+      "chinese_explanation": "装物品的容器",
+      "english_explanation": "container for holding things",
+      "example_sentence": "There are candies in the box."
+    },
+    {
+      "english": "boy",
+      "chinese": "男孩；男青年",
+      "phonetic": "/bɔɪ/",
+      "chinese_explanation": "男性未成年人",
+      "english_explanation": "male child or young man",
+      "example_sentence": "The boy is flying a kite."
+    },
+    {
+      "english": "bread",
+      "chinese": "面包",
+      "phonetic": "/bred/",
+      "chinese_explanation": "面粉烤制的食物",
+      "english_explanation": "baked food made of flour",
+      "example_sentence": "I eat bread for breakfast every day."
+    },
+    {
+      "english": "break",
+      "chinese": "打破；休息",
+      "phonetic": "/breɪk/",
+      "chinese_explanation": "损坏或短时休息",
+      "english_explanation": "damage or short rest period",
+      "example_sentence": "We have a break after class."
+    },
+    {
+      "english": "bright",
+      "chinese": "明亮的；聪明的",
+      "phonetic": "/braɪt/",
+      "chinese_explanation": "明亮的，聪明的",
+      "english_explanation": "full of light; intelligent",
+      "example_sentence": "The room is very bright."
+    },
+    {
+      "english": "bring",
+      "chinese": "带来；引起",
+      "phonetic": "/brɪŋ/",
+      "chinese_explanation": "拿来，带来",
+      "english_explanation": "take sth to a place",
+      "example_sentence": "Please bring me a cup of water."
+    },
+    {
+      "english": "brother",
+      "chinese": "兄弟；同事",
+      "phonetic": "/ˈbrʌðə(r)/",
+      "chinese_explanation": "兄，弟",
+      "english_explanation": "male sibling",
+      "example_sentence": "My brother is two years older than me."
+    },
+    {
+      "english": "brown",
+      "chinese": "棕色的；棕色",
+      "phonetic": "/braʊn/",
+      "chinese_explanation": "棕色（的）",
+      "english_explanation": "of the color of earth",
+      "example_sentence": "She wears a brown coat today."
+    },
+    {
+      "english": "bus",
+      "chinese": "公共汽车",
+      "phonetic": "/bʌs/",
+      "chinese_explanation": "公共汽车",
+      "english_explanation": "large public passenger vehicle",
+      "example_sentence": "I go to school by bus every day."
+    },
+    {
+      "english": "but",
+      "chinese": "但是；然而",
+      "phonetic": "/bʌt; bət/",
+      "chinese_explanation": "但是，然而",
+      "english_explanation": "used to introduce contrast",
+      "example_sentence": "I like apples but I don't like pears."
+    },
+    {
+      "english": "buy",
+      "chinese": "购买；买",
+      "phonetic": "/baɪ/",
+      "chinese_explanation": "购买，买",
+      "english_explanation": "get sth by paying money",
+      "example_sentence": "I want to buy a new pen."
+    },
+    {
+      "english": "by",
+      "chinese": "通过；被；由",
+      "phonetic": "/baɪ/",
+      "chinese_explanation": "通过，被",
+      "english_explanation": "near; through the means of",
+      "example_sentence": "The book was written by Lu Xun."
+    },
+    {
+      "english": "cake",
+      "chinese": "蛋糕；糕饼",
+      "phonetic": "/keɪk/",
+      "chinese_explanation": "蛋糕，糕饼",
+      "english_explanation": "sweet baked food",
+      "example_sentence": "We ate a birthday cake yesterday."
+    },
+    {
+      "english": "call",
+      "chinese": "呼叫；打电话；称呼",
+      "phonetic": "/kɔːl/",
+      "chinese_explanation": "呼叫，打电话",
+      "english_explanation": "speak to sb on phone; shout",
+      "example_sentence": "Please call me tomorrow morning."
+    },
+    {
+      "english": "can",
+      "chinese": "能；可以；罐头",
+      "phonetic": "/kæn/",
+      "chinese_explanation": "能够；金属罐头",
+      "english_explanation": "be able to; tin container",
+      "example_sentence": "I can play the guitar."
+    },
+    {
+      "english": "cap",
+      "chinese": "便帽；盖子",
+      "phonetic": "/kæp/",
+      "chinese_explanation": "软帽；容器封盖",
+      "english_explanation": "soft hat; container cover",
+      "example_sentence": "He wears a white cap."
+    },
+    {
+      "english": "car",
+      "chinese": "汽车；轿车",
+      "phonetic": "/kɑː(r)/",
+      "chinese_explanation": "陆路机动车辆",
+      "english_explanation": "road motor vehicle",
+      "example_sentence": "My mom drives a red car."
+    },
+    {
+      "english": "card",
+      "chinese": "卡片；纸牌",
+      "phonetic": "/kɑːd/",
+      "chinese_explanation": "硬纸片；卡牌",
+      "english_explanation": "thick paper; playing card",
+      "example_sentence": "I got a birthday card."
     },
     {
       "english": "cat",
-      "chinese": "猫",
+      "chinese": "猫；猫咪",
       "phonetic": "/kæt/",
-      "chinese_explanation": "一种常见宠物",
-      "english_explanation": "a small domesticated animal",
-      "example_sentence": "The cat is sleeping."
+      "chinese_explanation": "家养猫科宠物",
+      "english_explanation": "small domestic feline",
+      "example_sentence": "The cat is sleeping on the mat."
+    },
+    {
+      "english": "chair",
+      "chinese": "椅子；主席席位",
+      "phonetic": "/tʃeə(r)/",
+      "chinese_explanation": "带靠背的坐具",
+      "english_explanation": "seat with back for one",
+      "example_sentence": "There is a chair near the window."
+    },
+    {
+      "english": "cheese",
+      "chinese": "奶酪；干酪",
+      "phonetic": "/tʃiːz/",
+      "chinese_explanation": "牛奶制乳制品",
+      "english_explanation": "solid food made from milk",
+      "example_sentence": "I like eating cheese very much."
+    },
+    {
+      "english": "chicken",
+      "chinese": "鸡；鸡肉",
+      "phonetic": "/ˈtʃɪkɪn/",
+      "chinese_explanation": "小鸡；鸡肉食材",
+      "english_explanation": "young bird; its edible meat",
+      "example_sentence": "We had chicken for dinner."
+    },
+    {
+      "english": "child",
+      "chinese": "儿童；小孩",
+      "phonetic": "/tʃaɪld/",
+      "chinese_explanation": "未成年的孩子",
+      "english_explanation": "young non-adult person",
+      "example_sentence": "The child is drawing a picture."
+    },
+    {
+      "english": "children",
+      "chinese": "孩子们；儿童们",
+      "phonetic": "/ˈtʃɪldrən/",
+      "chinese_explanation": "child的复数形式",
+      "english_explanation": "plural form of child",
+      "example_sentence": "Many children are playing in the park."
+    },
+    {
+      "english": "chin",
+      "chinese": "下巴，颌",
+      "phonetic": "/tʃɪn/",
+      "chinese_explanation": "脸部下端部位",
+      "english_explanation": "part of face below mouth",
+      "example_sentence": "He touched his chin when thinking."
+    },
+    {
+      "english": "circle",
+      "chinese": "圆，圆圈",
+      "phonetic": "/ˈsɜːkl/",
+      "chinese_explanation": "圆形环状图形",
+      "english_explanation": "round closed shape",
+      "example_sentence": "We drew a circle on the paper."
+    },
+    {
+      "english": "city",
+      "chinese": "城市，都市",
+      "phonetic": "/ˈsɪti/",
+      "chinese_explanation": "大型聚居区域",
+      "english_explanation": "large populated town",
+      "example_sentence": "Shanghai is a busy modern city."
+    },
+    {
+      "english": "class",
+      "chinese": "班级，课程",
+      "phonetic": "/klɑːs/",
+      "chinese_explanation": "学生群体或课程",
+      "english_explanation": "student group or lesson",
+      "example_sentence": "We have an English class this morning."
+    },
+    {
+      "english": "clean",
+      "chinese": "干净的，打扫",
+      "phonetic": "/kliːn/",
+      "chinese_explanation": "无污渍的，清理",
+      "english_explanation": "free from dirt or mess",
+      "example_sentence": "Please keep your desk clean."
+    },
+    {
+      "english": "climb",
+      "chinese": "攀登，攀爬",
+      "phonetic": "/klaɪm/",
+      "chinese_explanation": "向上爬的动作",
+      "english_explanation": "go up high objects",
+      "example_sentence": "The little boy likes to climb trees."
+    },
+    {
+      "english": "clock",
+      "chinese": "时钟，钟",
+      "phonetic": "/klɒk/（英） /klɑːk/（美）",
+      "chinese_explanation": "计时用的器具",
+      "english_explanation": "A device that shows time",
+      "example_sentence": "There is a clock on the wall."
+    },
+    {
+      "english": "close",
+      "chinese": "关闭，近的",
+      "phonetic": "/kləʊz/",
+      "chinese_explanation": "合上，距离近的",
+      "english_explanation": "shut or near in distance",
+      "example_sentence": "Please close the door when you leave."
+    },
+    {
+      "english": "cloud",
+      "chinese": "云，云朵",
+      "phonetic": "/klaʊd/",
+      "chinese_explanation": "空中的水汽团",
+      "english_explanation": "white mass in the sky",
+      "example_sentence": "A white cloud is floating in the sky."
+    },
+    {
+      "english": "coat",
+      "chinese": "外套，大衣",
+      "phonetic": "/kəʊt/",
+      "chinese_explanation": "外穿的上衣",
+      "english_explanation": "warm outer clothing",
+      "example_sentence": "Put on your coat, it's cold outside."
+    },
+    {
+      "english": "cold",
+      "chinese": "寒冷的，感冒",
+      "phonetic": "/kəʊld/",
+      "chinese_explanation": "温度低，感冒病",
+      "english_explanation": "low temperature or flu",
+      "example_sentence": "It's very cold in winter in the north."
+    },
+    {
+      "english": "color",
+      "chinese": "颜色；给……着色",
+      "phonetic": "/ˈkʌlə(r)/",
+      "chinese_explanation": "色彩；染色动作",
+      "english_explanation": "visual feature of objects",
+      "example_sentence": "My favorite color is pink."
+    },
+    {
+      "english": "come",
+      "chinese": "来；来到；到达",
+      "phonetic": "/kʌm/",
+      "chinese_explanation": "抵达某个地点",
+      "english_explanation": "move to a place",
+      "example_sentence": "Come and play with me."
+    },
+    {
+      "english": "cook",
+      "chinese": "烹饪；厨师",
+      "phonetic": "/kʊk/",
+      "chinese_explanation": "做饭；做饭的人",
+      "english_explanation": "make food by heating",
+      "example_sentence": "My father likes to cook."
+    },
+    {
+      "english": "cool",
+      "chinese": "凉爽的；酷的",
+      "phonetic": "/kuːl/",
+      "chinese_explanation": "凉快的；出色的",
+      "english_explanation": "slightly cold; excellent",
+      "example_sentence": "The weather is very cool today."
+    },
+    {
+      "english": "copy",
+      "chinese": "复制；副本；复印件",
+      "phonetic": "/ˈkɒpi/",
+      "chinese_explanation": "仿制；复制品",
+      "english_explanation": "duplicate of a thing",
+      "example_sentence": "Please copy this sentence."
+    },
+    {
+      "english": "corn",
+      "chinese": "玉米；谷物",
+      "phonetic": "/kɔːn/",
+      "chinese_explanation": "玉米；谷类作物",
+      "english_explanation": "maize or cereal crop",
+      "example_sentence": "I love eating sweet corn."
+    },
+    {
+      "english": "count",
+      "chinese": "数数；计数；计算",
+      "phonetic": "/kaʊnt/",
+      "chinese_explanation": "计算事物数量",
+      "english_explanation": "calculate the total number",
+      "example_sentence": "Can you count from 1 to 10?"
+    },
+    {
+      "english": "cow",
+      "chinese": "奶牛；母牛",
+      "phonetic": "/kaʊ/",
+      "chinese_explanation": "雌性的牛",
+      "english_explanation": "female cattle that gives milk",
+      "example_sentence": "We saw a cow on the farm."
+    },
+    {
+      "english": "cry",
+      "chinese": "哭；喊叫；呼喊",
+      "phonetic": "/kraɪ/",
+      "chinese_explanation": "哭泣；大声叫喊",
+      "english_explanation": "shed tears; shout loudly",
+      "example_sentence": "The baby will cry when hungry."
+    },
+    {
+      "english": "cup",
+      "chinese": "杯子；奖杯",
+      "phonetic": "/kʌp/",
+      "chinese_explanation": "盛水容器；奖杯",
+      "english_explanation": "container for holding drinks",
+      "example_sentence": "There is a cup on the desk."
+    },
+    {
+      "english": "cut",
+      "chinese": "切；割；削减",
+      "phonetic": "/kʌt/",
+      "chinese_explanation": "切割，削减",
+      "english_explanation": "divide with sharp tool",
+      "example_sentence": "He can cut the apple easily."
+    },
+    {
+      "english": "dad",
+      "chinese": "爸爸；爹爹",
+      "phonetic": "/dæd/",
+      "chinese_explanation": "口语称呼父亲",
+      "english_explanation": "informal word for father",
+      "example_sentence": "Dad will pick me up later."
+    },
+    {
+      "english": "dance",
+      "chinese": "跳舞；舞蹈",
+      "phonetic": "/dɑːns/",
+      "chinese_explanation": "伴随音乐跳舞",
+      "english_explanation": "move body to music",
+      "example_sentence": "She likes to dance very much."
+    },
+    {
+      "english": "dark",
+      "chinese": "黑暗的；深色的",
+      "phonetic": "/dɑːk/",
+      "chinese_explanation": "光线不足的",
+      "english_explanation": "with little or no light",
+      "example_sentence": "It gets dark at six o'clock."
+    },
+    {
+      "english": "day",
+      "chinese": "一天；白天",
+      "phonetic": "/deɪ/",
+      "chinese_explanation": "一昼夜时间",
+      "english_explanation": "period of 24 hours",
+      "example_sentence": "We go to school every day."
+    },
+    {
+      "english": "dear",
+      "chinese": "亲爱的；昂贵的",
+      "phonetic": "/dɪə(r)/",
+      "chinese_explanation": "亲爱的，贵重的",
+      "english_explanation": "loved or high priced",
+      "example_sentence": "My dear grandma is very nice."
+    },
+    {
+      "english": "desk",
+      "chinese": "书桌；办公桌",
+      "phonetic": "/desk/",
+      "chinese_explanation": "学习办公的桌子",
+      "english_explanation": "table for study or work",
+      "example_sentence": "There are many books on the desk."
+    },
+    {
+      "english": "did",
+      "chinese": "do的过去式",
+      "phonetic": "/dɪd/",
+      "chinese_explanation": "do的过去式",
+      "english_explanation": "past tense of verb do",
+      "example_sentence": "I did some cleaning yesterday."
+    },
+    {
+      "english": "dig",
+      "chinese": "挖；掘",
+      "phonetic": "/dɪɡ/",
+      "chinese_explanation": "刨挖土地等",
+      "english_explanation": "make hole in ground",
+      "example_sentence": "They dig a small hole here."
+    },
+    {
+      "english": "dinner",
+      "chinese": "晚餐；正餐",
+      "phonetic": "/ˈdɪnə(r)/",
+      "chinese_explanation": "晚间的正餐",
+      "english_explanation": "main meal of the day",
+      "example_sentence": "We have chicken for dinner tonight."
+    },
+    {
+      "english": "do",
+      "chinese": "做，干，执行",
+      "phonetic": "/duː/",
+      "chinese_explanation": "进行某项动作",
+      "english_explanation": "perform an action",
+      "example_sentence": "I do sports every morning."
     },
     {
       "english": "dog",
-      "chinese": "狗",
+      "chinese": "狗，犬",
       "phonetic": "/dɒɡ/",
-      "chinese_explanation": "人类的朋友",
-      "english_explanation": "a domesticated pet animal",
-      "example_sentence": "The dog is playing."
+      "chinese_explanation": "常见宠物动物",
+      "english_explanation": "a common pet animal",
+      "example_sentence": "We keep a lovely dog at home."
+    },
+    {
+      "english": "door",
+      "chinese": "门，出入口",
+      "phonetic": "/dɔː(r)/",
+      "chinese_explanation": "房屋出入口构件",
+      "english_explanation": "entrance of a building",
+      "example_sentence": "Please knock on the door first."
+    },
+    {
+      "english": "down",
+      "chinese": "向下，往下",
+      "phonetic": "/daʊn/",
+      "chinese_explanation": "朝向更低位置",
+      "english_explanation": "towards lower position",
+      "example_sentence": "Please sit down and have a cup of tea."
+    },
+    {
+      "english": "draw",
+      "chinese": "画，绘制，拉",
+      "phonetic": "/drɔː/",
+      "chinese_explanation": "用笔创作图画",
+      "english_explanation": "make pictures with pens",
+      "example_sentence": "The little girl likes to draw flowers."
+    },
+    {
+      "english": "dream",
+      "chinese": "梦，梦想",
+      "phonetic": "/driːm/",
+      "chinese_explanation": "梦境，理想愿望",
+      "english_explanation": "thoughts when sleeping",
+      "example_sentence": "My dream is to be a doctor."
+    },
+    {
+      "english": "dress",
+      "chinese": "连衣裙，穿衣服",
+      "phonetic": "/dres/",
+      "chinese_explanation": "女士连衣裙",
+      "english_explanation": "women's one-piece clothing",
+      "example_sentence": "She wore a pink dress today."
+    },
+    {
+      "english": "drink",
+      "chinese": "喝，饮料",
+      "phonetic": "/drɪŋk/",
+      "chinese_explanation": "饮用液体饮品",
+      "english_explanation": "take liquid into mouth",
+      "example_sentence": "You should drink more water in summer."
+    },
+    {
+      "english": "drive",
+      "chinese": "驾驶，开车",
+      "phonetic": "/draɪv/",
+      "chinese_explanation": "操控车辆行驶",
+      "english_explanation": "operate a vehicle",
+      "example_sentence": "My father will drive us to the zoo."
+    },
+    {
+      "english": "drum",
+      "chinese": "鼓，击鼓",
+      "phonetic": "/drʌm/",
+      "chinese_explanation": "打击类乐器",
+      "english_explanation": "a percussion instrument",
+      "example_sentence": "He is good at playing the drum."
+    },
+    {
+      "english": "dry",
+      "chinese": "干的；干燥的",
+      "phonetic": "/draɪ/",
+      "chinese_explanation": "干的，不湿的",
+      "english_explanation": "not wet or damp",
+      "example_sentence": "The clothes are dry now."
+    },
+    {
+      "english": "duck",
+      "chinese": "鸭子；鸭肉",
+      "phonetic": "/dʌk/",
+      "chinese_explanation": "鸭子，鸭肉",
+      "english_explanation": "a common water bird",
+      "example_sentence": "There is a duck in the pool."
+    },
+    {
+      "english": "ear",
+      "chinese": "耳朵；听觉",
+      "phonetic": "/ɪə(r)/",
+      "chinese_explanation": "耳朵，听觉",
+      "english_explanation": "organ for hearing",
+      "example_sentence": "I have a pain in my left ear."
+    },
+    {
+      "english": "early",
+      "chinese": "早的；提前的",
+      "phonetic": "/ˈɜːli/",
+      "chinese_explanation": "早的，早期的",
+      "english_explanation": "arriving before time",
+      "example_sentence": "You get up very early today."
+    },
+    {
+      "english": "earth",
+      "chinese": "地球；陆地",
+      "phonetic": "/ɜːθ/",
+      "chinese_explanation": "地球，大地",
+      "english_explanation": "the planet we live on",
+      "example_sentence": "The earth goes around the sun."
+    },
+    {
+      "english": "east",
+      "chinese": "东；东方的",
+      "phonetic": "/iːst/",
+      "chinese_explanation": "东方，东部",
+      "english_explanation": "one of four directions",
+      "example_sentence": "The sun rises in the east."
+    },
+    {
+      "english": "easy",
+      "chinese": "容易的；简单的",
+      "phonetic": "/ˈiːzi/",
+      "chinese_explanation": "容易的，简单的",
+      "english_explanation": "not difficult to do",
+      "example_sentence": "This math problem is very easy."
+    },
+    {
+      "english": "eat",
+      "chinese": "吃；进食",
+      "phonetic": "/iːt/",
+      "chinese_explanation": "吃，食用",
+      "english_explanation": "consume food through mouth",
+      "example_sentence": "I eat an apple every morning."
     },
     {
       "english": "egg",
-      "chinese": "鸡蛋",
+      "chinese": "蛋；鸡蛋",
       "phonetic": "/eɡ/",
-      "chinese_explanation": "鸡下的蛋",
-      "english_explanation": "an oval object laid by a bird",
-      "example_sentence": "I had an egg for breakfast."
+      "chinese_explanation": "蛋，鸡蛋",
+      "english_explanation": "oval object laid by birds",
+      "example_sentence": "I want a boiled egg for breakfast."
+    },
+    {
+      "english": "eight",
+      "chinese": "八；八个",
+      "phonetic": "/eɪt/",
+      "chinese_explanation": "八，八个",
+      "english_explanation": "the number after seven",
+      "example_sentence": "There are eight students in the room."
+    },
+    {
+      "english": "elephant",
+      "chinese": "大象",
+      "phonetic": "/ˈel.ɪ.fənt/",
+      "chinese_explanation": "大型陆生动物",
+      "english_explanation": "a huge animal with trunk",
+      "example_sentence": "An elephant has a long nose."
+    },
+    {
+      "english": "eleven",
+      "chinese": "十一，十一个",
+      "phonetic": "/ɪˈlev.ən/",
+      "chinese_explanation": "数字十一",
+      "english_explanation": "the number 11",
+      "example_sentence": "I have eleven pens."
+    },
+    {
+      "english": "end",
+      "chinese": "结束，末端",
+      "phonetic": "/end/",
+      "chinese_explanation": "末尾，终止",
+      "english_explanation": "the final part of sth",
+      "example_sentence": "The film will end soon."
+    },
+    {
+      "english": "enjoy",
+      "chinese": "享受，喜爱",
+      "phonetic": "/ɪnˈdʒɔɪ/",
+      "chinese_explanation": "享受，喜爱",
+      "english_explanation": "like doing sth very much",
+      "example_sentence": "I enjoy playing football."
+    },
+    {
+      "english": "evening",
+      "chinese": "晚上，傍晚",
+      "phonetic": "/ˈiːv.nɪŋ/",
+      "chinese_explanation": "傍晚，晚间",
+      "english_explanation": "time before night falls",
+      "example_sentence": "We eat dinner in the evening."
+    },
+    {
+      "english": "every",
+      "chinese": "每个，每一",
+      "phonetic": "/ˈev.ri/",
+      "chinese_explanation": "所有的，每一的",
+      "english_explanation": "each one of a group",
+      "example_sentence": "Every kid likes candies."
+    },
+    {
+      "english": "eye",
+      "chinese": "眼睛",
+      "phonetic": "/aɪ/",
+      "chinese_explanation": "视觉器官",
+      "english_explanation": "organ for seeing",
+      "example_sentence": "Her eyes are very beautiful."
+    },
+    {
+      "english": "face",
+      "chinese": "脸，面对",
+      "phonetic": "/feɪs/",
+      "chinese_explanation": "脸庞，面部",
+      "english_explanation": "front part of head",
+      "example_sentence": "Please wash your face every day."
+    },
+    {
+      "english": "fall",
+      "chinese": "落下，跌倒，秋天",
+      "phonetic": "/fɔːl/",
+      "chinese_explanation": "落下，秋季",
+      "english_explanation": "drop down, or autumn",
+      "example_sentence": "Leaves fall in autumn."
+    },
+    {
+      "english": "family",
+      "chinese": "家庭，家人",
+      "phonetic": "/ˈfæm.ə.li/",
+      "chinese_explanation": "家庭，亲属",
+      "english_explanation": "group of related people",
+      "example_sentence": "I love my warm family."
+    },
+    {
+      "english": "far",
+      "chinese": "远的；遥远地",
+      "phonetic": "/fɑː(r)/",
+      "chinese_explanation": "距离远的",
+      "english_explanation": "at a great distance",
+      "example_sentence": "My home is far from school."
+    },
+    {
+      "english": "farm",
+      "chinese": "农场；务农",
+      "phonetic": "/fɑːm/",
+      "chinese_explanation": "农场，养殖场",
+      "english_explanation": "place for growing crops",
+      "example_sentence": "We visit the farm every weekend."
+    },
+    {
+      "english": "fast",
+      "chinese": "快的；快速地",
+      "phonetic": "/fɑːst/",
+      "chinese_explanation": "快速的，迅速的",
+      "english_explanation": "moving with high speed",
+      "example_sentence": "He runs very fast in the race."
+    },
+    {
+      "english": "fat",
+      "chinese": "胖的；脂肪",
+      "phonetic": "/fæt/",
+      "chinese_explanation": "肥胖的，脂肪",
+      "english_explanation": "having much body flesh",
+      "example_sentence": "The cute cat is a little fat."
+    },
+    {
+      "english": "father",
+      "chinese": "父亲，爸爸",
+      "phonetic": "/ˈfɑːðə(r)/",
+      "chinese_explanation": "父亲，爸爸",
+      "english_explanation": "male parent of a person",
+      "example_sentence": "My father loves playing basketball."
+    },
+    {
+      "english": "feel",
+      "chinese": "感觉，触摸",
+      "phonetic": "/fiːl/",
+      "chinese_explanation": "感受，感觉到",
+      "english_explanation": "experience a sensation",
+      "example_sentence": "I feel happy today."
+    },
+    {
+      "english": "feet",
+      "chinese": "脚（foot的复数）",
+      "phonetic": "/fiːt/",
+      "chinese_explanation": "脚（复数形式）",
+      "english_explanation": "plural form of foot",
+      "example_sentence": "My feet are sore after walking."
+    },
+    {
+      "english": "few",
+      "chinese": "很少的，几乎没有的",
+      "phonetic": "/fjuː/",
+      "chinese_explanation": "很少的，少数的",
+      "english_explanation": "small number of things",
+      "example_sentence": "Few students are late today."
+    },
+    {
+      "english": "field",
+      "chinese": "田地，领域",
+      "phonetic": "/fiːld/",
+      "chinese_explanation": "田地，专业领域",
+      "english_explanation": "open land for crops",
+      "example_sentence": "Farmers work in the field."
+    },
+    {
+      "english": "find",
+      "chinese": "找到，发现",
+      "phonetic": "/faɪnd/",
+      "chinese_explanation": "找到，发觉",
+      "english_explanation": "discover something unexpectedly",
+      "example_sentence": "I find a nice pen under the desk."
+    },
+    {
+      "english": "fine",
+      "chinese": "好的，健康的",
+      "phonetic": "/faɪn/",
+      "chinese_explanation": "好的，健康的",
+      "english_explanation": "good or well",
+      "example_sentence": "I feel fine today."
+    },
+    {
+      "english": "finger",
+      "chinese": "手指",
+      "phonetic": "/ˈfɪŋɡə(r)/",
+      "chinese_explanation": "手指",
+      "english_explanation": "part of hand",
+      "example_sentence": "I cut my finger yesterday."
+    },
+    {
+      "english": "fire",
+      "chinese": "火，火灾",
+      "phonetic": "/ˈfaɪə(r)/",
+      "chinese_explanation": "火，火焰",
+      "english_explanation": "burning flame",
+      "example_sentence": "Don't play with fire."
     },
     {
       "english": "fish",
-      "chinese": "鱼",
+      "chinese": "鱼，鱼肉",
       "phonetic": "/fɪʃ/",
-      "chinese_explanation": "水中的动物",
-      "english_explanation": "an animal that lives in water",
-      "example_sentence": "There are many fish in the river."
+      "chinese_explanation": "鱼，鱼肉",
+      "english_explanation": "aquatic animal",
+      "example_sentence": "The cat likes eating fish."
+    },
+    {
+      "english": "five",
+      "chinese": "五，五个",
+      "phonetic": "/faɪv/",
+      "chinese_explanation": "数字五",
+      "english_explanation": "number 5",
+      "example_sentence": "I have five apples."
+    },
+    {
+      "english": "flag",
+      "chinese": "旗帜；旗；标记",
+      "phonetic": "/flæɡ/",
+      "chinese_explanation": "可指旗帜或标记",
+      "english_explanation": "A cloth used as a symbol",
+      "example_sentence": "The national flag of China is red."
+    },
+    {
+      "english": "floor",
+      "chinese": "地板；楼层",
+      "phonetic": "/flɔː(r)/",
+      "chinese_explanation": "地板、建筑楼层",
+      "english_explanation": "building level, room surface",
+      "example_sentence": "The floor is very clean."
+    },
+    {
+      "english": "flower",
+      "chinese": "花；花卉",
+      "phonetic": "/ˈflaʊə(r)/",
+      "chinese_explanation": "观赏类开花植物",
+      "english_explanation": "colorful blooming plant",
+      "example_sentence": "The flower smells sweet."
+    },
+    {
+      "english": "fly",
+      "chinese": "飞；苍蝇",
+      "phonetic": "/flaɪ/",
+      "chinese_explanation": "飞翔；蝇类昆虫",
+      "english_explanation": "move through air; small insect",
+      "example_sentence": "Birds can fly in the sky."
+    },
+    {
+      "english": "food",
+      "chinese": "食物；食品",
+      "phonetic": "/fuːd/",
+      "chinese_explanation": "可食用的物品",
+      "english_explanation": "things for people to eat",
+      "example_sentence": "We need fresh food every day."
+    },
+    {
+      "english": "foot",
+      "chinese": "脚；英尺",
+      "phonetic": "/fʊt/",
+      "chinese_explanation": "足部；长度单位",
+      "english_explanation": "body part for walking",
+      "example_sentence": "I go to school on foot."
+    },
+    {
+      "english": "for",
+      "chinese": "为了；给",
+      "phonetic": "/fɔː(r)/",
+      "chinese_explanation": "表目的、对象",
+      "english_explanation": "shows purpose or recipient",
+      "example_sentence": "This gift is for you."
+    },
+    {
+      "english": "four",
+      "chinese": "四；四个",
+      "phonetic": "/fɔː(r)/",
+      "chinese_explanation": "数字四，四个",
+      "english_explanation": "number after three",
+      "example_sentence": "I have four pencils."
+    },
+    {
+      "english": "fox",
+      "chinese": "狐狸",
+      "phonetic": "/fɒks/",
+      "chinese_explanation": "狐狸，野生动物",
+      "english_explanation": "wild animal with thick fur",
+      "example_sentence": "A fox is running in the woods."
+    },
+    {
+      "english": "friend",
+      "chinese": "朋友；友人",
+      "phonetic": "/frend/",
+      "chinese_explanation": "交情好的熟人",
+      "english_explanation": "person you trust and like",
+      "example_sentence": "Lily is my best friend."
+    },
+    {
+      "english": "frog",
+      "chinese": "青蛙；蛙",
+      "phonetic": "/frɒɡ/",
+      "chinese_explanation": "蛙类两栖动物",
+      "english_explanation": "small amphibian near water",
+      "example_sentence": "The frog jumps into the river."
+    },
+    {
+      "english": "from",
+      "chinese": "从…起，来自",
+      "phonetic": "/frʌm/",
+      "chinese_explanation": "源自，来自",
+      "english_explanation": "indicating source of sth",
+      "example_sentence": "I come from China."
+    },
+    {
+      "english": "front",
+      "chinese": "前面，正面",
+      "phonetic": "/frʌnt/",
+      "chinese_explanation": "前部，正面",
+      "english_explanation": "forward part of sth",
+      "example_sentence": "There is a tree in front of the house."
+    },
+    {
+      "english": "fruit",
+      "chinese": "水果，果实",
+      "phonetic": "/fruːt/",
+      "chinese_explanation": "可食用水果",
+      "english_explanation": "edible sweet part of plant",
+      "example_sentence": "Apples are my favorite fruit."
+    },
+    {
+      "english": "full",
+      "chinese": "满的，充满的",
+      "phonetic": "/fʊl/",
+      "chinese_explanation": "满的，饱满的",
+      "english_explanation": "holding as much as possible",
+      "example_sentence": "The bottle is full of water."
+    },
+    {
+      "english": "fun",
+      "chinese": "乐趣，有趣的",
+      "phonetic": "/fʌn/",
+      "chinese_explanation": "乐趣，有趣的",
+      "english_explanation": "enjoyment and amusement",
+      "example_sentence": "Playing games is great fun."
+    },
+    {
+      "english": "game",
+      "chinese": "游戏，比赛",
+      "phonetic": "/ɡeɪm/",
+      "chinese_explanation": "游戏，比赛",
+      "english_explanation": "form of play or sport",
+      "example_sentence": "We often play basketball games after school."
+    },
+    {
+      "english": "garden",
+      "chinese": "花园，菜园",
+      "phonetic": "/ˈɡɑːdn/",
+      "chinese_explanation": "花园，庭院",
+      "english_explanation": "area for growing plants",
+      "example_sentence": "There are many flowers in the garden."
+    },
+    {
+      "english": "get",
+      "chinese": "得到，获得",
+      "phonetic": "/ɡet/",
+      "chinese_explanation": "获得，收到",
+      "english_explanation": "obtain or receive sth",
+      "example_sentence": "I get a present on my birthday."
+    },
+    {
+      "english": "gift",
+      "chinese": "礼物，天赋",
+      "phonetic": "/ɡɪft/",
+      "chinese_explanation": "礼物，天赋",
+      "english_explanation": "present or natural ability",
+      "example_sentence": "Mom gave me a gift yesterday."
+    },
+    {
+      "english": "girl",
+      "chinese": "女孩，姑娘",
+      "phonetic": "/ɡɜːl/",
+      "chinese_explanation": "女孩，姑娘",
+      "english_explanation": "female child or young woman",
+      "example_sentence": "The little girl is drawing a picture."
+    },
+    {
+      "english": "give",
+      "chinese": "给，给予",
+      "phonetic": "/ɡɪv/",
+      "chinese_explanation": "交付，赠予",
+      "english_explanation": "hand sth to others",
+      "example_sentence": "Please give me an apple."
+    },
+    {
+      "english": "glad",
+      "chinese": "高兴的，愉快的",
+      "phonetic": "/ɡlæd/",
+      "chinese_explanation": "开心愉悦的",
+      "english_explanation": "feeling happy",
+      "example_sentence": "I'm glad to meet you."
+    },
+    {
+      "english": "glass",
+      "chinese": "玻璃，玻璃杯",
+      "phonetic": "/ɡlɑːs/",
+      "chinese_explanation": "玻璃制品",
+      "english_explanation": "transparent hard material",
+      "example_sentence": "There is water in the glass."
+    },
+    {
+      "english": "go",
+      "chinese": "走，去，离开",
+      "phonetic": "/ɡəʊ/",
+      "chinese_explanation": "前往某地",
+      "english_explanation": "move to a place",
+      "example_sentence": "I go to work by bike."
+    },
+    {
+      "english": "good",
+      "chinese": "好的，优良的",
+      "phonetic": "/ɡʊd/",
+      "chinese_explanation": "令人满意的",
+      "english_explanation": "of fine quality",
+      "example_sentence": "The food tastes very good."
+    },
+    {
+      "english": "grass",
+      "chinese": "草，草地",
+      "phonetic": "/ɡrɑːs/",
+      "chinese_explanation": "绿色草本植物",
+      "english_explanation": "common green plant",
+      "example_sentence": "Cows like eating fresh grass."
+    },
+    {
+      "english": "great",
+      "chinese": "伟大的，极好的",
+      "phonetic": "/ɡreɪt/",
+      "chinese_explanation": "出色优秀的",
+      "english_explanation": "very good or important",
+      "example_sentence": "We had a great trip last week."
     },
     {
       "english": "green",
-      "chinese": "绿色的",
+      "chinese": "绿色的，环保的",
       "phonetic": "/ɡriːn/",
-      "chinese_explanation": "草的颜色",
-      "english_explanation": "the color of grass",
-      "example_sentence": "The grass is green."
+      "chinese_explanation": "青绿色的",
+      "english_explanation": "color of growing grass",
+      "example_sentence": "The leaves turn green in spring."
+    },
+    {
+      "english": "grey",
+      "chinese": "灰色的，灰白的",
+      "phonetic": "/ɡreɪ/",
+      "chinese_explanation": "灰颜色的",
+      "english_explanation": "color between black and white",
+      "example_sentence": "My grandma has grey hair."
+    },
+    {
+      "english": "ground",
+      "chinese": "地面，土地",
+      "phonetic": "/ɡraʊnd/",
+      "chinese_explanation": "地球的表面",
+      "english_explanation": "solid surface of earth",
+      "example_sentence": "A wallet lies on the ground."
+    },
+    {
+      "english": "grow",
+      "chinese": "生长；种植；变得",
+      "phonetic": "/ɡrəʊ/",
+      "chinese_explanation": "生长，种植，变得",
+      "english_explanation": "increase in size; cultivate",
+      "example_sentence": "Plants grow well in warm weather."
+    },
+    {
+      "english": "hair",
+      "chinese": "头发；毛发",
+      "phonetic": "/heə(r)/",
+      "chinese_explanation": "头发，毛发",
+      "english_explanation": "threads growing on skin",
+      "example_sentence": "She has curly brown hair."
+    },
+    {
+      "english": "hand",
+      "chinese": "手；传递",
+      "phonetic": "/hænd/",
+      "chinese_explanation": "手，手持，传递",
+      "english_explanation": "body part at arm end",
+      "example_sentence": "Please hand me the pen."
     },
     {
       "english": "happy",
-      "chinese": "快乐的",
-      "phonetic": "/ˈhæp.i/",
-      "chinese_explanation": "感到高兴",
-      "english_explanation": "feeling pleasure",
-      "example_sentence": "She looks very happy today."
+      "chinese": "快乐的；幸福的",
+      "phonetic": "/ˈhæpi/",
+      "chinese_explanation": "快乐的，幸福的",
+      "english_explanation": "feeling pleasure and joy",
+      "example_sentence": "We are happy to see you."
+    },
+    {
+      "english": "hard",
+      "chinese": "硬的；困难的；努力地",
+      "phonetic": "/hɑːd/",
+      "chinese_explanation": "坚硬的，困难的",
+      "english_explanation": "not soft; not easy to do",
+      "example_sentence": "He works very hard every day."
+    },
+    {
+      "english": "hat",
+      "chinese": "帽子",
+      "phonetic": "/hæt/",
+      "chinese_explanation": "带檐的帽子",
+      "english_explanation": "head covering with brim",
+      "example_sentence": "I wear a hat in summer."
+    },
+    {
+      "english": "have",
+      "chinese": "有；吃；进行；经历",
+      "phonetic": "/hæv , həv/",
+      "chinese_explanation": "拥有，持有，经历",
+      "english_explanation": "possess; own; experience",
+      "example_sentence": "I have two lovely dogs."
+    },
+    {
+      "english": "he",
+      "chinese": "他；雄性的它",
+      "phonetic": "/hiː , hi/",
+      "chinese_explanation": "他，雄性它",
+      "english_explanation": "male person or animal",
+      "example_sentence": "He is an English teacher."
+    },
+    {
+      "english": "head",
+      "chinese": "头；头部；首脑",
+      "phonetic": "/hed/",
+      "chinese_explanation": "头，首领，顶端",
+      "english_explanation": "body part above neck",
+      "example_sentence": "My head hurts a little today."
+    },
+    {
+      "english": "hear",
+      "chinese": "听见；听说；得知",
+      "phonetic": "/hɪə(r)/",
+      "chinese_explanation": "听见，听说",
+      "english_explanation": "perceive sound with ears",
+      "example_sentence": "I can hear birds singing outside."
+    },
+    {
+      "english": "heart",
+      "chinese": "心脏；内心",
+      "phonetic": "/hɑːt/",
+      "chinese_explanation": "心脏，内心",
+      "english_explanation": "Organ pumping blood",
+      "example_sentence": "My heart beats fast when I run."
+    },
+    {
+      "english": "help",
+      "chinese": "帮助；协助",
+      "phonetic": "/help/",
+      "chinese_explanation": "帮助，协助",
+      "english_explanation": "Give assistance to others",
+      "example_sentence": "Can you help me with my homework?"
+    },
+    {
+      "english": "hen",
+      "chinese": "母鸡；雌禽",
+      "phonetic": "/hen/",
+      "chinese_explanation": "母鸡，雌禽",
+      "english_explanation": "Adult female chicken",
+      "example_sentence": "The hen lays one egg a day."
+    },
+    {
+      "english": "her",
+      "chinese": "她的；她（宾格）",
+      "phonetic": "/hɜː(r)/",
+      "chinese_explanation": "她的，她（宾格）",
+      "english_explanation": "Object/possessive form of she",
+      "example_sentence": "I gave her a beautiful flower."
+    },
+    {
+      "english": "here",
+      "chinese": "在这里；此时",
+      "phonetic": "/hɪə(r)/",
+      "chinese_explanation": "这里，在此处",
+      "english_explanation": "In this place",
+      "example_sentence": "Come here and have a rest."
+    },
+    {
+      "english": "high",
+      "chinese": "高的；高级的",
+      "phonetic": "/haɪ/",
+      "chinese_explanation": "高的，高大的",
+      "english_explanation": "Having great height",
+      "example_sentence": "The tall tree is very high."
+    },
+    {
+      "english": "hill",
+      "chinese": "小山；丘陵",
+      "phonetic": "/hɪl/",
+      "chinese_explanation": "小山，丘陵",
+      "english_explanation": "Small low mountain",
+      "example_sentence": "We climbed the hill last weekend."
+    },
+    {
+      "english": "him",
+      "chinese": "他（宾格）",
+      "phonetic": "/hɪm/",
+      "chinese_explanation": "他（宾格）",
+      "english_explanation": "Object form of he",
+      "example_sentence": "I saw him in the library yesterday."
+    },
+    {
+      "english": "his",
+      "chinese": "他的",
+      "phonetic": "/hɪz/",
+      "chinese_explanation": "他的（所有格）",
+      "english_explanation": "Possessive form of he",
+      "example_sentence": "His favorite color is blue."
+    },
+    {
+      "english": "home",
+      "chinese": "家；住宅",
+      "phonetic": "/həʊm/",
+      "chinese_explanation": "家，居住场所",
+      "english_explanation": "Place where one lives",
+      "example_sentence": "I usually go home at 6 o'clock."
+    },
+    {
+      "english": "horse",
+      "chinese": "马",
+      "phonetic": "/hɔːs/",
+      "chinese_explanation": "一种家畜",
+      "english_explanation": "A large domestic animal",
+      "example_sentence": "A horse can run very fast."
+    },
+    {
+      "english": "hot",
+      "chinese": "热的",
+      "phonetic": "/hɒt/",
+      "chinese_explanation": "温度高的",
+      "english_explanation": "High in temperature",
+      "example_sentence": "It's very hot in summer."
+    },
+    {
+      "english": "house",
+      "chinese": "房屋",
+      "phonetic": "/haʊs/",
+      "chinese_explanation": "居住的建筑",
+      "english_explanation": "Building for people to live",
+      "example_sentence": "We live in a small house."
+    },
+    {
+      "english": "how",
+      "chinese": "如何",
+      "phonetic": "/haʊ/",
+      "chinese_explanation": "询问方式程度",
+      "english_explanation": "Ask about way or degree",
+      "example_sentence": "How do you go to school?"
+    },
+    {
+      "english": "hungry",
+      "chinese": "饥饿的",
+      "phonetic": "/ˈhʌŋɡri/",
+      "chinese_explanation": "想吃食物的",
+      "english_explanation": "Wanting to eat food",
+      "example_sentence": "I feel hungry after running."
     },
     {
       "english": "ice",
       "chinese": "冰",
       "phonetic": "/aɪs/",
-      "chinese_explanation": "冻结的水",
-      "english_explanation": "frozen water",
-      "example_sentence": "The lake is covered with ice."
+      "chinese_explanation": "水冻结的固体",
+      "english_explanation": "Frozen solid form of water",
+      "example_sentence": "There is ice on the lake."
+    },
+    {
+      "english": "idea",
+      "chinese": "主意",
+      "phonetic": "/aɪˈdɪə/",
+      "chinese_explanation": "想法，念头",
+      "english_explanation": "A thought or suggestion",
+      "example_sentence": "I have a good idea."
+    },
+    {
+      "english": "if",
+      "chinese": "如果",
+      "phonetic": "/ɪf/",
+      "chinese_explanation": "表假设条件",
+      "english_explanation": "Introduce a condition",
+      "example_sentence": "If it rains, we will stay home."
+    },
+    {
+      "english": "in",
+      "chinese": "在…里面",
+      "phonetic": "/ɪn/",
+      "chinese_explanation": "表内部位置",
+      "english_explanation": "Inside a place or object",
+      "example_sentence": "The book is in the bag."
+    },
+    {
+      "english": "into",
+      "chinese": "到…里面",
+      "phonetic": "/ˈɪntuː/",
+      "chinese_explanation": "表进入的动作",
+      "english_explanation": "Move to the inside of",
+      "example_sentence": "She walked into the room."
+    },
+    {
+      "english": "is",
+      "chinese": "是",
+      "phonetic": "/ɪz/",
+      "chinese_explanation": "be动词第三人称单数",
+      "english_explanation": "third person singular of be",
+      "example_sentence": "He is a hard-working student."
+    },
+    {
+      "english": "it",
+      "chinese": "它",
+      "phonetic": "/ɪt/",
+      "chinese_explanation": "指代事物的代词",
+      "english_explanation": "pronoun referring to a thing",
+      "example_sentence": "It is a lovely little dog."
+    },
+    {
+      "english": "its",
+      "chinese": "它的",
+      "phonetic": "/ɪts/",
+      "chinese_explanation": "it的所有格形式",
+      "english_explanation": "possessive form of it",
+      "example_sentence": "The bird flapped its wings to fly."
+    },
+    {
+      "english": "jacket",
+      "chinese": "夹克衫",
+      "phonetic": "/ˈdʒæk.ɪt/",
+      "chinese_explanation": "短款上衣外套",
+      "english_explanation": "short coat for upper body",
+      "example_sentence": "My mother bought me a red jacket."
+    },
+    {
+      "english": "jam",
+      "chinese": "果酱；堵塞",
+      "phonetic": "/dʒæm/",
+      "chinese_explanation": "果酱；交通堵塞",
+      "english_explanation": "fruit preserve; traffic block",
+      "example_sentence": "I love eating toast with apple jam."
     },
     {
       "english": "jump",
-      "chinese": "跳",
+      "chinese": "跳；跳跃",
       "phonetic": "/dʒʌmp/",
-      "chinese_explanation": "离地向上",
-      "english_explanation": "to push off the ground",
-      "example_sentence": "Children like to jump rope."
+      "chinese_explanation": "双脚离地的动作",
+      "english_explanation": "leap off the ground",
+      "example_sentence": "We often jump rope after school."
+    },
+    {
+      "english": "just",
+      "chinese": "正好；刚刚；仅仅",
+      "phonetic": "/dʒʌst/",
+      "chinese_explanation": "刚好；仅仅；刚才",
+      "english_explanation": "exactly; only; very recently",
+      "example_sentence": "I just finished reading this book."
+    },
+    {
+      "english": "keep",
+      "chinese": "保持；保留；饲养",
+      "phonetic": "/kiːp/",
+      "chinese_explanation": "保持，保留，饲养",
+      "english_explanation": "continue to have or do",
+      "example_sentence": "Please keep quiet in the reading room."
+    },
+    {
+      "english": "key",
+      "chinese": "钥匙；关键；键",
+      "phonetic": "/kiː/",
+      "chinese_explanation": "钥匙；关键；按键",
+      "english_explanation": "lock tool; important factor",
+      "example_sentence": "I forgot to take my house key today."
+    },
+    {
+      "english": "kind",
+      "chinese": "友善的；种类",
+      "phonetic": "/kaɪnd/",
+      "chinese_explanation": "友善的；类别",
+      "english_explanation": "friendly; type of something",
+      "example_sentence": "My deskmate is a very kind person."
+    },
+    {
+      "english": "king",
+      "chinese": "国王",
+      "phonetic": "/kɪŋ/",
+      "chinese_explanation": "君主，国王",
+      "english_explanation": "Male ruler of a country",
+      "example_sentence": "The king lives in the palace."
+    },
+    {
+      "english": "kite",
+      "chinese": "风筝",
+      "phonetic": "/kaɪt/",
+      "chinese_explanation": "风筝",
+      "english_explanation": "Toy that flies in wind",
+      "example_sentence": "I often fly a kite in spring."
+    },
+    {
+      "english": "know",
+      "chinese": "知道，了解",
+      "phonetic": "/nəʊ/",
+      "chinese_explanation": "知道，了解",
+      "english_explanation": "Have knowledge of something",
+      "example_sentence": "I know how to swim."
+    },
+    {
+      "english": "lake",
+      "chinese": "湖，湖泊",
+      "phonetic": "/leɪk/",
+      "chinese_explanation": "湖泊，湖",
+      "english_explanation": "Large area of water",
+      "example_sentence": "There are many fish in the lake."
+    },
+    {
+      "english": "lamp",
+      "chinese": "灯，台灯",
+      "phonetic": "/læmp/",
+      "chinese_explanation": "灯，灯具",
+      "english_explanation": "Device that gives light",
+      "example_sentence": "Turn on the lamp please."
+    },
+    {
+      "english": "land",
+      "chinese": "陆地，土地",
+      "phonetic": "/lænd/",
+      "chinese_explanation": "陆地，土地",
+      "english_explanation": "Solid ground of the earth",
+      "example_sentence": "The land is dry in summer."
+    },
+    {
+      "english": "large",
+      "chinese": "大的，大量的",
+      "phonetic": "/lɑːdʒ/",
+      "chinese_explanation": "大的，大型的",
+      "english_explanation": "Big in size or amount",
+      "example_sentence": "China is a large country."
+    },
+    {
+      "english": "last",
+      "chinese": "最后的，最近的",
+      "phonetic": "/lɑːst/",
+      "chinese_explanation": "最后的，末尾的",
+      "english_explanation": "Coming after all others",
+      "example_sentence": "He was the last to arrive."
+    },
+    {
+      "english": "late",
+      "chinese": "晚的，迟的",
+      "phonetic": "/leɪt/",
+      "chinese_explanation": "晚的，迟到的",
+      "english_explanation": "Not on time",
+      "example_sentence": "Don't be late for school."
+    },
+    {
+      "english": "laugh",
+      "chinese": "笑，大笑",
+      "phonetic": "/lɑːf/",
+      "chinese_explanation": "笑，大笑",
+      "english_explanation": "Make sounds when happy",
+      "example_sentence": "The funny story made me laugh."
+    },
+    {
+      "english": "leaf",
+      "chinese": "叶子，叶片",
+      "phonetic": "/liːf/",
+      "chinese_explanation": "植物的叶片",
+      "english_explanation": "green part of a plant",
+      "example_sentence": "The leaf falls from the tree in autumn."
+    },
+    {
+      "english": "learn",
+      "chinese": "学习，得知",
+      "phonetic": "/lɜːn/",
+      "chinese_explanation": "学习知识技能",
+      "english_explanation": "gain knowledge by studying",
+      "example_sentence": "Children learn new things quickly."
+    },
+    {
+      "english": "left",
+      "chinese": "左边（的）",
+      "phonetic": "/left/",
+      "chinese_explanation": "左边，左侧",
+      "english_explanation": "opposite side of right",
+      "example_sentence": "My school is on the left."
+    },
+    {
+      "english": "leg",
+      "chinese": "腿，腿部",
+      "phonetic": "/leɡ/",
+      "chinese_explanation": "行走的肢体",
+      "english_explanation": "body part for walking",
+      "example_sentence": "He has long legs."
+    },
+    {
+      "english": "lemon",
+      "chinese": "柠檬",
+      "phonetic": "/ˈlemən/",
+      "chinese_explanation": "酸味黄色水果",
+      "english_explanation": "sour yellow citrus fruit",
+      "example_sentence": "I like to drink lemon tea."
+    },
+    {
+      "english": "lesson",
+      "chinese": "课程，教训",
+      "phonetic": "/ˈlesən/",
+      "chinese_explanation": "课时，教训",
+      "english_explanation": "a single class period",
+      "example_sentence": "We have an art lesson this afternoon."
+    },
+    {
+      "english": "letter",
+      "chinese": "信件，字母",
+      "phonetic": "/ˈletər/",
+      "chinese_explanation": "信件，字母",
+      "english_explanation": "mail or alphabet character",
+      "example_sentence": "I wrote a letter to my grandma."
+    },
+    {
+      "english": "light",
+      "chinese": "光；轻的",
+      "phonetic": "/laɪt/",
+      "chinese_explanation": "光线；重量轻的",
+      "english_explanation": "brightness or not heavy",
+      "example_sentence": "The light in the room is soft."
+    },
+    {
+      "english": "like",
+      "chinese": "喜欢；像",
+      "phonetic": "/laɪk/",
+      "chinese_explanation": "喜爱；与…相似",
+      "english_explanation": "be fond of or similar to",
+      "example_sentence": "I like reading books in my free time."
+    },
+    {
+      "english": "lion",
+      "chinese": "狮子",
+      "phonetic": "/ˈlaɪən/",
+      "chinese_explanation": "大型猫科动物",
+      "english_explanation": "large wild feline animal",
+      "example_sentence": "A lion is running in the forest."
+    },
+    {
+      "english": "listen",
+      "chinese": "听；倾听",
+      "phonetic": "/ˈlɪs.ən/",
+      "chinese_explanation": "听，倾听",
+      "english_explanation": "Pay attention to sounds",
+      "example_sentence": "Listen to me carefully, please."
+    },
+    {
+      "english": "little",
+      "chinese": "小的；很少的",
+      "phonetic": "/ˈlɪt.əl/",
+      "chinese_explanation": "小的，少量的",
+      "english_explanation": "Small in size or amount",
+      "example_sentence": "The little girl is cute."
+    },
+    {
+      "english": "live",
+      "chinese": "居住；生活；活的",
+      "phonetic": "/lɪv/",
+      "chinese_explanation": "居住，生活",
+      "english_explanation": "Reside somewhere; be alive",
+      "example_sentence": "I live in Beijing now."
+    },
+    {
+      "english": "long",
+      "chinese": "长的；长久的",
+      "phonetic": "/lɒŋ/",
+      "chinese_explanation": "长度或时间较长",
+      "english_explanation": "of great length or duration",
+      "example_sentence": "She has long black hair."
+    },
+    {
+      "english": "look",
+      "chinese": "看；看起来",
+      "phonetic": "/lʊk/",
+      "chinese_explanation": "看，瞧",
+      "english_explanation": "Turn eyes to something",
+      "example_sentence": "Look at the blackboard, please."
+    },
+    {
+      "english": "loud",
+      "chinese": "大声的；喧闹的；响亮地",
+      "phonetic": "/laʊd/",
+      "chinese_explanation": "声音大的，吵闹的",
+      "english_explanation": "making a lot of noise",
+      "example_sentence": "Please don't speak so loud."
+    },
+    {
+      "english": "love",
+      "chinese": "爱；热爱；喜爱",
+      "phonetic": "/lʌv/",
+      "chinese_explanation": "爱，喜爱",
+      "english_explanation": "Have strong affection for",
+      "example_sentence": "I love my mother very much."
+    },
+    {
+      "english": "lunch",
+      "chinese": "午餐；午饭",
+      "phonetic": "/lʌntʃ/",
+      "chinese_explanation": "午餐，午饭",
+      "english_explanation": "Midday meal of the day",
+      "example_sentence": "We have rice for lunch."
+    },
+    {
+      "english": "make",
+      "chinese": "制作；使得；制造",
+      "phonetic": "/meɪk/",
+      "chinese_explanation": "制作，制造",
+      "english_explanation": "Create or produce something",
+      "example_sentence": "I can make a paper plane."
+    },
+    {
+      "english": "man",
+      "chinese": "男人；人；人类",
+      "phonetic": "/mæn/",
+      "chinese_explanation": "男人，人",
+      "english_explanation": "Adult male human being",
+      "example_sentence": "The man is my father."
+    },
+    {
+      "english": "many",
+      "chinese": "许多的；很多的",
+      "phonetic": "/ˈmen.i/",
+      "chinese_explanation": "许多的，多的",
+      "english_explanation": "Large number of things",
+      "example_sentence": "There are many birds in the tree."
+    },
+    {
+      "english": "map",
+      "chinese": "地图；示意图",
+      "phonetic": "/mæp/",
+      "chinese_explanation": "地图，示意图",
+      "english_explanation": "Drawing of geographic area",
+      "example_sentence": "This is a map of China."
+    },
+    {
+      "english": "match",
+      "chinese": "比赛；火柴；匹配",
+      "phonetic": "/mætʃ/",
+      "chinese_explanation": "比赛；火柴；匹配",
+      "english_explanation": "game; fire stick; pair",
+      "example_sentence": "Our class won the basketball match."
+    },
+    {
+      "english": "me",
+      "chinese": "我（宾格）",
+      "phonetic": "/miː/",
+      "chinese_explanation": "我（宾格形式）",
+      "english_explanation": "object form of 'I'",
+      "example_sentence": "Please pass the book to me."
     },
     {
       "english": "milk",
-      "chinese": "牛奶",
+      "chinese": "牛奶；乳汁",
       "phonetic": "/mɪlk/",
-      "chinese_explanation": "白色饮品",
-      "english_explanation": "a white liquid from cows",
-      "example_sentence": "I drink milk every morning."
+      "chinese_explanation": "牛奶；动物乳汁",
+      "english_explanation": "white drink from cows",
+      "example_sentence": "I like drinking warm milk before bed."
+    },
+    {
+      "english": "miss",
+      "chinese": "想念；错过；小姐",
+      "phonetic": "/mɪs/",
+      "chinese_explanation": "想念；错过；女士",
+      "english_explanation": "long for; fail to get",
+      "example_sentence": "I miss my old friends very much."
+    },
+    {
+      "english": "mom",
+      "chinese": "妈妈",
+      "phonetic": "/mɒm/",
+      "chinese_explanation": "口语称呼妈妈",
+      "english_explanation": "informal word for mother",
+      "example_sentence": "My mom is good at cooking."
+    },
+    {
+      "english": "monkey",
+      "chinese": "猴子",
+      "phonetic": "/ˈmʌŋ.ki/",
+      "chinese_explanation": "灵长类哺乳动物",
+      "english_explanation": "clever tree-climbing animal",
+      "example_sentence": "The monkey is jumping between trees."
+    },
+    {
+      "english": "moon",
+      "chinese": "月亮；月球",
+      "phonetic": "/muːn/",
+      "chinese_explanation": "地球的天然卫星",
+      "english_explanation": "Earth's natural satellite",
+      "example_sentence": "The moon is round tonight."
+    },
+    {
+      "english": "more",
+      "chinese": "更多的；额外的；更大程度地",
+      "phonetic": "/mɔː(r)/",
+      "chinese_explanation": "更多，数量更大",
+      "english_explanation": "greater in quantity or degree",
+      "example_sentence": "I need more time."
+    },
+    {
+      "english": "morning",
+      "chinese": "早晨；上午",
+      "phonetic": "/ˈmɔː.nɪŋ/",
+      "chinese_explanation": "上午的时间段",
+      "english_explanation": "early part of the day",
+      "example_sentence": "I get up at 6 every morning."
+    },
+    {
+      "english": "mother",
+      "chinese": "母亲；妈妈",
+      "phonetic": "/ˈmʌð.ə(r)/",
+      "chinese_explanation": "子女的女性双亲",
+      "english_explanation": "female parent of a child",
+      "example_sentence": "My mother loves me very much."
+    },
+    {
+      "english": "mouth",
+      "chinese": "嘴；口腔",
+      "phonetic": "/maʊθ/",
+      "chinese_explanation": "进食说话的器官",
+      "english_explanation": "organ for eating speaking",
+      "example_sentence": "Open your mouth and say 'ah'."
+    },
+    {
+      "english": "move",
+      "chinese": "v. 移动；搬动 n. 行动",
+      "phonetic": "/muːv/",
+      "chinese_explanation": "移动，行动",
+      "english_explanation": "change position or place",
+      "example_sentence": "Please move the box to the corner."
+    },
+    {
+      "english": "much",
+      "chinese": "adj./adv. 许多（的），大量（的）",
+      "phonetic": "/mʌtʃ/",
+      "chinese_explanation": "许多，大量",
+      "english_explanation": "a large amount of",
+      "example_sentence": "There isn't much milk left."
+    },
+    {
+      "english": "music",
+      "chinese": "n. 音乐，乐曲",
+      "phonetic": "/ˈmjuːzɪk/",
+      "chinese_explanation": "音乐，乐曲",
+      "english_explanation": "art of pleasing sounds",
+      "example_sentence": "I enjoy listening to light music."
+    },
+    {
+      "english": "my",
+      "chinese": "pron. 我的",
+      "phonetic": "/maɪ/",
+      "chinese_explanation": "我的",
+      "english_explanation": "belonging to me",
+      "example_sentence": "This is my favorite book."
+    },
+    {
+      "english": "name",
+      "chinese": "n. 名字，名称 v. 命名",
+      "phonetic": "/neɪm/",
+      "chinese_explanation": "名字，命名",
+      "english_explanation": "word identifying sb/sth",
+      "example_sentence": "Can you tell me your name?"
+    },
+    {
+      "english": "near",
+      "chinese": "adj./adv. 近的（地），靠近",
+      "phonetic": "/nɪə(r)/",
+      "chinese_explanation": "近的，靠近",
+      "english_explanation": "not far from here",
+      "example_sentence": "The supermarket is near my home."
+    },
+    {
+      "english": "neck",
+      "chinese": "n. 脖子，颈部",
+      "phonetic": "/nek/",
+      "chinese_explanation": "脖子，颈部",
+      "english_explanation": "part between head and shoulders",
+      "example_sentence": "He has a sore neck today."
+    },
+    {
+      "english": "new",
+      "chinese": "adj. 新的，崭新的",
+      "phonetic": "/njuː/",
+      "chinese_explanation": "新的，崭新的",
+      "english_explanation": "recently made or found",
+      "example_sentence": "I got a new bike last week."
+    },
+    {
+      "english": "next",
+      "chinese": "adj. 下一个的，接下来的",
+      "phonetic": "/nekst/",
+      "chinese_explanation": "下一个的",
+      "english_explanation": "coming right after this one",
+      "example_sentence": "We will meet next Monday."
+    },
+    {
+      "english": "nice",
+      "chinese": "好的；令人愉快的；友善的",
+      "phonetic": "/naɪs/",
+      "chinese_explanation": "美好友善的",
+      "english_explanation": "Good, pleasant or kind.",
+      "example_sentence": "It's a nice day today."
+    },
+    {
+      "english": "night",
+      "chinese": "n. 夜晚，晚上",
+      "phonetic": "/naɪt/",
+      "chinese_explanation": "夜晚，夜间",
+      "english_explanation": "dark time after sunset",
+      "example_sentence": "We can see stars at night."
+    },
+    {
+      "english": "nine",
+      "chinese": "九",
+      "phonetic": "/naɪn/",
+      "chinese_explanation": "数字九",
+      "english_explanation": "the number 9",
+      "example_sentence": "I have nine apples."
+    },
+    {
+      "english": "no",
+      "chinese": "不，没有",
+      "phonetic": "/nəʊ/",
+      "chinese_explanation": "表否定回答",
+      "english_explanation": "used to give negation",
+      "example_sentence": "No, I don't like it."
     },
     {
       "english": "nose",
       "chinese": "鼻子",
-      "phonetic": "/noʊz/",
-      "chinese_explanation": "呼吸器官",
-      "english_explanation": "part of face for breathing",
-      "example_sentence": "He has a big nose."
+      "phonetic": "/nəʊz/",
+      "chinese_explanation": "嗅觉器官鼻子",
+      "english_explanation": "body part for smelling",
+      "example_sentence": "My nose is very sensitive."
+    },
+    {
+      "english": "not",
+      "chinese": "不",
+      "phonetic": "/nɒt/",
+      "chinese_explanation": "否定副词",
+      "english_explanation": "used to form negation",
+      "example_sentence": "She is not at home."
+    },
+    {
+      "english": "now",
+      "chinese": "现在",
+      "phonetic": "/naʊ/",
+      "chinese_explanation": "当前时间",
+      "english_explanation": "at the present time",
+      "example_sentence": "We are eating now."
+    },
+    {
+      "english": "number",
+      "chinese": "数字，号码",
+      "phonetic": "/ˈnʌmbə(r)/",
+      "chinese_explanation": "数目、编号",
+      "english_explanation": "symbol representing quantity",
+      "example_sentence": "My phone number is 123."
+    },
+    {
+      "english": "nurse",
+      "chinese": "护士",
+      "phonetic": "/nɜːs/",
+      "chinese_explanation": "护理医护人员",
+      "english_explanation": "person who cares patients",
+      "example_sentence": "The nurse is very kind."
+    },
+    {
+      "english": "of",
+      "chinese": "属于…的",
+      "phonetic": "/ɒv; əv/",
+      "chinese_explanation": "表所属介词",
+      "english_explanation": "preposition showing possession",
+      "example_sentence": "This is a cup of tea."
+    },
+    {
+      "english": "off",
+      "chinese": "离开，关掉",
+      "phonetic": "/ɒf/",
+      "chinese_explanation": "表脱离关闭",
+      "english_explanation": "away from original position",
+      "example_sentence": "Please turn off the light."
+    },
+    {
+      "english": "often",
+      "chinese": "经常",
+      "phonetic": "/ˈɒfn; ˈɒftən/",
+      "chinese_explanation": "表频率经常",
+      "english_explanation": "many times, frequently",
+      "example_sentence": "I often read books at night."
+    },
+    {
+      "english": "old",
+      "chinese": "年老的；旧的",
+      "phonetic": "/əʊld/",
+      "chinese_explanation": "年老的，陈旧的",
+      "english_explanation": "not young or new",
+      "example_sentence": "He is an old man."
+    },
+    {
+      "english": "on",
+      "chinese": "在……之上；关于",
+      "phonetic": "/ɒn/",
+      "chinese_explanation": "在……上面",
+      "english_explanation": "resting on something",
+      "example_sentence": "The book is on the desk."
+    },
+    {
+      "english": "one",
+      "chinese": "一；一个",
+      "phonetic": "/wʌn/",
+      "chinese_explanation": "数字一，一个",
+      "english_explanation": "the number 1",
+      "example_sentence": "I have one apple."
+    },
+    {
+      "english": "open",
+      "chinese": "打开；开着的",
+      "phonetic": "/ˈəʊpən/",
+      "chinese_explanation": "打开，开启的",
+      "english_explanation": "not closed",
+      "example_sentence": "Please open the door."
+    },
+    {
+      "english": "or",
+      "chinese": "或者；还是",
+      "phonetic": "/ɔː(r)/",
+      "chinese_explanation": "或者，还是",
+      "english_explanation": "used for choosing",
+      "example_sentence": "Do you like tea or coffee?"
     },
     {
       "english": "orange",
-      "chinese": "橙子",
-      "phonetic": "/ˈɒr.ɪndʒ/",
-      "chinese_explanation": "柑橘类水果",
-      "english_explanation": "a round citrus fruit",
-      "example_sentence": "She peeled an orange."
+      "chinese": "橙子；橙色的",
+      "phonetic": "/ˈɒrɪndʒ/",
+      "chinese_explanation": "橙子，橙色的",
+      "english_explanation": "a kind of fruit",
+      "example_sentence": "I want to eat an orange."
+    },
+    {
+      "english": "other",
+      "chinese": "另外的；其他的",
+      "phonetic": "/ˈʌðə(r)/",
+      "chinese_explanation": "其他的，另外的",
+      "english_explanation": "different from this",
+      "example_sentence": "Where are the other books?"
+    },
+    {
+      "english": "our",
+      "chinese": "我们的",
+      "phonetic": "/ˈaʊə(r)/",
+      "chinese_explanation": "我们的（所有格）",
+      "english_explanation": "belonging to us",
+      "example_sentence": "This is our classroom."
+    },
+    {
+      "english": "out",
+      "chinese": "出来；向外",
+      "phonetic": "/aʊt/",
+      "chinese_explanation": "向外，在外的",
+      "english_explanation": "not inside a place",
+      "example_sentence": "Let's go out to play."
+    },
+    {
+      "english": "over",
+      "chinese": "在……上方；结束",
+      "phonetic": "/ˈəʊvə(r)/",
+      "chinese_explanation": "在上方，结束的",
+      "english_explanation": "above or finished",
+      "example_sentence": "Class is over at 4 pm."
+    },
+    {
+      "english": "own",
+      "chinese": "自己的；拥有",
+      "phonetic": "/əʊn/",
+      "chinese_explanation": "自己的；拥有",
+      "english_explanation": "Belong to oneself; possess",
+      "example_sentence": "I have my own small room."
+    },
+    {
+      "english": "page",
+      "chinese": "页；页面",
+      "phonetic": "/peɪdʒ/",
+      "chinese_explanation": "书页；页面",
+      "english_explanation": "One side of book paper",
+      "example_sentence": "Please turn to page 12."
+    },
+    {
+      "english": "paint",
+      "chinese": "绘画；油漆",
+      "phonetic": "/peɪnt/",
+      "chinese_explanation": "绘画；涂漆",
+      "english_explanation": "Draw or coat with colour",
+      "example_sentence": "I like to paint in free time."
+    },
+    {
+      "english": "paper",
+      "chinese": "纸；论文",
+      "phonetic": "/ˈpeɪ.pə(r)/",
+      "chinese_explanation": "纸张；论文",
+      "english_explanation": "Thin writing material",
+      "example_sentence": "Pass me a piece of paper."
+    },
+    {
+      "english": "park",
+      "chinese": "公园；停车",
+      "phonetic": "/pɑːk/",
+      "chinese_explanation": "公园；停放车辆",
+      "english_explanation": "Public garden; park vehicles",
+      "example_sentence": "We often play in the park."
     },
     {
       "english": "pen",
-      "chinese": "钢笔",
+      "chinese": "钢笔；笔",
       "phonetic": "/pen/",
-      "chinese_explanation": "写字工具",
-      "english_explanation": "a tool for writing",
-      "example_sentence": "Give me a pen please."
+      "chinese_explanation": "钢笔；书写工具",
+      "english_explanation": "Ink writing tool",
+      "example_sentence": "I write letters with a pen."
+    },
+    {
+      "english": "pencil",
+      "chinese": "铅笔",
+      "phonetic": "/ˈpen.səl/",
+      "chinese_explanation": "木质书写铅笔",
+      "english_explanation": "Wooden writing tool",
+      "example_sentence": "The kid draws with a pencil."
+    },
+    {
+      "english": "people",
+      "chinese": "人；人们",
+      "phonetic": "/ˈpiː.pəl/",
+      "chinese_explanation": "人们；人民",
+      "english_explanation": "General human beings",
+      "example_sentence": "There are many people here."
+    },
+    {
+      "english": "pick",
+      "chinese": "挑选；采摘",
+      "phonetic": "/pɪk/",
+      "chinese_explanation": "挑选；采摘",
+      "english_explanation": "Choose or pluck sth",
+      "example_sentence": "Pick your favorite fruit please."
+    },
+    {
+      "english": "picture",
+      "chinese": "照片；图画",
+      "phonetic": "/ˈpɪk.tʃə(r)/",
+      "chinese_explanation": "照片；图画",
+      "english_explanation": "Drawing, photo or painting",
+      "example_sentence": "This is a beautiful picture."
+    },
+    {
+      "english": "pig",
+      "chinese": "猪",
+      "phonetic": "/pɪɡ/",
+      "chinese_explanation": "常见家畜",
+      "english_explanation": "a common farm animal",
+      "example_sentence": "The fat pig is sleeping."
+    },
+    {
+      "english": "pink",
+      "chinese": "粉色的；粉色",
+      "phonetic": "/pɪŋk/",
+      "chinese_explanation": "浅红色调",
+      "english_explanation": "a light red color",
+      "example_sentence": "I like the pink flower."
+    },
+    {
+      "english": "place",
+      "chinese": "地方；地点",
+      "phonetic": "/pleɪs/",
+      "chinese_explanation": "特定位置",
+      "english_explanation": "a particular location",
+      "example_sentence": "This is a nice place."
+    },
+    {
+      "english": "plane",
+      "chinese": "飞机",
+      "phonetic": "/pleɪn/",
+      "chinese_explanation": "空中交通工具",
+      "english_explanation": "a flying vehicle",
+      "example_sentence": "We go to Sanya by plane."
+    },
+    {
+      "english": "plant",
+      "chinese": "n.植物 v.种植",
+      "phonetic": "/plænt/",
+      "chinese_explanation": "植物；栽种",
+      "english_explanation": "green living thing; grow sth",
+      "example_sentence": "We plant trees in spring."
+    },
+    {
+      "english": "play",
+      "chinese": "玩；玩耍；演奏",
+      "phonetic": "/pleɪ/",
+      "chinese_explanation": "玩耍；演奏",
+      "english_explanation": "have fun; perform music",
+      "example_sentence": "Kids play games after class."
+    },
+    {
+      "english": "please",
+      "chinese": "请；使愉快",
+      "phonetic": "/pliːz/",
+      "chinese_explanation": "表请求；使开心",
+      "english_explanation": "used for polite requests",
+      "example_sentence": "Please pass me the pen."
+    },
+    {
+      "english": "point",
+      "chinese": "指向；要点",
+      "phonetic": "/pɔɪnt/",
+      "chinese_explanation": "指向；核心要点",
+      "english_explanation": "indicate; key idea",
+      "example_sentence": "He points at the bird."
+    },
+    {
+      "english": "police",
+      "chinese": "警察；警方",
+      "phonetic": "/pəˈliːs/",
+      "chinese_explanation": "执法工作人员",
+      "english_explanation": "law enforcement officers",
+      "example_sentence": "The police help us a lot."
+    },
+    {
+      "english": "pond",
+      "chinese": "池塘；水塘",
+      "phonetic": "/pɒnd/",
+      "chinese_explanation": "小型的水塘",
+      "english_explanation": "small area of water",
+      "example_sentence": "Ducks swim in the pond."
+    },
+    {
+      "english": "pool",
+      "chinese": "游泳池; 水塘; 联营",
+      "phonetic": "/puːl/",
+      "chinese_explanation": "水池，泳池",
+      "english_explanation": "Still water or swimming area",
+      "example_sentence": "We swam in the pool yesterday."
+    },
+    {
+      "english": "poor",
+      "chinese": "贫穷的; 可怜的; 劣质的",
+      "phonetic": "/pɔː(r)/",
+      "chinese_explanation": "贫穷的，差的",
+      "english_explanation": "Lacking money or low quality",
+      "example_sentence": "The poor man had no food."
+    },
+    {
+      "english": "post",
+      "chinese": "邮政; 邮寄; 帖子; 岗位",
+      "phonetic": "/pəʊst/",
+      "chinese_explanation": "邮政，帖子，岗位",
+      "english_explanation": "Send mail or online message",
+      "example_sentence": "I will post the letter tomorrow."
+    },
+    {
+      "english": "potato",
+      "chinese": "土豆; 马铃薯",
+      "phonetic": "/pəˈteɪtəʊ/",
+      "chinese_explanation": "土豆，马铃薯",
+      "english_explanation": "A common root vegetable",
+      "example_sentence": "I like eating potato chips."
+    },
+    {
+      "english": "pull",
+      "chinese": "拉; 拽; 扯; 拉力",
+      "phonetic": "/pʊl/",
+      "chinese_explanation": "拉，拽，扯",
+      "english_explanation": "Drag sth towards yourself",
+      "example_sentence": "Please pull the door open."
+    },
+    {
+      "english": "purple",
+      "chinese": "紫色的; 紫色",
+      "phonetic": "/ˈpɜːpl/",
+      "chinese_explanation": "紫色（的）",
+      "english_explanation": "Color between red and blue",
+      "example_sentence": "Her favorite color is purple."
+    },
+    {
+      "english": "push",
+      "chinese": "推; 按; 催促",
+      "phonetic": "/pʊʃ/",
+      "chinese_explanation": "推，按，催促",
+      "english_explanation": "Move sth away with force",
+      "example_sentence": "You need to push the door hard."
+    },
+    {
+      "english": "put",
+      "chinese": "放; 放置; 安置",
+      "phonetic": "/pʊt/",
+      "chinese_explanation": "放，放置",
+      "english_explanation": "Place sth in a position",
+      "example_sentence": "Put your book on the desk."
+    },
+    {
+      "english": "queen",
+      "chinese": "女王; 王后; 皇后",
+      "phonetic": "/kwiːn/",
+      "chinese_explanation": "女王，王后",
+      "english_explanation": "Female ruler of a country",
+      "example_sentence": "The queen lived in the palace."
+    },
+    {
+      "english": "question",
+      "chinese": "问题; 疑问; 询问",
+      "phonetic": "/ˈkwestʃən/",
+      "chinese_explanation": "问题，疑问",
+      "english_explanation": "Query to get information",
+      "example_sentence": "You can ask me one question now."
+    },
+    {
+      "english": "quick",
+      "chinese": "快的，迅速的",
+      "phonetic": "/kwɪk/",
+      "chinese_explanation": "速度快的",
+      "english_explanation": "fast in speed",
+      "example_sentence": "He is a quick runner."
+    },
+    {
+      "english": "quiet",
+      "chinese": "安静的，文静的",
+      "phonetic": "/ˈkwaɪət/",
+      "chinese_explanation": "不吵闹的",
+      "english_explanation": "making little noise",
+      "example_sentence": "Please keep quiet in the library."
+    },
+    {
+      "english": "rabbit",
+      "chinese": "兔，野兔",
+      "phonetic": "/ˈræbɪt/",
+      "chinese_explanation": "小型哺乳动物",
+      "english_explanation": "small furry animal",
+      "example_sentence": "The rabbit likes eating carrots."
     },
     {
       "english": "rain",
-      "chinese": "雨",
+      "chinese": "雨，下雨",
       "phonetic": "/reɪn/",
-      "chinese_explanation": "天上落下的水",
-      "english_explanation": "water from clouds",
-      "example_sentence": "It is going to rain."
+      "chinese_explanation": "一种降水形式",
+      "english_explanation": "water falling from clouds",
+      "example_sentence": "It will rain this afternoon."
+    },
+    {
+      "english": "read",
+      "chinese": "阅读，朗读",
+      "phonetic": "/riːd/",
+      "chinese_explanation": "阅览文字内容",
+      "english_explanation": "understand written words",
+      "example_sentence": "I read storybooks every day."
+    },
+    {
+      "english": "red",
+      "chinese": "红色的，红色",
+      "phonetic": "/red/",
+      "chinese_explanation": "一种常见颜色",
+      "english_explanation": "a bright warm color",
+      "example_sentence": "The apple is big and red."
+    },
+    {
+      "english": "rice",
+      "chinese": "大米，米饭",
+      "phonetic": "/raɪs/",
+      "chinese_explanation": "常见粮食作物",
+      "english_explanation": "common food grain",
+      "example_sentence": "We have rice for lunch today."
+    },
+    {
+      "english": "rich",
+      "chinese": "富有的，肥沃的",
+      "phonetic": "/rɪtʃ/",
+      "chinese_explanation": "富裕的，富饶的",
+      "english_explanation": "having a lot of money",
+      "example_sentence": "The rich man has three cars."
+    },
+    {
+      "english": "ride",
+      "chinese": "骑，乘坐",
+      "phonetic": "/raɪd/",
+      "chinese_explanation": "骑乘或搭乘",
+      "english_explanation": "travel on bike or horse",
+      "example_sentence": "I ride a bike to school."
+    },
+    {
+      "english": "right",
+      "chinese": "正确的，右边的",
+      "phonetic": "/raɪt/",
+      "chinese_explanation": "正确的，右侧的",
+      "english_explanation": "correct or not wrong",
+      "example_sentence": "Your answer is right."
+    },
+    {
+      "english": "river",
+      "chinese": "河，河流",
+      "phonetic": "/ˈrɪvə(r)/",
+      "chinese_explanation": "天然水流通道",
+      "english_explanation": "large natural water flow",
+      "example_sentence": "There is a long river near the village."
+    },
+    {
+      "english": "road",
+      "chinese": "路，道路",
+      "phonetic": "/rəʊd/",
+      "chinese_explanation": "供通行的路面",
+      "english_explanation": "way for people and vehicles",
+      "example_sentence": "Many cars run on the road."
+    },
+    {
+      "english": "rock",
+      "chinese": "岩石，石块",
+      "phonetic": "/rɒk/",
+      "chinese_explanation": "坚硬矿物质块",
+      "english_explanation": "hard solid mineral substance",
+      "example_sentence": "He picked up a small rock."
+    },
+    {
+      "english": "room",
+      "chinese": "房间，空间",
+      "phonetic": "/ruːm/",
+      "chinese_explanation": "室内分隔空间",
+      "english_explanation": "separate space in a building",
+      "example_sentence": "My room is clean and bright."
+    },
+    {
+      "english": "run",
+      "chinese": "跑，奔跑",
+      "phonetic": "/rʌn/",
+      "chinese_explanation": "快速迈步移动",
+      "english_explanation": "move fast on foot",
+      "example_sentence": "I run 20 minutes every morning."
+    },
+    {
+      "english": "sad",
+      "chinese": "伤心的，难过的",
+      "phonetic": "/sæd/",
+      "chinese_explanation": "情绪低落的",
+      "english_explanation": "feeling unhappy or sorrowful",
+      "example_sentence": "She felt sad when she lost the toy."
+    },
+    {
+      "english": "same",
+      "chinese": "相同的，一样的",
+      "phonetic": "/seɪm/",
+      "chinese_explanation": "没有差异的",
+      "english_explanation": "identical, not different",
+      "example_sentence": "We are in the same class."
+    },
+    {
+      "english": "sand",
+      "chinese": "沙，沙子",
+      "phonetic": "/sænd/",
+      "chinese_explanation": "细碎的石粒",
+      "english_explanation": "tiny grains of rock",
+      "example_sentence": "The beach is covered with soft sand."
+    },
+    {
+      "english": "say",
+      "chinese": "说，讲",
+      "phonetic": "/seɪ/",
+      "chinese_explanation": "用言语表达",
+      "english_explanation": "speak to express meaning",
+      "example_sentence": "Please say hello to your parents."
+    },
+    {
+      "english": "school",
+      "chinese": "学校",
+      "phonetic": "/skuːl/",
+      "chinese_explanation": "学习知识的场所",
+      "english_explanation": "place for students to study",
+      "example_sentence": "I go to school by bike every day."
+    },
+    {
+      "english": "sea",
+      "chinese": "海",
+      "phonetic": "/siː/",
+      "chinese_explanation": "海洋",
+      "english_explanation": "large body of salt water",
+      "example_sentence": "We went to the sea last weekend."
+    },
+    {
+      "english": "see",
+      "chinese": "看见",
+      "phonetic": "/siː/",
+      "chinese_explanation": "看见",
+      "english_explanation": "perceive with eyes",
+      "example_sentence": "I can see a cat under the chair."
+    },
+    {
+      "english": "seven",
+      "chinese": "七",
+      "phonetic": "/ˈsev.ən/",
+      "chinese_explanation": "数字七",
+      "english_explanation": "number after six",
+      "example_sentence": "There are seven days in a week."
+    },
+    {
+      "english": "sheep",
+      "chinese": "绵羊",
+      "phonetic": "/ʃiːp/",
+      "chinese_explanation": "绵羊",
+      "english_explanation": "woolly farm animal",
+      "example_sentence": "The sheep are eating grass on the hill."
+    },
+    {
+      "english": "ship",
+      "chinese": "船",
+      "phonetic": "/ʃɪp/",
+      "chinese_explanation": "大船",
+      "english_explanation": "large water transport",
+      "example_sentence": "The goods were carried by ship."
+    },
+    {
+      "english": "shirt",
+      "chinese": "衬衫",
+      "phonetic": "/ʃɜːt/",
+      "chinese_explanation": "衬衫",
+      "english_explanation": "upper body garment",
+      "example_sentence": "He wore a blue shirt to work today."
+    },
+    {
+      "english": "shoe",
+      "chinese": "鞋",
+      "phonetic": "/ʃuː/",
+      "chinese_explanation": "鞋子",
+      "english_explanation": "foot covering",
+      "example_sentence": "I bought a new pair of shoes yesterday."
+    },
+    {
+      "english": "shop",
+      "chinese": "商店",
+      "phonetic": "/ʃɒp/",
+      "chinese_explanation": "商店",
+      "english_explanation": "goods selling place",
+      "example_sentence": "My mother works in a small shop."
+    },
+    {
+      "english": "short",
+      "chinese": "短的",
+      "phonetic": "/ʃɔːt/",
+      "chinese_explanation": "短的",
+      "english_explanation": "not long or tall",
+      "example_sentence": "My little brother has short hair."
+    },
+    {
+      "english": "shout",
+      "chinese": "喊叫",
+      "phonetic": "/ʃaʊt/",
+      "chinese_explanation": "呼喊",
+      "english_explanation": "speak very loudly",
+      "example_sentence": "Don't shout in the public place."
+    },
+    {
+      "english": "show",
+      "chinese": "显示；演出",
+      "phonetic": "/ʃəʊ/",
+      "chinese_explanation": "展示，演出",
+      "english_explanation": "display or a performance",
+      "example_sentence": "I will show you my new book."
+    },
+    {
+      "english": "sing",
+      "chinese": "唱歌；演唱",
+      "phonetic": "/sɪŋ/",
+      "chinese_explanation": "唱歌，演唱",
+      "english_explanation": "make musical sounds with voice",
+      "example_sentence": "She likes to sing pop songs."
+    },
+    {
+      "english": "sister",
+      "chinese": "姐妹；修女",
+      "phonetic": "/ˈsɪstə(r)/",
+      "chinese_explanation": "姐姐，妹妹",
+      "english_explanation": "female sibling",
+      "example_sentence": "My elder sister is a doctor."
+    },
+    {
+      "english": "sit",
+      "chinese": "坐；坐下；就座",
+      "phonetic": "/sɪt/",
+      "chinese_explanation": "坐下保持坐姿",
+      "english_explanation": "Rest on your buttocks",
+      "example_sentence": "Please sit next to me."
+    },
+    {
+      "english": "six",
+      "chinese": "六；六个",
+      "phonetic": "/sɪks/",
+      "chinese_explanation": "数字六",
+      "english_explanation": "the number 6",
+      "example_sentence": "There are six birds in the tree."
+    },
+    {
+      "english": "sky",
+      "chinese": "天空；天际",
+      "phonetic": "/skaɪ/",
+      "chinese_explanation": "天空",
+      "english_explanation": "space above the earth",
+      "example_sentence": "The sky is full of stars."
+    },
+    {
+      "english": "sleep",
+      "chinese": "睡觉；睡眠",
+      "phonetic": "/sliːp/",
+      "chinese_explanation": "睡觉，睡眠",
+      "english_explanation": "rest with eyes closed",
+      "example_sentence": "I need to sleep early tonight."
+    },
+    {
+      "english": "slow",
+      "chinese": "慢的；缓慢的",
+      "phonetic": "/sləʊ/",
+      "chinese_explanation": "缓慢的，慢的",
+      "english_explanation": "not fast, low speed",
+      "example_sentence": "The snail is very slow."
+    },
+    {
+      "english": "small",
+      "chinese": "小的；小型的",
+      "phonetic": "/smɔːl/",
+      "chinese_explanation": "小的，不大的",
+      "english_explanation": "not large in size",
+      "example_sentence": "This small dog is very cute."
+    },
+    {
+      "english": "smile",
+      "chinese": "微笑；笑容",
+      "phonetic": "/smaɪl/",
+      "chinese_explanation": "微笑",
+      "english_explanation": "happy facial expression",
+      "example_sentence": "Her smile is very sweet."
+    },
+    {
+      "english": "snow",
+      "chinese": "雪；下雪",
+      "phonetic": "/snəʊ/",
+      "chinese_explanation": "雪，下雪",
+      "english_explanation": "frozen water falling in winter",
+      "example_sentence": "It will snow tomorrow."
+    },
+    {
+      "english": "so",
+      "chinese": "所以；如此；这么",
+      "phonetic": "/səʊ/",
+      "chinese_explanation": "表因果或程度",
+      "english_explanation": "therefore; very",
+      "example_sentence": "I am so glad to see you."
+    },
+    {
+      "english": "sock",
+      "chinese": "短袜",
+      "phonetic": "/sɒk/",
+      "chinese_explanation": "短筒脚套",
+      "english_explanation": "short foot covering",
+      "example_sentence": "I lost one of my socks."
+    },
+    {
+      "english": "some",
+      "chinese": "一些；某个",
+      "phonetic": "/sʌm/",
+      "chinese_explanation": "若干数量的",
+      "english_explanation": "unspecified amount",
+      "example_sentence": "Would you like some coffee?"
+    },
+    {
+      "english": "song",
+      "chinese": "歌曲；歌声",
+      "phonetic": "/sɒŋ/",
+      "chinese_explanation": "声乐作品",
+      "english_explanation": "piece of vocal music",
+      "example_sentence": "This is my favorite pop song."
+    },
+    {
+      "english": "soon",
+      "chinese": "很快；不久",
+      "phonetic": "/suːn/",
+      "chinese_explanation": "短时间内",
+      "english_explanation": "in a short time",
+      "example_sentence": "The bus will arrive soon."
+    },
+    {
+      "english": "sorry",
+      "chinese": "抱歉的；对不起的",
+      "phonetic": "/ˈsɒri/",
+      "chinese_explanation": "表达歉意",
+      "english_explanation": "feeling regretful",
+      "example_sentence": "I'm sorry I broke your cup."
+    },
+    {
+      "english": "soup",
+      "chinese": "汤；羹",
+      "phonetic": "/suːp/",
+      "chinese_explanation": "液态食物",
+      "english_explanation": "liquid savoury dish",
+      "example_sentence": "I'd like a bowl of chicken soup."
+    },
+    {
+      "english": "speak",
+      "chinese": "说；讲；演讲",
+      "phonetic": "/spiːk/",
+      "chinese_explanation": "说话表达",
+      "english_explanation": "talk in a language",
+      "example_sentence": "Can you speak English?"
+    },
+    {
+      "english": "spell",
+      "chinese": "拼写；拼出",
+      "phonetic": "/spel/",
+      "chinese_explanation": "拼出单词",
+      "english_explanation": "form word with letters",
+      "example_sentence": "Please spell your full name."
+    },
+    {
+      "english": "sport",
+      "chinese": "运动；体育活动",
+      "phonetic": "/spɔːt/",
+      "chinese_explanation": "体育活动",
+      "english_explanation": "physical exercise activity",
+      "example_sentence": "Playing football is a popular sport."
+    },
+    {
+      "english": "spring",
+      "chinese": "春天；春季；泉水；弹跳",
+      "phonetic": "/sprɪŋ/",
+      "chinese_explanation": "春天；泉水；弹跳",
+      "english_explanation": "Warm season after winter",
+      "example_sentence": "Spring is my favorite season."
+    },
+    {
+      "english": "stand",
+      "chinese": "站立；忍受；摊位",
+      "phonetic": "/stænd/",
+      "chinese_explanation": "站立；忍受；摊位",
+      "english_explanation": "Be on one's feet",
+      "example_sentence": "Please stand up when answering questions."
+    },
+    {
+      "english": "star",
+      "chinese": "星星；明星；星形物",
+      "phonetic": "/stɑː(r)/",
+      "chinese_explanation": "星星；明星",
+      "english_explanation": "Celestial body or famous person",
+      "example_sentence": "There is a bright star in the sky."
+    },
+    {
+      "english": "start",
+      "chinese": "开始；启动；出发",
+      "phonetic": "/stɑːt/",
+      "chinese_explanation": "开始；启动",
+      "english_explanation": "Begin to do something",
+      "example_sentence": "We will start our trip tomorrow."
+    },
+    {
+      "english": "stay",
+      "chinese": "停留；保持；暂住",
+      "phonetic": "/steɪ/",
+      "chinese_explanation": "停留；保持",
+      "english_explanation": "Remain in a place",
+      "example_sentence": "I often stay at home on weekends."
+    },
+    {
+      "english": "step",
+      "chinese": "脚步；步骤；台阶",
+      "phonetic": "/step/",
+      "chinese_explanation": "脚步；步骤",
+      "english_explanation": "Act of moving foot forward",
+      "example_sentence": "Take the first step bravely."
+    },
+    {
+      "english": "stop",
+      "chinese": "停止；阻止；车站",
+      "phonetic": "/stɒp/",
+      "chinese_explanation": "停止；车站",
+      "english_explanation": "Cease moving or operating",
+      "example_sentence": "Stop talking when the teacher comes in."
+    },
+    {
+      "english": "story",
+      "chinese": "故事；小说；楼层",
+      "phonetic": "/ˈstɔːri/",
+      "chinese_explanation": "故事；叙述",
+      "english_explanation": "Account of past events",
+      "example_sentence": "My grandma tells me a story every night."
+    },
+    {
+      "english": "street",
+      "chinese": "街道；大街",
+      "phonetic": "/striːt/",
+      "chinese_explanation": "街道；马路",
+      "english_explanation": "Public road in a town",
+      "example_sentence": "There are many shops on this street."
+    },
+    {
+      "english": "strong",
+      "chinese": "强壮的；强烈的；坚强的",
+      "phonetic": "/strɒŋ/",
+      "chinese_explanation": "强壮的；强烈的",
+      "english_explanation": "Having great physical power",
+      "example_sentence": "He is strong enough to carry the box."
+    },
+    {
+      "english": "student",
+      "chinese": "学生",
+      "phonetic": "/ˈstjuːdnt/",
+      "chinese_explanation": "在校求学的人",
+      "english_explanation": "Person who studies at school",
+      "example_sentence": "She is a middle school student."
+    },
+    {
+      "english": "study",
+      "chinese": "学习，研究",
+      "phonetic": "/ˈstʌdi/",
+      "chinese_explanation": "学习钻研知识",
+      "english_explanation": "Learn knowledge or skills",
+      "example_sentence": "I study English every day."
+    },
+    {
+      "english": "summer",
+      "chinese": "夏天，夏季",
+      "phonetic": "/ˈsʌmə(r)/",
+      "chinese_explanation": "一年中最热的季节",
+      "english_explanation": "Hottest season of the year",
+      "example_sentence": "I like eating ice cream in summer."
     },
     {
       "english": "sun",
       "chinese": "太阳",
       "phonetic": "/sʌn/",
-      "chinese_explanation": "发光的恒星",
-      "english_explanation": "the star giving light",
+      "chinese_explanation": "太阳系中心恒星",
+      "english_explanation": "Star the earth orbits around",
       "example_sentence": "The sun rises in the east."
     },
     {
-      "english": "tree",
-      "chinese": "树",
-      "phonetic": "/triː/",
-      "chinese_explanation": "有树干的植物",
-      "english_explanation": "a tall plant with trunk",
-      "example_sentence": "A big tree in the garden."
-    },
-    {
-      "english": "water",
-      "chinese": "水",
-      "phonetic": "/ˈwɔː.tər/",
-      "chinese_explanation": "无色液体",
-      "english_explanation": "a clear liquid",
-      "example_sentence": "Give me some water."
-    },
-    {
-      "english": "bird",
-      "chinese": "鸟",
-      "phonetic": "/bɜːrd/",
-      "chinese_explanation": "会飞的动物",
-      "english_explanation": "an animal with wings",
-      "example_sentence": "A bird is singing."
-    },
-    {
-      "english": "cake",
-      "chinese": "蛋糕",
-      "phonetic": "/keɪk/",
-      "chinese_explanation": "甜的食物",
-      "english_explanation": "a sweet baked food",
-      "example_sentence": "Mom made a birthday cake."
-    },
-    {
-      "english": "door",
-      "chinese": "门",
-      "phonetic": "/dɔːr/",
-      "chinese_explanation": "房间入口",
-      "english_explanation": "entrance to a room",
-      "example_sentence": "Please close the door."
-    },
-    {
-      "english": "flower",
-      "chinese": "花",
-      "phonetic": "/ˈflaʊ.ər/",
-      "chinese_explanation": "植物美丽的部分",
-      "english_explanation": "colorful part of a plant",
-      "example_sentence": "The flower smells nice."
-    },
-    {
-      "english": "hand",
-      "chinese": "手",
-      "phonetic": "/hænd/",
-      "chinese_explanation": "抓东西的部分",
-      "english_explanation": "body part at end of arm",
-      "example_sentence": "Raise your hand please."
-    },
-    {
-      "english": "lion",
-      "chinese": "狮子",
-      "phonetic": "/ˈlaɪ.ən/",
-      "chinese_explanation": "大型猫科动物",
-      "english_explanation": "a large wild cat",
-      "example_sentence": "The lion is strong."
-    },
-    {
-      "english": "moon",
-      "chinese": "月亮",
-      "phonetic": "/muːn/",
-      "chinese_explanation": "夜晚的天体",
-      "english_explanation": "object shining at night",
-      "example_sentence": "The moon is bright tonight."
-    },
-    {
-      "english": "red",
-      "chinese": "红色的",
-      "phonetic": "/red/",
-      "chinese_explanation": "血液的颜色",
-      "english_explanation": "the color of blood",
-      "example_sentence": "She has a red dress."
-    },
-    {
-      "english": "star",
-      "chinese": "星星",
-      "phonetic": "/stɑːr/",
-      "chinese_explanation": "夜空中的天体",
-      "english_explanation": "bright point in the sky",
-      "example_sentence": "I see many stars tonight."
+      "english": "swim",
+      "chinese": "游泳",
+      "phonetic": "/swɪm/",
+      "chinese_explanation": "水中行进的运动",
+      "english_explanation": "Move through water with limbs",
+      "example_sentence": "I often swim in the pool in summer."
     },
     {
       "english": "table",
       "chinese": "桌子",
-      "phonetic": "/ˈteɪ.bəl/",
-      "chinese_explanation": "放东西的家具",
-      "english_explanation": "furniture with a flat top",
-      "example_sentence": "Put the book on the table."
+      "phonetic": "/ˈteɪbl/",
+      "chinese_explanation": "放置物品的家具",
+      "english_explanation": "Furniture for placing things",
+      "example_sentence": "There is a cup on the table."
+    },
+    {
+      "english": "tail",
+      "chinese": "尾巴",
+      "phonetic": "/teɪl/",
+      "chinese_explanation": "动物身体末端部分",
+      "english_explanation": "Rear part of animal's body",
+      "example_sentence": "The dog wagged its tail happily."
+    },
+    {
+      "english": "take",
+      "chinese": "拿，取，带走",
+      "phonetic": "/teɪk/",
+      "chinese_explanation": "握持并搬运物品",
+      "english_explanation": "Carry something to elsewhere",
+      "example_sentence": "Please take this book to Lily."
+    },
+    {
+      "english": "talk",
+      "chinese": "说话，交谈",
+      "phonetic": "/tɔːk/",
+      "chinese_explanation": "用语言交流信息",
+      "english_explanation": "Communicate with others by speaking",
+      "example_sentence": "They often talk about their hobbies."
+    },
+    {
+      "english": "tall",
+      "chinese": "高的",
+      "phonetic": "/tɔːl/",
+      "chinese_explanation": "高度大于平均的",
+      "english_explanation": "Having greater than average height",
+      "example_sentence": "My father is very tall."
+    },
+    {
+      "english": "tea",
+      "chinese": "茶，茶叶",
+      "phonetic": "/tiː/",
+      "chinese_explanation": "茶叶冲泡的饮品",
+      "english_explanation": "drink made from tea leaves",
+      "example_sentence": "I like drinking warm tea."
+    },
+    {
+      "english": "teach",
+      "chinese": "教，讲授",
+      "phonetic": "/tiːtʃ/",
+      "chinese_explanation": "传授知识技能",
+      "english_explanation": "give lessons to others",
+      "example_sentence": "He teaches kids to draw."
+    },
+    {
+      "english": "teacher",
+      "chinese": "教师，老师",
+      "phonetic": "/ˈtiː.tʃər/",
+      "chinese_explanation": "从事教育的人员",
+      "english_explanation": "person who teaches students",
+      "example_sentence": "My Chinese teacher is kind."
+    },
+    {
+      "english": "ten",
+      "chinese": "十，十个",
+      "phonetic": "/ten/",
+      "chinese_explanation": "九加一的得数",
+      "english_explanation": "number equal to 9+1",
+      "example_sentence": "There are ten birds here."
+    },
+    {
+      "english": "thank",
+      "chinese": "感谢，谢谢",
+      "phonetic": "/θæŋk/",
+      "chinese_explanation": "表达感激之情",
+      "english_explanation": "express gratitude to sb",
+      "example_sentence": "Thank you for your gift."
+    },
+    {
+      "english": "that",
+      "chinese": "那，那个",
+      "phonetic": "/ðæt/",
+      "chinese_explanation": "指较远的人或物",
+      "english_explanation": "refer to sth far away",
+      "example_sentence": "That cat is very cute."
+    },
+    {
+      "english": "the",
+      "chinese": "这，那，这个，那个",
+      "phonetic": "/ðə; ðiː/",
+      "chinese_explanation": "定冠词，表特指",
+      "english_explanation": "definite article for specific things",
+      "example_sentence": "The moon is round tonight."
+    },
+    {
+      "english": "their",
+      "chinese": "他们的，她们的，它们的",
+      "phonetic": "/ðeər/",
+      "chinese_explanation": "they的所有格",
+      "english_explanation": "possessive form of they",
+      "example_sentence": "They are cleaning their room."
+    },
+    {
+      "english": "them",
+      "chinese": "他们/她们/它们（宾格）",
+      "phonetic": "/ðem/",
+      "chinese_explanation": "they的宾格形式",
+      "english_explanation": "object form of they",
+      "example_sentence": "I will call them tomorrow."
+    },
+    {
+      "english": "then",
+      "chinese": "然后，当时，那么",
+      "phonetic": "/ðen/",
+      "chinese_explanation": "表时间或顺承",
+      "english_explanation": "at that time; next",
+      "example_sentence": "Finish homework then watch TV."
+    },
+    {
+      "english": "there",
+      "chinese": "在那里；存在",
+      "phonetic": "/ðeə(r)/",
+      "chinese_explanation": "表存在或地点",
+      "english_explanation": "refers to place or existence",
+      "example_sentence": "There is a book on the desk."
+    },
+    {
+      "english": "these",
+      "chinese": "这些",
+      "phonetic": "/ðiːz/",
+      "chinese_explanation": "近指复数事物",
+      "english_explanation": "plural form of this",
+      "example_sentence": "These flowers are beautiful."
+    },
+    {
+      "english": "they",
+      "chinese": "他们/她们/它们",
+      "phonetic": "/ðeɪ/",
+      "chinese_explanation": "第三人称复数",
+      "english_explanation": "third person plural pronoun",
+      "example_sentence": "They go to school every day."
+    },
+    {
+      "english": "thin",
+      "chinese": "瘦的；薄的；稀的",
+      "phonetic": "/θɪn/",
+      "chinese_explanation": "瘦的，薄的",
+      "english_explanation": "not fat or thick",
+      "example_sentence": "She is very thin."
+    },
+    {
+      "english": "thing",
+      "chinese": "事情；东西；事物",
+      "phonetic": "/θɪŋ/",
+      "chinese_explanation": "泛指事物事件",
+      "english_explanation": "an object or event",
+      "example_sentence": "I have an important thing to tell you."
+    },
+    {
+      "english": "think",
+      "chinese": "思考；认为；想",
+      "phonetic": "/θɪŋk/",
+      "chinese_explanation": "思考，认为",
+      "english_explanation": "consider with your mind",
+      "example_sentence": "I think it will rain tomorrow."
+    },
+    {
+      "english": "this",
+      "chinese": "这；这个",
+      "phonetic": "/ðɪs/",
+      "chinese_explanation": "近指单数事物",
+      "english_explanation": "refer to single nearby thing",
+      "example_sentence": "This is my mother."
+    },
+    {
+      "english": "three",
+      "chinese": "三；三个",
+      "phonetic": "/θriː/",
+      "chinese_explanation": "数字三",
+      "english_explanation": "the number three",
+      "example_sentence": "There are three birds in the tree."
+    },
+    {
+      "english": "throw",
+      "chinese": "扔；抛；投掷",
+      "phonetic": "/θrəʊ/",
+      "chinese_explanation": "抛掷，丢弃",
+      "english_explanation": "cast sth with hands",
+      "example_sentence": "Please throw the ball to me."
+    },
+    {
+      "english": "tiger",
+      "chinese": "老虎",
+      "phonetic": "/ˈtaɪɡə(r)/",
+      "chinese_explanation": "动物老虎",
+      "english_explanation": "a large wild cat",
+      "example_sentence": "The tiger is very dangerous."
+    },
+    {
+      "english": "time",
+      "chinese": "时间；时刻；次数",
+      "phonetic": "/taɪm/",
+      "chinese_explanation": "时间，时刻",
+      "english_explanation": "concept of passing moments",
+      "example_sentence": "I spend much time reading books."
+    },
+    {
+      "english": "tired",
+      "chinese": "疲倦的，困倦的",
+      "phonetic": "/ˈtaɪəd/",
+      "chinese_explanation": "疲惫的，困倦的",
+      "english_explanation": "feeling in need of rest",
+      "example_sentence": "I feel tired after long work."
+    },
+    {
+      "english": "to",
+      "chinese": "朝，向；不定式符号",
+      "phonetic": "/tuː/",
+      "chinese_explanation": "朝，向；不定式符号",
+      "english_explanation": "prep or infinitive marker",
+      "example_sentence": "I go to the park every weekend."
+    },
+    {
+      "english": "today",
+      "chinese": "今天，今日",
+      "phonetic": "/təˈdeɪ/",
+      "chinese_explanation": "今天，当日",
+      "english_explanation": "the present day",
+      "example_sentence": "Today is my mother's birthday."
+    },
+    {
+      "english": "together",
+      "chinese": "一起，共同",
+      "phonetic": "/təˈɡeðə(r)/",
+      "chinese_explanation": "一同，一起",
+      "english_explanation": "with each other",
+      "example_sentence": "We often have dinner together."
+    },
+    {
+      "english": "too",
+      "chinese": "也；太，过于",
+      "phonetic": "/tuː/",
+      "chinese_explanation": "也；太，过度",
+      "english_explanation": "also; excessively",
+      "example_sentence": "The coffee is too hot to drink."
+    },
+    {
+      "english": "top",
+      "chinese": "顶部，顶端；最高的",
+      "phonetic": "/tɒp/",
+      "chinese_explanation": "顶端，最高处",
+      "english_explanation": "highest part of sth",
+      "example_sentence": "He stands on the top of the hill."
+    },
+    {
+      "english": "town",
+      "chinese": "城镇，市镇",
+      "phonetic": "/taʊn/",
+      "chinese_explanation": "城镇，集镇",
+      "english_explanation": "small populated area",
+      "example_sentence": "My grandma lives in a small town."
+    },
+    {
+      "english": "toy",
+      "chinese": "玩具，玩物",
+      "phonetic": "/tɔɪ/",
+      "chinese_explanation": "儿童玩乐物品",
+      "english_explanation": "thing for kids to play with",
+      "example_sentence": "The little girl has many beautiful toys."
+    },
+    {
+      "english": "train",
+      "chinese": "火车；训练，培训",
+      "phonetic": "/treɪn/",
+      "chinese_explanation": "火车；训练",
+      "english_explanation": "rail vehicle; teach skills",
+      "example_sentence": "I will take a train to Beijing tomorrow."
+    },
+    {
+      "english": "tree",
+      "chinese": "树，树木",
+      "phonetic": "/triː/",
+      "chinese_explanation": "多年生木本植物",
+      "english_explanation": "tall plant with hard trunk",
+      "example_sentence": "There is a big tree in our yard."
+    },
+    {
+      "english": "try",
+      "chinese": "尝试，试图",
+      "phonetic": "/traɪ/",
+      "chinese_explanation": "尝试做某件事",
+      "english_explanation": "attempt to do something",
+      "example_sentence": "You can try this tasty cake."
+    },
+    {
+      "english": "turn",
+      "chinese": "转动，转向",
+      "phonetic": "/tɜːn/",
+      "chinese_explanation": "改变方向或状态",
+      "english_explanation": "change direction or position",
+      "example_sentence": "Please turn right at the corner."
+    },
+    {
+      "english": "twelve",
+      "chinese": "十二",
+      "phonetic": "/twelv/",
+      "chinese_explanation": "基数词，表数字十二",
+      "english_explanation": "The cardinal number 12",
+      "example_sentence": "There are twelve months in a year."
+    },
+    {
+      "english": "two",
+      "chinese": "二，两个",
+      "phonetic": "/tuː/",
+      "chinese_explanation": "数量为2的数字",
+      "english_explanation": "the number after one",
+      "example_sentence": "I have two cute cats at home."
+    },
+    {
+      "english": "uncle",
+      "chinese": "叔叔，舅舅，姨父",
+      "phonetic": "/ˈʌŋ.kl/",
+      "chinese_explanation": "父母的兄弟或姻亲",
+      "english_explanation": "parent's brother or aunt's husband",
+      "example_sentence": "My uncle is good at playing basketball."
+    },
+    {
+      "english": "under",
+      "chinese": "在…之下",
+      "phonetic": "/ˈʌn.də(r)/",
+      "chinese_explanation": "在某物的下方",
+      "english_explanation": "below or lower than something",
+      "example_sentence": "My football is under the sofa."
+    },
+    {
+      "english": "up",
+      "chinese": "向上，朝上",
+      "phonetic": "/ʌp/",
+      "chinese_explanation": "朝向更高的位置",
+      "english_explanation": "towards a higher position",
+      "example_sentence": "Please put the cup up on the shelf."
+    },
+    {
+      "english": "use",
+      "chinese": "使用，利用",
+      "phonetic": "/juːz/",
+      "chinese_explanation": "利用某物做事情",
+      "english_explanation": "utilize something for a purpose",
+      "example_sentence": "You can use my umbrella if it rains."
+    },
+    {
+      "english": "very",
+      "chinese": "非常，很",
+      "phonetic": "/ˈver.i/",
+      "chinese_explanation": "表示程度很高",
+      "english_explanation": "used to emphasize degree",
+      "example_sentence": "The movie we watched is very interesting."
+    },
+    {
+      "english": "village",
+      "chinese": "村庄，村落",
+      "phonetic": "/ˈvɪl.ɪdʒ/",
+      "chinese_explanation": "小型农村聚居点",
+      "english_explanation": "small community in countryside",
+      "example_sentence": "My grandparents live in a quiet village."
+    },
+    {
+      "english": "visit",
+      "chinese": "访问；参观；拜访",
+      "phonetic": "/ˈvɪz.ɪt/",
+      "chinese_explanation": "参观，拜访",
+      "english_explanation": "Go to see sb or a place",
+      "example_sentence": "I often visit my grandma on weekends."
+    },
+    {
+      "english": "voice",
+      "chinese": "声音；嗓音；语态",
+      "phonetic": "/vɔɪs/",
+      "chinese_explanation": "声音，嗓音",
+      "english_explanation": "Sound made by speaking",
+      "example_sentence": "She has a sweet voice."
+    },
+    {
+      "english": "wait",
+      "chinese": "等待；等候",
+      "phonetic": "/weɪt/",
+      "chinese_explanation": "等待，等候",
+      "english_explanation": "Stay for sb or sth",
+      "example_sentence": "Please wait for me here."
+    },
+    {
+      "english": "walk",
+      "chinese": "走；步行；散步",
+      "phonetic": "/wɔːk/",
+      "chinese_explanation": "步行，走路",
+      "english_explanation": "Move on foot",
+      "example_sentence": "I walk to school every day."
+    },
+    {
+      "english": "want",
+      "chinese": "想要；需要；希望",
+      "phonetic": "/wɒnt/",
+      "chinese_explanation": "想要，需要",
+      "english_explanation": "Would like to have sth",
+      "example_sentence": "I want a cup of hot tea."
+    },
+    {
+      "english": "warm",
+      "chinese": "温暖的；暖和的；热情的",
+      "phonetic": "/wɔːm/",
+      "chinese_explanation": "温暖的，暖和的",
+      "english_explanation": "Pleasantly not cold",
+      "example_sentence": "Spring is warm and sunny."
+    },
+    {
+      "english": "wash",
+      "chinese": "洗；洗涤；冲洗",
+      "phonetic": "/wɒʃ/",
+      "chinese_explanation": "洗涤，清洗",
+      "english_explanation": "Clean with water",
+      "example_sentence": "Wash your hands before meals."
+    },
+    {
+      "english": "watch",
+      "chinese": "观看；注视；手表",
+      "phonetic": "/wɒtʃ/",
+      "chinese_explanation": "观看；手表",
+      "english_explanation": "Look at sth carefully",
+      "example_sentence": "I often watch TV at night."
+    },
+    {
+      "english": "water",
+      "chinese": "水；雨水；给…浇水",
+      "phonetic": "/ˈwɔː.tə(r)/",
+      "chinese_explanation": "水；给…浇水",
+      "english_explanation": "Liquid for drinking",
+      "example_sentence": "Drink more water every day."
+    },
+    {
+      "english": "way",
+      "chinese": "方法；道路；方式",
+      "phonetic": "/weɪ/",
+      "chinese_explanation": "方法；道路",
+      "english_explanation": "Road or method to do sth",
+      "example_sentence": "Can you tell me the way to the park?"
+    },
+    {
+      "english": "we",
+      "chinese": "我们",
+      "phonetic": "/wiː/",
+      "chinese_explanation": "我们（主格）",
+      "english_explanation": "first person plural pronoun",
+      "example_sentence": "We are good friends."
+    },
+    {
+      "english": "week",
+      "chinese": "周，星期",
+      "phonetic": "/wiːk/",
+      "chinese_explanation": "一周时间单位",
+      "english_explanation": "seven days period",
+      "example_sentence": "There are 7 days in a week."
+    },
+    {
+      "english": "well",
+      "chinese": "很好地；健康的；井",
+      "phonetic": "/wel/",
+      "chinese_explanation": "好；健康；水井",
+      "english_explanation": "good state; water hole",
+      "example_sentence": "He plays football well."
+    },
+    {
+      "english": "west",
+      "chinese": "西方；西部",
+      "phonetic": "/west/",
+      "chinese_explanation": "西方，西部",
+      "english_explanation": "direction opposite east",
+      "example_sentence": "The sun sets in the west."
+    },
+    {
+      "english": "what",
+      "chinese": "什么",
+      "phonetic": "/wɒt/",
+      "chinese_explanation": "疑问代词，什么",
+      "english_explanation": "question word for things",
+      "example_sentence": "What are you doing?"
+    },
+    {
+      "english": "when",
+      "chinese": "什么时候",
+      "phonetic": "/wen/",
+      "chinese_explanation": "疑问词，问时间",
+      "english_explanation": "question word for time",
+      "example_sentence": "When will you come?"
+    },
+    {
+      "english": "where",
+      "chinese": "哪里",
+      "phonetic": "/weə(r)/",
+      "chinese_explanation": "疑问词，问地点",
+      "english_explanation": "question word for place",
+      "example_sentence": "Where is your school?"
+    },
+    {
+      "english": "which",
+      "chinese": "哪一个；哪一些",
+      "phonetic": "/ˈwɪtʃ/",
+      "chinese_explanation": "哪一个/哪些",
+      "english_explanation": "used to select from options",
+      "example_sentence": "Which do you like better?"
+    },
+    {
+      "english": "white",
+      "chinese": "白色；白色的",
+      "phonetic": "/waɪt/",
+      "chinese_explanation": "白色，白色的",
+      "english_explanation": "color of snow or milk",
+      "example_sentence": "My cat is white."
+    },
+    {
+      "english": "who",
+      "chinese": "谁",
+      "phonetic": "/huː/",
+      "chinese_explanation": "疑问词，问人物",
+      "english_explanation": "question word for people",
+      "example_sentence": "Who is your English teacher?"
+    },
+    {
+      "english": "why",
+      "chinese": "为什么",
+      "phonetic": "/waɪ/",
+      "chinese_explanation": "疑问词，问原因",
+      "english_explanation": "question word for reason",
+      "example_sentence": "Why are you so happy?"
+    },
+    {
+      "english": "wide",
+      "chinese": "宽的；广泛的",
+      "phonetic": "/waɪd/",
+      "chinese_explanation": "宽阔的，广泛的",
+      "english_explanation": "large in width",
+      "example_sentence": "The road is very wide."
+    },
+    {
+      "english": "wind",
+      "chinese": "风；缠绕；蜿蜒",
+      "phonetic": "/wɪnd/, /waɪnd/",
+      "chinese_explanation": "风；缠绕，上发条",
+      "english_explanation": "moving air; twist around",
+      "example_sentence": "The soft wind blows my hair."
     },
     {
       "english": "window",
-      "chinese": "窗户",
-      "phonetic": "/ˈwɪn.doʊ/",
-      "chinese_explanation": "墙上的开口",
-      "english_explanation": "opening in a wall",
-      "example_sentence": "Open the window please."
+      "chinese": "窗户；窗口",
+      "phonetic": "/ˈwɪndəʊ/",
+      "chinese_explanation": "窗户，窗口",
+      "english_explanation": "opening for light and air",
+      "example_sentence": "Please open the window."
     },
     {
-      "english": "blue",
-      "chinese": "蓝色的",
-      "phonetic": "/bluː/",
-      "chinese_explanation": "天空的颜色",
-      "english_explanation": "the color of the sky",
-      "example_sentence": "The sky is blue today."
+      "english": "winter",
+      "chinese": "冬天，冬季",
+      "phonetic": "/ˈwɪntə(r)/",
+      "chinese_explanation": "一年中最寒冷的季节",
+      "english_explanation": "The coldest season of the year",
+      "example_sentence": "We can make snowmen in winter."
+    },
+    {
+      "english": "with",
+      "chinese": "和…在一起；用；带有",
+      "phonetic": "/wɪð/",
+      "chinese_explanation": "和；用；带有",
+      "english_explanation": "accompanied by; using",
+      "example_sentence": "I play with my friend."
+    },
+    {
+      "english": "wolf",
+      "chinese": "狼",
+      "phonetic": "/wʊlf/",
+      "chinese_explanation": "狼",
+      "english_explanation": "wild meat-eating animal",
+      "example_sentence": "A wolf lives in the forest."
+    },
+    {
+      "english": "woman",
+      "chinese": "妇女；成年女子",
+      "phonetic": "/ˈwʊmən/",
+      "chinese_explanation": "成年女子，妇女",
+      "english_explanation": "adult female human",
+      "example_sentence": "The woman is my mother."
+    },
+    {
+      "english": "word",
+      "chinese": "单词；话语；消息",
+      "phonetic": "/wɜːd/",
+      "chinese_explanation": "单词，话语",
+      "english_explanation": "single language unit",
+      "example_sentence": "This is a new word."
+    },
+    {
+      "english": "work",
+      "chinese": "工作；劳动；作品",
+      "phonetic": "/wɜːk/",
+      "chinese_explanation": "工作，劳动",
+      "english_explanation": "do job; paid task",
+      "example_sentence": "My father works in a factory."
+    },
+    {
+      "english": "world",
+      "chinese": "世界；地球；领域",
+      "phonetic": "/wɜːld/",
+      "chinese_explanation": "世界，全球",
+      "english_explanation": "the earth and its people",
+      "example_sentence": "I want to travel the world."
+    },
+    {
+      "english": "write",
+      "chinese": "写，书写；写作",
+      "phonetic": "/raɪt/",
+      "chinese_explanation": "书写，写作",
+      "english_explanation": "produce written words or text",
+      "example_sentence": "Please write your name on the paper."
+    },
+    {
+      "english": "year",
+      "chinese": "年；年份；年度",
+      "phonetic": "/jɪə(r)/",
+      "chinese_explanation": "年，年度",
+      "english_explanation": "period of 365 days",
+      "example_sentence": "I am 9 years old this year."
+    },
+    {
+      "english": "yellow",
+      "chinese": "黄色的；黄色",
+      "phonetic": "/ˈjeləʊ/",
+      "chinese_explanation": "黄色，黄色的",
+      "english_explanation": "color of ripe lemons",
+      "example_sentence": "The flower is bright yellow."
+    },
+    {
+      "english": "yes",
+      "chinese": "是，是的",
+      "phonetic": "/jes/",
+      "chinese_explanation": "表同意、肯定",
+      "english_explanation": "used to show agreement",
+      "example_sentence": "Yes, I know that thing."
+    },
+    {
+      "english": "you",
+      "chinese": "你，你们",
+      "phonetic": "/juː/",
+      "chinese_explanation": "第二人称代词",
+      "english_explanation": "the person being addressed",
+      "example_sentence": "You are very smart."
+    },
+    {
+      "english": "young",
+      "chinese": "年轻的，年幼的",
+      "phonetic": "/jʌŋ/",
+      "chinese_explanation": "年纪不大的",
+      "english_explanation": "not old in age",
+      "example_sentence": "He is a young writer."
+    },
+    {
+      "english": "your",
+      "chinese": "你的，你们的",
+      "phonetic": "/jɔː(r)/",
+      "chinese_explanation": "你的，你们的",
+      "english_explanation": "possessive form of you",
+      "example_sentence": "Your bag is very nice."
+    },
+    {
+      "english": "zero",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
+    },
+    {
+      "english": "zoo",
+      "chinese": "",
+      "phonetic": "",
+      "chinese_explanation": "",
+      "english_explanation": "",
+      "example_sentence": ""
     }
   ]
 }

@@ -49,8 +49,6 @@ export default function SessionPage() {
   const [spellingSubmitted, setSpellingSubmitted] = useState(false);
   const spellingRef = useRef<HTMLInputElement>(null);
   const imprintBarRef = useRef<HTMLSpanElement>(null);
-  // 用 ref 保存最新计数，确保 handleConfirmDone 能拿到最新值
-  const countsRef = useRef({ totalCount: 0, correctCount: 0, spellingCorrect: 0 });
   const [todayImprints, setTodayImprints] = useState(0);
   const [totalImprints, setTotalImprints] = useState(0);
   const [imprintBounce, setImprintBounce] = useState(false);
@@ -118,10 +116,6 @@ export default function SessionPage() {
   }, []);
 
   useEffect(() => {
-    countsRef.current = { totalCount, correctCount, spellingCorrect };
-  }, [totalCount, correctCount, spellingCorrect]);
-
-  useEffect(() => {
     if (!words || words.length === 0) navigate('/home');
   }, [words, navigate]);
 
@@ -141,8 +135,8 @@ export default function SessionPage() {
         }
       } else {
         loadQuiz(words[currentIndex].id, quizType);
-        // 其他题型：英文相关题型自动播放
-        if (quizType === 'cn_to_en' || quizType === 'en_to_cn' || quizType === 'en_to_explanation') {
+        // 其他题型：英文相关题型自动播放（中文选英文不播，避免泄露答案）
+        if (quizType === 'en_to_cn' || quizType === 'en_to_explanation') {
           setTimeout(() => {
             const audio = new Audio(getWordAudio(words[currentIndex].english));
             audio.play().catch(() => {});
@@ -236,13 +230,18 @@ export default function SessionPage() {
   };
 
   const handleConfirmDone = async () => {
-    submitSpelling();
-    // 用 setTimeout 确保 state 更新后再读 ref
-    setTimeout(async () => {
-      const c = countsRef.current;
-      await confirmDone(words.map((w) => w.id), c.totalCount, c.correctCount, c.spellingCorrect);
-      navigate('/home');
-    }, 0);
+    // 直接计算最终值，避免 useEffect/ref 的竞态问题
+    let finalTotal = totalCount;
+    let finalCorrect = correctCount;
+    let finalSpelling = spellingCorrect;
+
+    // 如果当前是拼写题且未提交，计为答错
+    if (quizType === 'spelling' && !spellingSubmitted) {
+      finalTotal += 1;
+    }
+
+    await confirmDone(words.map((w) => w.id), finalTotal, finalCorrect, finalSpelling);
+    navigate('/words');
   };
 
   if (!words || words.length === 0) return null;
