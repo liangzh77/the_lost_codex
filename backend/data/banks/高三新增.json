@@ -68,43 +68,43 @@
     },
     {
       "english": "accolade",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "n. 赞扬，嘉奖，荣誉",
+      "phonetic": "/ˈækəleɪd/",
+      "chinese_explanation": "嘉奖，荣誉",
+      "english_explanation": "award or praise given",
+      "example_sentence": "He received the highest accolade in the industry."
     },
     {
       "english": "acquiesce",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "v. 默许，默然同意",
+      "phonetic": "/ˌækwiˈes/",
+      "chinese_explanation": "默许，默认同意",
+      "english_explanation": "accept something silently",
+      "example_sentence": "He decided to acquiesce to their request."
     },
     {
       "english": "acrimony",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "n. （言辞）尖刻，讥讽",
+      "phonetic": "/ˈækrɪməni/",
+      "chinese_explanation": "尖刻，严厉",
+      "english_explanation": "bitterness or sharpness",
+      "example_sentence": "The debate ended with considerable acrimony."
     },
     {
       "english": "adamant",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "adj. 坚决的，坚定不移的",
+      "phonetic": "/ˈædəmənt/",
+      "chinese_explanation": "坚决的，坚定的",
+      "english_explanation": "refusing to be persuaded",
+      "example_sentence": "She is adamant that she will not resign."
     },
     {
       "english": "admonish",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "v. 告诫，警告，劝告",
+      "phonetic": "/ədˈmɒnɪʃ/",
+      "chinese_explanation": "告诫，警告",
+      "english_explanation": "warn or advise firmly",
+      "example_sentence": "The teacher will admonish him for being late."
     },
     {
       "english": "adroit",
@@ -948,43 +948,43 @@
     },
     {
       "english": "despondent",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "沮丧的，泄气的",
+      "phonetic": "/dɪˈspɒndənt/",
+      "chinese_explanation": "情绪低落的",
+      "english_explanation": "feeling very unhappy",
+      "example_sentence": "He felt despondent after failing the interview."
     },
     {
       "english": "detrimental",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "有害的，不利的",
+      "phonetic": "/ˌdetrɪˈmentl/",
+      "chinese_explanation": "有损害的",
+      "english_explanation": "causing harm or damage",
+      "example_sentence": "Excessive drinking is detrimental to health."
     },
     {
       "english": "devious",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "不诚实的，迂回的",
+      "phonetic": "/ˈdiːviəs/",
+      "chinese_explanation": "不坦诚的",
+      "english_explanation": "not honest or direct",
+      "example_sentence": "He got the promotion by devious means."
     },
     {
       "english": "diffuse",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "扩散；弥漫的",
+      "phonetic": "/dɪˈfjuːz/",
+      "chinese_explanation": "散开传播的",
+      "english_explanation": "spread over a wide area",
+      "example_sentence": "The fragrance of jasmine diffused in the yard."
     },
     {
       "english": "digress",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "离题，跑题",
+      "phonetic": "/daɪˈɡres/",
+      "chinese_explanation": "偏离正题",
+      "english_explanation": "move away from main topic",
+      "example_sentence": "Please don't digress during the presentation."
     },
     {
       "english": "diligence",
@@ -1988,43 +1988,43 @@
     },
     {
       "english": "unify",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "统一，使联合",
+      "phonetic": "/ˈjuːnɪfaɪ/",
+      "chinese_explanation": "使成一体",
+      "english_explanation": "join together as one",
+      "example_sentence": "The policy aims to unify the regional market."
     },
     {
       "english": "unjust",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "不公平的，不公正的",
+      "phonetic": "/ˌʌnˈdʒʌst/",
+      "chinese_explanation": "不公正的",
+      "english_explanation": "not fair or reasonable",
+      "example_sentence": "The unjust decision aroused public anger."
     },
     {
       "english": "validate",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "证实，验证，使生效",
+      "phonetic": "/ˈvælɪdeɪt/",
+      "chinese_explanation": "确认有效",
+      "english_explanation": "prove something is valid",
+      "example_sentence": "You need a stamp to validate the certificate."
     },
     {
       "english": "vindicate",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "证明正确，澄清",
+      "phonetic": "/ˈvɪndɪkeɪt/",
+      "chinese_explanation": "证明无辜",
+      "english_explanation": "prove right or innocent",
+      "example_sentence": "The latest evidence vindicated the young man."
     },
     {
       "english": "wary",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "谨慎的，小心的",
+      "phonetic": "/ˈweəri/",
+      "chinese_explanation": "小心翼翼的",
+      "english_explanation": "careful of possible danger",
+      "example_sentence": "Be wary of phishing messages online."
     },
     {
       "english": "zealous",

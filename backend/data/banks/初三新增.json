@@ -36,11 +36,11 @@
     },
     {
       "english": "accommodate",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "容纳，提供住宿，适应",
+      "phonetic": "/əˈkɒmədeɪt/",
+      "chinese_explanation": "容纳，适应",
+      "english_explanation": "have enough space for",
+      "example_sentence": "The hotel can accommodate 500 guests."
     },
     {
       "english": "accumulate",
@@ -180,11 +180,11 @@
     },
     {
       "english": "ambassador",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "大使，使节",
+      "phonetic": "/æmˈbæs.ə.dər/",
+      "chinese_explanation": "外交使节",
+      "english_explanation": "senior diplomatic representative",
+      "example_sentence": "He is the Chinese ambassador to the UK."
     },
     {
       "english": "ambiguous",
@@ -204,35 +204,35 @@
     },
     {
       "english": "ample",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "充足的，丰富的",
+      "phonetic": "/ˈæm.pəl/",
+      "chinese_explanation": "充足足够的",
+      "english_explanation": "enough in quantity",
+      "example_sentence": "We have ample time for the trip."
     },
     {
       "english": "analogy",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "类比，类推",
+      "phonetic": "/əˈnæl.ə.dʒi/",
+      "chinese_explanation": "相似物类比",
+      "english_explanation": "comparison of similar things",
+      "example_sentence": "The teacher explained the rule with an analogy."
     },
     {
       "english": "anchor",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "锚；节目主持人",
+      "phonetic": "/ˈæŋ.kər/",
+      "chinese_explanation": "锚；节目主持",
+      "english_explanation": "ship weight; news host",
+      "example_sentence": "The ship dropped anchor at the bay."
     },
     {
       "english": "anonymous",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "匿名的，无名的",
+      "phonetic": "/əˈnɒn.ɪ.məs/",
+      "chinese_explanation": "匿名无名的",
+      "english_explanation": "with name not revealed",
+      "example_sentence": "He received an anonymous letter yesterday."
     },
     {
       "english": "apparatus",

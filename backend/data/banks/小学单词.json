@@ -3860,19 +3860,19 @@
     },
     {
       "english": "zero",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "零；零点；零度",
+      "phonetic": "/ˈzɪərəʊ/",
+      "chinese_explanation": "数字零，对应空无",
+      "english_explanation": "the number 0",
+      "example_sentence": "The temperature dropped to zero last night."
     },
     {
       "english": "zoo",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "动物园",
+      "phonetic": "/zuː/",
+      "chinese_explanation": "动物展出园区",
+      "english_explanation": "place keeping wild animals",
+      "example_sentence": "Many children like going to the zoo on weekends."
     }
   ]
 }

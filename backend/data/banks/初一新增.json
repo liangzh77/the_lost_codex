@@ -4,27 +4,27 @@
   "words": [
     {
       "english": "achieve",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "实现；达到；获得",
+      "phonetic": "/əˈtʃiːv/",
+      "chinese_explanation": "达成目标，取得",
+      "english_explanation": "get something successfully",
+      "example_sentence": "You will achieve good grades if you study hard."
     },
     {
       "english": "balance",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "平衡；均衡；余额",
+      "phonetic": "/ˈbæləns/",
+      "chinese_explanation": "稳定均衡的状态",
+      "english_explanation": "state of being steady",
+      "example_sentence": "We need to keep a balance between study and rest."
     },
     {
       "english": "courage",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "勇气；胆量",
+      "phonetic": "/ˈkʌrɪdʒ/",
+      "chinese_explanation": "面对困难的勇气",
+      "english_explanation": "bravery in face of danger",
+      "example_sentence": "It takes great courage to speak in public."
     },
     {
       "english": "develop",
@@ -388,43 +388,43 @@
     },
     {
       "english": "blank",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "空白的；空白",
+      "phonetic": "/blæŋk/",
+      "chinese_explanation": "无内容的，空的",
+      "english_explanation": "with no writing or marks",
+      "example_sentence": "Please write your name in the blank space."
     },
     {
       "english": "blind",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "失明的；盲目的",
+      "phonetic": "/blaɪnd/",
+      "chinese_explanation": "视力丧失的，盲",
+      "english_explanation": "unable to see anything",
+      "example_sentence": "We should offer help to the blind people."
     },
     {
       "english": "block",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "块；街区；阻碍",
+      "phonetic": "/blɒk/",
+      "chinese_explanation": "大块，阻碍，街区",
+      "english_explanation": "large piece or stop action",
+      "example_sentence": "The shop is just one block away from here."
     },
     {
       "english": "blood",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "血；血液；血统",
+      "phonetic": "/blʌd/",
+      "chinese_explanation": "生物体内的血液",
+      "english_explanation": "red liquid in bodies",
+      "example_sentence": "Donating blood is a very meaningful thing."
     },
     {
       "english": "bomb",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "炸弹；轰炸",
+      "phonetic": "/bɒm/",
+      "chinese_explanation": "爆炸类武器，轰炸",
+      "english_explanation": "weapon that can explode",
+      "example_sentence": "The police successfully disposed of the bomb."
     },
     {
       "english": "bone",
@@ -2476,43 +2476,43 @@
     },
     {
       "english": "familiar",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "熟悉的；熟知的",
+      "phonetic": "/fəˈmɪliə(r)/",
+      "chinese_explanation": "熟悉的，知晓的",
+      "english_explanation": "well known to you",
+      "example_sentence": "I am familiar with this city."
     },
     {
       "english": "fancy",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "精致的；想要；想象",
+      "phonetic": "/ˈfænsi/",
+      "chinese_explanation": "精致的；想要",
+      "english_explanation": "attractive and decorative",
+      "example_sentence": "She bought a fancy handbag."
     },
     {
       "english": "fantasy",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "幻想；想象产物",
+      "phonetic": "/ˈfæntəsi/",
+      "chinese_explanation": "幻想，空想",
+      "english_explanation": "product of imagination",
+      "example_sentence": "This novel is full of fantasy."
     },
     {
       "english": "fare",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "车费；票价；费用",
+      "phonetic": "/feə(r)/",
+      "chinese_explanation": "车费，票价",
+      "english_explanation": "money paid for travel",
+      "example_sentence": "The train fare is very cheap."
     },
     {
       "english": "fashion",
-      "chinese": "",
-      "phonetic": "",
-      "chinese_explanation": "",
-      "english_explanation": "",
-      "example_sentence": ""
+      "chinese": "时尚；流行款式",
+      "phonetic": "/ˈfæʃn/",
+      "chinese_explanation": "时尚，流行",
+      "english_explanation": "popular dress style",
+      "example_sentence": "She likes to follow fashion."
     },
     {
       "english": "fault",
