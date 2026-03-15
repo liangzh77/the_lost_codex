@@ -188,15 +188,15 @@ export default function SettingsPage() {
         </div>
 
         <div className="bg-white rounded-2xl p-4 space-y-3">
-          <div className="flex justify-between items-center cursor-pointer" onClick={() => setShowBanks(!showBanks)}>
-            <h3 className="text-sm font-medium text-gray-400">可用词库</h3>
-            <span className="text-xs text-gray-400">{showBanks ? '收起 ▲' : '展开 ▼'}</span>
+          <div className="flex items-center gap-2 cursor-pointer" onClick={() => setShowBanks(!showBanks)}>
+            <span className={`text-xs text-gray-400 inline-block transition-transform ${showBanks ? 'rotate-90' : ''}`}>▶</span>
+            <h3 className="text-sm font-medium text-gray-400">词库</h3>
           </div>
           {showBanks && banks.map((b) => (
             <div key={b.id} className="py-2 border-b border-gray-50 last:border-0">
               <div className="flex justify-between items-center cursor-pointer" onClick={() => handleBankClick(b.id)}>
                 <div className="flex items-center gap-2">
-                  <span className="text-sm text-gray-400">{expandedBank === b.id ? '▼' : '▶'}</span>
+                  <span className={`text-xs text-gray-400 inline-block transition-transform ${expandedBank === b.id ? 'rotate-90' : ''}`}>▶</span>
                   <span className="text-base text-gray-700">{b.name}</span>
                 </div>
                 <span className="text-xs text-gray-400">{b.learned}/{b.total}</span>

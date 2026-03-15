@@ -73,7 +73,7 @@ export default function GrowthPage() {
                 <p className="text-xl font-bold text-gray-900">Lv.{stats.level} {stats.level_name}</p>
               </div>
               <div className="text-right">
-                <p className="text-xs text-gray-400">累计印记</p>
+                <p className="text-xs text-gray-400">总印记</p>
                 <p className="text-xl font-bold text-blue-500">{stats.total_imprints}</p>
               </div>
             </div>
@@ -125,7 +125,8 @@ export default function GrowthPage() {
                 ))}
               </div>
               <div className="h-52">
-              <ResponsiveContainer width="100%" height="100%">
+                {imprintData.length > 0 ? (
+                <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={imprintData} margin={{ top: 8, right: 4, left: -12, bottom: 0 }}>
                   <defs>
                     <linearGradient id="gradImprints" x1="0" y1="0" x2="0" y2="1">
@@ -168,6 +169,9 @@ export default function GrowthPage() {
                   <Area type="monotone" dataKey="spelling_imprints" stroke="#a855f7" strokeWidth={2} fill="url(#gradSpelling)" name="拼写印记" dot={false} activeDot={{ r: 4, strokeWidth: 2, fill: '#fff' }} />
                 </AreaChart>
               </ResponsiveContainer>
+                ) : (
+                  <div className="flex items-center justify-center h-full text-gray-400 text-sm">加载中...</div>
+                )}
             </div>
             </>
           ) : (
@@ -227,7 +231,7 @@ export default function GrowthPage() {
             <div className="space-y-4">
               {achievements.map((a) => {
                 const categoryName = a.key === 'deep_cultivator' ? '单日印记'
-                  : a.key === 'imprint_collector' ? '累计印记'
+                  : a.key === 'imprint_collector' ? '总印记'
                   : a.key === 'spelling_master' ? '拼写正确'
                   : '已掌握单词';
                 const currentValue = a.value;

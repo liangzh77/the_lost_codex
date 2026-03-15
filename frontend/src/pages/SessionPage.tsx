@@ -259,7 +259,7 @@ export default function SessionPage() {
   if (phase === 'done') {
     return (
       <div className="pb-6">
-        <NavBar title="题型选择" onBack={() => navigate('/home')} />
+        <NavBar title="题型选择" />
         <div className="flex justify-center gap-4 py-2 bg-white/80 backdrop-blur border-b border-gray-100">
           <span className="text-xs text-gray-400">今日印记 <span className="text-sm font-bold text-blue-500">{todayImprints}</span></span>
           <span className="text-xs text-gray-400">总印记 <span className="text-sm font-bold text-gray-700">{totalImprints}</span></span>
@@ -345,7 +345,6 @@ export default function SessionPage() {
     <div className="flex flex-col min-h-screen" onClick={() => setShowCard(false)}>
       <NavBar
         title={`测试 ${currentIndex + 1}/${words.length}　✓${correctCount}`}
-        onBack={() => { submitSpelling(); setPhase('done'); }}
       />
       <div className="flex justify-center gap-4 py-2 bg-white/80 backdrop-blur border-b border-gray-100">
         <span className="text-xs text-gray-400">今日印记 <span ref={imprintBarRef} className={`text-sm font-bold text-blue-500 inline-block transition-transform ${imprintBounce ? 'scale-125' : 'scale-100'}`}>{todayImprints}</span></span>
