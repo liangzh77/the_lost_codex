@@ -5,33 +5,68 @@ from sqlalchemy import func
 from database import get_db
 from models import User, LearningRecord, UserAchievement, UserWordProgress
 from auth import get_current_user
-from services.spaced_repetition import get_total_stages
 
 router = APIRouter(prefix="/api/growth", tags=["growth"])
 
 LEVEL_THRESHOLDS = [0, 10, 30, 70, 150, 300, 500, 800, 1200, 2000, 3000]
 
 ACHIEVEMENTS = {
-    "deep_cultivator": {"name": "深耕者", "desc": "单日印记≥200", "icon": "🌱"},
-    "high_energy": {"name": "高能反应", "desc": "累计能量≥500", "icon": "⚡"},
-    "spelling_master": {"name": "拼写大师", "desc": "累计拼写正确≥100次", "icon": "🎯"},
-    "century": {"name": "百词斩", "desc": "累计学习≥100个单词", "icon": "💯"},
-    "tenacity": {"name": "韧性印记", "desc": "完成所有第30天复习", "icon": "🌉"},
+    "deep_cultivator": {
+        "icon": "🌱",
+        "tiers": [
+            {"name": "晨读", "desc": "单日印记≥20", "threshold": 20},
+            {"name": "苦读", "desc": "单日印记≥50", "threshold": 50},
+            {"name": "夜读", "desc": "单日印记≥100", "threshold": 100},
+            {"name": "通宵达旦", "desc": "单日印记≥200", "threshold": 200},
+            {"name": "废寝忘食", "desc": "单日印记≥500", "threshold": 500},
+        ],
+    },
+    "imprint_collector": {
+        "icon": "✒️",
+        "tiers": [
+            {"name": "墨点", "desc": "累计印记≥50", "threshold": 50},
+            {"name": "墨痕", "desc": "累计印记≥200", "threshold": 200},
+            {"name": "墨迹", "desc": "累计印记≥500", "threshold": 500},
+            {"name": "墨卷", "desc": "累计印记≥1000", "threshold": 1000},
+            {"name": "墨海", "desc": "累计印记≥3000", "threshold": 3000},
+        ],
+    },
+    "spelling_master": {
+        "icon": "🖊️",
+        "tiers": [
+            {"name": "描红", "desc": "累计拼写正确≥20次", "threshold": 20},
+            {"name": "临帖", "desc": "累计拼写正确≥50次", "threshold": 50},
+            {"name": "挥毫", "desc": "累计拼写正确≥100次", "threshold": 100},
+            {"name": "泼墨", "desc": "累计拼写正确≥300次", "threshold": 300},
+            {"name": "入木三分", "desc": "累计拼写正确≥1000次", "threshold": 1000},
+        ],
+    },
+    "century": {
+        "icon": "📖",
+        "tiers": [
+            {"name": "识字", "desc": "掌握≥20个单词", "threshold": 20},
+            {"name": "识文", "desc": "累计学习≥50个单���", "threshold": 50},
+            {"name": "通文", "desc": "掌握≥100个单词", "threshold": 100},
+            {"name": "博文", "desc": "掌握≥300个单词", "threshold": 300},
+            {"name": "万卷", "desc": "掌握≥1000个单词", "threshold": 1000},
+        ],
+    },
 }
 
 
-def calc_energy(record: LearningRecord) -> int:
-    e = 0
-    if record.total_questions > 0 and record.correct_answers > record.total_questions / 2:
-        e += 1
-    e += record.spelling_correct * 2
-    return e
+def calc_imprints(record: LearningRecord) -> int:
+    """答对一题+1印���，拼写对+2印记"""
+    imprints = 0
+    if record.total_questions > 0:
+        imprints += record.correct_answers
+    imprints += record.spelling_correct * 2
+    return imprints
 
 
-def get_level(total_energy: int) -> tuple[int, str]:
+def get_level(total_imprints: int) -> tuple[int, str]:
     level = 0
     for i, threshold in enumerate(LEVEL_THRESHOLDS):
-        if total_energy >= threshold:
+        if total_imprints >= threshold:
             level = i
     names = ["初学者", "入门", "进阶", "熟练", "精通", "大师", "宗师", "传奇", "神话", "至尊", "无上"]
     return level, names[min(level, len(names) - 1)]
@@ -46,21 +81,17 @@ def get_growth_stats(
     all_records = db.query(LearningRecord).filter(LearningRecord.user_id == user.id).all()
     today_records = [r for r in all_records if r.studied_at.date() == today]
 
-    total_imprints = len(all_records)
-    today_imprints = len(today_records)
-    total_energy = sum(calc_energy(r) for r in all_records)
-    today_energy = sum(calc_energy(r) for r in today_records)
-    level, level_name = get_level(total_energy)
+    total_imprints = sum(calc_imprints(r) for r in all_records)
+    today_imprints = sum(calc_imprints(r) for r in today_records)
+    level, level_name = get_level(total_imprints)
     next_threshold = LEVEL_THRESHOLDS[level + 1] if level + 1 < len(LEVEL_THRESHOLDS) else None
 
     return {
         "today_imprints": today_imprints,
-        "today_energy": today_energy,
         "total_imprints": total_imprints,
-        "total_energy": total_energy,
         "level": level,
         "level_name": level_name,
-        "next_level_energy": next_threshold,
+        "next_level_imprints": next_threshold,
     }
 
 
@@ -71,65 +102,77 @@ def get_heatmap(
     db: Session = Depends(get_db),
 ):
     start = date.today() - timedelta(days=days - 1)
-    rows = (
-        db.query(
-            func.date(LearningRecord.studied_at).label("day"),
-            func.count(LearningRecord.id).label("count"),
-        )
-        .filter(LearningRecord.user_id == user.id, LearningRecord.studied_at >= datetime.combine(start, datetime.min.time()))
-        .group_by(func.date(LearningRecord.studied_at))
-        .all()
-    )
-    data = {str(r.day): r.count for r in rows}
-    result = []
-    for i in range(days):
-        d = start + timedelta(days=i)
-        result.append({"date": str(d), "count": data.get(str(d), 0)})
-    return result
-
-
-@router.get("/energy-curve")
-def get_energy_curve(
-    days: int = Query(default=30),
-    user: User = Depends(get_current_user),
-    db: Session = Depends(get_db),
-):
-    start = date.today() - timedelta(days=days - 1)
     records = (
         db.query(LearningRecord)
         .filter(LearningRecord.user_id == user.id, LearningRecord.studied_at >= datetime.combine(start, datetime.min.time()))
         .all()
     )
-    daily = {}
+    daily: dict[str, int] = {}
     for r in records:
         d = str(r.studied_at.date())
-        if d not in daily:
-            daily[d] = {"energy": 0, "spelling_energy": 0}
-        e = calc_energy(r)
-        daily[d]["energy"] += e
-        daily[d]["spelling_energy"] += r.spelling_correct * 2
-
+        daily[d] = daily.get(d, 0) + calc_imprints(r)
     result = []
-    cumulative = 0
-    # get cumulative before start
-    prior = (
-        db.query(LearningRecord)
-        .filter(LearningRecord.user_id == user.id, LearningRecord.studied_at < datetime.combine(start, datetime.min.time()))
-        .all()
-    )
-    cumulative = sum(calc_energy(r) for r in prior)
-
     for i in range(days):
         d = str(start + timedelta(days=i))
-        day_data = daily.get(d, {"energy": 0, "spelling_energy": 0})
-        cumulative += day_data["energy"]
+        result.append({"date": d, "count": daily.get(d, 0)})
+    return result
+
+
+@router.get("/imprint-curve")
+def get_imprint_curve(
+    days: int = Query(default=30),
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    all_records = db.query(LearningRecord).filter(LearningRecord.user_id == user.id).all()
+
+    if days <= 0 and all_records:
+        # 全部：从最早记录日期到今天
+        earliest = min(r.studied_at.date() for r in all_records)
+        start = earliest
+        actual_days = (date.today() - earliest).days + 1
+    else:
+        start = date.today() - timedelta(days=days - 1)
+        actual_days = days
+
+    daily: dict[str, dict] = {}
+    for r in all_records:
+        d = str(r.studied_at.date())
+        if d not in daily:
+            daily[d] = {"imprints": 0, "spelling_imprints": 0}
+        daily[d]["imprints"] += calc_imprints(r)
+        daily[d]["spelling_imprints"] += r.spelling_correct * 2
+
+    result = []
+    for i in range(actual_days):
+        d = str(start + timedelta(days=i))
+        day_data = daily.get(d, {"imprints": 0, "spelling_imprints": 0})
         result.append({
             "date": d,
-            "energy": day_data["energy"],
-            "spelling_energy": day_data["spelling_energy"],
-            "cumulative": cumulative,
+            "imprints": day_data["imprints"],
+            "spelling_imprints": day_data["spelling_imprints"],
         })
     return result
+
+
+def _calc_achievement_value(key: str, all_records: list[LearningRecord], today: date, user: User = None, db: Session = None) -> tuple[int, str]:
+    """计算成就的当前数值和单位"""
+    if key == "deep_cultivator":
+        return sum(calc_imprints(r) for r in all_records if r.studied_at.date() == today), "今日印记"
+    elif key == "imprint_collector":
+        return sum(calc_imprints(r) for r in all_records), "累计印记"
+    elif key == "spelling_master":
+        return sum(r.spelling_correct for r in all_records), "拼写正确"
+    elif key == "century":
+        from services.spaced_repetition import get_total_stages
+        total_stages = get_total_stages(user.review_intervals)
+        mastered = (
+            db.query(UserWordProgress)
+            .filter(UserWordProgress.user_id == user.id, UserWordProgress.current_stage >= total_stages)
+            .count()
+        )
+        return mastered, "已掌握单词"
+    return 0, ""
 
 
 @router.get("/achievements")
@@ -137,72 +180,60 @@ def get_achievements(
     user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
 ):
-    unlocked = {
-        a.achievement_key: str(a.unlocked_at)
-        for a in db.query(UserAchievement).filter(UserAchievement.user_id == user.id).all()
-    }
+    # 已解锁的成就 key 格式: "deep_cultivator_0", "deep_cultivator_1", ...
+    unlocked_rows = db.query(UserAchievement).filter(UserAchievement.user_id == user.id).all()
+    unlocked = {a.achievement_key: str(a.unlocked_at) for a in unlocked_rows}
+
     all_records = db.query(LearningRecord).filter(LearningRecord.user_id == user.id).all()
     today = date.today()
 
-    # calc progress for each achievement
     result = []
     for key, info in ACHIEVEMENTS.items():
-        progress = 0.0
-        target = ""
+        value, unit = _calc_achievement_value(key, all_records, today, user, db)
+        tiers = info["tiers"]
 
-        if key == "deep_cultivator":
-            today_count = sum(1 for r in all_records if r.studied_at.date() == today)
-            progress = min(today_count / 200, 1.0)
-            target = f"今日印记 {today_count}/200"
+        # 找到当前已达到的最高阶梯
+        current_tier = -1
+        for i, tier in enumerate(tiers):
+            if value >= tier["threshold"]:
+                current_tier = i
 
-        elif key == "high_energy":
-            total_e = sum(calc_energy(r) for r in all_records)
-            progress = min(total_e / 500, 1.0)
-            target = f"累计能量 {total_e}/500"
+        # 下一个要解锁的阶梯
+        next_tier = current_tier + 1
+        if next_tier < len(tiers):
+            tier = tiers[next_tier]
+            progress = min(value / tier["threshold"], 0.99)
+            target = f"{unit} {value}/{tier['threshold']}"
+        else:
+            tier = tiers[-1]
+            progress = 1.0
+            target = f"{unit} {value}/{tiers[-1]['threshold']}"
 
-        elif key == "spelling_master":
-            total_spelling = sum(r.spelling_correct for r in all_records)
-            progress = min(total_spelling / 100, 1.0)
-            target = f"累计拼写正确 {total_spelling}/100"
-
-        elif key == "century":
-            unique_words = len(set(r.word_id for r in all_records))
-            progress = min(unique_words / 100, 1.0)
-            target = f"已学 {unique_words}/100 个单词"
-
-        elif key == "tenacity":
-            total_stages = get_total_stages(user.review_intervals)
-            mastered = (
-                db.query(UserWordProgress)
-                .filter(UserWordProgress.user_id == user.id, UserWordProgress.current_stage >= total_stages)
-                .count()
-            )
-            total_learning = (
-                db.query(UserWordProgress)
-                .filter(UserWordProgress.user_id == user.id)
-                .count()
-            )
-            progress = mastered / max(total_learning, 1)
-            target = f"已掌握 {mastered}/{total_learning}"
+        # 显示名 = 当前已解锁的阶梯名，未解锁任何则显示下一个
+        display_tier = tiers[current_tier] if current_tier >= 0 else tiers[0]
 
         result.append({
             "key": key,
-            "name": info["name"],
-            "desc": info["desc"],
+            "name": display_tier["name"],
+            "desc": display_tier["desc"],
             "icon": info["icon"],
-            "unlocked": key in unlocked,
-            "unlocked_at": unlocked.get(key),
+            "tier": current_tier + 1,  # 1-based, 0=未解锁
+            "max_tier": len(tiers),
+            "next_name": tiers[next_tier]["name"] if next_tier < len(tiers) else None,
+            "unlocked": current_tier >= 0,
             "progress": round(progress, 2),
             "target": target,
+            "value": value,
+            "all_tiers": [{"name": t["name"], "desc": t["desc"], "threshold": t["threshold"]} for t in tiers],
         })
 
-    # auto-unlock achievements
-    for a in result:
-        if not a["unlocked"] and a["progress"] >= 1.0:
-            ua = UserAchievement(user_id=user.id, achievement_key=a["key"])
-            db.add(ua)
-            a["unlocked"] = True
-            a["unlocked_at"] = str(datetime.now())
-    db.commit()
+        # auto-unlock new tiers
+        for i in range(current_tier + 1):
+            ak = f"{key}_{i}"
+            if ak not in unlocked:
+                ua = UserAchievement(user_id=user.id, achievement_key=ak, unlocked_at=datetime.now())
+                db.add(ua)
+                unlocked[ak] = str(datetime.now())
 
+    db.commit()
     return result

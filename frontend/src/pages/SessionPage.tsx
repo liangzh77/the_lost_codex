@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { getQuiz, confirmDone } from '../api';
+import { getQuiz, confirmDone, getGrowthStats } from '../api';
 import NavBar from '../components/NavBar';
 import Button from '../components/Button';
 import WordCard from '../components/WordCard';
@@ -48,6 +48,77 @@ export default function SessionPage() {
   const [spellingInput, setSpellingInput] = useState('');
   const [spellingSubmitted, setSpellingSubmitted] = useState(false);
   const spellingRef = useRef<HTMLInputElement>(null);
+  const imprintBarRef = useRef<HTMLSpanElement>(null);
+  // 用 ref 保存最新计数，确保 handleConfirmDone 能拿到最新值
+  const countsRef = useRef({ totalCount: 0, correctCount: 0, spellingCorrect: 0 });
+  const [todayImprints, setTodayImprints] = useState(0);
+  const [totalImprints, setTotalImprints] = useState(0);
+  const [imprintBounce, setImprintBounce] = useState(false);
+
+  useEffect(() => {
+    getGrowthStats().then((r) => {
+      setTodayImprints(r.data.today_imprints);
+      setTotalImprints(r.data.total_imprints);
+    });
+  }, []);
+
+  const flyImprint = useCallback((sourceEl: HTMLElement | null, amount: number) => {
+    if (!sourceEl || !imprintBarRef.current) return;
+    const src = sourceEl.getBoundingClientRect();
+    const dst = imprintBarRef.current.getBoundingClientRect();
+    const startX = src.left + src.width / 2;
+    const startY = src.top + src.height / 2;
+    const endX = dst.left + dst.width / 2;
+    const endY = dst.top + dst.height / 2;
+
+    for (let i = 0; i < amount; i++) {
+      const dot = document.createElement('div');
+      const delay = i * 120;
+      dot.style.cssText = `
+        position:fixed;z-index:9999;width:12px;height:12px;border-radius:50%;
+        background:linear-gradient(135deg,#3b82f6,#60a5fa);
+        box-shadow:0 0 8px rgba(59,130,246,0.6),0 0 16px rgba(59,130,246,0.3);
+        left:${startX - 6}px;top:${startY - 6}px;
+        pointer-events:none;opacity:1;
+        animation:imprintFly 600ms ${delay}ms cubic-bezier(0.2,0.8,0.2,1) forwards;
+      `;
+      document.body.appendChild(dot);
+      setTimeout(() => {
+        dot.remove();
+        setTodayImprints((c) => c + 1);
+        setTotalImprints((c) => c + 1);
+        setImprintBounce(true);
+        setTimeout(() => setImprintBounce(false), 300);
+      }, 600 + delay);
+    }
+
+    // Inject keyframes if not already
+    if (!document.getElementById('imprint-fly-style')) {
+      const style = document.createElement('style');
+      style.id = 'imprint-fly-style';
+      style.textContent = `
+        @keyframes imprintFly {
+          0% { transform:scale(1);opacity:1; }
+          50% { transform:translate(${(endX - startX) * 0.5}px,${(endY - startY) * 0.5 - 40}px) scale(0.8);opacity:0.8; }
+          100% { transform:translate(${endX - startX}px,${endY - startY}px) scale(0.3);opacity:0; }
+        }
+      `;
+      document.head.appendChild(style);
+    } else {
+      const style = document.getElementById('imprint-fly-style')!;
+      style.textContent = `
+        @keyframes imprintFly {
+          0% { transform:scale(1);opacity:1; }
+          50% { transform:translate(${(endX - startX) * 0.5}px,${(endY - startY) * 0.5 - 40}px) scale(0.8);opacity:0.8; }
+          100% { transform:translate(${endX - startX}px,${endY - startY}px) scale(0.3);opacity:0; }
+        }
+      `;
+    }
+  }, []);
+
+  useEffect(() => {
+    countsRef.current = { totalCount, correctCount, spellingCorrect };
+  }, [totalCount, correctCount, spellingCorrect]);
 
   useEffect(() => {
     if (!words || words.length === 0) navigate('/home');
@@ -79,25 +150,34 @@ export default function SessionPage() {
     }
   };
 
-  const handleSelect = (option: string) => {
+  const handleSelect = (option: string, e?: React.MouseEvent) => {
     if (showResult) return;
     setSelected(option);
     setShowResult(true);
     setTotalCount((c) => c + 1);
     if (option === quiz?.correct_answer) {
       setCorrectCount((c) => c + 1);
+      if (e) flyImprint(e.currentTarget as HTMLElement, 1);
     }
     setShowCard(true);
   };
 
+  const handleSpellingInput = (value: string) => {
+    setSpellingInput(value);
+    if (!spellingSubmitted && value.toLowerCase().trim() === word?.english.toLowerCase()) {
+      setSpellingSubmitted(true);
+      setTotalCount((c) => c + 1);
+      setSpellingCorrect((c) => c + 1);
+      setShowCard(true);
+      flyImprint(spellingRef.current, 2);
+    }
+  };
+
   const submitSpelling = () => {
+    // 如果还没提交过且输入不正确，记为答错
     if (quizType !== 'spelling' || spellingSubmitted) return;
     setSpellingSubmitted(true);
     setTotalCount((c) => c + 1);
-    if (spellingInput.toLowerCase().trim() === word.english.toLowerCase()) {
-      setCorrectCount((c) => c + 1);
-      setSpellingCorrect((c) => c + 1);
-    }
   };
 
   const handlePrev = () => {
@@ -136,8 +216,13 @@ export default function SessionPage() {
   };
 
   const handleConfirmDone = async () => {
-    await confirmDone(words.map((w) => w.id), totalCount, correctCount, spellingCorrect);
-    navigate('/home');
+    submitSpelling();
+    // 用 setTimeout 确保 state 更新后再读 ref
+    setTimeout(async () => {
+      const c = countsRef.current;
+      await confirmDone(words.map((w) => w.id), c.totalCount, c.correctCount, c.spellingCorrect);
+      navigate('/home');
+    }, 0);
   };
 
   if (!words || words.length === 0) return null;
@@ -175,6 +260,10 @@ export default function SessionPage() {
     return (
       <div className="pb-6">
         <NavBar title="题型选择" onBack={() => navigate('/home')} />
+        <div className="flex justify-center gap-4 py-2 bg-white/80 backdrop-blur border-b border-gray-100">
+          <span className="text-xs text-gray-400">今日印记 <span className="text-sm font-bold text-blue-500">{todayImprints}</span></span>
+          <span className="text-xs text-gray-400">总印记 <span className="text-sm font-bold text-gray-700">{totalImprints}</span></span>
+        </div>
         <div className="px-4 pt-10 space-y-4 text-center">
           {totalCount > 0 && (
             <p className="text-sm text-gray-500">
@@ -240,7 +329,7 @@ export default function SessionPage() {
             ref={spellingRef}
             type="text"
             value={spellingInput}
-            onChange={(e) => { if (!spellingSubmitted) setSpellingInput(e.target.value); }}
+            onChange={(e) => { if (!spellingSubmitted) handleSpellingInput(e.target.value); }}
             className="w-full text-center text-lg py-2 border-b-2 border-gray-200 outline-none focus:border-blue-400 bg-transparent"
             placeholder="输入英文拼写..."
             autoFocus
@@ -258,6 +347,10 @@ export default function SessionPage() {
         title={`测试 ${currentIndex + 1}/${words.length}　✓${correctCount}`}
         onBack={() => { submitSpelling(); setPhase('done'); }}
       />
+      <div className="flex justify-center gap-4 py-2 bg-white/80 backdrop-blur border-b border-gray-100">
+        <span className="text-xs text-gray-400">今日印记 <span ref={imprintBarRef} className={`text-sm font-bold text-blue-500 inline-block transition-transform ${imprintBounce ? 'scale-125' : 'scale-100'}`}>{todayImprints}</span></span>
+        <span className="text-xs text-gray-400">总印记 <span className={`text-sm font-bold text-gray-700 inline-block transition-transform ${imprintBounce ? 'scale-110' : 'scale-100'}`}>{totalImprints}</span></span>
+      </div>
       <div className="flex-1 px-4 pt-6 space-y-4">
         {quizType === 'spelling' ? (
           renderSpelling()
@@ -289,7 +382,7 @@ export default function SessionPage() {
                   <button
                     key={i}
                     className={`w-full rounded-xl p-4 text-left text-base transition ${cls}`}
-                    onClick={(e) => { e.stopPropagation(); handleSelect(opt); }}
+                    onClick={(e) => { e.stopPropagation(); handleSelect(opt, e); }}
                   >
                     {opt}
                   </button>
@@ -298,7 +391,7 @@ export default function SessionPage() {
             </div>
           </>
         )}
-        <div className="flex gap-3">
+        <div className="flex gap-2">
           <Button size="md" className="flex-1" variant={currentIndex > 0 ? 'primary' : 'secondary'} onClick={handlePrev} disabled={currentIndex === 0}>
             上一题
           </Button>
@@ -307,6 +400,9 @@ export default function SessionPage() {
           </Button>
           <Button size="md" className="flex-1" variant="ghost" onClick={() => { submitSpelling(); setPhase('done'); }}>
             题型
+          </Button>
+          <Button size="md" className="flex-1" variant="primary" onClick={handleConfirmDone}>
+            学完了
           </Button>
         </div>
       </div>

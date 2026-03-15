@@ -397,15 +397,16 @@ def confirm_done(
             )
             db.add(progress)
 
-        # 记录学习日志
+        # 记录学习日志（答题统计只记在第一条，避免重复计算印记）
+        is_first = (word_id == body.word_ids[0])
         record = LearningRecord(
             user_id=user.id,
             word_id=word_id,
             studied_at=now,
             stage_at_time=progress.current_stage,
-            total_questions=body.total_questions,
-            correct_answers=body.correct_answers,
-            spelling_correct=body.spelling_correct,
+            total_questions=body.total_questions if is_first else 0,
+            correct_answers=body.correct_answers if is_first else 0,
+            spelling_correct=body.spelling_correct if is_first else 0,
         )
         db.add(record)
 

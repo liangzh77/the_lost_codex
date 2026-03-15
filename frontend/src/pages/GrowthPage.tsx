@@ -4,16 +4,14 @@ import NavBar from '../components/NavBar';
 import TabBar from '../components/TabBar';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 
-type ChartTab = 'energy' | 'heatmap';
+type ChartTab = 'imprints' | 'heatmap';
 
 interface Stats {
   today_imprints: number;
-  today_energy: number;
   total_imprints: number;
-  total_energy: number;
   level: number;
   level_name: string;
-  next_level_energy: number | null;
+  next_level_imprints: number | null;
 }
 
 interface Achievement {
@@ -21,27 +19,46 @@ interface Achievement {
   name: string;
   desc: string;
   icon: string;
+  tier: number;
+  max_tier: number;
+  next_name: string | null;
   unlocked: boolean;
   progress: number;
   target: string;
+  value: number;
+  all_tiers: { name: string; desc: string; threshold: number }[];
 }
+
+const CURVE_RANGES = [
+  { label: '3天', days: 3 },
+  { label: '一周', days: 7 },
+  { label: '一月', days: 30 },
+  { label: '一季', days: 90 },
+  { label: '一年', days: 365 },
+  { label: '全部', days: 0 },
+];
 
 export default function GrowthPage() {
   const [stats, setStats] = useState<Stats | null>(null);
-  const [chartTab, setChartTab] = useState<ChartTab>('energy');
+  const [chartTab, setChartTab] = useState<ChartTab>('imprints');
   const [heatmapData, setHeatmapData] = useState<{ date: string; count: number }[]>([]);
-  const [energyData, setEnergyData] = useState<{ date: string; energy: number; imprints: number }[]>([]);
+  const [imprintData, setImprintData] = useState<{ date: string; imprints: number; spelling_imprints: number }[]>([]);
   const [achievements, setAchievements] = useState<Achievement[]>([]);
+  const [curveDays, setCurveDays] = useState(30);
+  const [showAchievementWall, setShowAchievementWall] = useState(false);
 
   useEffect(() => {
     getGrowthStats().then((r) => setStats(r.data));
     getHeatmap(90).then((r) => setHeatmapData(r.data));
-    getEnergyCurve(30).then((r) => setEnergyData(r.data));
     getAchievements().then((r) => setAchievements(r.data));
   }, []);
 
-  const levelProgress = stats && stats.next_level_energy
-    ? Math.round((stats.total_energy / stats.next_level_energy) * 100)
+  useEffect(() => {
+    getEnergyCurve(curveDays).then((r) => setImprintData(r.data));
+  }, [curveDays]);
+
+  const levelProgress = stats && stats.next_level_imprints
+    ? Math.round((stats.total_imprints / stats.next_level_imprints) * 100)
     : 100;
 
   return (
@@ -56,15 +73,15 @@ export default function GrowthPage() {
                 <p className="text-xl font-bold text-gray-900">Lv.{stats.level} {stats.level_name}</p>
               </div>
               <div className="text-right">
-                <p className="text-xs text-gray-400">累计能量</p>
-                <p className="text-xl font-bold text-blue-500">{stats.total_energy}</p>
+                <p className="text-xs text-gray-400">累计印记</p>
+                <p className="text-xl font-bold text-blue-500">{stats.total_imprints}</p>
               </div>
             </div>
-            {stats.next_level_energy && (
+            {stats.next_level_imprints && (
               <div>
                 <div className="flex justify-between text-xs text-gray-400 mb-1">
                   <span>升级进度</span>
-                  <span>{stats.total_energy}/{stats.next_level_energy}</span>
+                  <span>{stats.total_imprints}/{stats.next_level_imprints}</span>
                 </div>
                 <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                   <div className="h-full bg-blue-500 rounded-full transition-all" style={{ width: `${levelProgress}%` }} />
@@ -77,10 +94,6 @@ export default function GrowthPage() {
                 <p className="text-xs text-gray-400">今日印记</p>
               </div>
               <div className="flex-1 bg-gray-50 rounded-xl p-3 text-center">
-                <p className="text-lg font-bold text-blue-500">{stats.today_energy}</p>
-                <p className="text-xs text-gray-400">今日能量</p>
-              </div>
-              <div className="flex-1 bg-gray-50 rounded-xl p-3 text-center">
                 <p className="text-lg font-bold text-gray-700">{stats.total_imprints}</p>
                 <p className="text-xs text-gray-400">总印记</p>
               </div>
@@ -91,25 +104,35 @@ export default function GrowthPage() {
         <div className="bg-white rounded-2xl p-4 space-y-3">
           <div className="flex gap-2">
             <button
-              className={`flex-1 py-1.5 text-sm rounded-lg ${chartTab === 'energy' ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-500'}`}
-              onClick={() => setChartTab('energy')}
-            >能量曲线</button>
+              className={`flex-1 py-1.5 text-sm rounded-lg ${chartTab === 'imprints' ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-500'}`}
+              onClick={() => setChartTab('imprints')}
+            >印记曲线</button>
             <button
               className={`flex-1 py-1.5 text-sm rounded-lg ${chartTab === 'heatmap' ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-500'}`}
               onClick={() => setChartTab('heatmap')}
             >印记记录</button>
           </div>
 
-          {chartTab === 'energy' ? (
-            <div className="h-52">
+          {chartTab === 'imprints' ? (
+            <>
+              <div className="flex gap-1">
+                {CURVE_RANGES.map((r) => (
+                  <button
+                    key={r.days}
+                    className={`flex-1 py-1 text-xs rounded-md ${curveDays === r.days ? 'bg-blue-100 text-blue-600' : 'bg-gray-50 text-gray-400'}`}
+                    onClick={() => setCurveDays(r.days)}
+                  >{r.label}</button>
+                ))}
+              </div>
+              <div className="h-52">
               <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={energyData} margin={{ top: 8, right: 4, left: -12, bottom: 0 }}>
+                <AreaChart data={imprintData} margin={{ top: 8, right: 4, left: -12, bottom: 0 }}>
                   <defs>
-                    <linearGradient id="gradEnergy" x1="0" y1="0" x2="0" y2="1">
+                    <linearGradient id="gradImprints" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="0%" stopColor="#3b82f6" stopOpacity={0.25} />
                       <stop offset="100%" stopColor="#3b82f6" stopOpacity={0.02} />
                     </linearGradient>
-                    <linearGradient id="gradImprints" x1="0" y1="0" x2="0" y2="1">
+                    <linearGradient id="gradSpelling" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="0%" stopColor="#a855f7" stopOpacity={0.2} />
                       <stop offset="100%" stopColor="#a855f7" stopOpacity={0.02} />
                     </linearGradient>
@@ -141,11 +164,12 @@ export default function GrowthPage() {
                     labelFormatter={(v) => `${v}`}
                     cursor={{ stroke: '#d4d4d8', strokeWidth: 1 }}
                   />
-                  <Area type="monotone" dataKey="energy" stroke="#3b82f6" strokeWidth={2.5} fill="url(#gradEnergy)" name="能量" dot={false} activeDot={{ r: 4, strokeWidth: 2, fill: '#fff' }} />
-                  <Area type="monotone" dataKey="imprints" stroke="#a855f7" strokeWidth={2} fill="url(#gradImprints)" name="印记" dot={false} activeDot={{ r: 4, strokeWidth: 2, fill: '#fff' }} />
+                  <Area type="monotone" dataKey="imprints" stroke="#3b82f6" strokeWidth={2.5} fill="url(#gradImprints)" name="印记" dot={false} activeDot={{ r: 4, strokeWidth: 2, fill: '#fff' }} />
+                  <Area type="monotone" dataKey="spelling_imprints" stroke="#a855f7" strokeWidth={2} fill="url(#gradSpelling)" name="拼写印记" dot={false} activeDot={{ r: 4, strokeWidth: 2, fill: '#fff' }} />
                 </AreaChart>
               </ResponsiveContainer>
             </div>
+            </>
           ) : (
             <div>
               {renderHeatmap(heatmapData)}
@@ -154,19 +178,38 @@ export default function GrowthPage() {
         </div>
 
         <div className="bg-white rounded-2xl p-4 space-y-3">
-          <h3 className="text-sm font-medium text-gray-400">成就</h3>
+          <div className="flex justify-between items-center">
+            <h3 className="text-sm font-medium text-gray-400">成就</h3>
+            <button
+              className="text-xs text-blue-500 px-2 py-1 rounded-lg bg-blue-50"
+              onClick={() => setShowAchievementWall(true)}
+            >成就墙</button>
+          </div>
           {achievements.map((a) => (
             <div key={a.key} className="flex items-center gap-3 py-2 border-b border-gray-50 last:border-0">
-              <span className={`text-2xl ${a.unlocked ? '' : 'grayscale opacity-40'}`}>{a.icon}</span>
+              <span className={`text-2xl ${a.tier > 0 ? '' : 'grayscale opacity-40'}`}>{a.icon}</span>
               <div className="flex-1">
                 <div className="flex justify-between items-center">
-                  <p className={`text-sm font-medium ${a.unlocked ? 'text-gray-900' : 'text-gray-400'}`}>{a.name}</p>
-                  {a.unlocked && <span className="text-xs text-green-500">已解锁</span>}
+                  <p className={`text-sm font-medium ${a.tier > 0 ? 'text-gray-900' : 'text-gray-400'}`}>{a.name}</p>
+                  {a.tier > 0 && (
+                    <span className="text-xs text-green-500">
+                      {a.tier === a.max_tier ? '已满级' : `${a.tier}/${a.max_tier}`}
+                    </span>
+                  )}
                 </div>
-                <p className="text-xs text-gray-400">{a.target || a.desc}</p>
-                {!a.unlocked && (
+                <p className="text-xs text-gray-400">
+                  {a.next_name ? `下一阶: ${a.next_name} (${a.target})` : a.target}
+                </p>
+                {a.tier < a.max_tier && (
                   <div className="mt-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
                     <div className="h-full bg-blue-400 rounded-full" style={{ width: `${Math.round(a.progress * 100)}%` }} />
+                  </div>
+                )}
+                {a.tier > 0 && a.tier < a.max_tier && (
+                  <div className="flex gap-0.5 mt-1">
+                    {Array.from({ length: a.max_tier }).map((_, i) => (
+                      <div key={i} className={`h-1 flex-1 rounded-full ${i < a.tier ? 'bg-green-400' : 'bg-gray-100'}`} />
+                    ))}
                   </div>
                 )}
               </div>
@@ -174,6 +217,45 @@ export default function GrowthPage() {
           ))}
         </div>
       </div>
+      {showAchievementWall && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40" onClick={() => setShowAchievementWall(false)}>
+          <div className="bg-white rounded-2xl p-5 mx-4 max-w-sm w-full" onClick={(e) => e.stopPropagation()}>
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-base font-medium text-gray-900">成就墙</h3>
+              <button className="text-gray-400 text-lg" onClick={() => setShowAchievementWall(false)}>✕</button>
+            </div>
+            <div className="space-y-4">
+              {achievements.map((a) => {
+                const categoryName = a.key === 'deep_cultivator' ? '单日印记'
+                  : a.key === 'imprint_collector' ? '累计印记'
+                  : a.key === 'spelling_master' ? '拼写正确'
+                  : '已掌握单词';
+                const currentValue = a.value;
+                return (
+                <div key={a.key}>
+                  <div className="flex items-center gap-1.5 mb-2">
+                    <span className="text-base">{a.icon}</span>
+                    <span className="text-xs text-gray-500">{categoryName}</span>
+                    <span className="text-xs text-green-500 ml-auto">当前 {currentValue}</span>
+                  </div>
+                  <div className="flex gap-2">
+                    {a.all_tiers.map((t, i) => (
+                      <div key={i} className="flex flex-col items-center gap-0.5 flex-1">
+                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-lg ${i < a.tier ? 'bg-green-50' : 'bg-gray-50 grayscale opacity-40'}`}>
+                          {a.icon}
+                        </div>
+                        <p className={`text-[10px] text-center leading-tight ${i < a.tier ? 'text-gray-700' : 'text-gray-300'}`}>{t.name}</p>
+                        <p className={`text-[9px] ${i < a.tier ? 'text-gray-400' : 'text-gray-300'}`}>{t.threshold}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
       <TabBar />
     </div>
   );

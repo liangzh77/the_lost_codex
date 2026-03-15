@@ -29,6 +29,7 @@ export default function SettingsPage() {
   const [cardOpen, setCardOpen] = useState(false);
   const [cardWord, setCardWord] = useState<any>(null);
   const [loadingWordIds, setLoadingWordIds] = useState<Set<number>>(new Set());
+  const [showBanks, setShowBanks] = useState(false);
 
   useEffect(() => {
     getWordBanks().then((res) => setBanks(res.data));
@@ -187,8 +188,11 @@ export default function SettingsPage() {
         </div>
 
         <div className="bg-white rounded-2xl p-4 space-y-3">
-          <h3 className="text-sm font-medium text-gray-400">可用词库</h3>
-          {banks.map((b) => (
+          <div className="flex justify-between items-center cursor-pointer" onClick={() => setShowBanks(!showBanks)}>
+            <h3 className="text-sm font-medium text-gray-400">可用词库</h3>
+            <span className="text-xs text-gray-400">{showBanks ? '收起 ▲' : '展开 ▼'}</span>
+          </div>
+          {showBanks && banks.map((b) => (
             <div key={b.id} className="py-2 border-b border-gray-50 last:border-0">
               <div className="flex justify-between items-center cursor-pointer" onClick={() => handleBankClick(b.id)}>
                 <div className="flex items-center gap-2">
