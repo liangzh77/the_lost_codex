@@ -528,6 +528,24 @@ def get_learning_stats(
     return {"learning": learning, "mastered": mastered}
 
 
+def _group_display_names(db: Session, user_id: int) -> dict[int, str]:
+    """按创建时间给有单词的组分配连续序号"""
+    all_groups = (
+        db.query(LearningGroup)
+        .filter(LearningGroup.user_id == user_id)
+        .order_by(LearningGroup.created_at.asc())
+        .all()
+    )
+    # 只给有单词的组编号
+    names = {}
+    seq = 1
+    for g in all_groups:
+        if len(g.words_progress) > 0:
+            names[g.id] = f"第{seq}组"
+            seq += 1
+    return names
+
+
 # ---------- 组列表 ----------
 
 @router.get("/groups/recent")
@@ -537,6 +555,7 @@ def get_recent_groups(
 ):
     """最近的学习组（按时间倒序）"""
     today = date.today()
+    display_names = _group_display_names(db, user.id)
     groups = (
         db.query(LearningGroup)
         .filter(LearningGroup.user_id == user.id)
@@ -560,7 +579,7 @@ def get_recent_groups(
         ).scalar() if word_ids else None
         result.append({
             "id": g.id,
-            "name": g.name,
+            "name": display_names.get(g.id, g.name),
             "word_count": len(g.words_progress),
             "stage": min_stage,
             "created_at": str(last_studied) if last_studied else str(g.created_at),
@@ -578,6 +597,7 @@ def get_learning_groups(
 ):
     """在学的组（组内有未掌握的词）"""
     today = date.today()
+    display_names = _group_display_names(db, user.id)
     groups = (
         db.query(LearningGroup)
         .filter(LearningGroup.user_id == user.id)
@@ -600,7 +620,7 @@ def get_learning_groups(
             ).scalar() if word_ids else None
             result.append({
                 "id": g.id,
-                "name": g.name,
+                "name": display_names.get(g.id, g.name),
                 "word_count": len(g.words_progress),
                 "learning_count": learning_count,
                 "stage": min_stage,
@@ -645,6 +665,7 @@ def get_mastered_groups(
     db: Session = Depends(get_db),
 ):
     """已掌握的组（组内所有词都已掌握）"""
+    display_names = _group_display_names(db, user.id)
     groups = (
         db.query(LearningGroup)
         .filter(LearningGroup.user_id == user.id)
@@ -660,7 +681,7 @@ def get_mastered_groups(
             ).scalar() if word_ids else None
             result.append({
                 "id": g.id,
-                "name": g.name,
+                "name": display_names.get(g.id, g.name),
                 "word_count": len(g.words_progress),
                 "created_at": str(last_studied) if last_studied else str(g.created_at),
             })

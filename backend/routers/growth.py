@@ -158,7 +158,13 @@ def get_imprint_curve(
 def _calc_achievement_value(key: str, all_records: list[LearningRecord], today: date, user: User = None, db: Session = None) -> tuple[int, str]:
     """计算成就的当前数值和单位"""
     if key == "deep_cultivator":
-        return sum(calc_imprints(r) for r in all_records if r.studied_at.date() == today), "今日印记"
+        # 计算所有天中单日最高印记
+        daily: dict[date, int] = {}
+        for r in all_records:
+            d = r.studied_at.date()
+            daily[d] = daily.get(d, 0) + calc_imprints(r)
+        max_daily = max(daily.values()) if daily else 0
+        return max_daily, "单日印记"
     elif key == "imprint_collector":
         return sum(calc_imprints(r) for r in all_records), "累计印记"
     elif key == "spelling_master":

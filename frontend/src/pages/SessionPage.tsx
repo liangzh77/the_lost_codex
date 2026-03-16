@@ -53,6 +53,20 @@ export default function SessionPage() {
   const [totalImprints, setTotalImprints] = useState(0);
   const [imprintBounce, setImprintBounce] = useState(false);
   const [showPhonetic, setShowPhonetic] = useState(false);
+  const [seenWords, setSeenWords] = useState<Set<number>>(new Set());
+  const [quizOrder, setQuizOrder] = useState<number[]>(() => {
+    if (!words || words.length === 0) return [];
+    if (!isFirst) {
+      // 直接进入 quiz，初始化随机顺序
+      const indices = Array.from({ length: words.length }, (_, i) => i);
+      for (let i = indices.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [indices[i], indices[j]] = [indices[j], indices[i]];
+      }
+      return indices;
+    }
+    return [];
+  });
 
   useEffect(() => {
     getGrowthStats().then((r) => {
@@ -121,6 +135,7 @@ export default function SessionPage() {
 
   useEffect(() => {
     if (phase === 'quiz' && words && currentIndex < words.length) {
+      const wi = quizOrder[currentIndex] ?? currentIndex;
       if (quizType === 'spelling') {
         setSpellingInput('');
         setSpellingSubmitted(false);
@@ -129,16 +144,16 @@ export default function SessionPage() {
         // 拼写题：只有显示音标时才播放发音
         if (showPhonetic) {
           setTimeout(() => {
-            const audio = new Audio(getWordAudio(words[currentIndex].english));
+            const audio = new Audio(getWordAudio(words[wi].english));
             audio.play().catch(() => {});
           }, 300);
         }
       } else {
-        loadQuiz(words[currentIndex].id, quizType);
+        loadQuiz(words[wi].id, quizType);
         // 其他题型：英文相关题型自动播放（中文选英文不播，避免泄露答案）
         if (quizType === 'en_to_cn' || quizType === 'en_to_explanation') {
           setTimeout(() => {
-            const audio = new Audio(getWordAudio(words[currentIndex].english));
+            const audio = new Audio(getWordAudio(words[wi].english));
             audio.play().catch(() => {});
           }, 300);
         }
@@ -208,16 +223,49 @@ export default function SessionPage() {
     }
   };
 
+  useEffect(() => {
+    if (phase === 'first_look' && words && currentIndex < words.length) {
+      const audio = new Audio(getWordAudio(words[currentIndex].english));
+      audio.play().catch(() => {});
+      // 首次看到该词，加印记
+      const wordId = words[currentIndex].id;
+      if (!seenWords.has(wordId)) {
+        setSeenWords((prev) => new Set(prev).add(wordId));
+        setTodayImprints((c) => c + 1);
+        setTotalImprints((c) => c + 1);
+        setImprintBounce(true);
+        setTimeout(() => setImprintBounce(false), 300);
+      }
+    }
+  }, [phase, currentIndex]);
+
+  const handleFirstLookPrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
+  const shuffleOrder = () => {
+    const indices = Array.from({ length: words.length }, (_, i) => i);
+    for (let i = indices.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [indices[i], indices[j]] = [indices[j], indices[i]];
+    }
+    setQuizOrder(indices);
+  };
+
   const handleFirstLookNext = () => {
     if (currentIndex < words.length - 1) {
       setCurrentIndex(currentIndex + 1);
     } else {
+      shuffleOrder();
       setCurrentIndex(0);
       setPhase('quiz');
     }
   };
 
   const handleAgain = (type: string) => {
+    shuffleOrder();
     setCurrentIndex(0);
     setCorrectCount(0);
     setTotalCount(0);
@@ -246,17 +294,33 @@ export default function SessionPage() {
 
   if (!words || words.length === 0) return null;
 
-  const word = words[currentIndex];
+  // first_look 按原始顺序，quiz 按随机顺序
+  const wordIndex = phase === 'first_look' ? currentIndex : (quizOrder[currentIndex] ?? currentIndex);
+  const word = words[wordIndex];
 
   // 第一次学习：展示完整信息
   if (phase === 'first_look') {
     return (
       <div className="pb-6">
         <NavBar title={`认识新词 ${currentIndex + 1}/${words.length}`} onBack={() => navigate('/home')} />
+        <div className="flex justify-center gap-4 py-2 bg-white/80 backdrop-blur border-b border-gray-100">
+          <span className="text-xs text-gray-400">今日印记 <span className={`text-sm font-bold text-blue-500 inline-block transition-transform ${imprintBounce ? 'scale-125' : 'scale-100'}`}>{todayImprints}</span></span>
+          <span className="text-xs text-gray-400">总印记 <span className={`text-sm font-bold text-gray-700 inline-block transition-transform ${imprintBounce ? 'scale-110' : 'scale-100'}`}>{totalImprints}</span></span>
+        </div>
         <div className="px-4 pt-6 space-y-4">
           <div className="bg-white rounded-2xl p-6 shadow-sm text-center space-y-3">
-            <h2 className="text-3xl font-bold text-gray-900">{word.english}</h2>
-            <p className="text-sm text-gray-400">{word.phonetic}</p>
+            <h2
+              className="text-3xl font-bold text-gray-900 cursor-pointer"
+              onClick={() => { const a = new Audio(getWordAudio(word.english)); a.play().catch(() => {}); }}
+            >
+              {word.english}
+            </h2>
+            <p
+              className="text-sm text-gray-400 cursor-pointer"
+              onClick={() => { const a = new Audio(getWordAudio(word.english)); a.play().catch(() => {}); }}
+            >
+              {word.phonetic}
+            </p>
             <p className="text-xl text-gray-700">{word.chinese}</p>
             <div className="bg-gray-50 rounded-xl p-3 text-sm text-left space-y-1">
               <p><span className="text-gray-400">中文释义：</span>{word.chinese_explanation}</p>
@@ -266,9 +330,14 @@ export default function SessionPage() {
               {word.example_sentence}
             </div>
           </div>
-          <Button size="lg" onClick={handleFirstLookNext}>
-            {currentIndex < words.length - 1 ? '下一个' : '开始测试'}
-          </Button>
+          <div className="flex gap-2">
+            <Button size="lg" className="flex-1" variant={currentIndex > 0 ? 'secondary' : 'secondary'} onClick={handleFirstLookPrev} disabled={currentIndex === 0}>
+              上一个
+            </Button>
+            <Button size="lg" className="flex-1" onClick={handleFirstLookNext}>
+              {currentIndex < words.length - 1 ? '下一个' : '开始测试'}
+            </Button>
+          </div>
         </div>
       </div>
     );
