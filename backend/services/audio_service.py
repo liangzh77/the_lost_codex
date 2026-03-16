@@ -62,8 +62,25 @@ def download_and_cache_audio(word: str, url: str) -> Path | None:
         return None
 
 
+def get_audio_from_google_tts(word: str) -> Path | None:
+    """从 Google TTS 获取发音并缓存"""
+    try:
+        url = f"https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q={word}"
+        resp = requests.get(url, timeout=15)
+        if resp.status_code != 200 or len(resp.content) < 100:
+            return None
+
+        filename = f"{word.lower().replace(' ', '_')}.mp3"
+        filepath = AUDIO_DIR / filename
+        with open(filepath, 'wb') as f:
+            f.write(resp.content)
+        return filepath
+    except Exception:
+        return None
+
+
 def get_word_audio(word: str) -> Path | None:
-    """获取单词音频文件路径，不存在则下载"""
+    """获取单词音频文���路径，不存在则下载"""
     filename = f"{word.lower().replace(' ', '_')}.mp3"
     filepath = AUDIO_DIR / filename
 
@@ -71,9 +88,12 @@ def get_word_audio(word: str) -> Path | None:
     if filepath.exists():
         return filepath
 
-    # 不存在，从API获取并下载
+    # 优先从 Free Dictionary API 获取
     audio_url = get_audio_url_from_api(word)
-    if not audio_url:
-        return None
+    if audio_url:
+        result = download_and_cache_audio(word, audio_url)
+        if result:
+            return result
 
-    return download_and_cache_audio(word, audio_url)
+    # 备选：Google TTS
+    return get_audio_from_google_tts(word)
