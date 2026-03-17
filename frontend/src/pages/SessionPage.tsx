@@ -264,7 +264,16 @@ export default function SessionPage() {
     }
   };
 
+  // 累计之前轮次的答题数据（切换题型时保存）
+  const [prevTotal, setPrevTotal] = useState(0);
+  const [prevCorrect, setPrevCorrect] = useState(0);
+  const [prevSpelling, setPrevSpelling] = useState(0);
+
   const handleAgain = (type: string) => {
+    // 累加当前轮次数据到历史
+    setPrevTotal((p) => p + totalCount);
+    setPrevCorrect((p) => p + correctCount);
+    setPrevSpelling((p) => p + spellingCorrect);
     shuffleOrder();
     setCurrentIndex(0);
     setCorrectCount(0);
@@ -278,10 +287,9 @@ export default function SessionPage() {
   };
 
   const handleConfirmDone = async () => {
-    // 直接计算最终值，避免 useEffect/ref 的竞态问题
-    let finalTotal = totalCount;
-    let finalCorrect = correctCount;
-    let finalSpelling = spellingCorrect;
+    let finalTotal = prevTotal + totalCount;
+    let finalCorrect = prevCorrect + correctCount;
+    let finalSpelling = prevSpelling + spellingCorrect;
 
     // 如果当前是拼写题且未提交，计为答错
     if (quizType === 'spelling' && !spellingSubmitted) {
