@@ -182,11 +182,6 @@ export default function SessionPage() {
     if (option === quiz?.correct_answer) {
       setCorrectCount((c) => c + 1);
       if (e) flyImprint(e.currentTarget as HTMLElement, 1);
-      // 英文选中文、英文选释义时播放发音
-      if (quizType === 'cn_to_en' || quizType === 'en_to_cn' || quizType === 'en_to_explanation') {
-        const audio = new Audio(getWordAudio(word.english));
-        audio.play().catch(() => {});
-      }
     }
     setShowCard(true);
   };
