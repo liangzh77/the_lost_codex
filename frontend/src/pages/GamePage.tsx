@@ -396,7 +396,7 @@ export default function GamePage() {
           <div style={{ fontSize: 64 }}>👾</div>
           <div className="text-center">
             <h1 className="text-2xl font-bold text-white mb-2">怪物防御战</h1>
-            <p className="text-slate-400 text-sm">听发音，选正确释义<br />别让怪物冲到你的城堡！</p>
+            <p className="text-slate-400 text-sm">听发音，选正确释义<br />别让怪物冲进你的城堡！</p>
           </div>
 
           {/* Word source selector */}
@@ -597,14 +597,14 @@ export default function GamePage() {
             if (e.animationName === 'monsterFall') handleMonsterReachBottom();
           }}
         >
-          <div style={{ fontSize: 52, filter: 'drop-shadow(0 0 12px rgba(239,68,68,0.5))' }}>👾</div>
           <div style={{
-            marginTop: 4, background: 'rgba(0,0,0,0.75)', color: '#fbbf24',
+            marginBottom: 6, background: 'rgba(0,0,0,0.75)', color: '#fbbf24',
             fontSize: 14, fontWeight: 700, padding: '3px 12px', borderRadius: 8,
             border: '1px solid rgba(251,191,36,0.3)', whiteSpace: 'nowrap',
           }}>
             {curWord.english}
           </div>
+          <div style={{ fontSize: 52, filter: 'drop-shadow(0 0 12px rgba(239,68,68,0.5))' }}>👾</div>
         </div>
 
         {/* Cannonball */}
@@ -617,22 +617,26 @@ export default function GamePage() {
           }} />
         )}
 
-        {/* Castle + controls */}
-        <div style={{ position: 'absolute', bottom: 10, left: '50%', transform: 'translateX(-50%)', display: 'flex', alignItems: 'center', gap: 20 }}>
-          <button
-            onClick={handleQuit}
-            style={{ width: 44, height: 44, borderRadius: '50%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}
-          >
-            <span style={{ fontSize: 14, opacity: 0.4, color: '#fff' }}>✕</span>
-          </button>
+        {/* Castle */}
+        <div style={{ position: 'absolute', bottom: 10, left: '50%', transform: 'translateX(-50%)' }}>
           <div style={{ fontSize: 34 }}>🏰</div>
-          <button
-            onClick={handlePauseResume}
-            style={{ width: 44, height: 44, borderRadius: '50%', background: isPaused ? 'rgba(99,102,241,0.18)' : 'rgba(255,255,255,0.06)', border: `1px solid ${isPaused ? 'rgba(99,102,241,0.4)' : 'rgba(255,255,255,0.1)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0, transition: 'all 0.2s' }}
-          >
-            <span style={{ fontSize: 14, opacity: isPaused ? 0.9 : 0.4, color: isPaused ? '#a5b4fc' : '#fff' }}>{isPaused ? '▶' : '⏸'}</span>
-          </button>
         </div>
+
+        {/* Quit button — left edge */}
+        <button
+          onClick={handleQuit}
+          style={{ position: 'absolute', bottom: 10, left: 8, width: 132, height: 132, borderRadius: '50%', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+        >
+          <span style={{ fontSize: 22, opacity: 0.3, color: '#fff' }}>✕</span>
+        </button>
+
+        {/* Pause/Resume button — right edge */}
+        <button
+          onClick={handlePauseResume}
+          style={{ position: 'absolute', bottom: 10, right: 8, width: 132, height: 132, borderRadius: '50%', background: isPaused ? 'rgba(99,102,241,0.15)' : 'rgba(255,255,255,0.05)', border: `1px solid ${isPaused ? 'rgba(99,102,241,0.35)' : 'rgba(255,255,255,0.08)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', transition: 'all 0.2s' }}
+        >
+          <span style={{ fontSize: 22, opacity: isPaused ? 0.85 : 0.3, color: isPaused ? '#a5b4fc' : '#fff' }}>{isPaused ? '▶' : '⏸'}</span>
+        </button>
       </div>
 
       {/* Urgency bar */}
