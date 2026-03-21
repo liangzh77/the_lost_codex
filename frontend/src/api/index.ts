@@ -42,9 +42,11 @@ export const confirmDone = (wordIds: number[], totalQuestions = 0, correctAnswer
 
 export const getRecentWords = () => api.get('/learning/words/recent');
 
-export const getLearningWords = () => api.get('/learning/words/learning');
+export const getLearningWords = (bankId?: number) =>
+  api.get('/learning/words/learning', { params: bankId ? { bank_id: bankId } : {} });
 
-export const getMasteredWords = () => api.get('/learning/words/mastered');
+export const getMasteredWords = (bankId?: number) =>
+  api.get('/learning/words/mastered', { params: bankId ? { bank_id: bankId } : {} });
 
 export const getLearningStats = () => api.get('/learning/stats');
 

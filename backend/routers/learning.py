@@ -465,19 +465,18 @@ def get_recent_words(
 def get_learning_words(
     user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
+    bank_id: int | None = None,
 ):
     """正在背诵的单词"""
-    progress_list = (
-        db.query(UserWordProgress)
-        .filter(
-            UserWordProgress.user_id == user.id,
-            UserWordProgress.current_stage < get_total_stages(user.review_intervals),
-        )
-        .all()
+    q = db.query(UserWordProgress).filter(
+        UserWordProgress.user_id == user.id,
+        UserWordProgress.current_stage < get_total_stages(user.review_intervals),
     )
+    if bank_id is not None:
+        q = q.join(Word, UserWordProgress.word_id == Word.id).filter(Word.word_bank_id == bank_id)
+    progress_list = q.all()
     result = []
     for p in progress_list:
-        # 获取最近学习时间
         last_record = (
             db.query(LearningRecord)
             .filter(LearningRecord.user_id == user.id, LearningRecord.word_id == p.word_id)
@@ -493,16 +492,16 @@ def get_learning_words(
 def get_mastered_words(
     user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
+    bank_id: int | None = None,
 ):
     """已掌握的单词"""
-    progress_list = (
-        db.query(UserWordProgress)
-        .filter(
-            UserWordProgress.user_id == user.id,
-            UserWordProgress.current_stage >= get_total_stages(user.review_intervals),
-        )
-        .all()
+    q = db.query(UserWordProgress).filter(
+        UserWordProgress.user_id == user.id,
+        UserWordProgress.current_stage >= get_total_stages(user.review_intervals),
     )
+    if bank_id is not None:
+        q = q.join(Word, UserWordProgress.word_id == Word.id).filter(Word.word_bank_id == bank_id)
+    progress_list = q.all()
     return [
         {"id": p.word.id, "english": p.word.english, "chinese": p.word.chinese}
         for p in progress_list

@@ -1,12 +1,14 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getTodayReview, getLearningWords, getMasteredWords, getQuiz, confirmDone, getWordAudio, getGrowthStats } from '../api';
+import { getTodayReview, getLearningWords, getMasteredWords, getWordBanks, getQuiz, confirmDone, getWordAudio, getGrowthStats } from '../api';
 import NavBar from '../components/NavBar';
 import Button from '../components/Button';
 
 type GamePhase = 'entry' | 'loading' | 'playing' | 'gameover' | 'victory';
-type WordSource = 'today' | 'learning' | 'mastered' | 'all';
+type WordSource = 'today' | 'learning' | 'mastered' | 'all' | 'bank';
 type WordLimit = 10 | 20 | 30 | null;
+
+interface Bank { id: number; name: string; total: number; learned: number; }
 
 interface WordInfo {
   id: number;
@@ -36,6 +38,8 @@ export default function GamePage() {
   const [wordSource, setWordSource] = useState<WordSource>('today');
   const [wordLimit, setWordLimit] = useState<WordLimit>(10);
   const [availableCount, setAvailableCount] = useState<number | null>(null);
+  const [banks, setBanks] = useState<Bank[]>([]);
+  const [selectedBankId, setSelectedBankId] = useState<number | null>(null);
 
   // word/quiz data (state for rendering, refs for callbacks)
   const [words, setWords] = useState<WordInfo[]>([]);
@@ -85,14 +89,16 @@ export default function GamePage() {
   useEffect(() => {
     if (gamePhase !== 'entry') return;
     getGrowthStats().then(res => setTodayImprints(res.data.today_imprints));
+    getWordBanks().then(res => setBanks(res.data));
     const stored = parseInt(localStorage.getItem('monster_best_combo') || '0', 10);
     setBestCombo(stored);
     bestComboRef.current = stored;
   }, [gamePhase]);
 
-  // update available count when source changes
+  // update available count when source or bank changes
   useEffect(() => {
     if (gamePhase !== 'entry') return;
+    if (wordSource === 'bank' && selectedBankId === null) { setAvailableCount(null); return; }
     setAvailableCount(null);
     const fetch = async () => {
       if (wordSource === 'today') {
@@ -101,13 +107,16 @@ export default function GamePage() {
         const r = await getLearningWords(); setAvailableCount(r.data.length);
       } else if (wordSource === 'mastered') {
         const r = await getMasteredWords(); setAvailableCount(r.data.length);
+      } else if (wordSource === 'bank' && selectedBankId !== null) {
+        const [l, m] = await Promise.all([getLearningWords(selectedBankId), getMasteredWords(selectedBankId)]);
+        setAvailableCount(l.data.length + m.data.length);
       } else {
         const [l, m] = await Promise.all([getLearningWords(), getMasteredWords()]);
         setAvailableCount(l.data.length + m.data.length);
       }
     };
     fetch().catch(() => setAvailableCount(0));
-  }, [gamePhase, wordSource]);
+  }, [gamePhase, wordSource, selectedBankId]);
 
   // intercept browser back while playing
   useEffect(() => {
@@ -276,6 +285,9 @@ export default function GamePage() {
         rawWords = (await getLearningWords()).data;
       } else if (wordSource === 'mastered') {
         rawWords = (await getMasteredWords()).data;
+      } else if (wordSource === 'bank' && selectedBankId !== null) {
+        const [l, m] = await Promise.all([getLearningWords(selectedBankId), getMasteredWords(selectedBankId)]);
+        rawWords = [...l.data, ...m.data];
       } else {
         const [l, m] = await Promise.all([getLearningWords(), getMasteredWords()]);
         rawWords = [...l.data, ...m.data];
@@ -325,6 +337,7 @@ export default function GamePage() {
       { value: 'learning', label: '学习中' },
       { value: 'mastered', label: '已掌握' },
       { value: 'all', label: '全部' },
+      { value: 'bank', label: '按词库' },
     ];
     const limitOptions: { value: WordLimit; label: string }[] = [
       { value: 10, label: '10个' },
@@ -333,7 +346,8 @@ export default function GamePage() {
       { value: null, label: '无限' },
     ];
     const actualCount = wordLimit === null ? availableCount : Math.min(availableCount ?? 0, wordLimit);
-    const noWords = availableCount === 0;
+    const bankNotSelected = wordSource === 'bank' && selectedBankId === null;
+    const noWords = !bankNotSelected && availableCount === 0;
 
     return (
       <div className="min-h-screen flex flex-col" style={{ background: '#0f172a' }}>
@@ -366,6 +380,35 @@ export default function GamePage() {
               ))}
             </div>
           </div>
+
+          {/* Bank picker (only when source=bank) */}
+          {wordSource === 'bank' && (
+            <div className="w-full">
+              <p className="text-xs text-slate-500 mb-2 text-center">选择词库</p>
+              <div className="space-y-2 max-h-40 overflow-y-auto pr-1">
+                {banks.filter(b => b.learned > 0).map(b => (
+                  <button
+                    key={b.id}
+                    onClick={() => setSelectedBankId(b.id)}
+                    style={{
+                      display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                      width: '100%', padding: '10px 14px', borderRadius: 12, fontSize: 13,
+                      border: `1px solid ${selectedBankId === b.id ? '#3b82f6' : '#334155'}`,
+                      background: selectedBankId === b.id ? 'rgba(59,130,246,0.15)' : '#1e293b',
+                      color: selectedBankId === b.id ? '#60a5fa' : '#94a3b8',
+                      cursor: 'pointer', transition: 'all 0.15s',
+                    }}
+                  >
+                    <span style={{ fontWeight: 600 }}>{b.name}</span>
+                    <span style={{ fontSize: 11, color: '#475569' }}>{b.learned} 词</span>
+                  </button>
+                ))}
+                {banks.filter(b => b.learned > 0).length === 0 && (
+                  <p style={{ color: '#475569', fontSize: 12, textAlign: 'center' }}>暂无已学词库</p>
+                )}
+              </div>
+            </div>
+          )}
 
           {/* Word limit selector */}
           <div className="w-full">
@@ -409,7 +452,7 @@ export default function GamePage() {
             <Button
               size="lg"
               onClick={handleStartGame}
-              disabled={gamePhase === 'loading' || availableCount === null || noWords}
+              disabled={gamePhase === 'loading' || bankNotSelected || availableCount === null || noWords}
             >
               {gamePhase === 'loading' ? '准备中...' : '开始战斗！'}
             </Button>
