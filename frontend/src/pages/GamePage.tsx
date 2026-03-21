@@ -94,8 +94,6 @@ export default function GamePage() {
   const pauseStartRef = useRef(0);
   const tickFnRef = useRef<(() => void) | null>(null);
   const pendingGoNextRef = useRef(false);
-  const reachedBottomRef = useRef(false);
-  const pendingCannonballRef = useRef(false);
 
   // load entry screen data
   useEffect(() => {
@@ -165,18 +163,12 @@ export default function GamePage() {
     }
   }, [gamePhase]);
 
-  // 游戏开始时重置暂停状态（monsterKey 切换不重置，避免覆盖用户的手动暂停）
-  useEffect(() => {
-    if (gamePhase === 'playing') {
-      isPausedRef.current = false;
-      setIsPaused(false);
-    }
-  }, [gamePhase]);
-
   // progress bar via requestAnimationFrame
   useEffect(() => {
     if (gamePhase !== 'playing') return;
     spawnTimeRef.current = Date.now();
+    isPausedRef.current = false;
+    setIsPaused(false);
     pendingGoNextRef.current = false;
     setProgressWidth(0);
     const tick = () => {
@@ -241,8 +233,6 @@ export default function GamePage() {
       return;
     }
     answeredRef.current = false;
-    reachedBottomRef.current = false;
-    pendingCannonballRef.current = false;
     tryCountRef.current = 0;
     setWrongOptions(new Set());
     setMonsterDead(false);
@@ -255,8 +245,8 @@ export default function GamePage() {
   }, []);
 
   const handleMonsterReachBottom = useCallback(() => {
-    if (reachedBottomRef.current) return;
-    reachedBottomRef.current = true;
+    if (answeredRef.current) return;
+    answeredRef.current = true;
     cancelAnimationFrame(rafRef.current);
     comboRef.current = 0;
     setCombo(0);
@@ -286,12 +276,10 @@ export default function GamePage() {
       isPausedRef.current = false;
       setIsPaused(false);
       if (pendingGoNextRef.current) {
+        // Castle-hit resume: fire cannon at the monster, then go next
         pendingGoNextRef.current = false;
-        setMonsterDead(true); // 现在杀怪（手动暂停时延迟到这里）
-        if (pendingCannonballRef.current) {
-          pendingCannonballRef.current = false;
-          setShowCannonball(true);
-        }
+        setShowCannonball(true);
+        setMonsterDead(true);
         setTimeout(goNextWord, 600);
       } else if (tickFnRef.current) {
         rafRef.current = requestAnimationFrame(tickFnRef.current);
@@ -312,6 +300,15 @@ export default function GamePage() {
       answeredRef.current = true;
       cancelAnimationFrame(rafRef.current);
 
+      if (castleHit) {
+        // Castle-hit mode: correct answer redeems — no cannon, just resume to next word
+        pendingGoNextRef.current = false;
+        isPausedRef.current = false;
+        setIsPaused(false);
+        goNextWord();
+        return;
+      }
+
       const isFirst = tryCountRef.current === 0;
       const isSecond = tryCountRef.current === 1;
 
@@ -329,11 +326,7 @@ export default function GamePage() {
         firstTryCorrectIdsRef.current.push(wordsRef.current[wordIndexRef.current].id);
         firstTryCorrectCountRef.current++;
         flyImprint(e.currentTarget as HTMLElement, 1);
-        if (castleHit || isPausedRef.current) {
-          pendingCannonballRef.current = true;
-        } else {
-          setShowCannonball(true);
-        }
+        setShowCannonball(true);
       } else if (isSecond) {
         scoreRef.current += 10;
         setScore(scoreRef.current);
@@ -344,19 +337,14 @@ export default function GamePage() {
       const nf = Math.max(fallDurationRef.current * 0.95, MIN_FALL);
       fallDurationRef.current = nf;
       setFallDuration(nf);
-      reachedBottomRef.current = true; // 防止 resume 后幽灵 onAnimationEnd 扣血
-      if (castleHit || isPausedRef.current) {
-        if (castleHit) setMonsterDead(true); // 已在底部，直接隐藏
-        // 手动暂停：怪物保持可见，resume 时再杀
-        pendingGoNextRef.current = true;
-      } else {
-        setMonsterDead(true);
-        setTimeout(goNextWord, 600);
-      }
+      setMonsterDead(true);
+      setTimeout(goNextWord, 600);
     } else {
       setWrongOptions(prev => new Set(prev).add(option));
-      comboRef.current = 0;
-      setCombo(0);
+      if (!castleHit) {
+        comboRef.current = 0;
+        setCombo(0);
+      }
       tryCountRef.current++;
     }
   };
@@ -712,7 +700,7 @@ export default function GamePage() {
         <div className="space-y-2">
           {curQuiz.options.map((opt, i) => {
             const isWrong = wrongOptions.has(opt);
-            const isCorrectShown = monsterDead && opt === curQuiz.correct_answer;
+            const isCorrectShown = (monsterDead || castleHit) && opt === curQuiz.correct_answer;
             let bg = '#0f172a', border = '#334155', color = '#e2e8f0';
             if (isCorrectShown) { bg = 'rgba(34,197,94,0.1)'; border = '#22c55e'; color = '#4ade80'; }
             else if (isWrong) { bg = 'rgba(239,68,68,0.1)'; border = '#ef4444'; color = '#f87171'; }
