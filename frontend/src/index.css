@@ -32,10 +32,10 @@ html {
   to { bottom: 90%; opacity: 0; }
 }
 
-@keyframes hitExplosion {
-  0%   { transform: translate(-50%, -50%) scale(0.1); opacity: 1; }
-  60%  { transform: translate(-50%, -50%) scale(1.8); opacity: 0.8; }
-  100% { transform: translate(-50%, -50%) scale(3);   opacity: 0; }
+@keyframes explode {
+  0%   { transform: translate(-50%, -50%) scale(0.2); opacity: 1; }
+  60%  { transform: translate(-50%, -50%) scale(1.6); opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) scale(2.4); opacity: 0; }
 }
 
 @keyframes castleHit {

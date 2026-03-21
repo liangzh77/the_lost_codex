@@ -58,8 +58,7 @@ export default function GamePage() {
   const [pausedAnswered, setPausedAnswered] = useState(false);
   const [monsterDead, setMonsterDead] = useState(false);
   const [showCannonball, setShowCannonball] = useState(false);
-  const [hitPos, setHitPos] = useState<{ x: number; y: number } | null>(null);
-  const monsterRef = useRef<HTMLDivElement>(null);
+  const [explosion, setExplosion] = useState<{ x: number; y: number } | null>(null);
   const [fallDuration, setFallDuration] = useState(INITIAL_FALL);
   const [progressWidth, setProgressWidth] = useState(0);
 
@@ -87,6 +86,9 @@ export default function GamePage() {
   const rafRef = useRef<number>(0);
   const spawnTimeRef = useRef(0);
   const imprintBarRef = useRef<HTMLSpanElement>(null);
+  const cannonballRef = useRef<HTMLDivElement>(null);
+  const monsterDivRef = useRef<HTMLDivElement>(null);
+  const collisionRafRef = useRef<number>(0);
 
   // castle hit state
   const [castleHit, setCastleHit] = useState(false);
@@ -168,6 +170,29 @@ export default function GamePage() {
     }
   }, [gamePhase]);
 
+  // Cannonball collision detection via RAF
+  useEffect(() => {
+    if (!showCannonball) { cancelAnimationFrame(collisionRafRef.current); return; }
+    const check = () => {
+      const ball = cannonballRef.current;
+      const monster = monsterDivRef.current;
+      if (ball && monster) {
+        const br = ball.getBoundingClientRect();
+        const mr = monster.getBoundingClientRect();
+        if (br.top <= mr.bottom) {
+          setExplosion({ x: mr.left + mr.width / 2, y: mr.top + mr.height / 2 });
+          setShowCannonball(false);
+          setMonsterDead(true);
+          setTimeout(goNextWord, 320);
+          return;
+        }
+      }
+      collisionRafRef.current = requestAnimationFrame(check);
+    };
+    collisionRafRef.current = requestAnimationFrame(check);
+    return () => cancelAnimationFrame(collisionRafRef.current);
+  }, [showCannonball, goNextWord]);
+
   // progress bar via requestAnimationFrame
   useEffect(() => {
     if (gamePhase !== 'playing') return;
@@ -245,7 +270,6 @@ export default function GamePage() {
     setMonsterDead(false);
     setCastleHit(false);
     setShowCannonball(false);
-    setHitPos(null);
     wordIndexRef.current = next;
     setWordIndex(next);
     setMonsterKey(k => k + 1);
@@ -631,7 +655,7 @@ export default function GamePage() {
 
         {/* Monster */}
         <div
-          ref={monsterRef}
+          ref={monsterDivRef}
           key={monsterKey}
           style={{
             position: 'absolute',
@@ -660,11 +684,7 @@ export default function GamePage() {
         {/* Cannonball */}
         {showCannonball && (
           <div
-            onAnimationEnd={() => {
-              const rect = monsterRef.current?.getBoundingClientRect();
-              if (rect) setHitPos({ x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 });
-              setMonsterDead(true);
-            }}
+            ref={cannonballRef}
             style={{
               position: 'absolute', left: '50%', transform: 'translateX(-50%)',
               width: 14, height: 14, background: '#fbbf24', borderRadius: '50%',
@@ -674,17 +694,16 @@ export default function GamePage() {
           />
         )}
 
-        {/* Hit explosion */}
-        {hitPos && (
+        {/* Explosion */}
+        {explosion && (
           <div
-            onAnimationEnd={() => { setHitPos(null); goNextWord(); }}
+            onAnimationEnd={() => setExplosion(null)}
             style={{
-              position: 'fixed', left: hitPos.x, top: hitPos.y,
-              transform: 'translate(-50%, -50%)',
-              pointerEvents: 'none', zIndex: 200,
-              width: 80, height: 80, borderRadius: '50%',
-              background: 'radial-gradient(circle, #fff 0%, #fbbf24 30%, #f97316 60%, transparent 80%)',
-              animation: 'hitExplosion 0.38s ease-out forwards',
+              position: 'fixed', left: explosion.x, top: explosion.y, pointerEvents: 'none', zIndex: 9999,
+              width: 48, height: 48, borderRadius: '50%',
+              background: 'radial-gradient(circle, #fef08a, #fbbf24, #ef4444)',
+              boxShadow: '0 0 24px #fbbf24, 0 0 48px rgba(239,68,68,0.6)',
+              animation: 'explode 0.32s ease-out forwards',
             }}
           />
         )}
