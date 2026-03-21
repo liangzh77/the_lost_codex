@@ -281,13 +281,12 @@ export default function GamePage() {
       setIsPaused(false);
       if (pendingGoNextRef.current) {
         pendingGoNextRef.current = false;
+        setMonsterDead(true); // 现在杀怪（手动暂停时延迟到这里）
         if (pendingCannonballRef.current) {
           pendingCannonballRef.current = false;
           setShowCannonball(true);
-          setTimeout(goNextWord, 600);
-        } else {
-          goNextWord();
         }
+        setTimeout(goNextWord, 600);
       } else if (tickFnRef.current) {
         rafRef.current = requestAnimationFrame(tickFnRef.current);
       }
@@ -339,10 +338,13 @@ export default function GamePage() {
       const nf = Math.max(fallDurationRef.current * 0.95, MIN_FALL);
       fallDurationRef.current = nf;
       setFallDuration(nf);
-      setMonsterDead(true);
+      reachedBottomRef.current = true; // 防止 resume 后幽灵 onAnimationEnd 扣血
       if (castleHit || isPausedRef.current) {
+        if (castleHit) setMonsterDead(true); // 已在底部，直接隐藏
+        // 手动暂停：怪物保持可见，resume 时再杀
         pendingGoNextRef.current = true;
       } else {
+        setMonsterDead(true);
         setTimeout(goNextWord, 600);
       }
     } else {
