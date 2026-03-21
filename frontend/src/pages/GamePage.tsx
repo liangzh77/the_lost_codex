@@ -94,6 +94,7 @@ export default function GamePage() {
   const pauseStartRef = useRef(0);
   const tickFnRef = useRef<(() => void) | null>(null);
   const pendingGoNextRef = useRef(false);
+  const castleHitAnsweredRef = useRef(false);
 
   // load entry screen data
   useEffect(() => {
@@ -234,6 +235,7 @@ export default function GamePage() {
     }
     answeredRef.current = false;
     tryCountRef.current = 0;
+    castleHitAnsweredRef.current = false;
     setWrongOptions(new Set());
     setMonsterDead(false);
     setCastleHit(false);
@@ -276,11 +278,16 @@ export default function GamePage() {
       isPausedRef.current = false;
       setIsPaused(false);
       if (pendingGoNextRef.current) {
-        // Castle-hit resume: fire cannon at the monster, then go next
         pendingGoNextRef.current = false;
-        setShowCannonball(true);
-        setMonsterDead(true);
-        setTimeout(goNextWord, 600);
+        if (castleHitAnsweredRef.current) {
+          // Already answered correctly while paused: skip cannon, go next
+          goNextWord();
+        } else {
+          // Resume without answering: fire cannon then go next
+          setShowCannonball(true);
+          setMonsterDead(true);
+          setTimeout(goNextWord, 600);
+        }
       } else if (tickFnRef.current) {
         rafRef.current = requestAnimationFrame(tickFnRef.current);
       }
@@ -294,18 +301,19 @@ export default function GamePage() {
 
   const handleSelect = (option: string, e: React.MouseEvent) => {
     const quiz = quizzesRef.current[wordIndexRef.current];
-    if (!quiz || answeredRef.current || monsterDead) return;
+    // In castleHit mode, allow clicks even though answeredRef was set by handleMonsterReachBottom;
+    // but block if the user already answered during this castleHit pause
+    if (!quiz || monsterDead) return;
+    if (!castleHit && answeredRef.current) return;
+    if (castleHit && castleHitAnsweredRef.current) return;
 
     if (option === quiz.correct_answer) {
       answeredRef.current = true;
       cancelAnimationFrame(rafRef.current);
 
       if (castleHit) {
-        // Castle-hit mode: correct answer redeems — no cannon, just resume to next word
-        pendingGoNextRef.current = false;
-        isPausedRef.current = false;
-        setIsPaused(false);
-        goNextWord();
+        // Castle-hit mode: mark as answered, stay paused; resume button will go to next word
+        castleHitAnsweredRef.current = true;
         return;
       }
 
