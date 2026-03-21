@@ -255,7 +255,13 @@ export default function GamePage() {
         [wl[i], wl[j]] = [wl[j], wl[i]];
       }
       const qrs = await Promise.all(wl.map(w => getQuiz(w.id, 'en_to_cn')));
-      const ql: QuizData[] = qrs.map(r => ({ ...r.data, options: (r.data.options as string[]).slice(0, 3) }));
+      const ql: QuizData[] = qrs.map(r => {
+        const allOptions = r.data.options as string[];
+        const correct = r.data.correct_answer as string;
+        const wrongs = allOptions.filter(o => o !== correct).slice(0, 2);
+        const opts = [...wrongs, correct].sort(() => Math.random() - 0.5);
+        return { ...r.data, options: opts };
+      });
 
       // reset all refs
       wordsRef.current = wl; quizzesRef.current = ql;
