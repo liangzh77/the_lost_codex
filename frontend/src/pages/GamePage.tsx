@@ -385,7 +385,7 @@ export default function GamePage() {
           {wordSource === 'bank' && (
             <div className="w-full">
               <p className="text-xs text-slate-500 mb-2 text-center">选择词库</p>
-              <div className="space-y-2 max-h-40 overflow-y-auto pr-1">
+              <div className="space-y-2 max-h-40 overflow-y-auto apple-scroll">
                 {banks.map(b => (
                   <button
                     key={b.id}
