@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getTodayReview, getLearningWords, getMasteredWords, getWordBanks, getQuiz, confirmDone, getWordAudio, getGrowthStats } from '../api';
+import { getTodayReview, getLearningWords, getMasteredWords, getWordBanks, getBankWords, getQuiz, confirmDone, getWordAudio, getGrowthStats } from '../api';
 import NavBar from '../components/NavBar';
 import Button from '../components/Button';
 
@@ -108,8 +108,8 @@ export default function GamePage() {
       } else if (wordSource === 'mastered') {
         const r = await getMasteredWords(); setAvailableCount(r.data.length);
       } else if (wordSource === 'bank' && selectedBankId !== null) {
-        const [l, m] = await Promise.all([getLearningWords(selectedBankId), getMasteredWords(selectedBankId)]);
-        setAvailableCount(l.data.length + m.data.length);
+        const r = await getBankWords(selectedBankId);
+        setAvailableCount(r.data.filter((w: { chinese: string }) => w.chinese).length);
       } else {
         const [l, m] = await Promise.all([getLearningWords(), getMasteredWords()]);
         setAvailableCount(l.data.length + m.data.length);
@@ -286,8 +286,8 @@ export default function GamePage() {
       } else if (wordSource === 'mastered') {
         rawWords = (await getMasteredWords()).data;
       } else if (wordSource === 'bank' && selectedBankId !== null) {
-        const [l, m] = await Promise.all([getLearningWords(selectedBankId), getMasteredWords(selectedBankId)]);
-        rawWords = [...l.data, ...m.data];
+        const r = await getBankWords(selectedBankId);
+        rawWords = r.data.filter((w: WordInfo) => w.chinese);
       } else {
         const [l, m] = await Promise.all([getLearningWords(), getMasteredWords()]);
         rawWords = [...l.data, ...m.data];
@@ -386,7 +386,7 @@ export default function GamePage() {
             <div className="w-full">
               <p className="text-xs text-slate-500 mb-2 text-center">选择词库</p>
               <div className="space-y-2 max-h-40 overflow-y-auto pr-1">
-                {banks.filter(b => b.learned > 0).map(b => (
+                {banks.map(b => (
                   <button
                     key={b.id}
                     onClick={() => setSelectedBankId(b.id)}
@@ -400,11 +400,11 @@ export default function GamePage() {
                     }}
                   >
                     <span style={{ fontWeight: 600 }}>{b.name}</span>
-                    <span style={{ fontSize: 11, color: '#475569' }}>{b.learned} 词</span>
+                    <span style={{ fontSize: 11, color: '#475569' }}>{b.total} 词</span>
                   </button>
                 ))}
-                {banks.filter(b => b.learned > 0).length === 0 && (
-                  <p style={{ color: '#475569', fontSize: 12, textAlign: 'center' }}>暂无已学词库</p>
+                {banks.length === 0 && (
+                  <p style={{ color: '#475569', fontSize: 12, textAlign: 'center' }}>加载中…</p>
                 )}
               </div>
             </div>

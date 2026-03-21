@@ -10,6 +10,8 @@ export const getMe = () => api.get('/users/me');
 
 export const getWordBanks = () => api.get('/words/banks');
 
+export const getBankWords = (bankId: number) => api.get(`/words/bank/${bankId}`);
+
 export const getWord = (wordId: number) => api.get(`/words/${wordId}`);
 
 export const startNewWords = (wordBankId?: number, customWords?: string[]) =>
