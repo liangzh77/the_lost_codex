@@ -95,6 +95,7 @@ export default function GamePage() {
   const tickFnRef = useRef<(() => void) | null>(null);
   const pendingGoNextRef = useRef(false);
   const reachedBottomRef = useRef(false);
+  const pendingCannonballRef = useRef(false);
 
   // load entry screen data
   useEffect(() => {
@@ -235,6 +236,7 @@ export default function GamePage() {
     }
     answeredRef.current = false;
     reachedBottomRef.current = false;
+    pendingCannonballRef.current = false;
     tryCountRef.current = 0;
     setWrongOptions(new Set());
     setMonsterDead(false);
@@ -279,7 +281,13 @@ export default function GamePage() {
       setIsPaused(false);
       if (pendingGoNextRef.current) {
         pendingGoNextRef.current = false;
-        goNextWord();
+        if (pendingCannonballRef.current) {
+          pendingCannonballRef.current = false;
+          setShowCannonball(true);
+          setTimeout(goNextWord, 600);
+        } else {
+          goNextWord();
+        }
       } else if (tickFnRef.current) {
         rafRef.current = requestAnimationFrame(tickFnRef.current);
       }
@@ -316,7 +324,11 @@ export default function GamePage() {
         firstTryCorrectIdsRef.current.push(wordsRef.current[wordIndexRef.current].id);
         firstTryCorrectCountRef.current++;
         flyImprint(e.currentTarget as HTMLElement, 1);
-        setShowCannonball(true);
+        if (castleHit || isPausedRef.current) {
+          pendingCannonballRef.current = true;
+        } else {
+          setShowCannonball(true);
+        }
       } else if (isSecond) {
         scoreRef.current += 10;
         setScore(scoreRef.current);
