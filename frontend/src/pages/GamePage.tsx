@@ -112,7 +112,7 @@ export default function GamePage() {
     setAvailableCount(null);
     const fetch = async () => {
       if (wordSource === 'today') {
-        const r = await getTodayReview(); setAvailableCount(r.data.length);
+        const r = await getTodayReview(true); setAvailableCount(r.data.length);
       } else if (wordSource === 'learning') {
         const r = await getLearningWords(); setAvailableCount(r.data.length);
       } else if (wordSource === 'mastered') {
@@ -341,7 +341,7 @@ export default function GamePage() {
     try {
       let rawWords: WordInfo[] = [];
       if (wordSource === 'today') {
-        rawWords = (await getTodayReview()).data;
+        rawWords = (await getTodayReview(true)).data;
       } else if (wordSource === 'learning') {
         rawWords = (await getLearningWords()).data;
       } else if (wordSource === 'mastered') {
@@ -677,7 +677,7 @@ export default function GamePage() {
         <div className="flex items-center justify-between mb-3">
           <span style={{ color: '#64748b', fontSize: 12 }}>听发音，选正确的中文意思</span>
           <button
-            style={{ color: '#60a5fa', fontSize: 12, padding: '8px 14px', margin: '-8px -14px' }}
+            style={{ color: '#60a5fa', fontSize: 12, padding: '14px 20px', margin: '-14px -20px' }}
             onClick={() => new Audio(getWordAudio(curWord.english)).play().catch(() => {})}
           >
             🔊 重播

@@ -32,7 +32,8 @@ export const startNewSingleWord = (word: string) =>
 export const checkWords = (words: string[]) =>
   api.post('/learning/check-words', { words });
 
-export const getTodayReview = () => api.get('/learning/review/today');
+export const getTodayReview = (includeReviewed = false) =>
+  api.get('/learning/review/today', { params: includeReviewed ? { include_reviewed: true } : {} });
 
 export const getTodayReviewCount = () => api.get('/learning/review/today/count');
 

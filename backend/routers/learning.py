@@ -247,25 +247,24 @@ def complete_batch_words(body: BatchCompleteRequest):
 def get_today_review(
     user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
+    include_reviewed: bool = False,
 ):
-    """获取今天需要复习的单词（排除今天已复习的）"""
+    """获取今天需要复习的单词（include_reviewed=true 时包含今天已复习的）"""
     today = date.today()
-    today_start = datetime(today.year, today.month, today.day)
-    reviewed_today = (
-        db.query(LearningRecord.word_id)
-        .filter(LearningRecord.user_id == user.id, LearningRecord.studied_at >= today_start)
-        .subquery()
+    q = db.query(UserWordProgress).filter(
+        UserWordProgress.user_id == user.id,
+        UserWordProgress.next_review_date <= today,
+        UserWordProgress.current_stage < get_total_stages(user.review_intervals),
     )
-    progress_list = (
-        db.query(UserWordProgress)
-        .filter(
-            UserWordProgress.user_id == user.id,
-            UserWordProgress.next_review_date <= today,
-            UserWordProgress.current_stage < get_total_stages(user.review_intervals),
-            ~UserWordProgress.word_id.in_(db.query(reviewed_today.c.word_id)),
+    if not include_reviewed:
+        today_start = datetime(today.year, today.month, today.day)
+        reviewed_today = (
+            db.query(LearningRecord.word_id)
+            .filter(LearningRecord.user_id == user.id, LearningRecord.studied_at >= today_start)
+            .subquery()
         )
-        .all()
-    )
+        q = q.filter(~UserWordProgress.word_id.in_(db.query(reviewed_today.c.word_id)))
+    progress_list = q.all()
     result = []
     for p in progress_list:
         w = p.word
