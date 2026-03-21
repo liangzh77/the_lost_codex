@@ -55,6 +55,12 @@ export default function HomePage() {
             学习新词
           </Button>
         </Card>
+
+        <Card>
+          <Button size="lg" variant="secondary" onClick={() => navigate('/game')}>
+            👾 单词战场
+          </Button>
+        </Card>
       </div>
       <TabBar />
     </div>

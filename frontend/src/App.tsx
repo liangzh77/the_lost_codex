@@ -8,6 +8,7 @@ import ReviewPage from './pages/ReviewPage';
 import WordsPage from './pages/WordsPage';
 import SettingsPage from './pages/SettingsPage';
 import GrowthPage from './pages/GrowthPage';
+import GamePage from './pages/GamePage';
 import './index.css';
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
@@ -30,6 +31,7 @@ function AppRoutes() {
       <Route path="/words" element={<PrivateRoute><WordsPage /></PrivateRoute>} />
       <Route path="/growth" element={<PrivateRoute><GrowthPage /></PrivateRoute>} />
       <Route path="/settings" element={<PrivateRoute><SettingsPage /></PrivateRoute>} />
+      <Route path="/game" element={<PrivateRoute><GamePage /></PrivateRoute>} />
       <Route path="*" element={<Navigate to={token ? '/home' : '/login'} />} />
     </Routes>
   );

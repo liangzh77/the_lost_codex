@@ -3,3 +3,13 @@
 html {
   overflow-y: scroll;
 }
+
+@keyframes monsterFall {
+  from { top: 5%; }
+  to { top: 85%; }
+}
+
+@keyframes cannonballFly {
+  from { bottom: 50px; opacity: 1; }
+  to { bottom: 90%; opacity: 0; }
+}
