@@ -326,7 +326,11 @@ export default function GamePage() {
       fallDurationRef.current = nf;
       setFallDuration(nf);
       setMonsterDead(true);
-      setTimeout(goNextWord, 600);
+      if (isPausedRef.current) {
+        pendingGoNextRef.current = true;
+      } else {
+        setTimeout(goNextWord, 600);
+      }
     } else {
       setWrongOptions(prev => new Set(prev).add(option));
       comboRef.current = 0;
@@ -684,9 +688,9 @@ export default function GamePage() {
           </button>
         </div>
         <div className="space-y-2">
-          {curQuiz.options.map((opt, i) => {
+          {!castleHit && curQuiz.options.map((opt, i) => {
             const isWrong = wrongOptions.has(opt);
-            const isCorrectShown = (monsterDead || castleHit) && opt === curQuiz.correct_answer;
+            const isCorrectShown = monsterDead && opt === curQuiz.correct_answer;
             let bg = '#0f172a', border = '#334155', color = '#e2e8f0';
             if (isCorrectShown) { bg = 'rgba(34,197,94,0.1)'; border = '#22c55e'; color = '#4ade80'; }
             else if (isWrong) { bg = 'rgba(239,68,68,0.1)'; border = '#ef4444'; color = '#f87171'; }
