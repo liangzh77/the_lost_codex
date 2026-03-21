@@ -285,8 +285,7 @@ export default function GamePage() {
         pendingGoNextRef.current = false;
         pausedAnsweredRef.current = false;
         setShowCannonball(true);
-        setMonsterDead(true);
-        setTimeout(goNextWord, 600);
+        // monsterDead + goNextWord triggered by cannonball onAnimationEnd
       } else if (tickFnRef.current) {
         rafRef.current = requestAnimationFrame(tickFnRef.current);
       }
@@ -350,8 +349,7 @@ export default function GamePage() {
       const nf = Math.max(fallDurationRef.current * 0.95, MIN_FALL);
       fallDurationRef.current = nf;
       setFallDuration(nf);
-      setMonsterDead(true);
-      setTimeout(goNextWord, 600);
+      // monsterDead + goNextWord triggered by cannonball onAnimationEnd
     } else {
       setWrongOptions(prev => new Set(prev).add(option));
       if (!castleHit) {
@@ -657,12 +655,15 @@ export default function GamePage() {
 
         {/* Cannonball */}
         {showCannonball && (
-          <div style={{
-            position: 'absolute', left: '50%', transform: 'translateX(-50%)',
-            width: 14, height: 14, background: '#fbbf24', borderRadius: '50%',
-            boxShadow: '0 0 14px #fbbf24, 0 0 28px rgba(251,191,36,0.4)',
-            animation: 'cannonballFly 0.55s ease-out forwards',
-          }} />
+          <div
+            onAnimationEnd={() => { setMonsterDead(true); setTimeout(goNextWord, 120); }}
+            style={{
+              position: 'absolute', left: '50%', transform: 'translateX(-50%)',
+              width: 14, height: 14, background: '#fbbf24', borderRadius: '50%',
+              boxShadow: '0 0 14px #fbbf24, 0 0 28px rgba(251,191,36,0.4)',
+              animation: 'cannonballFly 0.55s ease-out forwards',
+            }}
+          />
         )}
 
         {/* Castle */}
