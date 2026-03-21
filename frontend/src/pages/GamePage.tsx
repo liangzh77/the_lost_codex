@@ -381,7 +381,7 @@ export default function GamePage() {
         </div>
         <div className="flex gap-1">
           {[0, 1, 2].map(i => (
-            <span key={i} style={{ fontSize: 16, color: i < lives ? '#f87171' : '#1e293b' }}>♥</span>
+            <span key={i} style={{ fontSize: 16, color: i < lives ? '#f87171' : 'rgba(248,113,113,0.2)' }}>♥</span>
           ))}
         </div>
       </div>
