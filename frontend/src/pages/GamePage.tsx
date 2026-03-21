@@ -291,7 +291,7 @@ export default function GamePage() {
 
   const handleSelect = (option: string, e: React.MouseEvent) => {
     const quiz = quizzesRef.current[wordIndexRef.current];
-    if (!quiz || answeredRef.current || monsterDead || castleHit) return;
+    if (!quiz || answeredRef.current || monsterDead || castleHit || isPausedRef.current) return;
 
     if (option === quiz.correct_answer) {
       answeredRef.current = true;
@@ -326,11 +326,7 @@ export default function GamePage() {
       fallDurationRef.current = nf;
       setFallDuration(nf);
       setMonsterDead(true);
-      if (isPausedRef.current) {
-        pendingGoNextRef.current = true;
-      } else {
-        setTimeout(goNextWord, 600);
-      }
+      setTimeout(goNextWord, 600);
     } else {
       setWrongOptions(prev => new Set(prev).add(option));
       comboRef.current = 0;
@@ -688,7 +684,7 @@ export default function GamePage() {
           </button>
         </div>
         <div className="space-y-2">
-          {!castleHit && curQuiz.options.map((opt, i) => {
+          {curQuiz.options.map((opt, i) => {
             const isWrong = wrongOptions.has(opt);
             const isCorrectShown = monsterDead && opt === curQuiz.correct_answer;
             let bg = '#0f172a', border = '#334155', color = '#e2e8f0';
