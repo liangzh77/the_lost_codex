@@ -85,6 +85,9 @@ export default function GamePage() {
   const spawnTimeRef = useRef(0);
   const imprintBarRef = useRef<HTMLSpanElement>(null);
 
+  // castle hit state
+  const [castleHit, setCastleHit] = useState(false);
+
   // pause state
   const [isPaused, setIsPaused] = useState(false);
   const isPausedRef = useRef(false);
@@ -208,6 +211,21 @@ export default function GamePage() {
     st.textContent = `@keyframes imprintFlyGame{0%{transform:scale(1);opacity:1;}50%{transform:translate(${(ex - sx) * 0.5}px,${(ey - sy) * 0.5 - 40}px) scale(0.8);opacity:0.8;}100%{transform:translate(${ex - sx}px,${ey - sy}px) scale(0.3);opacity:0;}}`;
   }, []);
 
+  const playFailureSound = useCallback(() => {
+    try {
+      const ctx = new (window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext)();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(180, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(60, ctx.currentTime + 0.35);
+      gain.gain.setValueAtTime(0.25, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.35);
+      osc.start(ctx.currentTime); osc.stop(ctx.currentTime + 0.35);
+    } catch { /* no audio context */ }
+  }, []);
+
   const goNextWord = useCallback(() => {
     const next = wordIndexRef.current + 1;
     if (next >= wordsRef.current.length) {
@@ -218,6 +236,7 @@ export default function GamePage() {
     tryCountRef.current = 0;
     setWrongOptions(new Set());
     setMonsterDead(false);
+    setCastleHit(false);
     setShowCannonball(false);
     wordIndexRef.current = next;
     setWordIndex(next);
@@ -235,13 +254,15 @@ export default function GamePage() {
     const newLives = livesRef.current - 1;
     livesRef.current = newLives;
     setLives(newLives);
+    setCastleHit(true);
+    playFailureSound();
     if (newLives <= 0) { setGamePhase('gameover'); return; }
     // auto-pause so player sees what happened; resume triggers next monster
     pendingGoNextRef.current = true;
     pauseStartRef.current = Date.now();
     isPausedRef.current = true;
     setIsPaused(true);
-  }, []);
+  }, [playFailureSound]);
 
   const handlePauseResume = useCallback(() => {
     if (!isPausedRef.current) {
@@ -618,9 +639,12 @@ export default function GamePage() {
         )}
 
         {/* Castle */}
-        <div style={{ position: 'absolute', bottom: 10, left: '50%', transform: 'translateX(-50%)' }}>
-          <div style={{ fontSize: 34 }}>🏰</div>
-        </div>
+        <div style={{
+          position: 'absolute', bottom: 10, left: '50%',
+          transform: 'translateX(-50%)',
+          animation: castleHit ? 'castleHit 0.5s ease-out forwards' : 'none',
+          fontSize: 34,
+        }}>🏰</div>
 
         {/* Quit button — left edge */}
         <button
@@ -653,7 +677,7 @@ export default function GamePage() {
         <div className="flex items-center justify-between mb-3">
           <span style={{ color: '#64748b', fontSize: 12 }}>听发音，选正确的中文意思</span>
           <button
-            style={{ color: '#60a5fa', fontSize: 12 }}
+            style={{ color: '#60a5fa', fontSize: 12, padding: '8px 14px', margin: '-8px -14px' }}
             onClick={() => new Audio(getWordAudio(curWord.english)).play().catch(() => {})}
           >
             🔊 重播
@@ -662,7 +686,7 @@ export default function GamePage() {
         <div className="space-y-2">
           {curQuiz.options.map((opt, i) => {
             const isWrong = wrongOptions.has(opt);
-            const isCorrectShown = monsterDead && opt === curQuiz.correct_answer;
+            const isCorrectShown = (monsterDead || castleHit) && opt === curQuiz.correct_answer;
             let bg = '#0f172a', border = '#334155', color = '#e2e8f0';
             if (isCorrectShown) { bg = 'rgba(34,197,94,0.1)'; border = '#22c55e'; color = '#4ade80'; }
             else if (isWrong) { bg = 'rgba(239,68,68,0.1)'; border = '#ef4444'; color = '#f87171'; }
