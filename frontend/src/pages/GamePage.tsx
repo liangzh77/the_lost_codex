@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getTodayReview, getQuiz, confirmDone, getWordAudio, getGrowthStats } from '../api';
+import { getTodayReview, getLearningWords, getMasteredWords, getQuiz, confirmDone, getWordAudio, getGrowthStats } from '../api';
 import NavBar from '../components/NavBar';
 import Button from '../components/Button';
 
 type GamePhase = 'entry' | 'loading' | 'playing' | 'gameover' | 'victory';
+type WordSource = 'today' | 'learning' | 'mastered' | 'all';
+type WordLimit = 10 | 20 | 30 | null;
 
 interface WordInfo {
   id: number;
@@ -31,7 +33,9 @@ export default function GamePage() {
   const navigate = useNavigate();
 
   const [gamePhase, setGamePhase] = useState<GamePhase>('entry');
-  const [reviewCount, setReviewCount] = useState<number | null>(null);
+  const [wordSource, setWordSource] = useState<WordSource>('today');
+  const [wordLimit, setWordLimit] = useState<WordLimit>(10);
+  const [availableCount, setAvailableCount] = useState<number | null>(null);
 
   // word/quiz data (state for rendering, refs for callbacks)
   const [words, setWords] = useState<WordInfo[]>([]);
@@ -80,12 +84,30 @@ export default function GamePage() {
   // load entry screen data
   useEffect(() => {
     if (gamePhase !== 'entry') return;
-    getTodayReview().then(res => setReviewCount(res.data.length));
     getGrowthStats().then(res => setTodayImprints(res.data.today_imprints));
     const stored = parseInt(localStorage.getItem('monster_best_combo') || '0', 10);
     setBestCombo(stored);
     bestComboRef.current = stored;
   }, [gamePhase]);
+
+  // update available count when source changes
+  useEffect(() => {
+    if (gamePhase !== 'entry') return;
+    setAvailableCount(null);
+    const fetch = async () => {
+      if (wordSource === 'today') {
+        const r = await getTodayReview(); setAvailableCount(r.data.length);
+      } else if (wordSource === 'learning') {
+        const r = await getLearningWords(); setAvailableCount(r.data.length);
+      } else if (wordSource === 'mastered') {
+        const r = await getMasteredWords(); setAvailableCount(r.data.length);
+      } else {
+        const [l, m] = await Promise.all([getLearningWords(), getMasteredWords()]);
+        setAvailableCount(l.data.length + m.data.length);
+      }
+    };
+    fetch().catch(() => setAvailableCount(0));
+  }, [gamePhase, wordSource]);
 
   // intercept browser back while playing
   useEffect(() => {
@@ -247,13 +269,25 @@ export default function GamePage() {
     try { new Audio(getWordAudio('hello')).play(); } catch { /* unlock iOS audio */ }
     setGamePhase('loading');
     try {
-      const res = await getTodayReview();
-      const wl: WordInfo[] = [...res.data];
+      let rawWords: WordInfo[] = [];
+      if (wordSource === 'today') {
+        rawWords = (await getTodayReview()).data;
+      } else if (wordSource === 'learning') {
+        rawWords = (await getLearningWords()).data;
+      } else if (wordSource === 'mastered') {
+        rawWords = (await getMasteredWords()).data;
+      } else {
+        const [l, m] = await Promise.all([getLearningWords(), getMasteredWords()]);
+        rawWords = [...l.data, ...m.data];
+      }
+      const wl: WordInfo[] = [...rawWords];
       // Fisher-Yates shuffle
       for (let i = wl.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [wl[i], wl[j]] = [wl[j], wl[i]];
       }
+      // apply word limit
+      if (wordLimit !== null) wl.splice(wordLimit);
       const qrs = await Promise.all(wl.map(w => getQuiz(w.id, 'en_to_cn')));
       const ql: QuizData[] = qrs.map(r => {
         const allOptions = r.data.options as string[];
@@ -286,6 +320,21 @@ export default function GamePage() {
   // ——— RENDER ———
 
   if (gamePhase === 'entry' || gamePhase === 'loading') {
+    const sourceOptions: { value: WordSource; label: string }[] = [
+      { value: 'today', label: '今日单词' },
+      { value: 'learning', label: '学习中' },
+      { value: 'mastered', label: '已掌握' },
+      { value: 'all', label: '全部' },
+    ];
+    const limitOptions: { value: WordLimit; label: string }[] = [
+      { value: 10, label: '10个' },
+      { value: 20, label: '20个' },
+      { value: 30, label: '30个' },
+      { value: null, label: '无限' },
+    ];
+    const actualCount = wordLimit === null ? availableCount : Math.min(availableCount ?? 0, wordLimit);
+    const noWords = availableCount === 0;
+
     return (
       <div className="min-h-screen flex flex-col" style={{ background: '#0f172a' }}>
         <NavBar title="单词战场" onBack={() => navigate('/home')} />
@@ -295,23 +344,72 @@ export default function GamePage() {
             <h1 className="text-2xl font-bold text-white mb-2">怪物防御战</h1>
             <p className="text-slate-400 text-sm">听发音，选正确释义<br />别让怪物冲到你的炮台！</p>
           </div>
+
+          {/* Word source selector */}
+          <div className="w-full">
+            <p className="text-xs text-slate-500 mb-2 text-center">选词范围</p>
+            <div className="flex gap-2 justify-center flex-wrap">
+              {sourceOptions.map(opt => (
+                <button
+                  key={opt.value}
+                  onClick={() => setWordSource(opt.value)}
+                  style={{
+                    padding: '6px 14px', borderRadius: 20, fontSize: 13, fontWeight: 600,
+                    border: `1px solid ${wordSource === opt.value ? '#3b82f6' : '#334155'}`,
+                    background: wordSource === opt.value ? 'rgba(59,130,246,0.15)' : 'transparent',
+                    color: wordSource === opt.value ? '#60a5fa' : '#64748b',
+                    cursor: 'pointer', transition: 'all 0.15s',
+                  }}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Word limit selector */}
+          <div className="w-full">
+            <p className="text-xs text-slate-500 mb-2 text-center">挑战数量</p>
+            <div className="flex gap-2 justify-center">
+              {limitOptions.map(opt => (
+                <button
+                  key={String(opt.value)}
+                  onClick={() => setWordLimit(opt.value)}
+                  style={{
+                    padding: '6px 14px', borderRadius: 20, fontSize: 13, fontWeight: 600,
+                    border: `1px solid ${wordLimit === opt.value ? '#a855f7' : '#334155'}`,
+                    background: wordLimit === opt.value ? 'rgba(168,85,247,0.15)' : 'transparent',
+                    color: wordLimit === opt.value ? '#c084fc' : '#64748b',
+                    cursor: 'pointer', transition: 'all 0.15s',
+                  }}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Stats */}
           <div className="flex gap-10">
             <div className="text-center">
-              <div className="text-2xl font-bold text-yellow-400">{reviewCount === null ? '…' : reviewCount}</div>
-              <div className="text-xs text-slate-500 mt-1">今日单词</div>
+              <div className="text-2xl font-bold text-yellow-400">
+                {availableCount === null ? '…' : (noWords ? 0 : actualCount)}
+              </div>
+              <div className="text-xs text-slate-500 mt-1">本局单词</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-green-400">{bestCombo}</div>
               <div className="text-xs text-slate-500 mt-1">最高连击</div>
             </div>
           </div>
-          {reviewCount === 0 ? (
-            <p className="text-slate-500 text-sm">今天没有待复习的单词</p>
+
+          {noWords ? (
+            <p className="text-slate-500 text-sm">该范围暂无单词</p>
           ) : (
             <Button
               size="lg"
               onClick={handleStartGame}
-              disabled={gamePhase === 'loading' || reviewCount === null || reviewCount === 0}
+              disabled={gamePhase === 'loading' || availableCount === null || noWords}
             >
               {gamePhase === 'loading' ? '准备中...' : '开始战斗！'}
             </Button>
