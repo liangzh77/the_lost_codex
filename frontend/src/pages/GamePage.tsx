@@ -85,6 +85,13 @@ export default function GamePage() {
   const spawnTimeRef = useRef(0);
   const imprintBarRef = useRef<HTMLSpanElement>(null);
 
+  // pause state
+  const [isPaused, setIsPaused] = useState(false);
+  const isPausedRef = useRef(false);
+  const pauseStartRef = useRef(0);
+  const tickFnRef = useRef<(() => void) | null>(null);
+  const pendingGoNextRef = useRef(false);
+
   // load entry screen data
   useEffect(() => {
     if (gamePhase !== 'entry') return;
@@ -157,6 +164,9 @@ export default function GamePage() {
   useEffect(() => {
     if (gamePhase !== 'playing') return;
     spawnTimeRef.current = Date.now();
+    isPausedRef.current = false;
+    setIsPaused(false);
+    pendingGoNextRef.current = false;
     setProgressWidth(0);
     const tick = () => {
       const progress = Math.min(
@@ -166,6 +176,7 @@ export default function GamePage() {
       setProgressWidth(progress * 100);
       if (progress < 1) rafRef.current = requestAnimationFrame(tick);
     };
+    tickFnRef.current = tick;
     rafRef.current = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(rafRef.current);
   }, [gamePhase, monsterKey]);
@@ -225,12 +236,41 @@ export default function GamePage() {
     livesRef.current = newLives;
     setLives(newLives);
     if (newLives <= 0) { setGamePhase('gameover'); return; }
-    setTimeout(goNextWord, 400);
+    // auto-pause so player sees what happened; resume triggers next monster
+    pendingGoNextRef.current = true;
+    pauseStartRef.current = Date.now();
+    isPausedRef.current = true;
+    setIsPaused(true);
+  }, []);
+
+  const handlePauseResume = useCallback(() => {
+    if (!isPausedRef.current) {
+      cancelAnimationFrame(rafRef.current);
+      pauseStartRef.current = Date.now();
+      isPausedRef.current = true;
+      setIsPaused(true);
+    } else {
+      const pausedDuration = Date.now() - pauseStartRef.current;
+      spawnTimeRef.current += pausedDuration;
+      isPausedRef.current = false;
+      setIsPaused(false);
+      if (pendingGoNextRef.current) {
+        pendingGoNextRef.current = false;
+        goNextWord();
+      } else if (tickFnRef.current) {
+        rafRef.current = requestAnimationFrame(tickFnRef.current);
+      }
+    }
   }, [goNextWord]);
+
+  const handleQuit = useCallback(() => {
+    cancelAnimationFrame(rafRef.current);
+    setGamePhase('entry');
+  }, []);
 
   const handleSelect = (option: string, e: React.MouseEvent) => {
     const quiz = quizzesRef.current[wordIndexRef.current];
-    if (!quiz || answeredRef.current || monsterDead) return;
+    if (!quiz || answeredRef.current || monsterDead || isPausedRef.current) return;
 
     if (option === quiz.correct_answer) {
       answeredRef.current = true;
@@ -275,7 +315,7 @@ export default function GamePage() {
   };
 
   const handleStartGame = async () => {
-    try { new Audio(getWordAudio('hello')).play(); } catch { /* unlock iOS audio */ }
+    try { const a = new Audio('data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA='); a.play().catch(() => {}); } catch { /* unlock iOS audio context */ }
     setGamePhase('loading');
     try {
       let rawWords: WordInfo[] = [];
@@ -356,7 +396,7 @@ export default function GamePage() {
           <div style={{ fontSize: 64 }}>👾</div>
           <div className="text-center">
             <h1 className="text-2xl font-bold text-white mb-2">怪物防御战</h1>
-            <p className="text-slate-400 text-sm">听发音，选正确释义<br />别让怪物冲到你的炮台！</p>
+            <p className="text-slate-400 text-sm">听发音，选正确释义<br />别让怪物冲到你的城堡！</p>
           </div>
 
           {/* Word source selector */}
@@ -549,6 +589,7 @@ export default function GamePage() {
             transform: 'translateX(-50%)',
             textAlign: 'center',
             animation: `monsterFall ${fallDuration}s linear forwards`,
+            animationPlayState: isPaused ? 'paused' : 'running',
             opacity: monsterDead ? 0 : 1,
             transition: monsterDead ? 'opacity 0.15s' : 'none',
           }}
@@ -576,9 +617,21 @@ export default function GamePage() {
           }} />
         )}
 
-        {/* Cannon */}
-        <div style={{ position: 'absolute', bottom: 10, left: '50%', transform: 'translateX(-50%)' }}>
+        {/* Castle + controls */}
+        <div style={{ position: 'absolute', bottom: 10, left: '50%', transform: 'translateX(-50%)', display: 'flex', alignItems: 'center', gap: 20 }}>
+          <button
+            onClick={handleQuit}
+            style={{ width: 44, height: 44, borderRadius: '50%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}
+          >
+            <span style={{ fontSize: 14, opacity: 0.4, color: '#fff' }}>✕</span>
+          </button>
           <div style={{ fontSize: 34 }}>🏰</div>
+          <button
+            onClick={handlePauseResume}
+            style={{ width: 44, height: 44, borderRadius: '50%', background: isPaused ? 'rgba(99,102,241,0.18)' : 'rgba(255,255,255,0.06)', border: `1px solid ${isPaused ? 'rgba(99,102,241,0.4)' : 'rgba(255,255,255,0.1)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0, transition: 'all 0.2s' }}
+          >
+            <span style={{ fontSize: 14, opacity: isPaused ? 0.9 : 0.4, color: isPaused ? '#a5b4fc' : '#fff' }}>{isPaused ? '▶' : '⏸'}</span>
+          </button>
         </div>
       </div>
 
