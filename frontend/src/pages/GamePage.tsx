@@ -55,6 +55,7 @@ export default function GamePage() {
   const [combo, setCombo] = useState(0);
   const [bestCombo, setBestCombo] = useState(0);
   const [wrongOptions, setWrongOptions] = useState<Set<string>>(new Set());
+  const [pausedAnswered, setPausedAnswered] = useState(false);
   const [monsterDead, setMonsterDead] = useState(false);
   const [showCannonball, setShowCannonball] = useState(false);
   const [fallDuration, setFallDuration] = useState(INITIAL_FALL);
@@ -237,6 +238,7 @@ export default function GamePage() {
     answeredRef.current = false;
     tryCountRef.current = 0;
     pausedAnsweredRef.current = false;
+    setPausedAnswered(false);
     setWrongOptions(new Set());
     setMonsterDead(false);
     setCastleHit(false);
@@ -314,6 +316,7 @@ export default function GamePage() {
         // Resume button will fire cannon and go to next word
         answeredRef.current = true;
         pausedAnsweredRef.current = true;
+        setPausedAnswered(true);
         return;
       }
 
@@ -710,7 +713,7 @@ export default function GamePage() {
         <div className="space-y-2">
           {curQuiz.options.map((opt, i) => {
             const isWrong = wrongOptions.has(opt);
-            const isCorrectShown = (monsterDead || castleHit) && opt === curQuiz.correct_answer;
+            const isCorrectShown = (monsterDead || castleHit || pausedAnswered) && opt === curQuiz.correct_answer;
             let bg = '#0f172a', border = '#334155', color = '#e2e8f0';
             if (isCorrectShown) { bg = 'rgba(34,197,94,0.1)'; border = '#22c55e'; color = '#4ade80'; }
             else if (isWrong) { bg = 'rgba(239,68,68,0.1)'; border = '#ef4444'; color = '#f87171'; }
