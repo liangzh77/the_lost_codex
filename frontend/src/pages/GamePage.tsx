@@ -165,12 +165,18 @@ export default function GamePage() {
     }
   }, [gamePhase]);
 
+  // 游戏开始时重置暂停状态（monsterKey 切换不重置，避免覆盖用户的手动暂停）
+  useEffect(() => {
+    if (gamePhase === 'playing') {
+      isPausedRef.current = false;
+      setIsPaused(false);
+    }
+  }, [gamePhase]);
+
   // progress bar via requestAnimationFrame
   useEffect(() => {
     if (gamePhase !== 'playing') return;
     spawnTimeRef.current = Date.now();
-    isPausedRef.current = false;
-    setIsPaused(false);
     pendingGoNextRef.current = false;
     setProgressWidth(0);
     const tick = () => {
