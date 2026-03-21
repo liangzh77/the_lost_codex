@@ -94,7 +94,8 @@ export default function GamePage() {
   const pauseStartRef = useRef(0);
   const tickFnRef = useRef<(() => void) | null>(null);
   const pendingGoNextRef = useRef(false);
-  const castleHitAnsweredRef = useRef(false);
+  // true when user answered correctly while paused (either manual or castle-hit)
+  const pausedAnsweredRef = useRef(false);
 
   // load entry screen data
   useEffect(() => {
@@ -235,7 +236,7 @@ export default function GamePage() {
     }
     answeredRef.current = false;
     tryCountRef.current = 0;
-    castleHitAnsweredRef.current = false;
+    pausedAnsweredRef.current = false;
     setWrongOptions(new Set());
     setMonsterDead(false);
     setCastleHit(false);
@@ -277,17 +278,13 @@ export default function GamePage() {
       spawnTimeRef.current += pausedDuration;
       isPausedRef.current = false;
       setIsPaused(false);
-      if (pendingGoNextRef.current) {
+      if (pendingGoNextRef.current || pausedAnsweredRef.current) {
+        // Castle-hit resume OR answered correctly while manually paused
         pendingGoNextRef.current = false;
-        if (castleHitAnsweredRef.current) {
-          // Already answered correctly while paused: skip cannon, go next
-          goNextWord();
-        } else {
-          // Resume without answering: fire cannon then go next
-          setShowCannonball(true);
-          setMonsterDead(true);
-          setTimeout(goNextWord, 600);
-        }
+        pausedAnsweredRef.current = false;
+        setShowCannonball(true);
+        setMonsterDead(true);
+        setTimeout(goNextWord, 600);
       } else if (tickFnRef.current) {
         rafRef.current = requestAnimationFrame(tickFnRef.current);
       }
@@ -301,21 +298,26 @@ export default function GamePage() {
 
   const handleSelect = (option: string, e: React.MouseEvent) => {
     const quiz = quizzesRef.current[wordIndexRef.current];
-    // In castleHit mode, allow clicks even though answeredRef was set by handleMonsterReachBottom;
-    // but block if the user already answered during this castleHit pause
+    // Guard: block if already handled
+    // - castleHit: answeredRef is set by handleMonsterReachBottom, ignore it; use pausedAnsweredRef
+    // - manual pause: answeredRef is false, but pausedAnsweredRef tracks if already clicked
+    // - normal play: use answeredRef as usual
     if (!quiz || monsterDead) return;
-    if (!castleHit && answeredRef.current) return;
-    if (castleHit && castleHitAnsweredRef.current) return;
+    if (pausedAnsweredRef.current) return;
+    if (!castleHit && !isPausedRef.current && answeredRef.current) return;
 
     if (option === quiz.correct_answer) {
-      answeredRef.current = true;
       cancelAnimationFrame(rafRef.current);
 
-      if (castleHit) {
-        // Castle-hit mode: mark as answered, stay paused; resume button will go to next word
-        castleHitAnsweredRef.current = true;
+      if (castleHit || isPausedRef.current) {
+        // Paused (either castle-hit or manual): mark answered, stay paused
+        // Resume button will fire cannon and go to next word
+        answeredRef.current = true;
+        pausedAnsweredRef.current = true;
         return;
       }
+
+      answeredRef.current = true;
 
       const isFirst = tryCountRef.current === 0;
       const isSecond = tryCountRef.current === 1;
