@@ -170,29 +170,6 @@ export default function GamePage() {
     }
   }, [gamePhase]);
 
-  // Cannonball collision detection via RAF
-  useEffect(() => {
-    if (!showCannonball) { cancelAnimationFrame(collisionRafRef.current); return; }
-    const check = () => {
-      const ball = cannonballRef.current;
-      const monster = monsterDivRef.current;
-      if (ball && monster) {
-        const br = ball.getBoundingClientRect();
-        const mr = monster.getBoundingClientRect();
-        if (br.top <= mr.bottom) {
-          setExplosion({ x: mr.left + mr.width / 2, y: mr.top + mr.height / 2 });
-          setShowCannonball(false);
-          setMonsterDead(true);
-          setTimeout(goNextWord, 320);
-          return;
-        }
-      }
-      collisionRafRef.current = requestAnimationFrame(check);
-    };
-    collisionRafRef.current = requestAnimationFrame(check);
-    return () => cancelAnimationFrame(collisionRafRef.current);
-  }, [showCannonball, goNextWord]);
-
   // progress bar via requestAnimationFrame
   useEffect(() => {
     if (gamePhase !== 'playing') return;
@@ -275,6 +252,29 @@ export default function GamePage() {
     setMonsterKey(k => k + 1);
     new Audio(getWordAudio(wordsRef.current[next].english)).play().catch(() => {});
   }, []);
+
+  // Cannonball collision detection via RAF (must be after goNextWord)
+  useEffect(() => {
+    if (!showCannonball) { cancelAnimationFrame(collisionRafRef.current); return; }
+    const check = () => {
+      const ball = cannonballRef.current;
+      const monster = monsterDivRef.current;
+      if (ball && monster) {
+        const br = ball.getBoundingClientRect();
+        const mr = monster.getBoundingClientRect();
+        if (br.top <= mr.bottom) {
+          setExplosion({ x: mr.left + mr.width / 2, y: mr.top + mr.height / 2 });
+          setShowCannonball(false);
+          setMonsterDead(true);
+          setTimeout(goNextWord, 320);
+          return;
+        }
+      }
+      collisionRafRef.current = requestAnimationFrame(check);
+    };
+    collisionRafRef.current = requestAnimationFrame(check);
+    return () => cancelAnimationFrame(collisionRafRef.current);
+  }, [showCannonball, goNextWord]);
 
   const handleMonsterReachBottom = useCallback(() => {
     if (answeredRef.current) return;
