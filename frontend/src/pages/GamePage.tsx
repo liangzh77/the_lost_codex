@@ -291,7 +291,7 @@ export default function GamePage() {
 
   const handleSelect = (option: string, e: React.MouseEvent) => {
     const quiz = quizzesRef.current[wordIndexRef.current];
-    if (!quiz || answeredRef.current || monsterDead || castleHit || isPausedRef.current) return;
+    if (!quiz || answeredRef.current || monsterDead || castleHit) return;
 
     if (option === quiz.correct_answer) {
       answeredRef.current = true;
