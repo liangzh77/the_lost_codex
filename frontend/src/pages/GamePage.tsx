@@ -598,7 +598,7 @@ export default function GamePage() {
           }}
         >
           <div style={{
-            marginBottom: 6, background: 'rgba(0,0,0,0.75)', color: '#fbbf24',
+            marginBottom: 2, background: 'rgba(0,0,0,0.75)', color: '#fbbf24',
             fontSize: 14, fontWeight: 700, padding: '3px 12px', borderRadius: 8,
             border: '1px solid rgba(251,191,36,0.3)', whiteSpace: 'nowrap',
           }}>

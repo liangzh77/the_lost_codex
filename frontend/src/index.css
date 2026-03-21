@@ -24,7 +24,7 @@ html {
 
 @keyframes monsterFall {
   from { top: 5%; }
-  to { top: 85%; }
+  to { top: 72%; }
 }
 
 @keyframes cannonballFly {
