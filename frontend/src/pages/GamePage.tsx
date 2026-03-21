@@ -58,6 +58,8 @@ export default function GamePage() {
   const [pausedAnswered, setPausedAnswered] = useState(false);
   const [monsterDead, setMonsterDead] = useState(false);
   const [showCannonball, setShowCannonball] = useState(false);
+  const [hitPos, setHitPos] = useState<{ x: number; y: number } | null>(null);
+  const monsterRef = useRef<HTMLDivElement>(null);
   const [fallDuration, setFallDuration] = useState(INITIAL_FALL);
   const [progressWidth, setProgressWidth] = useState(0);
 
@@ -243,6 +245,7 @@ export default function GamePage() {
     setMonsterDead(false);
     setCastleHit(false);
     setShowCannonball(false);
+    setHitPos(null);
     wordIndexRef.current = next;
     setWordIndex(next);
     setMonsterKey(k => k + 1);
@@ -628,6 +631,7 @@ export default function GamePage() {
 
         {/* Monster */}
         <div
+          ref={monsterRef}
           key={monsterKey}
           style={{
             position: 'absolute',
@@ -656,12 +660,31 @@ export default function GamePage() {
         {/* Cannonball */}
         {showCannonball && (
           <div
-            onAnimationEnd={() => { setMonsterDead(true); setTimeout(goNextWord, 120); }}
+            onAnimationEnd={() => {
+              const rect = monsterRef.current?.getBoundingClientRect();
+              if (rect) setHitPos({ x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 });
+              setMonsterDead(true);
+            }}
             style={{
               position: 'absolute', left: '50%', transform: 'translateX(-50%)',
               width: 14, height: 14, background: '#fbbf24', borderRadius: '50%',
               boxShadow: '0 0 14px #fbbf24, 0 0 28px rgba(251,191,36,0.4)',
               animation: 'cannonballFly 0.55s ease-out forwards',
+            }}
+          />
+        )}
+
+        {/* Hit explosion */}
+        {hitPos && (
+          <div
+            onAnimationEnd={() => { setHitPos(null); goNextWord(); }}
+            style={{
+              position: 'fixed', left: hitPos.x, top: hitPos.y,
+              transform: 'translate(-50%, -50%)',
+              pointerEvents: 'none', zIndex: 200,
+              width: 80, height: 80, borderRadius: '50%',
+              background: 'radial-gradient(circle, #fff 0%, #fbbf24 30%, #f97316 60%, transparent 80%)',
+              animation: 'hitExplosion 0.38s ease-out forwards',
             }}
           />
         )}
