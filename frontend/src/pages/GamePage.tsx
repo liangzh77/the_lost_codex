@@ -94,6 +94,7 @@ export default function GamePage() {
   const pauseStartRef = useRef(0);
   const tickFnRef = useRef<(() => void) | null>(null);
   const pendingGoNextRef = useRef(false);
+  const reachedBottomRef = useRef(false);
 
   // load entry screen data
   useEffect(() => {
@@ -233,6 +234,7 @@ export default function GamePage() {
       return;
     }
     answeredRef.current = false;
+    reachedBottomRef.current = false;
     tryCountRef.current = 0;
     setWrongOptions(new Set());
     setMonsterDead(false);
@@ -245,8 +247,8 @@ export default function GamePage() {
   }, []);
 
   const handleMonsterReachBottom = useCallback(() => {
-    if (answeredRef.current) return;
-    answeredRef.current = true;
+    if (reachedBottomRef.current) return;
+    reachedBottomRef.current = true;
     cancelAnimationFrame(rafRef.current);
     comboRef.current = 0;
     setCombo(0);
