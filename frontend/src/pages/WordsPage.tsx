@@ -85,7 +85,7 @@ export default function WordsPage() {
   const handleStudyGroup = (groupId: number) => {
     getGroupWords(groupId).then((res) => {
       if (res.data.length > 0) {
-        navigate('/learn/session', { state: { words: res.data, isFirst: false } });
+        navigate('/learn/review', { state: { words: res.data } });
       }
     });
   };

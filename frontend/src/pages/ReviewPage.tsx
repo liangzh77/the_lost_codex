@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { getTodayReview } from '../api';
 import NavBar from '../components/NavBar';
 import Button from '../components/Button';
@@ -16,9 +16,12 @@ interface WordInfo {
 
 export default function ReviewPage() {
   const navigate = useNavigate();
-  const [words, setWords] = useState<WordInfo[] | null>(null);
+  const location = useLocation();
+  const preloaded = (location.state as { words?: WordInfo[] } | null)?.words ?? null;
+  const [words, setWords] = useState<WordInfo[] | null>(preloaded);
 
   useEffect(() => {
+    if (preloaded) return;
     getTodayReview().then((res) => {
       if (res.data.length === 0) {
         alert('今天没有需要复习的单词');
@@ -27,7 +30,7 @@ export default function ReviewPage() {
         setWords(res.data);
       }
     });
-  }, [navigate]);
+  }, [navigate, preloaded]);
 
   if (!words) {
     return (
