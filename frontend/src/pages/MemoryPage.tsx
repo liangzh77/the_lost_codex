@@ -12,6 +12,7 @@ interface WordInfo {
   id: number;
   english: string;
   chinese: string;
+  phonetic?: string;
 }
 
 interface MemoryCard {
@@ -19,6 +20,7 @@ interface MemoryCard {
   wordId: number;
   pairKey: string;
   content: string;
+  phonetic?: string;
   type: 'en' | 'cn';
   state: 'hidden' | 'flipped' | 'matched';
 }
@@ -198,7 +200,7 @@ export default function MemoryPage() {
     const selected = shuffle(wordsToUse).slice(0, count);
     const newCards: MemoryCard[] = shuffle(
       selected.flatMap((word, i) => [
-        { id: `${i}-en`, wordId: word.id, pairKey: String(i), content: word.english, type: 'en' as const, state: 'hidden' as const },
+        { id: `${i}-en`, wordId: word.id, pairKey: String(i), content: word.english, phonetic: word.phonetic, type: 'en' as const, state: 'hidden' as const },
         { id: `${i}-cn`, wordId: word.id, pairKey: String(i), content: word.chinese, type: 'cn' as const, state: 'hidden' as const },
       ])
     );
@@ -556,18 +558,31 @@ export default function MemoryPage() {
                     padding: '5px',
                   }}
                 >
-                  <span
-                    style={{
-                      fontSize: cfg.pairs === 10 ? '9px' : '11px',
-                      textAlign: 'center',
-                      lineHeight: 1.3,
-                      fontWeight: card.type === 'en' ? 600 : 400,
-                      color: card.state === 'matched' ? '#111827' : isSelected ? '#2563eb' : (card.type === 'en' ? '#111827' : '#374151'),
-                      wordBreak: 'break-word',
-                    }}
-                  >
-                    {card.content}
-                  </span>
+                  <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1 }}>
+                    <span
+                      style={{
+                        fontSize: cfg.pairs === 10 ? '9px' : '11px',
+                        lineHeight: 1.3,
+                        fontWeight: card.type === 'en' ? 600 : 400,
+                        color: card.state === 'matched' ? '#111827' : isSelected ? '#2563eb' : (card.type === 'en' ? '#111827' : '#374151'),
+                        wordBreak: 'break-word',
+                      }}
+                    >
+                      {card.content}
+                    </span>
+                    {card.type === 'en' && card.phonetic && (
+                      <span
+                        style={{
+                          fontSize: cfg.pairs === 10 ? '7px' : '8px',
+                          color: card.state === 'matched' ? '#6b7280' : isSelected ? '#93c5fd' : '#9ca3af',
+                          fontWeight: 400,
+                          lineHeight: 1.2,
+                        }}
+                      >
+                        {card.phonetic}
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
