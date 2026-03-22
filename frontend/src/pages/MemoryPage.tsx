@@ -470,6 +470,18 @@ export default function MemoryPage() {
   const cfg = DIFFICULTY_CONFIG[difficulty];
   const matchedCount = cards.filter(c => c.state === 'matched').length / 2;
 
+  // Dynamic font size: bigger base, shrinks for long English words
+  const getEnFontSize = (word: string): string => {
+    const base = cfg.pairs === 10 ? 12 : cfg.pairs === 8 ? 14 : 16;
+    const len = word.length;
+    if (len <= 6)  return `${base}px`;
+    if (len <= 9)  return `${base - 2}px`;
+    if (len <= 12) return `${base - 3}px`;
+    return `${base - 4}px`;
+  };
+  const getCnFontSize = (): string => cfg.pairs === 10 ? '11px' : cfg.pairs === 8 ? '12px' : '13px';
+  const getPhoneticSize = (): string => cfg.pairs === 10 ? '9px' : cfg.pairs === 8 ? '10px' : '11px';
+
   return (
     <div className="pb-4">
       {/* Custom header for playing phase */}
@@ -558,10 +570,10 @@ export default function MemoryPage() {
                     padding: '5px',
                   }}
                 >
-                  <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1 }}>
+                  <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
                     <span
                       style={{
-                        fontSize: cfg.pairs === 10 ? '9px' : '11px',
+                        fontSize: card.type === 'en' ? getEnFontSize(card.content) : getCnFontSize(),
                         lineHeight: 1.3,
                         fontWeight: card.type === 'en' ? 600 : 400,
                         color: card.state === 'matched' ? '#111827' : isSelected ? '#2563eb' : (card.type === 'en' ? '#111827' : '#374151'),
@@ -573,7 +585,7 @@ export default function MemoryPage() {
                     {card.type === 'en' && card.phonetic && (
                       <span
                         style={{
-                          fontSize: cfg.pairs === 10 ? '7px' : '8px',
+                          fontSize: getPhoneticSize(),
                           color: card.state === 'matched' ? '#6b7280' : isSelected ? '#93c5fd' : '#9ca3af',
                           fontWeight: 400,
                           lineHeight: 1.2,
