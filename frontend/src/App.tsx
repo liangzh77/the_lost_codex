@@ -4,7 +4,6 @@ import LoginPage from './pages/LoginPage';
 import HomePage from './pages/HomePage';
 import NewWordsPage from './pages/NewWordsPage';
 import SessionPage from './pages/SessionPage';
-import ReviewPage from './pages/ReviewPage';
 import WordsPage from './pages/WordsPage';
 import SettingsPage from './pages/SettingsPage';
 import GrowthPage from './pages/GrowthPage';
@@ -27,7 +26,6 @@ function AppRoutes() {
       <Route path="/home" element={<PrivateRoute><HomePage /></PrivateRoute>} />
       <Route path="/learn/new" element={<PrivateRoute><NewWordsPage /></PrivateRoute>} />
       <Route path="/learn/session" element={<PrivateRoute><SessionPage /></PrivateRoute>} />
-      <Route path="/learn/review" element={<PrivateRoute><ReviewPage /></PrivateRoute>} />
       <Route path="/words" element={<PrivateRoute><WordsPage /></PrivateRoute>} />
       <Route path="/growth" element={<PrivateRoute><GrowthPage /></PrivateRoute>} />
       <Route path="/settings" element={<PrivateRoute><SettingsPage /></PrivateRoute>} />

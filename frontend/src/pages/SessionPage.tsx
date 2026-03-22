@@ -24,14 +24,14 @@ interface Quiz {
   correct_answer: string;
 }
 
-type Phase = 'first_look' | 'quiz' | 'done';
+type Phase = 'first_look' | 'select' | 'quiz' | 'done';
 
 export default function SessionPage() {
   const location = useLocation();
   const navigate = useNavigate();
   const { words, isFirst, initialQuizType } = (location.state || {}) as { words: WordInfo[]; isFirst: boolean; initialQuizType?: string };
 
-  const [phase, setPhase] = useState<Phase>(isFirst ? 'first_look' : 'quiz');
+  const [phase, setPhase] = useState<Phase>(isFirst ? 'first_look' : initialQuizType ? 'quiz' : 'select');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [quiz, setQuiz] = useState<Quiz | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
@@ -347,7 +347,32 @@ export default function SessionPage() {
     );
   }
 
-  // 题型选择
+  // 初始题型选择（从复习进入）
+  if (phase === 'select') {
+    return (
+      <div className="pb-6">
+        <NavBar title="题型选择" onBack={() => navigate('/words')} />
+        <div className="flex justify-center gap-4 py-2 bg-white/80 backdrop-blur border-b border-gray-100">
+          <span className="text-xs text-gray-400">今日印记 <span className="text-sm font-bold text-blue-500">{todayImprints}</span></span>
+          <span className="text-xs text-gray-400">总印记 <span className="text-sm font-bold text-gray-700">{totalImprints}</span></span>
+        </div>
+        <div className="px-4 pt-10 space-y-4 text-center">
+          <p className="text-sm text-gray-500">共 {words.length} 个单词待复习</p>
+          <p className="text-sm text-gray-400">选择一种题型开始复习</p>
+          <div className="space-y-3 pt-4">
+            <Button size="lg" variant="secondary" onClick={() => handleAgain('cn_to_en')}>中文 → 选英文</Button>
+            <Button size="lg" variant="secondary" onClick={() => handleAgain('en_to_cn')}>英文 → 选中文</Button>
+            <Button size="lg" variant="secondary" onClick={() => handleAgain('en_to_explanation')}>英文 → 选中文释义</Button>
+            <Button size="lg" variant="secondary" onClick={() => handleAgain('spelling')}>中文 → 拼写英文</Button>
+            <Button size="lg" variant="secondary" onClick={() => navigate('/game', { state: { reviewWords: words } })}>⚔️ 单词战场</Button>
+            <Button size="lg" onClick={handleConfirmDone}>学完了</Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // 练习后题型选择
   if (phase === 'done') {
     return (
       <div className="pb-6">
@@ -368,6 +393,7 @@ export default function SessionPage() {
             <Button size="lg" variant="secondary" onClick={() => handleAgain('en_to_cn')}>英文 → 选中文</Button>
             <Button size="lg" variant="secondary" onClick={() => handleAgain('en_to_explanation')}>英文 → 选中文释义</Button>
             <Button size="lg" variant="secondary" onClick={() => handleAgain('spelling')}>中文 → 拼写英文</Button>
+            <Button size="lg" variant="secondary" onClick={() => navigate('/game', { state: { reviewWords: words } })}>⚔️ 单词战场</Button>
             <Button size="lg" onClick={handleConfirmDone}>学完了</Button>
           </div>
         </div>

@@ -35,6 +35,7 @@ export default function GamePage() {
   const navigate = useNavigate();
   const location = useLocation();
   const reviewWords = (location.state as { reviewWords?: WordInfo[] } | null)?.reviewWords ?? null;
+  const autoStartedRef = useRef(false);
 
   const [gamePhase, setGamePhase] = useState<GamePhase>('entry');
   const [wordSource, setWordSource] = useState<WordSource>('today');
@@ -115,7 +116,10 @@ export default function GamePage() {
   // load entry screen data
   useEffect(() => {
     if (gamePhase !== 'entry') return;
-    if (reviewWords) { handleStartGame(); return; }
+    if (reviewWords) {
+      if (!autoStartedRef.current) { autoStartedRef.current = true; handleStartGame(); }
+      return;
+    }
     getGrowthStats().then(res => setTodayImprints(res.data.today_imprints));
     getWordBanks().then(res => setBanks(res.data));
     const stored = parseInt(localStorage.getItem('monster_best_combo') || '0', 10);
@@ -391,8 +395,14 @@ export default function GamePage() {
 
   const handleQuit = useCallback(() => {
     cancelAnimationFrame(rafRef.current);
-    setGamePhase('entry');
-  }, []);
+    cancelAnimationFrame(castleCollisionRafRef.current);
+    cancelAnimationFrame(collisionRafRef.current);
+    if (reviewWords) {
+      navigate('/learn/session', { state: { words: reviewWords, isFirst: false } });
+    } else {
+      setGamePhase('entry');
+    }
+  }, [reviewWords, navigate]);
 
   const handleSelect = (option: string, e: React.MouseEvent) => {
     const quiz = quizzesRef.current[wordIndexRef.current];
