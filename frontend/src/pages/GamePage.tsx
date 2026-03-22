@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { getTodayReview, getLearningWords, getMasteredWords, getWordBanks, getBankWords, getQuiz, confirmDone, getWordAudio, getGrowthStats } from '../api';
 import NavBar from '../components/NavBar';
 import Button from '../components/Button';
@@ -33,6 +33,8 @@ const MIN_FALL = 3;
 
 export default function GamePage() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const reviewWords = (location.state as { reviewWords?: WordInfo[] } | null)?.reviewWords ?? null;
 
   const [gamePhase, setGamePhase] = useState<GamePhase>('entry');
   const [wordSource, setWordSource] = useState<WordSource>('today');
@@ -113,12 +115,13 @@ export default function GamePage() {
   // load entry screen data
   useEffect(() => {
     if (gamePhase !== 'entry') return;
+    if (reviewWords) { handleStartGame(); return; }
     getGrowthStats().then(res => setTodayImprints(res.data.today_imprints));
     getWordBanks().then(res => setBanks(res.data));
     const stored = parseInt(localStorage.getItem('monster_best_combo') || '0', 10);
     setBestCombo(stored);
     bestComboRef.current = stored;
-  }, [gamePhase]);
+  }, [gamePhase]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // update available count when source or bank changes
   useEffect(() => {
@@ -148,11 +151,7 @@ export default function GamePage() {
     if (gamePhase !== 'playing') return;
     window.history.pushState(null, '', window.location.href);
     const onPop = () => {
-      if (window.confirm('退出游戏？当前进度将丢失。')) {
-        navigate('/home');
-      } else {
-        window.history.pushState(null, '', window.location.href);
-      }
+      navigate('/home');
     };
     window.addEventListener('popstate', onPop);
     return () => window.removeEventListener('popstate', onPop);
@@ -463,7 +462,9 @@ export default function GamePage() {
     setGamePhase('loading');
     try {
       let rawWords: WordInfo[] = [];
-      if (wordSource === 'today') {
+      if (reviewWords) {
+        rawWords = reviewWords;
+      } else if (wordSource === 'today') {
         rawWords = (await getTodayReview(true)).data;
       } else if (wordSource === 'learning') {
         rawWords = (await getLearningWords()).data;

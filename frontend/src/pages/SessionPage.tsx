@@ -29,7 +29,7 @@ type Phase = 'first_look' | 'quiz' | 'done';
 export default function SessionPage() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { words, isFirst } = (location.state || {}) as { words: WordInfo[]; isFirst: boolean };
+  const { words, isFirst, initialQuizType } = (location.state || {}) as { words: WordInfo[]; isFirst: boolean; initialQuizType?: string };
 
   const [phase, setPhase] = useState<Phase>(isFirst ? 'first_look' : 'quiz');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -41,6 +41,7 @@ export default function SessionPage() {
   const [correctCount, setCorrectCount] = useState(0);
   const [totalCount, setTotalCount] = useState(0);
   const [quizType, setQuizType] = useState<string>(() => {
+    if (initialQuizType) return initialQuizType;
     const types = ['cn_to_en', 'en_to_cn', 'en_to_explanation'];
     return types[Math.floor(Math.random() * types.length)];
   });
