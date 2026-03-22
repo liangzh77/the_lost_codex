@@ -1,9 +1,12 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { getTodayReview, confirmDone } from '../api';
+import { getTodayReview, getLearningWords, getMasteredWords, getWordBanks, getBankWords, confirmDone } from '../api';
 import { useImprints } from '../contexts/ImprintContext';
 import NavBar from '../components/NavBar';
 import Button from '../components/Button';
+
+type WordSource = 'today' | 'learning' | 'mastered' | 'all' | 'bank';
+interface Bank { id: number; name: string; total: number; }
 
 interface WordInfo {
   id: number;
@@ -51,6 +54,11 @@ export default function MemoryPage() {
   const [words, setWords] = useState<WordInfo[] | null>(passedWords);
   const [phase, setPhase] = useState<Phase>('entry');
   const [difficulty, setDifficulty] = useState<Difficulty>('standard');
+  const [wordSource, setWordSource] = useState<WordSource>('today');
+  const [selectedBankId, setSelectedBankId] = useState<number | null>(null);
+  const [banks, setBanks] = useState<Bank[]>([]);
+  const [availableCount, setAvailableCount] = useState<number | null>(null);
+  const [isStarting, setIsStarting] = useState(false);
   const [cards, setCards] = useState<MemoryCard[]>([]);
   const [flippedIds, setFlippedIds] = useState<string[]>([]);
   const [steps, setSteps] = useState(0);
@@ -68,10 +76,35 @@ export default function MemoryPage() {
   const imprintBarRef = useRef<HTMLElement>(null);
   const sessionImprintsRef = useRef(0);
 
+  // Load banks list when not coming from session
   useEffect(() => {
     if (passedWords) return;
-    getTodayReview().then(res => setWords(res.data));
+    getWordBanks().then(res => setBanks(res.data));
   }, []);
+
+  // Update available count when source or bank changes (only when not coming from session)
+  useEffect(() => {
+    if (passedWords) return;
+    if (phase !== 'entry') return;
+    if (wordSource === 'bank' && selectedBankId === null) { setAvailableCount(null); return; }
+    setAvailableCount(null);
+    const fetch = async () => {
+      if (wordSource === 'today') {
+        const r = await getTodayReview(true); setAvailableCount(r.data.length);
+      } else if (wordSource === 'learning') {
+        const r = await getLearningWords(); setAvailableCount(r.data.length);
+      } else if (wordSource === 'mastered') {
+        const r = await getMasteredWords(); setAvailableCount(r.data.length);
+      } else if (wordSource === 'bank' && selectedBankId !== null) {
+        const r = await getBankWords(selectedBankId);
+        setAvailableCount(r.data.filter((w: { chinese: string }) => w.chinese).length);
+      } else {
+        const [l, m] = await Promise.all([getLearningWords(), getMasteredWords()]);
+        setAvailableCount(l.data.length + m.data.length);
+      }
+    };
+    fetch().catch(() => setAvailableCount(0));
+  }, [passedWords, phase, wordSource, selectedBankId]);
 
   const flyImprint = useCallback((sourceEl: HTMLElement | null, amount: number) => {
     if (!sourceEl || !imprintBarRef.current) return;
@@ -125,14 +158,44 @@ export default function MemoryPage() {
         doneCalledRef.current = true;
       }
     }
-    navigate('/learn/session', { state: { words, isFirst: false } });
+    if (passedWords) {
+      navigate('/learn/session', { state: { words, isFirst: false } });
+    } else {
+      navigate('/home');
+    }
   };
 
-  const startGame = () => {
-    if (!words) return;
+  const startGame = async () => {
+    let wordsToUse: WordInfo[];
+    if (passedWords) {
+      wordsToUse = passedWords;
+    } else {
+      setIsStarting(true);
+      try {
+        if (wordSource === 'today') {
+          wordsToUse = (await getTodayReview(true)).data;
+        } else if (wordSource === 'learning') {
+          wordsToUse = (await getLearningWords()).data;
+        } else if (wordSource === 'mastered') {
+          wordsToUse = (await getMasteredWords()).data;
+        } else if (wordSource === 'bank' && selectedBankId !== null) {
+          const r = await getBankWords(selectedBankId);
+          wordsToUse = r.data.filter((w: WordInfo) => w.chinese);
+        } else {
+          const [l, m] = await Promise.all([getLearningWords(), getMasteredWords()]);
+          wordsToUse = [...l.data, ...m.data];
+        }
+      } catch {
+        setIsStarting(false);
+        return;
+      }
+      setIsStarting(false);
+      if (wordsToUse.length === 0) return;
+      setWords(wordsToUse);
+    }
     const cfg = DIFFICULTY_CONFIG[difficulty];
-    const count = Math.min(cfg.pairs, words.length);
-    const selected = shuffle(words).slice(0, count);
+    const count = Math.min(cfg.pairs, wordsToUse.length);
+    const selected = shuffle(wordsToUse).slice(0, count);
     const newCards: MemoryCard[] = shuffle(
       selected.flatMap((word, i) => [
         { id: `${i}-en`, wordId: word.id, pairKey: String(i), content: word.english, type: 'en' as const, state: 'hidden' as const },
@@ -234,17 +297,20 @@ export default function MemoryPage() {
     confirmDone(playedWordIdsRef.current, playedWordIdsRef.current.length, sessionImprintsRef.current, 0, false);
   }, [phase]);
 
-  if (!words) {
-    return (
-      <div>
-        <NavBar title="翻牌配对" onBack={handleBack} />
-        <div className="flex items-center justify-center h-60 text-gray-400">加载中...</div>
-      </div>
-    );
-  }
-
   // Entry phase
   if (phase === 'entry') {
+    const wordCount = passedWords ? passedWords.length : availableCount;
+    const sourceOptions: { value: WordSource; label: string }[] = [
+      { value: 'today', label: '今日单词' },
+      { value: 'learning', label: '学习中' },
+      { value: 'mastered', label: '已掌握' },
+      { value: 'all', label: '全部' },
+      { value: 'bank', label: '按词库' },
+    ];
+    const bankNotSelected = !passedWords && wordSource === 'bank' && selectedBankId === null;
+    const noWords = !passedWords && !bankNotSelected && availableCount === 0;
+    const startDisabled = isStarting || bankNotSelected || noWords || (!passedWords && availableCount === null);
+
     return (
       <div className="pb-6">
         <NavBar title="翻牌配对" onBack={handleBack} />
@@ -252,39 +318,106 @@ export default function MemoryPage() {
           <span className="text-xs text-gray-400">今日印记 <span className="text-sm font-bold text-blue-500">{todayImprints}</span></span>
           <span className="text-xs text-gray-400">总印记 <span className="text-sm font-bold text-gray-700">{totalImprints}</span></span>
         </div>
-        <div className="px-4 pt-8 space-y-5 text-center">
+        <div className="px-4 pt-6 space-y-5 text-center">
+          {/* Word count */}
           <div className="bg-white rounded-2xl p-4 border border-gray-100">
-            <p className="text-3xl font-bold text-gray-900">{words.length}</p>
-            <p className="text-sm text-gray-400 mt-1">待复习单词</p>
+            <p className="text-3xl font-bold text-gray-900">
+              {wordCount === null ? '…' : wordCount}
+            </p>
+            <p className="text-sm text-gray-400 mt-1">
+              {passedWords ? '待复习单词' : '可用单词'}
+            </p>
           </div>
-          <p className="text-sm text-gray-400">选择难度</p>
-          <div className="flex flex-col gap-3">
-            {(['easy', 'standard', 'hard'] as Difficulty[]).map(diff => {
-              const cfg = DIFFICULTY_CONFIG[diff];
-              const disabled = diff === 'hard' && words.length < 8;
-              const selected = difficulty === diff;
-              return (
-                <button
-                  key={diff}
-                  disabled={disabled}
-                  onClick={() => setDifficulty(diff)}
-                  className={`flex-1 rounded-xl p-3 border-2 transition ${
-                    disabled
-                      ? 'opacity-30 cursor-not-allowed border-gray-200 bg-white'
-                      : selected
-                      ? 'border-gray-900 bg-white'
-                      : 'border-gray-200 bg-white hover:border-gray-400'
-                  }`}
-                >
-                  <span className="block text-sm font-semibold text-gray-900">{cfg.label}</span>
-                  <span className="block text-xs text-gray-400 mt-0.5">
-                    {cfg.grid} · {Math.min(cfg.pairs, words.length)}对
-                  </span>
-                </button>
-              );
-            })}
+
+          {/* Source selector — only when not coming from session */}
+          {!passedWords && (
+            <>
+              <div>
+                <p className="text-sm text-gray-400 mb-2">选词范围</p>
+                <div className="flex gap-2 justify-center flex-wrap">
+                  {sourceOptions.map(opt => (
+                    <button
+                      key={opt.value}
+                      onClick={() => { setWordSource(opt.value); if (opt.value !== 'bank') setSelectedBankId(null); }}
+                      className={`px-3 py-1.5 rounded-full text-sm font-semibold transition ${
+                        wordSource === opt.value
+                          ? 'bg-blue-50 text-blue-500 border border-blue-400'
+                          : 'bg-white text-gray-500 border border-gray-200 hover:border-gray-400'
+                      }`}
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Bank picker */}
+              {wordSource === 'bank' && (
+                <div>
+                  <p className="text-sm text-gray-400 mb-2">选择词库</p>
+                  <div className="space-y-2 max-h-40 overflow-y-auto" style={{ paddingRight: 4 }}>
+                    {banks.map(b => (
+                      <button
+                        key={b.id}
+                        onClick={() => setSelectedBankId(b.id)}
+                        className={`flex justify-between items-center w-full px-4 py-2.5 rounded-xl text-sm border transition ${
+                          selectedBankId === b.id
+                            ? 'border-blue-400 bg-blue-50 text-blue-600'
+                            : 'border-gray-200 bg-white text-gray-700 hover:border-gray-400'
+                        }`}
+                      >
+                        <span className="font-semibold">{b.name}</span>
+                        <span className="text-xs text-gray-400">{b.total} 词</span>
+                      </button>
+                    ))}
+                    {banks.length === 0 && (
+                      <p className="text-sm text-gray-400">加载中…</p>
+                    )}
+                  </div>
+                </div>
+              )}
+            </>
+          )}
+
+          {/* Difficulty selector */}
+          <div>
+            <p className="text-sm text-gray-400 mb-2">选择难度</p>
+            <div className="flex flex-col gap-3">
+              {(['easy', 'standard', 'hard'] as Difficulty[]).map(diff => {
+                const cfg = DIFFICULTY_CONFIG[diff];
+                const count = wordCount ?? 0;
+                const disabled = diff === 'hard' && count < 8;
+                const selected = difficulty === diff;
+                return (
+                  <button
+                    key={diff}
+                    disabled={disabled}
+                    onClick={() => setDifficulty(diff)}
+                    className={`flex-1 rounded-xl p-3 border-2 transition ${
+                      disabled
+                        ? 'opacity-30 cursor-not-allowed border-gray-200 bg-white'
+                        : selected
+                        ? 'border-gray-900 bg-white'
+                        : 'border-gray-200 bg-white hover:border-gray-400'
+                    }`}
+                  >
+                    <span className="block text-sm font-semibold text-gray-900">{cfg.label}</span>
+                    <span className="block text-xs text-gray-400 mt-0.5">
+                      {cfg.grid} · {Math.min(cfg.pairs, count)}对
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
-          <Button size="lg" onClick={startGame}>开始翻牌</Button>
+
+          {noWords ? (
+            <p className="text-sm text-gray-400">该范围暂无单词</p>
+          ) : (
+            <Button size="lg" onClick={startGame} disabled={startDisabled}>
+              {isStarting ? '准备中...' : '开始翻牌'}
+            </Button>
+          )}
           {getBest(difficulty) !== null && (
             <p className="text-xs text-gray-300">最佳步数：{getBest(difficulty)}步</p>
           )}
