@@ -24,18 +24,16 @@ html {
 
 @keyframes monsterFall {
   from { top: 5%; }
-  to { top: 72%; }
+  to { top: 110%; }
 }
 
 @keyframes cannonballFly {
-  from { bottom: 50px; opacity: 1; }
   to { bottom: 90%; opacity: 0; }
 }
 
 @keyframes explode {
-  0%   { transform: translate(-50%, -50%) scale(0.2); opacity: 1; }
-  60%  { transform: translate(-50%, -50%) scale(1.6); opacity: 0.8; }
-  100% { transform: translate(-50%, -50%) scale(2.4); opacity: 0; }
+  0%   { transform: translate(-50%, -50%) scale(0.2); opacity: 0.7; }
+  100% { transform: translate(-50%, -50%) scale(2.2); opacity: 0; }
 }
 
 @keyframes castleHit {

@@ -4,7 +4,7 @@
  * 以及目标中被跳过（用户少写）的位置
  */
 
-export type CharStatus = 'correct' | 'wrong' | 'extra';
+export type CharStatus = 'correct' | 'wrong' | 'extra' | 'missing';
 
 export interface DiffResult {
   chars: { char: string; status: CharStatus }[];

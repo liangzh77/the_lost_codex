@@ -58,6 +58,7 @@ export default function GamePage() {
   const [pausedAnswered, setPausedAnswered] = useState(false);
   const [monsterDead, setMonsterDead] = useState(false);
   const [showCannonball, setShowCannonball] = useState(false);
+  const [cannonballBottom, setCannonballBottom] = useState(50);
   const [explosion, setExplosion] = useState<{ x: number; y: number } | null>(null);
   const [fallDuration, setFallDuration] = useState(INITIAL_FALL);
   const [progressWidth, setProgressWidth] = useState(0);
@@ -76,8 +77,12 @@ export default function GamePage() {
   const bestComboRef = useRef(0);
   const fallDurationRef = useRef(INITIAL_FALL);
   const tryCountRef = useRef(0);
+  const wordSourceRef = useRef<WordSource>(wordSource);
+  useEffect(() => { wordSourceRef.current = wordSource; }, [wordSource]);
+
   const answeredRef = useRef(false);
   const doneFiredRef = useRef(false);
+  const pendingImprintRef = useRef(false);
   const firstTryCorrectIdsRef = useRef<number[]>([]);
   const totalPlayedRef = useRef(0);
   const firstTryCorrectCountRef = useRef(0);
@@ -85,10 +90,13 @@ export default function GamePage() {
   const sessionImprintsRef = useRef(0);
   const rafRef = useRef<number>(0);
   const spawnTimeRef = useRef(0);
+  const monsterInitialBottomRef = useRef<number>(0);
   const imprintBarRef = useRef<HTMLSpanElement>(null);
   const cannonballRef = useRef<HTMLDivElement>(null);
   const monsterDivRef = useRef<HTMLDivElement>(null);
+  const castleDivRef = useRef<HTMLDivElement>(null);
   const collisionRafRef = useRef<number>(0);
+  const castleCollisionRafRef = useRef<number>(0);
 
   // castle hit state
   const [castleHit, setCastleHit] = useState(false);
@@ -158,7 +166,8 @@ export default function GamePage() {
         firstTryCorrectIdsRef.current,
         totalPlayedRef.current,
         firstTryCorrectCountRef.current,
-        0
+        0,
+        wordSourceRef.current !== 'bank'
       ).catch(() => {});
       setEndData({
         score: scoreRef.current,
@@ -174,15 +183,24 @@ export default function GamePage() {
   useEffect(() => {
     if (gamePhase !== 'playing') return;
     spawnTimeRef.current = Date.now();
+    monsterInitialBottomRef.current = 0;
     isPausedRef.current = false;
     setIsPaused(false);
     pendingGoNextRef.current = false;
     setProgressWidth(0);
     const tick = () => {
-      const progress = Math.min(
-        (Date.now() - spawnTimeRef.current) / (fallDurationRef.current * 1000),
-        1
-      );
+      const monster = monsterDivRef.current;
+      const castle = castleDivRef.current;
+      let progress: number;
+      if (monster && castle) {
+        const mr = monster.getBoundingClientRect();
+        if (monsterInitialBottomRef.current === 0) monsterInitialBottomRef.current = mr.bottom;
+        const start = monsterInitialBottomRef.current;
+        const end = castle.getBoundingClientRect().top;
+        progress = Math.max(0, Math.min((mr.bottom - start) / (end - start), 1));
+      } else {
+        progress = Math.min((Date.now() - spawnTimeRef.current) / (fallDurationRef.current * 1000), 1);
+      }
       setProgressWidth(progress * 100);
       if (progress < 1) rafRef.current = requestAnimationFrame(tick);
     };
@@ -200,6 +218,9 @@ export default function GamePage() {
     const sy = src.top + src.height / 2;
     const ex = dst.left + dst.width / 2;
     const ey = dst.top + dst.height / 2;
+    let st = document.getElementById('imprint-fly-game-style') as HTMLStyleElement | null;
+    if (!st) { st = document.createElement('style'); st.id = 'imprint-fly-game-style'; document.head.appendChild(st); }
+    st.textContent = `@keyframes imprintFlyGame{0%{transform:scale(1);opacity:1;}50%{transform:translate(${(ex - sx) * 0.5}px,${(ey - sy) * 0.5 - 40}px) scale(0.9);opacity:1;}100%{transform:translate(${ex - sx}px,${ey - sy}px) scale(0.8);opacity:0.9;}}`;
     for (let i = 0; i < amount; i++) {
       const dot = document.createElement('div');
       const delay = i * 120;
@@ -213,9 +234,21 @@ export default function GamePage() {
         setTimeout(() => setImprintBounce(false), 300);
       }, 600 + delay);
     }
-    let st = document.getElementById('imprint-fly-game-style') as HTMLStyleElement | null;
-    if (!st) { st = document.createElement('style'); st.id = 'imprint-fly-game-style'; document.head.appendChild(st); }
-    st.textContent = `@keyframes imprintFlyGame{0%{transform:scale(1);opacity:1;}50%{transform:translate(${(ex - sx) * 0.5}px,${(ey - sy) * 0.5 - 40}px) scale(0.8);opacity:0.8;}100%{transform:translate(${ex - sx}px,${ey - sy}px) scale(0.3);opacity:0;}}`;
+  }, []);
+
+  const playHitSound = useCallback(() => {
+    try {
+      const ctx = new (window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext)();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(900, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(300, ctx.currentTime + 0.08);
+      gain.gain.setValueAtTime(0.18, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.08);
+      osc.start(ctx.currentTime); osc.stop(ctx.currentTime + 0.08);
+    } catch { /* no audio context */ }
   }, []);
 
   const playFailureSound = useCallback(() => {
@@ -231,6 +264,15 @@ export default function GamePage() {
       gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.35);
       osc.start(ctx.currentTime); osc.stop(ctx.currentTime + 0.35);
     } catch { /* no audio context */ }
+  }, []);
+
+  const fireCannonball = useCallback(() => {
+    if (castleDivRef.current) {
+      const castle = castleDivRef.current.getBoundingClientRect();
+      const field = castleDivRef.current.parentElement!.getBoundingClientRect();
+      setCannonballBottom(field.bottom - castle.top);
+    }
+    setShowCannonball(true);
   }, []);
 
   const goNextWord = useCallback(() => {
@@ -266,6 +308,11 @@ export default function GamePage() {
           setExplosion({ x: mr.left + mr.width / 2, y: mr.top + mr.height / 2 });
           setShowCannonball(false);
           setMonsterDead(true);
+          playHitSound();
+          if (pendingImprintRef.current) {
+            pendingImprintRef.current = false;
+            flyImprint(monsterDivRef.current, 1);
+          }
           setTimeout(goNextWord, 320);
           return;
         }
@@ -274,7 +321,7 @@ export default function GamePage() {
     };
     collisionRafRef.current = requestAnimationFrame(check);
     return () => cancelAnimationFrame(collisionRafRef.current);
-  }, [showCannonball, goNextWord]);
+  }, [showCannonball, goNextWord, playHitSound, flyImprint]);
 
   const handleMonsterReachBottom = useCallback(() => {
     if (answeredRef.current) return;
@@ -296,6 +343,30 @@ export default function GamePage() {
     setIsPaused(true);
   }, [playFailureSound]);
 
+  // Castle collision detection via RAF: compare monster bottom Y vs castle top Y
+  // (must be after handleMonsterReachBottom)
+  useEffect(() => {
+    if (gamePhase !== 'playing' || isPaused || monsterDead) {
+      cancelAnimationFrame(castleCollisionRafRef.current);
+      return;
+    }
+    const check = () => {
+      const monster = monsterDivRef.current;
+      const castle = castleDivRef.current;
+      if (monster && castle) {
+        const mr = monster.getBoundingClientRect();
+        const cr = castle.getBoundingClientRect();
+        if (mr.bottom >= cr.top) {
+          handleMonsterReachBottom();
+          return;
+        }
+      }
+      castleCollisionRafRef.current = requestAnimationFrame(check);
+    };
+    castleCollisionRafRef.current = requestAnimationFrame(check);
+    return () => cancelAnimationFrame(castleCollisionRafRef.current);
+  }, [gamePhase, isPaused, monsterDead, handleMonsterReachBottom]);
+
   const handlePauseResume = useCallback(() => {
     if (!isPausedRef.current) {
       cancelAnimationFrame(rafRef.current);
@@ -311,13 +382,13 @@ export default function GamePage() {
         // Castle-hit resume OR answered correctly while manually paused
         pendingGoNextRef.current = false;
         pausedAnsweredRef.current = false;
-        setShowCannonball(true);
+        fireCannonball();
         // monsterDead + goNextWord triggered by cannonball onAnimationEnd
       } else if (tickFnRef.current) {
         rafRef.current = requestAnimationFrame(tickFnRef.current);
       }
     }
-  }, [goNextWord]);
+  }, [goNextWord, fireCannonball]);
 
   const handleQuit = useCallback(() => {
     cancelAnimationFrame(rafRef.current);
@@ -364,13 +435,13 @@ export default function GamePage() {
         localStorage.setItem('monster_best_combo', String(nb));
         firstTryCorrectIdsRef.current.push(wordsRef.current[wordIndexRef.current].id);
         firstTryCorrectCountRef.current++;
-        flyImprint(e.currentTarget as HTMLElement, 1);
-        setShowCannonball(true);
+        pendingImprintRef.current = true;
       } else if (isSecond) {
         scoreRef.current += 10;
         setScore(scoreRef.current);
       }
       // 3rd+ try: +0 pts
+      fireCannonball();
 
       totalPlayedRef.current++;
       const nf = Math.max(fallDurationRef.current * 0.95, MIN_FALL);
@@ -426,7 +497,7 @@ export default function GamePage() {
       wordsRef.current = wl; quizzesRef.current = ql;
       wordIndexRef.current = 0; livesRef.current = 3; comboRef.current = 0;
       fallDurationRef.current = INITIAL_FALL; tryCountRef.current = 0;
-      answeredRef.current = false; doneFiredRef.current = false;
+      answeredRef.current = false; doneFiredRef.current = false; pausedAnsweredRef.current = false; pendingImprintRef.current = false;
       firstTryCorrectIdsRef.current = []; totalPlayedRef.current = 0;
       firstTryCorrectCountRef.current = 0; scoreRef.current = 0; sessionImprintsRef.current = 0;
 
@@ -434,6 +505,7 @@ export default function GamePage() {
       setWords(wl); setQuizzes(ql); setWordIndex(0); setMonsterKey(0);
       setLives(3); setScore(0); setCombo(0); setFallDuration(INITIAL_FALL);
       setWrongOptions(new Set()); setMonsterDead(false); setShowCannonball(false);
+      setCastleHit(false); setPausedAnswered(false);
 
       new Audio(getWordAudio(wl[0].english)).play().catch(() => {});
       setGamePhase('playing');
@@ -662,13 +734,13 @@ export default function GamePage() {
             left: '50%',
             transform: 'translateX(-50%)',
             textAlign: 'center',
-            animation: `monsterFall ${fallDuration}s linear forwards`,
+            animationName: 'monsterFall',
+            animationDuration: `${fallDuration}s`,
+            animationTimingFunction: 'linear',
+            animationFillMode: 'forwards',
             animationPlayState: isPaused ? 'paused' : 'running',
             opacity: monsterDead ? 0 : 1,
             transition: monsterDead ? 'opacity 0.15s' : 'none',
-          }}
-          onAnimationEnd={(e) => {
-            if (e.animationName === 'monsterFall') handleMonsterReachBottom();
           }}
         >
           <div style={{
@@ -687,6 +759,7 @@ export default function GamePage() {
             ref={cannonballRef}
             style={{
               position: 'absolute', left: '50%', transform: 'translateX(-50%)',
+              bottom: cannonballBottom,
               width: 14, height: 14, background: '#fbbf24', borderRadius: '50%',
               boxShadow: '0 0 14px #fbbf24, 0 0 28px rgba(251,191,36,0.4)',
               animation: 'cannonballFly 0.55s ease-out forwards',
@@ -700,16 +773,16 @@ export default function GamePage() {
             onAnimationEnd={() => setExplosion(null)}
             style={{
               position: 'fixed', left: explosion.x, top: explosion.y, pointerEvents: 'none', zIndex: 9999,
-              width: 48, height: 48, borderRadius: '50%',
-              background: 'radial-gradient(circle, #fef08a, #fbbf24, #ef4444)',
-              boxShadow: '0 0 24px #fbbf24, 0 0 48px rgba(239,68,68,0.6)',
-              animation: 'explode 0.32s ease-out forwards',
+              width: 32, height: 32, borderRadius: '50%',
+              background: 'transparent',
+              border: '1.5px solid rgba(251,191,36,0.55)',
+              animation: 'explode 0.22s ease-out forwards',
             }}
           />
         )}
 
         {/* Castle */}
-        <div style={{
+        <div ref={castleDivRef} style={{
           position: 'absolute', bottom: 10, left: '50%',
           transform: 'translateX(-50%)',
           animation: castleHit ? 'castleHit 0.5s ease-out forwards' : 'none',
@@ -756,7 +829,7 @@ export default function GamePage() {
         <div className="space-y-2">
           {curQuiz.options.map((opt, i) => {
             const isWrong = wrongOptions.has(opt);
-            const isCorrectShown = (monsterDead || castleHit || pausedAnswered) && opt === curQuiz.correct_answer;
+            const isCorrectShown = (monsterDead || pausedAnswered) && opt === curQuiz.correct_answer;
             let bg = '#0f172a', border = '#334155', color = '#e2e8f0';
             if (isCorrectShown) { bg = 'rgba(34,197,94,0.1)'; border = '#22c55e'; color = '#4ade80'; }
             else if (isWrong) { bg = 'rgba(239,68,68,0.1)'; border = '#ef4444'; color = '#f87171'; }

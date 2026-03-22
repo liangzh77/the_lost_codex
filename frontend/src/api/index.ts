@@ -40,8 +40,8 @@ export const getTodayReviewCount = () => api.get('/learning/review/today/count')
 export const getQuiz = (wordId: number, quizType?: string) =>
   api.get(`/learning/quiz/${wordId}`, { params: quizType ? { quiz_type: quizType } : {} });
 
-export const confirmDone = (wordIds: number[], totalQuestions = 0, correctAnswers = 0, spellingCorrect = 0) =>
-  api.post('/learning/confirm', { word_ids: wordIds, total_questions: totalQuestions, correct_answers: correctAnswers, spelling_correct: spellingCorrect });
+export const confirmDone = (wordIds: number[], totalQuestions = 0, correctAnswers = 0, spellingCorrect = 0, createGroup = true) =>
+  api.post('/learning/confirm', { word_ids: wordIds, total_questions: totalQuestions, correct_answers: correctAnswers, spelling_correct: spellingCorrect, create_group: createGroup });
 
 export const getRecentWords = () => api.get('/learning/words/recent');
 

@@ -24,6 +24,7 @@ class ConfirmDoneRequest(BaseModel):
     total_questions: int = 0
     correct_answers: int = 0
     spelling_correct: int = 0
+    create_group: bool = True
 
 
 class CheckWordsRequest(BaseModel):
@@ -249,22 +250,42 @@ def get_today_review(
     db: Session = Depends(get_db),
     include_reviewed: bool = False,
 ):
-    """获取今天需要复习的单词（include_reviewed=true 时包含今天已复习的）"""
+    """获取今天需要复习的单词（include_reviewed=true 时包含今天已复习的，即使已推进到下一阶段）"""
     today = date.today()
-    q = db.query(UserWordProgress).filter(
-        UserWordProgress.user_id == user.id,
-        UserWordProgress.next_review_date <= today,
-        UserWordProgress.current_stage < get_total_stages(user.review_intervals),
-    )
-    if not include_reviewed:
-        today_start = datetime(today.year, today.month, today.day)
+    today_start = datetime(today.year, today.month, today.day)
+    if include_reviewed:
+        # 今天到期（尚未完成）的词
+        pending = db.query(UserWordProgress).filter(
+            UserWordProgress.user_id == user.id,
+            UserWordProgress.next_review_date <= today,
+            UserWordProgress.current_stage < get_total_stages(user.review_intervals),
+        ).all()
+        pending_ids = {p.word_id for p in pending}
+        # 今天已复习过（confirmDone 后 next_review_date 已推进）的词
+        reviewed_today_ids = {
+            r.word_id for r in db.query(LearningRecord.word_id)
+            .filter(LearningRecord.user_id == user.id, LearningRecord.studied_at >= today_start)
+            .all()
+        }
+        extra_ids = reviewed_today_ids - pending_ids
+        extra = db.query(UserWordProgress).filter(
+            UserWordProgress.user_id == user.id,
+            UserWordProgress.word_id.in_(extra_ids),
+            UserWordProgress.current_stage < get_total_stages(user.review_intervals),
+        ).all() if extra_ids else []
+        progress_list = pending + extra
+    else:
         reviewed_today = (
             db.query(LearningRecord.word_id)
             .filter(LearningRecord.user_id == user.id, LearningRecord.studied_at >= today_start)
             .subquery()
         )
-        q = q.filter(~UserWordProgress.word_id.in_(db.query(reviewed_today.c.word_id)))
-    progress_list = q.all()
+        progress_list = db.query(UserWordProgress).filter(
+            UserWordProgress.user_id == user.id,
+            UserWordProgress.next_review_date <= today,
+            UserWordProgress.current_stage < get_total_stages(user.review_intervals),
+            ~UserWordProgress.word_id.in_(db.query(reviewed_today.c.word_id)),
+        ).all()
     result = []
     for p in progress_list:
         w = p.word
@@ -377,15 +398,17 @@ def confirm_done(
     today = date.today()
     now = datetime.now()
 
-    # 创建学习组
-    group_count = db.query(LearningGroup).filter(LearningGroup.user_id == user.id).count()
-    group = LearningGroup(
-        user_id=user.id,
-        name=f"第{group_count + 1}组",
-        created_at=now,
-    )
-    db.add(group)
-    db.flush()
+    # 创建学习组（随便玩词库模式时跳过）
+    group = None
+    if body.create_group:
+        group_count = db.query(LearningGroup).filter(LearningGroup.user_id == user.id).count()
+        group = LearningGroup(
+            user_id=user.id,
+            name=f"第{group_count + 1}组",
+            created_at=now,
+        )
+        db.add(group)
+        db.flush()
 
     for word_id in body.word_ids:
         progress = (
@@ -395,13 +418,11 @@ def confirm_done(
         )
         if progress:
             if today >= progress.next_review_date:
-                # 到了复习日期，推进到下一轮
                 progress.current_stage += 1
                 progress.next_review_date = get_next_review_date(progress.current_stage, today, user.review_intervals)
             else:
-                # 还没到复习日期，重置当前轮的倒计时
                 progress.next_review_date = get_next_review_date(progress.current_stage, today, user.review_intervals)
-            if not progress.group_id:
+            if group and not progress.group_id:
                 progress.group_id = group.id
         else:
             progress = UserWordProgress(
@@ -409,7 +430,7 @@ def confirm_done(
                 word_id=word_id,
                 current_stage=1,
                 next_review_date=get_next_review_date(1, today, user.review_intervals),
-                group_id=group.id,
+                group_id=group.id if group else None,
             )
             db.add(progress)
 
