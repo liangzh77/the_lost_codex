@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { getQuiz, confirmDone, getGrowthStats, getWordAudio } from '../api';
+import { getQuiz, confirmDone, getWordAudio } from '../api';
+import { useImprints } from '../contexts/ImprintContext';
 import NavBar from '../components/NavBar';
 import Button from '../components/Button';
 import WordCard from '../components/WordCard';
@@ -50,8 +51,7 @@ export default function SessionPage() {
   const [spellingSubmitted, setSpellingSubmitted] = useState(false);
   const spellingRef = useRef<HTMLInputElement>(null);
   const imprintBarRef = useRef<HTMLSpanElement>(null);
-  const [todayImprints, setTodayImprints] = useState(0);
-  const [totalImprints, setTotalImprints] = useState(0);
+  const { todayImprints, totalImprints, addImprints } = useImprints();
   const [imprintBounce, setImprintBounce] = useState(false);
   const [showPhonetic, setShowPhonetic] = useState(false);
   const [seenWords, setSeenWords] = useState<Set<number>>(new Set());
@@ -68,13 +68,6 @@ export default function SessionPage() {
     }
     return [];
   });
-
-  useEffect(() => {
-    getGrowthStats().then((r) => {
-      setTodayImprints(r.data.today_imprints);
-      setTotalImprints(r.data.total_imprints);
-    });
-  }, []);
 
   const flyImprint = useCallback((sourceEl: HTMLElement | null, amount: number) => {
     if (!sourceEl || !imprintBarRef.current) return;
@@ -99,8 +92,7 @@ export default function SessionPage() {
       document.body.appendChild(dot);
       setTimeout(() => {
         dot.remove();
-        setTodayImprints((c) => c + 1);
-        setTotalImprints((c) => c + 1);
+        addImprints(1);
         setImprintBounce(true);
         setTimeout(() => setImprintBounce(false), 300);
       }, 600 + delay);
@@ -128,7 +120,7 @@ export default function SessionPage() {
         }
       `;
     }
-  }, []);
+  }, [addImprints]);
 
   useEffect(() => {
     if (!words || words.length === 0) navigate('/home');
@@ -227,8 +219,7 @@ export default function SessionPage() {
       const wordId = words[currentIndex].id;
       if (!seenWords.has(wordId)) {
         setSeenWords((prev) => new Set(prev).add(wordId));
-        setTodayImprints((c) => c + 1);
-        setTotalImprints((c) => c + 1);
+        addImprints(1);
         setImprintBounce(true);
         setTimeout(() => setImprintBounce(false), 300);
       }
@@ -365,6 +356,7 @@ export default function SessionPage() {
             <Button size="lg" variant="secondary" onClick={() => handleAgain('en_to_explanation')}>英文 → 选中文释义</Button>
             <Button size="lg" variant="secondary" onClick={() => handleAgain('spelling')}>中文 → 拼写英文</Button>
             <Button size="lg" variant="secondary" onClick={() => navigate('/game', { state: { reviewWords: words } })}>⚔️ 单词战场</Button>
+            <Button size="lg" variant="secondary" onClick={() => navigate('/memory', { state: { words } })}>🃏 翻牌配对</Button>
             <Button size="lg" onClick={handleConfirmDone}>学完了</Button>
           </div>
         </div>
@@ -394,6 +386,7 @@ export default function SessionPage() {
             <Button size="lg" variant="secondary" onClick={() => handleAgain('en_to_explanation')}>英文 → 选中文释义</Button>
             <Button size="lg" variant="secondary" onClick={() => handleAgain('spelling')}>中文 → 拼写英文</Button>
             <Button size="lg" variant="secondary" onClick={() => navigate('/game', { state: { reviewWords: words } })}>⚔️ 单词战场</Button>
+            <Button size="lg" variant="secondary" onClick={() => navigate('/memory', { state: { words } })}>🃏 翻牌配对</Button>
             <Button size="lg" onClick={handleConfirmDone}>学完了</Button>
           </div>
         </div>

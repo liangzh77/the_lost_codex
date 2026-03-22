@@ -61,6 +61,12 @@ export default function HomePage() {
             👾 单词战场
           </Button>
         </Card>
+
+        <Card>
+          <Button size="lg" variant="secondary" onClick={() => navigate('/memory')}>
+            🃏 翻牌配对
+          </Button>
+        </Card>
       </div>
       <TabBar />
     </div>

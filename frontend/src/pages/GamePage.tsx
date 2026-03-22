@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { getTodayReview, getLearningWords, getMasteredWords, getWordBanks, getBankWords, getQuiz, confirmDone, getWordAudio, getGrowthStats } from '../api';
+import { getTodayReview, getLearningWords, getMasteredWords, getWordBanks, getBankWords, getQuiz, confirmDone, getWordAudio } from '../api';
+import { useImprints } from '../contexts/ImprintContext';
 import NavBar from '../components/NavBar';
 import Button from '../components/Button';
 
@@ -67,7 +68,7 @@ export default function GamePage() {
   const [progressWidth, setProgressWidth] = useState(0);
 
   // HUD imprints
-  const [todayImprints, setTodayImprints] = useState(0);
+  const { todayImprints, addImprints } = useImprints();
   const [imprintBounce, setImprintBounce] = useState(false);
 
   // end-game snapshot
@@ -120,7 +121,6 @@ export default function GamePage() {
       if (!autoStartedRef.current) { autoStartedRef.current = true; handleStartGame(); }
       return;
     }
-    getGrowthStats().then(res => setTodayImprints(res.data.today_imprints));
     getWordBanks().then(res => setBanks(res.data));
     const stored = parseInt(localStorage.getItem('monster_best_combo') || '0', 10);
     setBestCombo(stored);
@@ -155,6 +155,16 @@ export default function GamePage() {
     if (gamePhase !== 'playing') return;
     window.history.pushState(null, '', window.location.href);
     const onPop = () => {
+      if (!doneFiredRef.current && firstTryCorrectIdsRef.current.length > 0) {
+        doneFiredRef.current = true;
+        confirmDone(
+          firstTryCorrectIdsRef.current,
+          totalPlayedRef.current,
+          firstTryCorrectCountRef.current,
+          0,
+          wordSourceRef.current !== 'bank'
+        ).catch(() => {});
+      }
       navigate('/home');
     };
     window.addEventListener('popstate', onPop);
@@ -231,13 +241,13 @@ export default function GamePage() {
       document.body.appendChild(dot);
       setTimeout(() => {
         dot.remove();
-        setTodayImprints(c => c + 1);
+        addImprints(1);
         sessionImprintsRef.current++;
         setImprintBounce(true);
         setTimeout(() => setImprintBounce(false), 300);
       }, 600 + delay);
     }
-  }, []);
+  }, [addImprints]);
 
   const playHitSound = useCallback(() => {
     try {
@@ -397,6 +407,16 @@ export default function GamePage() {
     cancelAnimationFrame(rafRef.current);
     cancelAnimationFrame(castleCollisionRafRef.current);
     cancelAnimationFrame(collisionRafRef.current);
+    if (!doneFiredRef.current && firstTryCorrectIdsRef.current.length > 0) {
+      doneFiredRef.current = true;
+      confirmDone(
+        firstTryCorrectIdsRef.current,
+        totalPlayedRef.current,
+        firstTryCorrectCountRef.current,
+        0,
+        wordSourceRef.current !== 'bank'
+      ).catch(() => {});
+    }
     if (reviewWords) {
       navigate('/learn/session', { state: { words: reviewWords, isFirst: false } });
     } else {

@@ -1,9 +1,11 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { ImprintProvider } from './contexts/ImprintContext';
 import LoginPage from './pages/LoginPage';
 import HomePage from './pages/HomePage';
 import NewWordsPage from './pages/NewWordsPage';
 import SessionPage from './pages/SessionPage';
+import MemoryPage from './pages/MemoryPage';
 import WordsPage from './pages/WordsPage';
 import SettingsPage from './pages/SettingsPage';
 import GrowthPage from './pages/GrowthPage';
@@ -26,6 +28,7 @@ function AppRoutes() {
       <Route path="/home" element={<PrivateRoute><HomePage /></PrivateRoute>} />
       <Route path="/learn/new" element={<PrivateRoute><NewWordsPage /></PrivateRoute>} />
       <Route path="/learn/session" element={<PrivateRoute><SessionPage /></PrivateRoute>} />
+      <Route path="/memory" element={<PrivateRoute><MemoryPage /></PrivateRoute>} />
       <Route path="/words" element={<PrivateRoute><WordsPage /></PrivateRoute>} />
       <Route path="/growth" element={<PrivateRoute><GrowthPage /></PrivateRoute>} />
       <Route path="/settings" element={<PrivateRoute><SettingsPage /></PrivateRoute>} />
@@ -39,9 +42,11 @@ export default function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <div className="max-w-lg mx-auto min-h-screen bg-gray-50">
-          <AppRoutes />
-        </div>
+        <ImprintProvider>
+          <div className="max-w-lg mx-auto min-h-screen bg-gray-50">
+            <AppRoutes />
+          </div>
+        </ImprintProvider>
       </AuthProvider>
     </BrowserRouter>
   );

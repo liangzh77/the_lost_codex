@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getGrowthStats, getHeatmap, getEnergyCurve, getAchievements } from '../api';
+import { useImprints } from '../contexts/ImprintContext';
 import NavBar from '../components/NavBar';
 import TabBar from '../components/TabBar';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
@@ -7,8 +8,6 @@ import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianG
 type ChartTab = 'imprints' | 'heatmap';
 
 interface Stats {
-  today_imprints: number;
-  total_imprints: number;
   level: number;
   level_name: string;
   next_level_imprints: number | null;
@@ -39,6 +38,7 @@ const CURVE_RANGES = [
 ];
 
 export default function GrowthPage() {
+  const { todayImprints, totalImprints } = useImprints();
   const [stats, setStats] = useState<Stats | null>(null);
   const [chartTab, setChartTab] = useState<ChartTab>('imprints');
   const [heatmapData, setHeatmapData] = useState<{ date: string; count: number }[]>([]);
@@ -58,7 +58,7 @@ export default function GrowthPage() {
   }, [curveDays]);
 
   const levelProgress = stats && stats.next_level_imprints
-    ? Math.round((stats.total_imprints / stats.next_level_imprints) * 100)
+    ? Math.round((totalImprints / stats.next_level_imprints) * 100)
     : 100;
 
   return (
@@ -74,14 +74,14 @@ export default function GrowthPage() {
               </div>
               <div className="text-right">
                 <p className="text-xs text-gray-400">总印记</p>
-                <p className="text-xl font-bold text-blue-500">{stats.total_imprints}</p>
+                <p className="text-xl font-bold text-blue-500">{totalImprints}</p>
               </div>
             </div>
             {stats.next_level_imprints && (
               <div>
                 <div className="flex justify-between text-xs text-gray-400 mb-1">
                   <span>升级进度</span>
-                  <span>{stats.total_imprints}/{stats.next_level_imprints}</span>
+                  <span>{totalImprints}/{stats.next_level_imprints}</span>
                 </div>
                 <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                   <div className="h-full bg-blue-500 rounded-full transition-all" style={{ width: `${levelProgress}%` }} />
@@ -90,11 +90,11 @@ export default function GrowthPage() {
             )}
             <div className="flex gap-3">
               <div className="flex-1 bg-gray-50 rounded-xl p-3 text-center">
-                <p className="text-lg font-bold text-gray-900">{stats.today_imprints}</p>
+                <p className="text-lg font-bold text-gray-900">{todayImprints}</p>
                 <p className="text-xs text-gray-400">今日印记</p>
               </div>
               <div className="flex-1 bg-gray-50 rounded-xl p-3 text-center">
-                <p className="text-lg font-bold text-gray-700">{stats.total_imprints}</p>
+                <p className="text-lg font-bold text-gray-700">{totalImprints}</p>
                 <p className="text-xs text-gray-400">总印记</p>
               </div>
             </div>

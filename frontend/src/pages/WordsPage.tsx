@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getRecentWords, getLearningWords, getMasteredWords, getRecentGroups, getLearningGroups, getMasteredGroups, getGroupWords, getWord, getGrowthStats } from '../api';
+import { getRecentWords, getLearningWords, getMasteredWords, getRecentGroups, getLearningGroups, getMasteredGroups, getGroupWords, getWord } from '../api';
+import { useImprints } from '../contexts/ImprintContext';
 import NavBar from '../components/NavBar';
 import TabBar from '../components/TabBar';
 import WordCard from '../components/WordCard';
@@ -39,15 +40,7 @@ export default function WordsPage() {
   const [loading, setLoading] = useState(false);
   const [cardOpen, setCardOpen] = useState(false);
   const [cardWord, setCardWord] = useState<any>(null);
-  const [todayImprints, setTodayImprints] = useState(0);
-  const [totalImprints, setTotalImprints] = useState(0);
-
-  useEffect(() => {
-    getGrowthStats().then((r) => {
-      setTodayImprints(r.data.today_imprints);
-      setTotalImprints(r.data.total_imprints);
-    });
-  }, []);
+  const { todayImprints, totalImprints } = useImprints();
 
   useEffect(() => {
     setLoading(true);
