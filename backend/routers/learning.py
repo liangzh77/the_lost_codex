@@ -398,17 +398,21 @@ def confirm_done(
     today = date.today()
     now = datetime.now()
 
-    # 创建学习组（随便玩词库模式时跳过）
+    # 学习组懒创建：只有真正需要分配新词时才建组，避免产生空组
     group = None
-    if body.create_group:
-        group_count = db.query(LearningGroup).filter(LearningGroup.user_id == user.id).count()
-        group = LearningGroup(
-            user_id=user.id,
-            name=f"第{group_count + 1}组",
-            created_at=now,
-        )
-        db.add(group)
-        db.flush()
+
+    def get_or_create_group():
+        nonlocal group
+        if group is None and body.create_group:
+            group_count = db.query(LearningGroup).filter(LearningGroup.user_id == user.id).count()
+            group = LearningGroup(
+                user_id=user.id,
+                name=f"第{group_count + 1}组",
+                created_at=now,
+            )
+            db.add(group)
+            db.flush()
+        return group
 
     for word_id in body.word_ids:
         progress = (
@@ -422,15 +426,18 @@ def confirm_done(
                 progress.next_review_date = get_next_review_date(progress.current_stage, today, user.review_intervals)
             else:
                 progress.next_review_date = get_next_review_date(progress.current_stage, today, user.review_intervals)
-            if group and not progress.group_id:
-                progress.group_id = group.id
+            if not progress.group_id:
+                g = get_or_create_group()
+                if g:
+                    progress.group_id = g.id
         else:
+            g = get_or_create_group()
             progress = UserWordProgress(
                 user_id=user.id,
                 word_id=word_id,
                 current_stage=1,
                 next_review_date=get_next_review_date(1, today, user.review_intervals),
-                group_id=group.id if group else None,
+                group_id=g.id if g else None,
             )
             db.add(progress)
 

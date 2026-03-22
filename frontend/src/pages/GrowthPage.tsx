@@ -153,6 +153,11 @@ export default function GrowthPage() {
                     tick={{ fontSize: 11, fill: '#a1a1aa' }}
                     width={36}
                     tickMargin={4}
+                    domain={[0, (dataMax: number) => {
+                      if (dataMax <= 0) return 10;
+                      const step = dataMax <= 50 ? 10 : dataMax <= 200 ? 50 : dataMax <= 500 ? 100 : 200;
+                      return Math.ceil(dataMax / step) * step;
+                    }]}
                   />
                   <Tooltip
                     contentStyle={{
