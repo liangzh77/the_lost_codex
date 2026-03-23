@@ -1,13 +1,16 @@
+import os
 from datetime import datetime, timedelta
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from jose import JWTError, jwt
 import bcrypt
+from dotenv import load_dotenv
 from sqlalchemy.orm import Session
 from database import get_db
 from models import User
 
-SECRET_KEY = "the-lost-codex-secret-key-change-in-production"
+load_dotenv()
+SECRET_KEY = os.getenv("JWT_SECRET_KEY", "the-lost-codex-secret-key-change-in-production")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_DAYS = 30
 

@@ -16,6 +16,10 @@ class User(Base):
     group_size: Mapped[int] = mapped_column(Integer, default=10)
     review_intervals: Mapped[str] = mapped_column(String(200), default="1,2,4,7,15,30")
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.now)
+    # 微信小程序字段（nullable，老用户无此值）
+    openid: Mapped[Optional[str]] = mapped_column(String(64), nullable=True, unique=True, index=True)
+    display_name: Mapped[Optional[str]] = mapped_column(String(100), nullable=True)
+    avatar_url: Mapped[Optional[str]] = mapped_column(String(500), nullable=True)
 
     progress: Mapped[list["UserWordProgress"]] = relationship(back_populates="user")
     records: Mapped[list["LearningRecord"]] = relationship(back_populates="user")
