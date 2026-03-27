@@ -55,7 +55,10 @@ ACHIEVEMENTS = {
 
 
 def calc_imprints(record: LearningRecord) -> int:
-    """答对一题+1印���，拼写对+2印记"""
+    """计算一条记录的印记数。优先使用前端传入的精确值，兼容旧记录回退到公式计算"""
+    if record.imprints > 0:
+        return record.imprints
+    # 旧记录兼容：答对一题+1，拼写对+2
     imprints = 0
     if record.total_questions > 0:
         imprints += record.correct_answers

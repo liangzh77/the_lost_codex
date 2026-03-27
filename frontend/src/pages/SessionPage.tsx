@@ -51,6 +51,7 @@ export default function SessionPage() {
   const [spellingSubmitted, setSpellingSubmitted] = useState(false);
   const spellingRef = useRef<HTMLInputElement>(null);
   const imprintBarRef = useRef<HTMLSpanElement>(null);
+  const sessionImprintsRef = useRef(0);
   const { todayImprints, totalImprints, addImprints } = useImprints();
   const [imprintBounce, setImprintBounce] = useState(false);
   const [showPhonetic, setShowPhonetic] = useState(false);
@@ -71,6 +72,7 @@ export default function SessionPage() {
 
   const flyImprint = useCallback((sourceEl: HTMLElement | null, amount: number) => {
     if (!sourceEl || !imprintBarRef.current) return;
+    sessionImprintsRef.current += amount;
     const src = sourceEl.getBoundingClientRect();
     const dst = imprintBarRef.current.getBoundingClientRect();
     const startX = src.left + src.width / 2;
@@ -219,6 +221,7 @@ export default function SessionPage() {
       const wordId = words[currentIndex].id;
       if (!seenWords.has(wordId)) {
         setSeenWords((prev) => new Set(prev).add(wordId));
+        sessionImprintsRef.current += 1;
         addImprints(1);
         setImprintBounce(true);
         setTimeout(() => setImprintBounce(false), 300);
@@ -283,7 +286,7 @@ export default function SessionPage() {
       finalTotal += 1;
     }
 
-    await confirmDone(words.map((w) => w.id), finalTotal, finalCorrect, finalSpelling);
+    await confirmDone(words.map((w) => w.id), finalTotal, finalCorrect, finalSpelling, true, sessionImprintsRef.current);
     navigate('/words');
   };
 
@@ -338,48 +341,24 @@ export default function SessionPage() {
     );
   }
 
-  // 初始题型选择（从复习进入）
-  if (phase === 'select') {
+  // 题型选择（初始复习 or 练习后）
+  if (phase === 'select' || phase === 'done') {
+    const hasDoneRound = phase === 'done';
     return (
       <div className="pb-6">
-        <NavBar title="题型选择" onBack={() => navigate('/words')} />
+        <NavBar title="题型选择" onBack={!hasDoneRound ? () => navigate('/words') : undefined} />
         <div className="flex justify-center gap-4 py-2 bg-white/80 backdrop-blur border-b border-gray-100">
           <span className="text-xs text-gray-400">今日印记 <span className="text-sm font-bold text-blue-500">{todayImprints}</span></span>
           <span className="text-xs text-gray-400">总印记 <span className="text-sm font-bold text-gray-700">{totalImprints}</span></span>
         </div>
         <div className="px-4 pt-10 space-y-4 text-center">
-          <p className="text-sm text-gray-500">共 {words.length} 个单词待复习</p>
-          <p className="text-sm text-gray-400">选择一种题型开始复习</p>
-          <div className="space-y-3 pt-4">
-            <Button size="lg" variant="secondary" onClick={() => handleAgain('cn_to_en')}>中文 → 选英文</Button>
-            <Button size="lg" variant="secondary" onClick={() => handleAgain('en_to_cn')}>英文 → 选中文</Button>
-            <Button size="lg" variant="secondary" onClick={() => handleAgain('en_to_explanation')}>英文 → 选中文释义</Button>
-            <Button size="lg" variant="secondary" onClick={() => handleAgain('spelling')}>中文 → 拼写英文</Button>
-            <Button size="lg" variant="secondary" onClick={() => navigate('/game', { state: { reviewWords: words } })}>⚔️ 单词战场</Button>
-            <Button size="lg" variant="secondary" onClick={() => navigate('/memory', { state: { words } })}>🃏 翻牌配对</Button>
-            <Button size="lg" onClick={handleConfirmDone}>学完了</Button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // 练习后题型选择
-  if (phase === 'done') {
-    return (
-      <div className="pb-6">
-        <NavBar title="题型选择" />
-        <div className="flex justify-center gap-4 py-2 bg-white/80 backdrop-blur border-b border-gray-100">
-          <span className="text-xs text-gray-400">今日印记 <span className="text-sm font-bold text-blue-500">{todayImprints}</span></span>
-          <span className="text-xs text-gray-400">总印记 <span className="text-sm font-bold text-gray-700">{totalImprints}</span></span>
-        </div>
-        <div className="px-4 pt-10 space-y-4 text-center">
-          {totalCount > 0 && (
+          {!hasDoneRound && <p className="text-sm text-gray-500">共 {words.length} 个单词待复习</p>}
+          {hasDoneRound && totalCount > 0 && (
             <p className="text-sm text-gray-500">
               正确率：{correctCount}/{totalCount}（{Math.round((correctCount / totalCount) * 100)}%）
             </p>
           )}
-          <p className="text-sm text-gray-400">选择一种题型继续练习</p>
+          <p className="text-sm text-gray-400">选择一种题型{hasDoneRound ? '继续练习' : '开始复习'}</p>
           <div className="space-y-3 pt-4">
             <Button size="lg" variant="secondary" onClick={() => handleAgain('cn_to_en')}>中文 → 选英文</Button>
             <Button size="lg" variant="secondary" onClick={() => handleAgain('en_to_cn')}>英文 → 选中文</Button>

@@ -24,6 +24,7 @@ class ConfirmDoneRequest(BaseModel):
     total_questions: int = 0
     correct_answers: int = 0
     spelling_correct: int = 0
+    imprints: int = 0
     create_group: bool = True
 
 
@@ -451,6 +452,7 @@ def confirm_done(
             total_questions=body.total_questions if is_first else 0,
             correct_answers=body.correct_answers if is_first else 0,
             spelling_correct=body.spelling_correct if is_first else 0,
+            imprints=body.imprints if is_first else 0,
         )
         db.add(record)
 

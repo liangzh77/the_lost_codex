@@ -5,7 +5,7 @@ import { useImprints } from '../contexts/ImprintContext';
 import NavBar from '../components/NavBar';
 import Button from '../components/Button';
 
-type GamePhase = 'entry' | 'loading' | 'playing' | 'gameover' | 'victory';
+type GamePhase = 'entry' | 'playing' | 'gameover' | 'victory';
 type WordSource = 'today' | 'learning' | 'mastered' | 'all' | 'bank';
 type WordLimit = 10 | 20 | 30 | null;
 
@@ -39,6 +39,7 @@ export default function GamePage() {
   const autoStartedRef = useRef(false);
 
   const [gamePhase, setGamePhase] = useState<GamePhase>('entry');
+  const [isStarting, setIsStarting] = useState(false);
   const [wordSource, setWordSource] = useState<WordSource>('today');
   const [wordLimit, setWordLimit] = useState<WordLimit>(10);
   const [availableCount, setAvailableCount] = useState<number | null>(null);
@@ -162,7 +163,8 @@ export default function GamePage() {
           totalPlayedRef.current,
           firstTryCorrectCountRef.current,
           0,
-          wordSourceRef.current !== 'bank'
+          wordSourceRef.current !== 'bank',
+          sessionImprintsRef.current
         ).catch(() => {});
       }
       navigate('/home');
@@ -180,7 +182,8 @@ export default function GamePage() {
         totalPlayedRef.current,
         firstTryCorrectCountRef.current,
         0,
-        wordSourceRef.current !== 'bank'
+        wordSourceRef.current !== 'bank',
+        sessionImprintsRef.current
       ).catch(() => {});
       setEndData({
         score: scoreRef.current,
@@ -225,6 +228,7 @@ export default function GamePage() {
   // flyImprint — adapted from SessionPage.tsx
   const flyImprint = useCallback((sourceEl: HTMLElement | null, amount: number) => {
     if (!sourceEl || !imprintBarRef.current) return;
+    sessionImprintsRef.current += amount;
     const src = sourceEl.getBoundingClientRect();
     const dst = imprintBarRef.current.getBoundingClientRect();
     const sx = src.left + src.width / 2;
@@ -242,7 +246,6 @@ export default function GamePage() {
       setTimeout(() => {
         dot.remove();
         addImprints(1);
-        sessionImprintsRef.current++;
         setImprintBounce(true);
         setTimeout(() => setImprintBounce(false), 300);
       }, 600 + delay);
@@ -414,7 +417,8 @@ export default function GamePage() {
         totalPlayedRef.current,
         firstTryCorrectCountRef.current,
         0,
-        wordSourceRef.current !== 'bank'
+        wordSourceRef.current !== 'bank',
+        sessionImprintsRef.current
       ).catch(() => {});
     }
     if (reviewWords) {
@@ -489,7 +493,7 @@ export default function GamePage() {
 
   const handleStartGame = async () => {
     try { const a = new Audio('data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA='); a.play().catch(() => {}); } catch { /* unlock iOS audio context */ }
-    setGamePhase('loading');
+    setIsStarting(true);
     try {
       let rawWords: WordInfo[] = [];
       if (reviewWords) {
@@ -539,15 +543,16 @@ export default function GamePage() {
       setCastleHit(false); setPausedAnswered(false);
 
       new Audio(getWordAudio(wl[0].english)).play().catch(() => {});
+      setIsStarting(false);
       setGamePhase('playing');
     } catch {
-      setGamePhase('entry');
+      setIsStarting(false);
     }
   };
 
   // ——— RENDER ———
 
-  if (gamePhase === 'entry' || gamePhase === 'loading') {
+  if (gamePhase === 'entry') {
     const sourceOptions: { value: WordSource; label: string }[] = [
       { value: 'today', label: '今日单词' },
       { value: 'learning', label: '学习中' },
@@ -668,9 +673,9 @@ export default function GamePage() {
             <Button
               size="lg"
               onClick={handleStartGame}
-              disabled={gamePhase === 'loading' || bankNotSelected || availableCount === null || noWords}
+              disabled={isStarting || bankNotSelected || availableCount === null || noWords}
             >
-              {gamePhase === 'loading' ? '准备中...' : '开始战斗！'}
+              {isStarting ? '准备中...' : '开始战斗！'}
             </Button>
           )}
         </div>

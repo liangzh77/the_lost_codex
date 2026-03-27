@@ -156,7 +156,7 @@ export default function MemoryPage() {
         .map(c => c.wordId);
       if (matchedWordIds.length > 0 || sessionImprintsRef.current > 0) {
         const ids = matchedWordIds.length > 0 ? matchedWordIds : playedWordIdsRef.current.slice(0, 1);
-        confirmDone(ids, ids.length, sessionImprintsRef.current, 0, false);
+        confirmDone(ids, ids.length, 0, 0, false, sessionImprintsRef.current);
         doneCalledRef.current = true;
       }
     }
@@ -296,7 +296,7 @@ export default function MemoryPage() {
   useEffect(() => {
     if (phase !== 'done' || doneCalledRef.current) return;
     doneCalledRef.current = true;
-    confirmDone(playedWordIdsRef.current, playedWordIdsRef.current.length, sessionImprintsRef.current, 0, false);
+    confirmDone(playedWordIdsRef.current, playedWordIdsRef.current.length, 0, 0, false, sessionImprintsRef.current);
   }, [phase]);
 
   // Entry phase

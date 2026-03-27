@@ -78,6 +78,7 @@ class LearningRecord(Base):
     total_questions: Mapped[int] = mapped_column(Integer, default=0)
     correct_answers: Mapped[int] = mapped_column(Integer, default=0)
     spelling_correct: Mapped[int] = mapped_column(Integer, default=0)
+    imprints: Mapped[int] = mapped_column(Integer, default=0)
 
     user: Mapped["User"] = relationship(back_populates="records")
     word: Mapped["Word"] = relationship()

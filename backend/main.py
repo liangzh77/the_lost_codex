@@ -21,18 +21,26 @@ app.include_router(growth.router)
 app.include_router(audio.router)
 
 
-def _migrate_add_wechat_fields():
-    """一次性迁移：为 users 表添加微信字段（SQLite ALTER TABLE，幂等）"""
+def _migrate(table: str, columns: list[tuple[str, str]]):
+    """幂等地为指定表添加列（SQLite ALTER TABLE）"""
     with engine.connect() as conn:
-        existing = {row[1] for row in conn.execute(text("PRAGMA table_info(users)"))}
-        for col, typedef in [
-            ("openid", "TEXT UNIQUE"),
-            ("display_name", "TEXT"),
-            ("avatar_url", "TEXT"),
-        ]:
+        existing = {row[1] for row in conn.execute(text(f"PRAGMA table_info({table})"))}
+        for col, typedef in columns:
             if col not in existing:
-                conn.execute(text(f"ALTER TABLE users ADD COLUMN {col} {typedef}"))
+                conn.execute(text(f"ALTER TABLE {table} ADD COLUMN {col} {typedef}"))
         conn.commit()
+
+
+def _migrate_add_wechat_fields():
+    """一次性迁移：为各表添加缺失列（幂等）"""
+    _migrate("users", [
+        ("openid", "TEXT UNIQUE"),
+        ("display_name", "TEXT"),
+        ("avatar_url", "TEXT"),
+    ])
+    _migrate("learning_records", [
+        ("imprints", "INTEGER DEFAULT 0"),
+    ])
 
 
 @app.on_event("startup")
