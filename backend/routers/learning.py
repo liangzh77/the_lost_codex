@@ -10,6 +10,7 @@ from models import User, Word, WordBank, UserWordProgress, LearningRecord, Learn
 from auth import get_current_user
 from services.spaced_repetition import get_next_review_date, is_mastered, TOTAL_STAGES, get_total_stages
 from services.ai_complete import complete_word_info
+from services.lemmatize import normalize_words
 
 router = APIRouter(prefix="/api/learning", tags=["learning"])
 
@@ -34,12 +35,14 @@ class CheckWordsRequest(BaseModel):
 
 @router.post("/check-words")
 def check_words(body: CheckWordsRequest, db: Session = Depends(get_db)):
-    """检查哪些词在词库中已存在"""
-    existing = db.query(Word.english).filter(Word.english.in_(body.words)).all()
+    """检查哪些词在词库中已存在（输入词先归一化为词元）"""
+    words, normalized = normalize_words(body.words)
+    existing = db.query(Word.english).filter(Word.english.in_(words)).all()
     found = {w[0].lower() for w in existing}
     return {
-        "existing": [w for w in body.words if w.lower() in found],
-        "new": [w for w in body.words if w.lower() not in found],
+        "existing": [w for w in words if w.lower() in found],
+        "new": [w for w in words if w.lower() not in found],
+        "normalized": normalized,
     }
 
 
@@ -53,7 +56,8 @@ def start_new_words(
 ):
     """从词库随机抽取一组新词，或根据用户输入查找单词"""
     if body.custom_words:
-        all_matches = db.query(Word).filter(Word.english.in_(body.custom_words)).all()
+        custom_words, _ = normalize_words(body.custom_words)
+        all_matches = db.query(Word).filter(Word.english.in_(custom_words)).all()
         # 按 english 去重：优先选有详细信息的（chinese 非空）
         seen: dict[str, Word] = {}
         for w in all_matches:
@@ -62,7 +66,7 @@ def start_new_words(
                 seen[key] = w
         words = list(seen.values())
         found = {w.english.lower() for w in words}
-        not_found = [w for w in body.custom_words if w.lower() not in found]
+        not_found = [w for w in custom_words if w.lower() not in found]
         # 词库中没有的单词自动创建，用AI补全信息，放入"自定义单词"词库
         if not_found:
             custom_bank = db.query(WordBank).filter(WordBank.name == "自定义单词").first()
