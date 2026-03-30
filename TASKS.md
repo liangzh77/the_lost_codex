@@ -45,6 +45,18 @@
 - [x] 批量导入脚本（默认导入 words_full.json）
 - [x] data/generate_words.py — 词库生成脚本
 
+## P6.5 — 词形归一化 ✅
+- [x] backend/services/lemmatize.py — 基于 NLTK WordNet 的词形归一化服务
+  - 动词变形：walked→walk, running→run, ran→run（含不规则）
+  - 名词复数：children→child, mice→mouse, cats→cat
+  - 形容词比较级：bigger→big
+  - 所有格处理：running's→run
+  - NLTK 不可用时降级为无归一化模式，不影响现有功能
+- [x] normalize_words() helper：批量归一化 + 保序去重
+- [x] POST /api/learning/check-words：用户输入先归一化，按词元查词库
+- [x] POST /api/learning/new（自定义词路径）：创建词元词条而非变形词
+- [x] 25 个单元测试覆盖全部代码路径（backend/tests/test_lemmatize.py）
+
 ## P6 — Bug 修复 & 体验优化 ✅
 - [x] 后端：最近背的单词列表返回 studied_at 字段
 - [x] 后端：四选一测验干扰项去重，不足时兼容处理

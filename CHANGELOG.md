@@ -5,16 +5,12 @@ All notable changes to this project will be documented in this file.
 ## [0.1.0.0] - 2026-03-28
 
 ### Added
-- 词形归一化服务 (`backend/services/lemmatize.py`)：基于 NLTK WordNet，将用户输入的变形词自动还原为字典词元
-  - 动词变形：walked→walk, running→run, ran→run（含不规则）
-  - 名词复数：children→child, mice→mouse, cats→cat
-  - 形容词比较级：bigger→big
-  - 所有格处理：running's→run
-  - NLTK 不可用时降级为无归一化模式，不影响现有功能
-- `normalize_words()` helper：批量归一化 + 保序去重
-- 25 个单元测试覆盖全部代码路径
-- TODOS.md 记录历史变形词条清理事项
+- **词形归一化**：输入 walked、running、children，系统自动识别为 walk、run、child——无论你输哪种时态或复数，都能学到正确的词元形式
+  - 支持：动词变形（walked→walk、ran→run）、名词复数（children→child、mice→mouse）、形容词比较级（bigger→big）、所有格（running's→run）
+  - NLTK 不可用时自动降级，不影响现有功能
+- 重复词自动合并：同时输入 walked 和 walk，只会学习一个词条 walk
+- 25 个单元测试，覆盖全部归一化逻辑
 
 ### Changed
-- `POST /api/learning/check-words`：输入词先归一化，返回词元形式；新增 `normalized` 响应字段
-- `POST /api/learning/new`（custom_words 路径）：用户输入先归一化，确保创建词元词条而非变形词
+- 查词接口（`check-words`）现在返回归一化后的词元，并附带 `normalized` 字段说明哪些词发生了变形还原
+- 自定义添加单词时，自动归一化为词元形式，避免 walked 和 walk 被当作两个不同单词收录
