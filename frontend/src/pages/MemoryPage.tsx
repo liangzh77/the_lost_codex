@@ -109,9 +109,8 @@ export default function MemoryPage() {
   }, [passedWords, phase, wordSource, selectedBankId]);
 
   const flyImprint = useCallback((sourceEl: HTMLElement | null, amount: number) => {
+    // 纯动画函数，不再负责计数（计数已在 handleCardClick 配对成功时立即完成）
     if (!sourceEl || !imprintBarRef.current) return;
-    // 立即累计印记数，确保 confirmDone 调用时能拿到正确值（动画完成在 550ms 后的 phase='done' 之后）
-    sessionImprintsRef.current += amount;
     const src = sourceEl.getBoundingClientRect();
     const dst = imprintBarRef.current.getBoundingClientRect();
     const startX = src.left + src.width / 2;
@@ -150,17 +149,26 @@ export default function MemoryPage() {
     }
   }, [addImprints]);
 
-  const handleBack = () => {
-    if (phase === 'playing' && !doneCalledRef.current) {
-      const matchedWordIds = cards
-        .filter(c => c.state === 'matched' && c.type === 'en')
-        .map(c => c.wordId);
-      if (matchedWordIds.length > 0 || sessionImprintsRef.current > 0) {
-        const ids = matchedWordIds.length > 0 ? matchedWordIds : playedWordIdsRef.current.slice(0, 1);
-        confirmDone(ids, ids.length, 0, 0, false, sessionImprintsRef.current);
+  // 统一存档函数：任何退出方式（完成/返回/卸载）都通过这里上传印记
+  const saveSession = useCallback(() => {
+    if (doneCalledRef.current) return;
+    if (playedWordIdsRef.current.length === 0) return;
+    doneCalledRef.current = true;
+    confirmDone(playedWordIdsRef.current, playedWordIdsRef.current.length, 0, 0, false, sessionImprintsRef.current);
+  }, []);
+
+  // 组件卸载时兜底保存（ref 不受闭包影响，始终读最新值）
+  useEffect(() => {
+    return () => {
+      if (!doneCalledRef.current && playedWordIdsRef.current.length > 0) {
         doneCalledRef.current = true;
+        confirmDone(playedWordIdsRef.current, playedWordIdsRef.current.length, 0, 0, false, sessionImprintsRef.current);
       }
-    }
+    };
+  }, []);
+
+  const handleBack = () => {
+    if (phase === 'playing') saveSession();
     if (passedWords) {
       navigate('/learn/session', { state: { words, isFirst: false } });
     } else {
@@ -252,8 +260,9 @@ export default function MemoryPage() {
       const c1 = cards.find(c => c.id === id1);
 
       if (c1 && c1.pairKey === card.pairKey) {
-        // MATCH — fly imprint dots: 2 if cards were hidden (memory), 1 if already revealed
+        // MATCH — 立即计入印记（与动画无关，保证 confirmDone 时数值正确）
         const amount = allRevealedRef.current ? 1 : 2;
+        sessionImprintsRef.current += amount;
         flyImprint(document.getElementById(id1), amount);
         setTimeout(() => {
           setCards(prev => {
@@ -293,12 +302,10 @@ export default function MemoryPage() {
     }
   };
 
-  // Call confirmDone when entering done phase
+  // 游戏正常完成时存档
   useEffect(() => {
-    if (phase !== 'done' || doneCalledRef.current) return;
-    doneCalledRef.current = true;
-    confirmDone(playedWordIdsRef.current, playedWordIdsRef.current.length, 0, 0, false, sessionImprintsRef.current);
-  }, [phase]);
+    if (phase === 'done') saveSession();
+  }, [phase, saveSession]);
 
   // Entry phase
   if (phase === 'entry') {
