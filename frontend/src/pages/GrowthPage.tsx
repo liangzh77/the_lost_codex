@@ -55,7 +55,7 @@ export default function GrowthPage() {
 
   useEffect(() => {
     getEnergyCurve(curveDays).then((r) => setImprintData(r.data));
-  }, [curveDays]);
+  }, [curveDays, todayImprints]);
 
   const levelProgress = stats && stats.next_level_imprints
     ? Math.round((totalImprints / stats.next_level_imprints) * 100)

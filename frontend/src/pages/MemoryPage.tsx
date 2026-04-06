@@ -110,6 +110,8 @@ export default function MemoryPage() {
 
   const flyImprint = useCallback((sourceEl: HTMLElement | null, amount: number) => {
     if (!sourceEl || !imprintBarRef.current) return;
+    // 立即累计印记数，确保 confirmDone 调用时能拿到正确值（动画完成在 550ms 后的 phase='done' 之后）
+    sessionImprintsRef.current += amount;
     const src = sourceEl.getBoundingClientRect();
     const dst = imprintBarRef.current.getBoundingClientRect();
     const startX = src.left + src.width / 2;
@@ -142,7 +144,6 @@ export default function MemoryPage() {
       setTimeout(() => {
         dot.remove();
         addImprints(1);
-        sessionImprintsRef.current += 1;
         setImprintBounce(true);
         setTimeout(() => setImprintBounce(false), 300);
       }, 600 + delay);
