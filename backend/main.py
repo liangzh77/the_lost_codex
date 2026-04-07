@@ -22,12 +22,15 @@ app.include_router(audio.router)
 
 
 def _migrate(table: str, columns: list[tuple[str, str]]):
-    """幂等地为指定表添加列（SQLite ALTER TABLE）"""
+    """幂等地为指定表添加列（SQLite ALTER TABLE）。
+    SQLite 不支持 ALTER TABLE ADD COLUMN ... UNIQUE，添加时自动去掉 UNIQUE 约束。"""
     with engine.connect() as conn:
         existing = {row[1] for row in conn.execute(text(f"PRAGMA table_info({table})"))}
         for col, typedef in columns:
             if col not in existing:
-                conn.execute(text(f"ALTER TABLE {table} ADD COLUMN {col} {typedef}"))
+                # SQLite 不支持 ADD COLUMN UNIQUE，去掉后添加列
+                safe_typedef = typedef.replace("UNIQUE", "").strip()
+                conn.execute(text(f"ALTER TABLE {table} ADD COLUMN {col} {safe_typedef}"))
         conn.commit()
 
 
