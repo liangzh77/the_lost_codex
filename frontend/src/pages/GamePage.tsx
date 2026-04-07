@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { getTodayReview, getLearningWords, getMasteredWords, getWordBanks, getBankWords, getQuiz, confirmDone, getWordAudio } from '../api';
+import { shuffle } from '../utils/random';
 import { useImprints } from '../contexts/ImprintContext';
 import NavBar from '../components/NavBar';
 import Button from '../components/Button';
@@ -511,12 +512,7 @@ export default function GamePage() {
         const [l, m] = await Promise.all([getLearningWords(), getMasteredWords()]);
         rawWords = [...l.data, ...m.data];
       }
-      const wl: WordInfo[] = [...rawWords];
-      // Fisher-Yates shuffle
-      for (let i = wl.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [wl[i], wl[j]] = [wl[j], wl[i]];
-      }
+      const wl: WordInfo[] = shuffle(rawWords);
       // apply word limit
       if (wordLimit !== null) wl.splice(wordLimit);
       const qrs = await Promise.all(wl.map(w => getQuiz(w.id, 'en_to_cn')));
@@ -524,7 +520,7 @@ export default function GamePage() {
         const allOptions = r.data.options as string[];
         const correct = r.data.correct_answer as string;
         const wrongs = allOptions.filter(o => o !== correct).slice(0, 2);
-        const opts = [...wrongs, correct].sort(() => Math.random() - 0.5);
+        const opts = shuffle([...wrongs, correct]);
         return { ...r.data, options: opts };
       });
 

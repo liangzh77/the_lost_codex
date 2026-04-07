@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { getTodayReview, getLearningWords, getMasteredWords, getWordBanks, getBankWords, confirmDone } from '../api';
+import { getTodayReview, getLearningWords, getMasteredWords, getWordBanks, getBankWords, confirmDone, getWordAudio } from '../api';
+import { shuffle } from '../utils/random';
 import { useImprints } from '../contexts/ImprintContext';
 import NavBar from '../components/NavBar';
 import Button from '../components/Button';
@@ -34,14 +35,6 @@ const DIFFICULTY_CONFIG: Record<Difficulty, { label: string; cols: number; pairs
   hard:     { label: '困难', cols: 4, pairs: 10, grid: '4×5', storageKey: 'memory_best_steps_hard' },
 };
 
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
 
 function getBest(diff: Difficulty): number | null {
   const v = parseInt(localStorage.getItem(DIFFICULTY_CONFIG[diff].storageKey) || '0', 10);
@@ -242,6 +235,11 @@ export default function MemoryPage() {
     if (!allRevealedRef.current && card.state !== 'hidden') return;
     if (flippedIds.includes(card.id)) return;
 
+    // 点击英文牌时播放读音
+    if (card.type === 'en') {
+      new Audio(getWordAudio(card.content)).play().catch(() => {});
+    }
+
     // In normal mode, flip the card face-up
     if (!allRevealedRef.current) {
       setCards(prev => prev.map(c => c.id === card.id ? { ...c, state: 'flipped' as const } : c));
@@ -260,7 +258,9 @@ export default function MemoryPage() {
       const c1 = cards.find(c => c.id === id1);
 
       if (c1 && c1.pairKey === card.pairKey) {
-        // MATCH — 立即计入印记（与动画无关，保证 confirmDone 时数值正确）
+        // MATCH — 播放读音 + 立即计入印记（与动画无关，保证 confirmDone 时数值正确）
+        const enCard = c1.type === 'en' ? c1 : card;
+        new Audio(getWordAudio(enCard.content)).play().catch(() => {});
         const amount = allRevealedRef.current ? 1 : 2;
         sessionImprintsRef.current += amount;
         flyImprint(document.getElementById(id1), amount);

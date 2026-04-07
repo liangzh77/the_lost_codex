@@ -6,6 +6,7 @@ import NavBar from '../components/NavBar';
 import Button from '../components/Button';
 import WordCard from '../components/WordCard';
 import { diffSpelling } from '../utils/diffSpelling';
+import { shuffle, randomChoice } from '../utils/random';
 
 interface WordInfo {
   id: number;
@@ -44,7 +45,7 @@ export default function SessionPage() {
   const [quizType, setQuizType] = useState<string>(() => {
     if (initialQuizType) return initialQuizType;
     const types = ['cn_to_en', 'en_to_cn', 'en_to_explanation'];
-    return types[Math.floor(Math.random() * types.length)];
+    return randomChoice(types);
   });
   const [spellingCorrect, setSpellingCorrect] = useState(0);
   const [spellingInput, setSpellingInput] = useState('');
@@ -60,12 +61,7 @@ export default function SessionPage() {
     if (!words || words.length === 0) return [];
     if (!isFirst) {
       // 直接进入 quiz，初始化随机顺序
-      const indices = Array.from({ length: words.length }, (_, i) => i);
-      for (let i = indices.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [indices[i], indices[j]] = [indices[j], indices[i]];
-      }
-      return indices;
+      return shuffle(Array.from({ length: words.length }, (_, i) => i));
     }
     return [];
   });
@@ -236,12 +232,7 @@ export default function SessionPage() {
   };
 
   const shuffleOrder = () => {
-    const indices = Array.from({ length: words.length }, (_, i) => i);
-    for (let i = indices.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [indices[i], indices[j]] = [indices[j], indices[i]];
-    }
-    setQuizOrder(indices);
+    setQuizOrder(shuffle(Array.from({ length: words.length }, (_, i) => i)));
   };
 
   const handleFirstLookNext = () => {
